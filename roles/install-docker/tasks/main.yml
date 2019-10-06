@@ -1,0 +1,16 @@
+---
+# tasks file
+
+- name: Uninstall old versions of docker  
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: absent
+    loop:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+
+    

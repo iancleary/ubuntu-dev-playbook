@@ -1,0 +1,4 @@
+---
+# defaults file for ansible
+website_root_dir: ~/dev/iancleary.me/website
+website_bucket_name: iancleary.me
