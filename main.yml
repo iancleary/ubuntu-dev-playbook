@@ -1,0 +1,6 @@
+- name: upgrade
+  hosts: localhost
+  remote_user: root
+  roles:
+    - { role: upgrade, tags: [ 'all' ] }
+    - { role: install-docker, tags: ['docker']}
