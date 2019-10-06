@@ -107,6 +107,17 @@ flameshot: upgrade
 	## doesn't seem to work
 	# sudo snap install flameshot-app
 
+gnome-firefox-theme: ## Install GNOME Firefox theme
+gnome-firefox-theme:
+	################################################
+	# Install gnome firefox theme
+	# https://github.com/rafaelmardojai/firefox-gnome-theme
+	# Updating gnome firefox theme
+	# https://github.com/rafaelmardojai/firefox-gnome-theme#updating
+	###############################################
+	git clone git@github.com:rafaelmardojai/firefox-gnome-theme.git /tmp/firefox-gnome-theme && cd /tmp/firefox-gnome-theme
+	bash /tmp/firefox-gnome-theme/scripts/install.sh -g
+
 
 nodejs: ## Install node.js
 nodejs:
