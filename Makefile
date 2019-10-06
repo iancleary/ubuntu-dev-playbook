@@ -194,6 +194,12 @@ sublime-text: ## Install Sublime Text as a snap
 sublime-text: snap
 	sudo snap install sublime-text --classic 
 
+tresorit: ## Install Tresorit
+tresorit:
+	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
+	chmod +x ~/Downloads/tresorit_installer.run
+	$(echo $0) ~/Downloads/tresorit_installer.run
+
 yarn: ## Install node.js and yarn
 yarn: upgrade nodejs
 
