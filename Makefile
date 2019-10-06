@@ -136,9 +136,13 @@ snap:  ## Install snapd
 snap:
 	sudo apt install snapd
 
-spotify: ## Install Spotify snap
+spotify: ## Install Spotify as a snap
 spotify: snap
 	sudo snap install spotify
+
+sublime-text: ## Install Sublime Text as a snap
+sublime-text: snap
+	sudo snap install sublime-text --classic 
 
 yarn: ## Install node.js and yarn
 yarn: upgrade nodejs
