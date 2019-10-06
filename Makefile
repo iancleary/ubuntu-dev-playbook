@@ -138,4 +138,22 @@ yarn-globals:
 	# yarn global remove @gridsome/cli
 	yarn global add @gridsome/cli
 
+zsh: ## Install zsh and oh-my-zsh, change shell to zsh
+zsh: upgrade
+
+	################################################
+	# Install ZSH and Oh-my-zsh
+	# https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH
+	###############################################
+	sudo apt -y install zsh
+	
+	zsh --version
+	
+	# change shell
+	# chsh -s $(shell which zsh)
+
+	# install oh-my-zsh
+	sh -c "$(shell curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
 .DEFAULT_GOAL := help
