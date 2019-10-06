@@ -19,6 +19,10 @@ upgrade: DARGS?=
 upgrade: ## Apt update & upgrade
 	sudo apt-get update && sudo apt-get -y upgrade && sudo apt -y autoremove
 
+ansible: ## Install ansible
+ansible:
+	sudo apt install ansible
+
 docker: ## Install docker with apt 
 docker: DARGS?=
 docker: upgrade
@@ -123,6 +127,44 @@ nodejs:
 	# Using Ubuntu
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
+
+python-three-seven: ## Install python3.7
+python-three-seven: upgrade
+	# Start by updating the packages list and installing the prerequisites:
+	sudo apt install software-properties-common
+
+	# Next, add the deadsnakes PPA to your sources list:
+	sudo add-apt-repository ppa:deadsnakes/ppa # not for 19.04
+	# when prompted, press Enter to continue
+
+	# Once the repository is enabled, install Python 3.7 with: (added libpython3.7-dev for pip installs)
+	# - httptools wasn't installing correctly until adding it
+	# - see: https://github.com/huge-success/sanic/issues/1503#issuecomment-469031275
+	sudo apt update
+	sudo apt install -y python3.7 libpython3.7-dev
+
+	# python3 pip
+	sudo apt install -y python3-pip
+	# upgrade pip
+	python3.7 -m pip install --upgrade pip
+
+	# python3 pytest
+	sudo apt install -y python3-pytest
+
+	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.7 --version
+	python3.7 -m pip --version
+	python3.7 -m pytest --version
+
+python-supporting: ## Install useful packages
+python-supporting:
+	python3.7 -m pip install --user twine
+	python3.7 -m pip install --user wheel
+	python3.7 -m pip install --user cookiecutter
+
+	# add the following to your .bashrc (.zshrc, etc.) file
+	# export PATH=$$HOME/.local/bin:$$PATH
 
 secure-comms: ## Install secure communication snaps
 secure-comms: snap
