@@ -125,6 +125,17 @@ yarn: upgrade nodejs
 	@echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 	sudo apt-get update && sudo apt-get install yarn
 
+yarn-globals: ## Install Vue and Gridsome CLIs
+yarn-globals:
+	yarn --version
+	## Add the next two lines, without the comment, to your .bashrc (.zshrc, etc.) file
+	# export PATH="$$PATH:/opt/yarn-$(shell yarn --version)/bin"
+	# export PATH="$$(yarn global bin):$$PATH"
+	## source it and run again
 
+	#yarn global remove @vue/cli
+	yarn global add @vue/cli
+	# yarn global remove @gridsome/cli
+	yarn global add @gridsome/cli
 
 .DEFAULT_GOAL := help
