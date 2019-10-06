@@ -118,12 +118,19 @@ gnome-firefox-theme:
 	git clone git@github.com:rafaelmardojai/firefox-gnome-theme.git /tmp/firefox-gnome-theme && cd /tmp/firefox-gnome-theme
 	bash /tmp/firefox-gnome-theme/scripts/install.sh -g
 
-
 nodejs: ## Install node.js
 nodejs:
 	# Using Ubuntu
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
+
+secure-comms: ## Install secure communication snaps
+secure-comms:
+	# Signal Desktop Private Messaging
+	sudo snap install signal-desktop
+
+	# Telegram messenger
+	sudo snap install telegram-desktop
 
 yarn: ## Install node.js and yarn
 yarn: upgrade nodejs
