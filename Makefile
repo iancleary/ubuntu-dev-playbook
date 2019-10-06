@@ -126,6 +126,15 @@ gnome-firefox-theme:
 	git clone git@github.com:rafaelmardojai/firefox-gnome-theme.git /tmp/firefox-gnome-theme && cd /tmp/firefox-gnome-theme
 	bash /tmp/firefox-gnome-theme/scripts/install.sh -g
 
+gnome-keybindings:  ## Configure GNOME keybindings
+gnome-keybindings:
+	## Adjust key bindings for window/application switching (default is for all of below to switch-applications)
+	### Rather change gsettings than install an extension!
+	gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
+	gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
+	gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+	gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+
 nodejs: ## Install node.js
 nodejs:
 	# Using Ubuntu
