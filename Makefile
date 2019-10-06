@@ -130,10 +130,89 @@ gnome-keybindings:  ## Configure GNOME keybindings
 gnome-keybindings:
 	## Adjust key bindings for window/application switching (default is for all of below to switch-applications)
 	### Rather change gsettings than install an extension!
+
+	# Dconf-editor for tweaking Gnome keyboard shortcuts
+	sudo apt install dconf-editor
+
 	gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+
+gnome-preferences: ## Install GNOME preferences
+gnome-preferences:
+	# Set SCP as Monospace (Code) Font
+	gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro Semi-Bold 12'
+
+	# Better Font Smoothing
+	gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
+
+	# Usability Improvements
+	-gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'adaptive'
+	-gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+	-gsettings set org.gnome.desktop.calendar show-weekdate true
+	-gsettings set org.gnome.desktop.wm.preferences resize-with-right-button true
+	-gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+	-gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
+
+	# Nautilus (File Manager) Usability
+	-gsettings set org.gnome.nautilus.icon-view default-zoom-level 'standard'
+	-gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
+	-gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+	-gsettings set org.gnome.nautilus.list-view use-tree-view true
+
+gnome-extensions: ## Install GNOME extensions
+gnome-extensions:
+	sudo apt install gnome-shell-extensions
+
+	# Dash to Dock Theme
+	# gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
+	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
+	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
+	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#729fcf'
+	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
+	# gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+	# gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+	# gsettings set org.gnome.shell.extensions.dash-to-dock force-straight-corner false
+	# gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
+	# gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
+	# gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
+	# gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
+	# gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
+	# gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+	# gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
+	# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.70000000000000000
+
+gnome-theming: ## Install GNOME themes and configure them
+gnome-theming:
+	###############################################
+	# Theming and GNOME Options
+	# Install Icons and Themes
+	###############################################
+
+	# Paper Icons (https://snwh.org/paper/download)
+	# add daily builds PPA
+	-sudo add-apt-repository -u ppa:snwh/ppa
+	# Install icon theme
+	-sudo apt-get install paper-gtk-theme
+	-sudo apt-get install paper-icon-theme
+	-sudo apt-get install paper-cursor-theme
+
+	# Flat Remix Gnome (https://www.gnome-look.org/p/1013030/)
+	-sudo add-apt-repository ppa:daniruiz/flat-remix
+	sudo apt-get update
+	-sudo apt-get install flat-remix-gnome
+
+	#Adapta GTK Theme
+	-sudo apt-add-repository ppa:tista/adapta
+	sudo apt-get update
+	-sudo apt-get install adapta-gtk-theme
+
+	# Enable all possible from above
+	-gsettings set org.gnome.desktop.interface gtk-theme 'Adapta-Nokto-Eta'
+	-gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
+	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+	-gsettings set org.gnome.shell.extensions.user-theme name 'Adapta-Nokto-Eta' #'Pop-dark'
 
 nodejs: ## Install node.js
 nodejs:
