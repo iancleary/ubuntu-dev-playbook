@@ -125,12 +125,20 @@ nodejs:
 	sudo apt-get install -y nodejs
 
 secure-comms: ## Install secure communication snaps
-secure-comms:
+secure-comms: snap
 	# Signal Desktop Private Messaging
 	sudo snap install signal-desktop
 
 	# Telegram messenger
 	sudo snap install telegram-desktop
+
+snap:  ## Install snapd
+snap:
+	sudo apt install snapd
+
+spotify: ## Install Spotify snap
+spotify: snap
+	sudo snap install spotify
 
 yarn: ## Install node.js and yarn
 yarn: upgrade nodejs
