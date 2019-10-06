@@ -23,6 +23,10 @@ ansible: ## Install ansible
 ansible:
 	sudo apt install ansible
 
+code: ## Install Microsoft Visual Studio Code as a snap
+code: snap
+	sudo snap install code --classic
+
 docker: ## Install docker with apt 
 docker: DARGS?=
 docker: upgrade
@@ -127,6 +131,10 @@ nodejs:
 	# Using Ubuntu
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
+
+postman: ## Install Postman as a snap
+postman: snap
+	sudo snap install postman
 
 python-three-seven: ## Install python3.7
 python-three-seven: upgrade
