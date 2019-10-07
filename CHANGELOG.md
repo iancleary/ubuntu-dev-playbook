@@ -12,5 +12,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v0.1.0
+[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.1.0
