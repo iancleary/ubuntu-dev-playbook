@@ -86,7 +86,7 @@ docker-stopped-on-boot: ## Don't start docker on boot
 docker-stopped-on-boot:
 	sudo systemctl disable docker
 
-docker-compose: ## Manage Docker as a non-root user
+docker-compose: ## Install Docker Compose
 docker-compose:
 
 	# Run this command to download the current stable release of Docker Compose:
