@@ -100,7 +100,7 @@ docker-compose:
 
 flameshot: ## Install flameshot, update gnome keybindings
 flameshot: upgrade
-	
+
 	# Ubuntu >=18.04 
 	sudo apt install -y flameshot
 
@@ -114,6 +114,12 @@ flameshot: upgrade
 
 	## doesn't seem to work
 	# sudo snap install flameshot-app
+
+flatpak: ## Install flatpack on GNOME
+flatpak: upgrade
+	sudo apt install -y flatpak
+	-sudo apt install -y gnome-software-plugin-flatpak
+	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 gnome-firefox-theme: ## Install GNOME Firefox theme
 gnome-firefox-theme:
@@ -277,6 +283,12 @@ snap:
 spotify: ## Install Spotify as a snap
 spotify: snap
 	sudo snap install spotify
+
+steam: ## Install Steam via Flatpak
+steam: flatpak
+	flatpak -y install flathub com.valvesoftware.Steam
+	# Installed but not displayed? Check with: flatpak run com.valvesoftware.Steam
+
 
 sublime-text: ## Install Sublime Text as a snap
 sublime-text: snap
