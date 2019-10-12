@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - GNOME keybindings: terminal and close window set to Pop!_OS defaults
 - GNOME preferences: changed default clock to '24h'
+- GNOME extensions: added GNOME tweak tool, argos installation, and my custom argos extensions
 
 ## [0.1.1] - 2019-10-10
 
