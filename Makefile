@@ -199,9 +199,8 @@ gnome-extensions:
 	# Install my argos scripts
 	-rm -rf /tmp/gnome-argos-extensions
 	git clone git@github.com:iancleary/gnome-argos-extensions.git /tmp/gnome-argos-extensions
-	@if ! [ -d $(HOME)/.config/argos ]; then \
-		mkdir $(HOME)/.config/argos; \
-	fi
+	-rm -rf $(HOME)/.config/argos
+	mkdir $(HOME)/.config/argos
 	## use rsync rather than cp -r to exclude folders
 	rsync -rv /tmp/gnome-argos-extensions/ --exclude=.gitignore --exclude=.vscode --exclude=.git --exclude=Makefile . $(HOME)/.config/argos
 	-rm -rf /tmp/gnome-argos-extensions
