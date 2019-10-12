@@ -202,7 +202,7 @@ gnome-extensions:
 	-rm -rf $(HOME)/.config/argos
 	mkdir $(HOME)/.config/argos
 	## use rsync rather than cp -r to exclude folders
-	rsync -rv /tmp/gnome-argos-extensions/ --exclude=.gitignore --exclude=.vscode --exclude=.git --exclude=Makefile . $(HOME)/.config/argos
+	rsync -rv /tmp/gnome-argos-extensions/ --exclude=.gitignore --exclude=.vscode --exclude=LICENSE --exclude=CHANGELOG.md --exclude=images/ --exclude=.git --exclude=Makefile . $(HOME)/.config/argos
 	-rm -rf /tmp/gnome-argos-extensions
 
 	# Dash to Dock Theme
