@@ -140,10 +140,18 @@ gnome-keybindings:
 	# Dconf-editor for tweaking Gnome keyboard shortcuts
 	sudo apt install dconf-editor
 
+	# Window and Application switching for sane people
 	gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+
+	# Close Windows
+	gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
+
+	# Launch Terminal
+	gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
+
 
 gnome-preferences: ## Install GNOME preferences
 gnome-preferences:
@@ -166,6 +174,9 @@ gnome-preferences:
 	-gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
 	-gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 	-gsettings set org.gnome.nautilus.list-view use-tree-view true
+
+	# Clock format
+	gsettings set org.gnome.desktop.interface clock-format '24h'
 
 gnome-extensions: ## Install GNOME extensions
 gnome-extensions:
