@@ -270,7 +270,7 @@ python-three-seven: upgrade
 	sudo apt install software-properties-common
 
 	# Next, add the deadsnakes PPA to your sources list:
-	sudo add-apt-repository ppa:deadsnakes/ppa # not for 19.04
+	# sudo add-apt-repository ppa:deadsnakes/ppa # not for 19.04
 	# when prompted, press Enter to continue
 
 	# Once the repository is enabled, install Python 3.7 with: (added libpython3.7-dev for pip installs)
