@@ -264,6 +264,29 @@ postman: ## Install Postman as a snap
 postman: snap
 	sudo snap install postman
 
+python-three-six: ## Install python3.6
+python-three-six: upgrade
+	# Start by updating the packages list and installing the prerequisites:
+	sudo apt install software-properties-common
+
+	# install python3.6
+	sudo apt update
+	sudo apt install -y python3.6
+
+	# python3 pip
+	sudo apt install -y python3-pip
+	# upgrade pip
+	python3.6 -m pip install --upgrade pip
+
+	# python3 pytest
+	sudo apt install -y python3-pytest
+
+	# At this point, Python 3.6 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.6 --version
+	python3.6 -m pip --version
+	python3.6 -m pytest --version
+
 python-three-seven: ## Install python3.7
 python-three-seven: upgrade
 	# Start by updating the packages list and installing the prerequisites:
