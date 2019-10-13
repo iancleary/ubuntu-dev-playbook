@@ -7,7 +7,6 @@ SHELL:=bash
 # Ubuntu distro string
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
-
 # - to suppress if it doesn't exist
 -include make.env
 
