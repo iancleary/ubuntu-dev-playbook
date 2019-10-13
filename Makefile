@@ -37,7 +37,7 @@ docker: upgrade
 	sudo apt-get update
 
 	# Install packages to allow apt ot use a repository over HTTPS
-	sudo apt-get install \
+	sudo apt-get -y install \
 		apt-transport-https \
 		ca-certificates \
 		curl \
