@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GNOME keybindings: terminal and close window set to Pop!_OS defaults
 - GNOME preferences: changed default clock to '24h'
 - GNOME extensions: added GNOME tweak tool, argos installation, and my custom argos extensions
+- Docker: run-as-non-root user resolving
+- oh-my-zsh: modified install to work within Makefile and use /tmp
+- Various: -y flags for apt installs
 
 ## [0.1.1] - 2019-10-10
 
