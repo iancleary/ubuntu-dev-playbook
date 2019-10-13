@@ -7,6 +7,11 @@ SHELL:=bash
 # Ubuntu distro string
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
+# ZSH install stri
+define install_oh-my-zsh = 
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+endef
+
 # - to suppress if it doesn't exist
 -include make.env
 
@@ -21,7 +26,7 @@ upgrade: ## Apt update & upgrade
 
 ansible: ## Install ansible
 ansible:
-	sudo apt install ansible
+	sudo apt -y install ansible
 
 code: ## Install Microsoft Visual Studio Code as a snap
 code: snap
@@ -69,10 +74,10 @@ docker-run-as-non-root:
 	###############################################
 
 	# Create the docker group.
-	sudo groupadd docker
+	-sudo groupadd docker
 
 	# Add your user to the docker group.
-	sudo usermod -aG docker $USER
+	sudo usermod -aG docker $(USER)
 
 	# Log out and log back in so that your group membership is re-evaluated.
 	# If testing on a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
@@ -373,7 +378,10 @@ zsh: upgrade
 	# chsh -s $(shell which zsh)
 
 	# install oh-my-zsh
-	sh -c "$(shell curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+	-rm -rf /tmp/oh-my-zsh/
+	mkdir /tmp/oh-my-zsh/
+	curl -Lo /tmp/oh-my-zsh/install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+	-@sh /tmp/oh-my-zsh/install.sh
+	-rm -rf /tmp/oh-my-zsh/
 
 .DEFAULT_GOAL := help
