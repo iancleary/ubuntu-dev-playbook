@@ -287,8 +287,57 @@ python-three-six: upgrade
 	python3.6 -m pip --version
 	python3.6 -m pytest --version
 
-python-three-seven: ## Install python3.7
-python-three-seven: upgrade
+python-three-six-supporting: ## Install useful packages
+python-three-six-supporting:
+	python3.6 -m pip install --user twine
+	python3.6 -m pip install --user wheel
+	python3.6 -m pip install --user cookiecutter
+
+	# add the following to your .bashrc (.zshrc, etc.) file
+	# export PATH=$$HOME/.local/bin:$$PATH
+
+python-three-seven-alt-install: ## Install python3.7 as altinstall
+python-three-seven-alt-install: upgrade
+	# Start by updating the packages list and installing the prerequisites:
+	sudo apt install software-properties-common
+	sudo apt install build-essential \
+					 libssl-dev \
+					 zlib1g-dev \
+					 libncurses5-dev \ 
+					 libncursesw5-dev \
+					 libreadline-dev \
+					 libsqlite3-dev \
+					 libgdbm-dev \
+					 libdb5.3-dev \
+					 libbz2-dev \
+					 libexpat1-dev \
+					 liblzma-dev \
+					 tk-dev \
+					 libffi-dev \
+					 libpython3.7-dev
+
+	# Once the repository is enabled, install Python 3.7 with: (added libpython3.7-dev for pip installs)
+	# - httptools wasn't installing correctly until adding it
+	# - see: https://github.com/huge-success/sanic/issues/1503#issuecomment-469031275
+	sudo apt update
+	sudo apt install -y python3.7 
+
+	## NEED TO ADD MAKE FROM SOURCE HERE
+	
+	# upgrade pip
+	python3.7 -m pip install --upgrade pip
+
+	# python3 pytest
+	sudo apt install -y python3-pytest
+
+	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.7 --version
+	python3.7 -m pip --version
+	python3.7 -m pytest --version
+
+python-three-seven-main-install: ## Install python3.7 as main
+python-three-seven-main-install: upgrade
 	# Start by updating the packages list and installing the prerequisites:
 	sudo apt install software-properties-common
 
@@ -316,8 +365,8 @@ python-three-seven: upgrade
 	python3.7 -m pip --version
 	python3.7 -m pytest --version
 
-python-supporting: ## Install useful packages
-python-supporting:
+python-three-seven-supporting: ## Install useful packages
+python-three-seven-supporting:
 	python3.7 -m pip install --user twine
 	python3.7 -m pip install --user wheel
 	python3.7 -m pip install --user cookiecutter
@@ -401,5 +450,15 @@ zsh: upgrade
 	curl -Lo /tmp/oh-my-zsh/install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 	-@sh /tmp/oh-my-zsh/install.sh
 	-rm -rf /tmp/oh-my-zsh/
+
+test: ## Test conditional flow
+test: DARGS?=
+test: 
+	@echo $(MAKEFLAGS)
+	# ifneq (,$(findstring main-install,$(MAKEFLAGS)))
+	# 	@echo "hello main-install"
+	# else
+	# 	@echo "regular path"
+	# endif
 
 .DEFAULT_GOAL := help
