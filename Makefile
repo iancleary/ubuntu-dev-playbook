@@ -298,7 +298,7 @@ python-three-six-supporting: ## Install useful packages
 python-three-six-supporting:
 
 	# upgrade pip
-	python3.6 -m pip install --upgrade pip
+	python3.6 -m pip install --user --upgrade pip
 
 	# python3 pytest
 	sudo apt install -y python3-pytest
@@ -314,7 +314,7 @@ python-three-six-supporting:
 	python3.6 -m pip install --user cookiecutter
 
 	# add the following to your .bashrc (.zshrc, etc.) file
-	# export PATH=$$HOME/.local/bin:$$PATH
+	# export PATH="$$HOME/.local/bin:$$PATH"
 
 python-three-seven-install: ## Install python3.7 using apt (main install)
 python-three-seven-install: upgrade
@@ -331,14 +331,15 @@ python-three-seven-install: upgrade
 	sudo apt update
 	sudo apt install -y python3.7 libpython3.7-dev
 
-	# python3 pip
-	sudo apt install -y python3-pip
 
 python-three-seven-supporting: ## Install useful packages
 python-three-seven-supporting:
 
+	# python3 pip
+	sudo apt install -y python3-pip
+
 	# upgrade pip
-	python3.7 -m pip install --upgrade pip
+	python3.7 -m pip install --user --upgrade pip
 
 	# python3 pytest
 	sudo apt install -y python3-pytest
@@ -354,7 +355,7 @@ python-three-seven-supporting:
 	python3.7 -m pip install --user cookiecutter
 
 	# add the following to your .bashrc (.zshrc, etc.) file
-	# export PATH=$$HOME/.local/bin:$$PATH
+	# export PATH="$$HOME/.local/bin:$$PATH"
 
 secure-comms: ## Install secure communication snaps
 secure-comms: snap
