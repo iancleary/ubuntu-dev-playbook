@@ -260,6 +260,12 @@ nodejs:
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
 
+poetry: ## Install Poetry (Python Packaging and Dependencey Management)
+poetry:
+	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
+	sudo apt-get install python3-venv
+	python3.7 -m pip install --user poetry
+
 postman: ## Install Postman as a snap
 postman: snap
 	sudo snap install postman

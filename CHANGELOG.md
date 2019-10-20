@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker: run-as-non-root user resolving
 - oh-my-zsh: modified install to work within Makefile and use /tmp
 - Various: -y flags for apt installs
+- Working python altinstall
+- Added [poetry](https://poetry.eustace.io/), Python packaging and dependency management made easy
 
 ## [0.1.1] - 2019-10-10
 
