@@ -282,16 +282,19 @@ python-three-six-altinstall: upgrade
 		libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 		xz-utils tk-dev libffi-dev liblzma-dev
 
+	# fixes for pip SSL issues
+	sudo apt install libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev libgdm-dev libdb4o-cil-dev libpcap-dev
+
 	# sudo apt-get install zlib1g-dev # needed on Pop!_OS 19.10
 
 	# cd ~/Downloads
 	# wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
 	# tar xvf Python-3.6.9.tgz
 	# cd Python-3.6.9
-	# ./configure --enable-optimizations --enable-shared \
-	# 	--with-ensurepip=install \
-	# 	--prefix=/usr/local \
-    #     LDFLAGS="-Wl,--rpath=/usr/local/lib"
+	./configure --enable-optimizations --enable-shared \
+		--with-ensurepip=install \
+		--prefix=/usr/local \
+        LDFLAGS="-Wl,--rpath=/usr/local/lib"
 	# make -j8
 	# sudo make altinstall
 	# python3.6
