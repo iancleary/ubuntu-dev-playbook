@@ -376,6 +376,10 @@ secure-comms: snap
 	# Telegram messenger
 	sudo snap install telegram-desktop
 
+slack: ## Install Slack as a snap
+slack: snap
+	sudo snap install slack --classic
+
 snap:  ## Install snapd
 snap:
 	sudo apt install snapd
