@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Working python altinstall
 - Added [poetry](https://poetry.eustace.io/), Python packaging and dependency management made easy
 - Added Slack as a snap
+- Added Chromium as a snap
 
 ## [0.1.1] - 2019-10-10
 
