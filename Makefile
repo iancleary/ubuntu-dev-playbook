@@ -156,6 +156,8 @@ gnome-keybindings:
 	# Launch Terminal
 	gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
 
+	# Lock Computer (screensaver)
+	gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Super>l'
 
 gnome-preferences: ## Install GNOME preferences
 gnome-preferences:
