@@ -156,7 +156,7 @@ gnome-keybindings:
 gnome-preferences: ## Install GNOME preferences
 gnome-preferences:
 	# Set SCP as Monospace (Code) Font
-	gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro Semi-Bold 12'
+	# gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro Semi-Bold 12'
 
 	# Better Font Smoothing
 	gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
