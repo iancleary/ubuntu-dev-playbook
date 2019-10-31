@@ -438,6 +438,7 @@ zim-desktop-wiki: ## Install zim-desktop-wiki from Ubuntu PPA
 zim-desktop-wiki: upgrade
 	sudo add-apt-repository ppa:jaap.karssenberg/zim
 	sudo apt-get update
+	sudo apt-get install zim
 	
 zsh: ## Install zsh and oh-my-zsh, change shell to zsh
 zsh: upgrade
