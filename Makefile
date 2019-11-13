@@ -23,6 +23,11 @@ ansible: ## Install ansible
 ansible:
 	sudo apt -y install ansible
 
+cherrytree: ## Installs Cherrytree deb by adding PPA
+cherrytree:
+	sudo add-apt-repository ppa:giuspen/ppa
+	sudo apt install -y cherrytree
+
 chromium: ## Install Chromium as a snap
 chromium: snap
 	sudo snap install chromium
