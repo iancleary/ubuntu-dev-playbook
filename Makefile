@@ -156,11 +156,23 @@ gnome-keybindings:
 	gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 
+	# Move windows and workspaces
+	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "['<Primary><Shift><Super>Down']"
+	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "['<Primary><Shift><Super>Left']"
+	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Primary><Shift><Super>Right']"
+	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "['<Primary><Shift><Super>Up']"
+	
+	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Super>Down']"
+	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-last "['<Shift><Alt>End']"
+	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Shift><Alt>Left']"
+	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Shift><Alt>Right']"
+	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Super>Up']"	
+
 	# Close Windows
 	gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 
 	# Launch Terminal
-	gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Super>t']"
 
 	# Lock Computer (screensaver)
 	gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Super>l'
