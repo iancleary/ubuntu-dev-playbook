@@ -13,8 +13,6 @@ jobs:
       run: make docker
     - name: Docker-compose install
       run: make docker-compose
-    - name: Docker-compose install
-      run: make docker-compose
     - name: Python 3.7 install
       run: make python-three-seven-install
     - name: Python 3.7 supporting
