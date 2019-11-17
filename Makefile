@@ -15,6 +15,10 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+update: DARGS?=
+update: ## Apt update
+	sudo apt-get update
+
 upgrade: DARGS?=
 upgrade: ## Apt update & upgrade
 	sudo apt-get update && sudo apt-get -y upgrade && sudo apt -y autoremove
@@ -38,7 +42,7 @@ code: snap
 
 docker: ## Install docker with apt 
 docker: DARGS?=
-docker: upgrade
+docker:
 	# Uninstall old versions
 	sudo apt-get remove docker docker-engine docker.io containerd runc
 
@@ -108,7 +112,7 @@ docker-compose:
 	docker-compose --version
 
 flameshot: ## Install flameshot, update gnome keybindings
-flameshot: upgrade
+flameshot: update
 
 	# Ubuntu >=18.04 
 	sudo apt install -y flameshot
@@ -126,7 +130,7 @@ flameshot: upgrade
 	# sudo snap install flameshot-app
 
 flatpak: ## Install flatpack on GNOME
-flatpak: upgrade
+flatpak: update
 	sudo apt install -y flatpak
 	-sudo apt install -y gnome-software-plugin-flatpak
 	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -352,7 +356,7 @@ python-three-six-supporting:
 	# export PATH="$$HOME/.local/bin:$$PATH"
 
 python-three-seven-install: ## Install python3.7 using apt (main install)
-python-three-seven-install: upgrade
+python-three-seven-install: update
 	# Start by updating the packages list and installing the prerequisites:
 	sudo apt install software-properties-common
 
@@ -366,6 +370,9 @@ python-three-seven-install: upgrade
 	sudo apt update
 	sudo apt install -y python3.7 libpython3.7-dev
 
+	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.7 --version
 
 python-three-seven-supporting: ## Install useful packages
 python-three-seven-supporting:
@@ -429,7 +436,7 @@ tresorit:
 	$(echo $0) ~/Downloads/tresorit_installer.run
 
 yarn: ## Install node.js and yarn
-yarn: upgrade nodejs
+yarn: update nodejs
 
 	################################################
 	# Install Yarn
@@ -453,13 +460,13 @@ yarn-globals:
 	yarn global add @gridsome/cli
 
 zim-desktop-wiki: ## Install zim-desktop-wiki from Ubuntu PPA
-zim-desktop-wiki: upgrade
+zim-desktop-wiki: update
 	sudo add-apt-repository ppa:jaap.karssenberg/zim
 	sudo apt-get update
 	sudo apt-get install zim
 	
-zsh: ## Install zsh and oh-my-zsh, change shell to zsh
-zsh: upgrade
+zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
+zsh: update
 
 	################################################
 	# Install ZSH and Oh-my-zsh

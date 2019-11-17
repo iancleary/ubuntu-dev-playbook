@@ -1,0 +1,37 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Docker install
+      run: make docker
+    - name: Docker-compose install
+      run: make docker-compose
+    - name: Python 3.7 install
+      run: make python-three-seven-install
+    - name: Python 3.7 supporting
+      run: make python-three-seven-supporting
+    - name: Yarn (and Nodejs)
+      run: make yarn
+    - name: Yarn Globals
+      run: make yarn-globals
+    - name: Zim Desktop Wiki
+      run: make zim-desktop-wiki
+    - name: Snap Installs (Code, Chromium, Postman, Slack, Telegram, Signal, Spotify, Sublime Text)
+      run: |
+        make code
+        make chromium
+        make postman
+        make secure-comms
+        make slack
+        make spotify
+        make sublime-text
+    - name: Zsh and oh-my-zsh
+      run: make zsh
+    
