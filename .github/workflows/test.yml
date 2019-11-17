@@ -14,4 +14,4 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: Tests Docker Install
-      run: make docker1
+      run: make docker
