@@ -15,6 +15,10 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+update: DARGS?=
+update: ## Apt update
+	sudo apt-get update
+
 upgrade: DARGS?=
 upgrade: ## Apt update & upgrade
 	sudo apt-get update && sudo apt-get -y upgrade && sudo apt -y autoremove
