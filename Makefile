@@ -465,7 +465,7 @@ zim-desktop-wiki: update
 	sudo apt-get update
 	sudo apt-get install zim
 	
-zsh: ## Install zsh and oh-my-zsh, change shell to zsh
+zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
 zsh: update
 
 	################################################

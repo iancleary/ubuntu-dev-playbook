@@ -34,4 +34,6 @@ jobs:
         make slack
         make spotify
         make sublime-text
+    - name: Zsh and oh-my-zsh
+      run: make zsh
     
