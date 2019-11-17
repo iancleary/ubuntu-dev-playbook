@@ -112,7 +112,7 @@ docker-compose:
 	docker-compose --version
 
 flameshot: ## Install flameshot, update gnome keybindings
-flameshot: upgrade
+flameshot: update
 
 	# Ubuntu >=18.04 
 	sudo apt install -y flameshot
@@ -130,7 +130,7 @@ flameshot: upgrade
 	# sudo snap install flameshot-app
 
 flatpak: ## Install flatpack on GNOME
-flatpak: upgrade
+flatpak: update
 	sudo apt install -y flatpak
 	-sudo apt install -y gnome-software-plugin-flatpak
 	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -356,7 +356,7 @@ python-three-six-supporting:
 	# export PATH="$$HOME/.local/bin:$$PATH"
 
 python-three-seven-install: ## Install python3.7 using apt (main install)
-python-three-seven-install: upgrade
+python-three-seven-install: update
 	# Start by updating the packages list and installing the prerequisites:
 	sudo apt install software-properties-common
 
@@ -433,7 +433,7 @@ tresorit:
 	$(echo $0) ~/Downloads/tresorit_installer.run
 
 yarn: ## Install node.js and yarn
-yarn: upgrade nodejs
+yarn: update nodejs
 
 	################################################
 	# Install Yarn
@@ -457,13 +457,13 @@ yarn-globals:
 	yarn global add @gridsome/cli
 
 zim-desktop-wiki: ## Install zim-desktop-wiki from Ubuntu PPA
-zim-desktop-wiki: upgrade
+zim-desktop-wiki: update
 	sudo add-apt-repository ppa:jaap.karssenberg/zim
 	sudo apt-get update
 	sudo apt-get install zim
 	
 zsh: ## Install zsh and oh-my-zsh, change shell to zsh
-zsh: upgrade
+zsh: update
 
 	################################################
 	# Install ZSH and Oh-my-zsh
