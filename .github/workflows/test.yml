@@ -17,4 +17,27 @@ jobs:
       run: make docker
     - name: Docker-compose install
       run: make docker-compose
+    - name: Docker-compose install
+      run: make docker-compose
+    - name: Python 3.7 install
+      run: make python-three-seven-install
+    - name: Python 3.7 supporting
+      run: make python-three-seven-supporting
+    - name: Yarn
+      run: make yarn
+    - name: Yarn Globals
+      run: make yarn-globals
+    - name: Zim Desktop Wiki
+      run: make zim-desktop-wiki
+    - name: Snap Installs (Code, Chromium, Postman, Secure Comms, Spotify, Sublime Text)
+      run: |
+        make code
+        make chromium
+        make postman
+        make secure-comms
+        make slack
+        make spotify
+        make sublime-text
+    - name: Steam via Flatpak (install steam and flatpak)
+      run: make steam
     
