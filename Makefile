@@ -370,6 +370,9 @@ python-three-seven-install: update
 	sudo apt update
 	sudo apt install -y python3.7 libpython3.7-dev
 
+	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.7 --version
 
 python-three-seven-supporting: ## Install useful packages
 python-three-seven-supporting:

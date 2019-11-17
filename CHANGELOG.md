@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+## [0.2.0] - 2019-11-17
+
+### Added
+
 - GNOME keybindings: terminal and close window set to Pop!_OS defaults
 - GNOME preferences: changed default clock to '24h'
 - GNOME extensions: added GNOME tweak tool, argos installation, and my custom argos extensions
@@ -22,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Lock screensaver to `<Super>l`
 - Added [Zim-Desktop-Wiki](https://zim-wiki.org/downloads.html) Ubuntu PPA
 - Added [Cherrytree](https://www.giuspen.com/cherrytree/) Ubuntu PPA
+- Github Actions CI for most make targets that are not GUI or login/logout dependent
 
 ## [0.1.1] - 2019-10-10
 

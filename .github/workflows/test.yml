@@ -9,10 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
     - name: Docker install
       run: make docker
     - name: Docker-compose install
@@ -23,13 +19,13 @@ jobs:
       run: make python-three-seven-install
     - name: Python 3.7 supporting
       run: make python-three-seven-supporting
-    - name: Yarn
+    - name: Yarn (and Nodejs)
       run: make yarn
     - name: Yarn Globals
       run: make yarn-globals
     - name: Zim Desktop Wiki
       run: make zim-desktop-wiki
-    - name: Snap Installs (Code, Chromium, Postman, Secure Comms, Spotify, Sublime Text)
+    - name: Snap Installs (Code, Chromium, Postman, Slack, Telegram, Signal, Spotify, Sublime Text)
       run: |
         make code
         make chromium
@@ -38,6 +34,4 @@ jobs:
         make slack
         make spotify
         make sublime-text
-    - name: Steam via Flatpak (install steam and flatpak)
-      run: make steam
     
