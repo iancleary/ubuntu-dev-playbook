@@ -325,7 +325,7 @@ python-three-six-altinstall: upgrade
 	# wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
 	# tar xvf Python-3.6.9.tgz
 	# cd Python-3.6.9
-	./configure --enable-optimizations --enable-shared \
+	#./configure --enable-optimizations --enable-shared \
 		--with-ensurepip=install \
 		--prefix=/usr/local \
         LDFLAGS="-Wl,--rpath=/usr/local/lib"
@@ -351,6 +351,7 @@ python-three-six-supporting:
 	python3.6 -m pip install --user twine
 	python3.6 -m pip install --user wheel
 	python3.6 -m pip install --user cookiecutter
+	python3.6 -m pip install --user pipenv
 
 	# add the following to your .bashrc (.zshrc, etc.) file
 	# export PATH="$$HOME/.local/bin:$$PATH"
@@ -395,6 +396,7 @@ python-three-seven-supporting:
 	python3.7 -m pip install --user twine
 	python3.7 -m pip install --user wheel
 	python3.7 -m pip install --user cookiecutter
+	python3.7 -m pip install --user pipenv
 
 	# add the following to your .bashrc (.zshrc, etc.) file
 	# export PATH="$$HOME/.local/bin:$$PATH"
