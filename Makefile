@@ -173,7 +173,8 @@ gnome-keybindings:
 	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Super>Up']"	
 
 	# Close Windows
-	gsettings set org.gnome.desktop.wm.keybindings close '<Super>w'
+	# gsettings set org.gnome.desktop.wm.keybindings close '<Super>w'
+	gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 
 	# Launch Terminal
 	gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
