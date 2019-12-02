@@ -252,8 +252,8 @@ gnome-extensions:
 	# gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
 	# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.70000000000000000
 
-gnome-theming: ## Install GNOME themes and configure them
-gnome-theming:
+gnome-themes: ## Install GNOME themes and configure them
+gnome-themes:
 	###############################################
 	# Theming and GNOME Options
 	# Install Icons and Themes
@@ -267,21 +267,19 @@ gnome-theming:
 	-sudo apt-get install paper-icon-theme
 	-sudo apt-get install paper-cursor-theme
 
-	# Flat Remix Gnome (https://www.gnome-look.org/p/1013030/)
-	-sudo add-apt-repository ppa:daniruiz/flat-remix
-	sudo apt-get update
-	-sudo apt-get install flat-remix-gnome
+	## install script for GNOME Themes
+	-git clone https://github.com/tliron/install-gnome-themes ~/install-gnome-themes
+	# install dependencies
+	sudo bash ~/install-gnome-themes/install-requirements-debian
 
-	#Adapta GTK Theme
-	-sudo apt-add-repository ppa:tista/adapta
-	sudo apt-get update
-	-sudo apt-get install adapta-gtk-theme
+	# run install script
+	@~/install-gnome-themes/install-gnome-themes
 
 	# Enable all possible from above
-	-gsettings set org.gnome.desktop.interface gtk-theme 'Adapta-Nokto-Eta'
+	-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 	-gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
-	-gsettings set org.gnome.shell.extensions.user-theme name 'Adapta-Nokto-Eta' #'Pop-dark'
+	-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
 
 nodejs: ## Install node.js
 nodejs:
