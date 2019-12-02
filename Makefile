@@ -213,6 +213,9 @@ gnome-extensions:
 	-sudo add-apt-repository universe
 	sudo apt install gnome-tweak-tool
 
+	# extensions.gnome.org read installed extensions 
+	sudo apt-get install chrome-gnome-shell
+
 	# Install common extensions via apt
 	sudo apt install -y gnome-shell-extensions
 
