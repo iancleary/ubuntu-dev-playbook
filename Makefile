@@ -290,9 +290,14 @@ nodejs:
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
 
+peek: ## Install Peek (GIF Screen Recorder)
+peek:
+	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
+	sudo add-apt-repository ppa:peek-developers/stable
+	sudo apt update && sudo apt install -y peek
+
 poetry: ## Install Poetry (Python Packaging and Dependencey Management)
 poetry:
-	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
 	sudo apt-get install python3-venv
 	python3.7 -m pip install --user poetry
 
