@@ -27,6 +27,21 @@ ansible: ## Install ansible
 ansible:
 	sudo apt -y install ansible
 
+brave: ## Install Brave browser
+brave:
+	# https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
+	sudo apt install apt-transport-https curl
+
+	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+
+	source /etc/os-release
+
+	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $(OS_VERSION_NAME) main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-$(OS_VERSION_NAME).list
+
+	sudo apt update
+
+	sudo apt install brave-browser
+
 cherrytree: ## Installs Cherrytree deb by adding PPA
 cherrytree:
 	sudo add-apt-repository ppa:giuspen/ppa
