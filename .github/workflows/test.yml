@@ -23,6 +23,8 @@ jobs:
       run: make yarn-globals
     - name: Zim Desktop Wiki
       run: make zim-desktop-wiki
+    - name: Brave Browser
+      run: make brave
     - name: Snap Installs (Code, Chromium, Postman, Slack, Telegram, Signal, Spotify, Sublime Text)
       run: |
         make code
