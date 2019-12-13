@@ -299,6 +299,10 @@ gnome-themes:
 	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 	-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
 
+icloud-for-linux: ## Installs icloud-for-linux snap
+icloud-for-linux: snap
+	sudo snap install icloud-for-linux
+
 nodejs: ## Install node.js
 nodejs:
 	# Using Ubuntu
@@ -438,6 +442,7 @@ slack: snap
 snap:  ## Install snapd
 snap:
 	sudo apt install snapd
+	sudo snap install snap-store
 
 spotify: ## Install Spotify as a snap
 spotify: snap
