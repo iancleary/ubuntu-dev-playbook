@@ -252,23 +252,25 @@ gnome-extensions:
 	rsync -rv /tmp/gnome-argos-extensions/ --exclude=.gitignore --exclude=.vscode --exclude=LICENSE --exclude=CHANGELOG.md --exclude=images/ --exclude=.git --exclude=Makefile . $(HOME)/.config/argos
 	-rm -rf /tmp/gnome-argos-extensions
 
+gnome-dash-to-dock: ## Configure dask to dock
+gnome-dash-to-dock:
 	# Dash to Dock Theme
-	# gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#729fcf'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock force-straight-corner false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.70000000000000000
+	gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#729fcf'
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
+	gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+	gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+	gsettings set org.gnome.shell.extensions.dash-to-dock force-straight-corner false
+	gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
+	gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
+	gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
+	gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
+	gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
+	gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+	gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
+	gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.70000000000000000
 
 gnome-themes: ## Install GNOME themes and configure them
 gnome-themes:
@@ -295,7 +297,7 @@ gnome-themes:
 
 	# Enable all possible from above
 	-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-	-gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
+	-gsettings set org.gnome.desktop.interface cursor-theme 'Paper'
 	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 	-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
 
@@ -308,6 +310,13 @@ nodejs:
 	# Using Ubuntu
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
+
+nordvpn: ## install nordvpn
+nordvpn:
+	curl -o /tmp/nordvpn-release_1.0.0_all.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+	sudo apt install /tmp/nordvpn-release_1.0.0_all.deb
+	sudo apt-get update
+	sudo apt install -y nordvpn
 
 peek: ## Install Peek (GIF Screen Recorder)
 peek:
