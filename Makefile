@@ -292,14 +292,14 @@ gnome-themes:
 	# install dependencies
 	sudo bash ~/install-gnome-themes/install-requirements-debian
 
-	# run install script
+	# run install script (THIS TAKES A LONG TIME)
 	@~/install-gnome-themes/install-gnome-themes
 
 	# Enable all possible from above
-	-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
+	-gsettings set org.gnome.desktop.interface gtk-theme 'Vimix-laptop-beryl'
 	-gsettings set org.gnome.desktop.interface cursor-theme 'Paper'
 	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
-	-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
+	-gsettings set org.gnome.shell.extensions.user-theme name 'Vimix-laptop-beryl'
 
 icloud-for-linux: ## Installs icloud-for-linux snap
 icloud-for-linux: snap
