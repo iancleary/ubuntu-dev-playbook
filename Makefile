@@ -302,6 +302,12 @@ gnome-themes:
 	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 	-gsettings set org.gnome.shell.extensions.user-theme name 'vimix-laptop-beryl'
 
+gnome-extras: ## Install gtk3
+gnome-extras:
+	# https://askubuntu.com/questions/695796/view-list-of-all-available-unique-icons-with-their-names-and-thumbnail/695958
+	sudo apt-get install -y gtk-3-examples
+	@gtk3-icon-browser &
+
 icloud-for-linux: ## Installs icloud-for-linux snap
 icloud-for-linux: snap
 	sudo snap install icloud-for-linux
