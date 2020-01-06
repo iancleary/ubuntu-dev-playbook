@@ -51,6 +51,9 @@ chromium: ## Install Chromium as a snap
 chromium: snap
 	sudo snap install chromium
 
+	# allows opening files
+	sudo snap connect chromium:home
+
 code: ## Install Microsoft Visual Studio Code as a snap
 code: snap
 	sudo snap install code --classic
