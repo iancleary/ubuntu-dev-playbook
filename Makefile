@@ -383,6 +383,7 @@ python-three-six-supporting:
 
 	# upgrade pip
 	python3.6 -m pip install --user --upgrade pip
+	-python3.6 -m pip install --upgrade keyrings.alt --user
 
 	# python3 pytest
 	sudo apt install -y python3-pytest
@@ -428,6 +429,7 @@ python-three-seven-supporting:
 
 	# upgrade pip
 	python3.7 -m pip install --user --upgrade pip
+	-python3.7 -m pip install --upgrade keyrings.alt --user
 
 	# python3 pytest
 	sudo apt install -y python3-pytest
