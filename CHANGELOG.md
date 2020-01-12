@@ -7,16 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- updated GNOME theme installation to use [tliron/install-gnome-themes](https://github.com/tliron/install-gnome-themes)
-- Added Peek (GIF Screen Recorder)
-- Added Brave Browser
-- Added [icloud-for-linux](https://snapcraft.io/icloud-for-linux) snap
-- Added Nordvpn
-- moved dash-to-dock to unique target
+## [0.3.0]
+
+### Fixed
+
 - fixed python3.* [keyring.alt pip issue with package upgrade](https://bugs.launchpad.net/usd-importer/+bug/1794041)
-- Added standard-notes snap
+
+### Removed
+
+- Removed Brave Browser
+- Removed [icloud-for-linux](https://snapcraft.io/icloud-for-linux) snap
+- Removed zim-desktop-wiki
+
+### Updated
+
+- updated GNOME theme installation to use [tliron/install-gnome-themes](https://github.com/tliron/install-gnome-themes)
+- moved dash-to-dock to unique target
 
 ### Added
+
+- Added Peek (GIF Screen Recorder)
+- Added Nordvpn
+- Added Standard Notes snap
 
 ## [0.2.0] - 2019-11-17
 
@@ -51,6 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.3.0
+[0.2.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.2.0
 [0.1.1]: https://github.com/iancleary/install-scripts/releases/tag/v0.1.1
 [0.1.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.1.0

@@ -13,6 +13,10 @@ jobs:
       run: make docker
     - name: Docker-compose install
       run: make docker-compose
+    - name: Python 3.6 install
+      run: make python-three-six-install
+    - name: Python 3.6 supporting
+      run: make python-three-six-supporting
     - name: Python 3.7 install
       run: make python-three-seven-install
     - name: Python 3.7 supporting
@@ -21,15 +25,10 @@ jobs:
       run: make yarn
     - name: Yarn Globals
       run: make yarn-globals
-    - name: Zim Desktop Wiki
-      run: make zim-desktop-wiki
-    - name: Brave Browser
-      run: make brave
     - name: Snap Installs (Code, Chromium, Postman, Slack, Telegram, Signal, Spotify, Sublime Text)
       run: |
         make code
         make chromium
-        make icloud-for-linux
         make postman
         make secure-comms
         make slack
@@ -38,4 +37,3 @@ jobs:
         make standard-notes
     - name: Zsh and oh-my-zsh
       run: make zsh
-    
