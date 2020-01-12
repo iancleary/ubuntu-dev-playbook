@@ -51,11 +51,14 @@ chromium: ## Install Chromium as a snap
 chromium: snap
 	sudo snap install chromium
 
+	# allows opening files
+	sudo snap connect chromium:home
+
 code: ## Install Microsoft Visual Studio Code as a snap
 code: snap
 	sudo snap install code --classic
 
-docker: ## Install docker with apt 
+docker: ## Install docker with apt
 docker: DARGS?=
 docker:
 	# Uninstall old versions
@@ -71,13 +74,13 @@ docker:
 		curl \
 		gnupg-agent \
 		software-properties-common
-	
+
 	# Add Docker's official GPG key
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 	# Setup the stable repository
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(OS_VERSION_NAME) stable"
-	
+
 	# Update the apt package update
 	sudo apt-get update
 
@@ -129,7 +132,7 @@ docker-compose:
 flameshot: ## Install flameshot, update gnome keybindings
 flameshot: update
 
-	# Ubuntu >=18.04 
+	# Ubuntu >=18.04
 	sudo apt install -y flameshot
 
 	# Update gnome keybindings
@@ -180,12 +183,12 @@ gnome-keybindings:
 	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "['<Primary><Shift><Super>Left']"
 	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Primary><Shift><Super>Right']"
 	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "['<Primary><Shift><Super>Up']"
-	
+
 	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Super>Down']"
 	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-last "['<Shift><Alt>End']"
 	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Shift><Alt>Left']"
 	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Shift><Alt>Right']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Super>Up']"	
+	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Super>Up']"
 
 	# Close Windows
 	# gsettings set org.gnome.desktop.wm.keybindings close '<Super>w'
@@ -228,7 +231,7 @@ gnome-extensions:
 	-sudo add-apt-repository universe
 	sudo apt install gnome-tweak-tool
 
-	# extensions.gnome.org read installed extensions 
+	# extensions.gnome.org read installed extensions
 	sudo apt-get install chrome-gnome-shell
 
 	# Install common extensions via apt
@@ -240,7 +243,7 @@ gnome-extensions:
 	git clone git@github.com:p-e-w/argos.git /tmp/argos
 	cp -r /tmp/argos/argos@pew.worldwidemann.com  ~/.local/share/gnome-shell/extensions
 	-rm -rf /tmp/argos
-	## Restart GNOME Shell by pressing Alt+F2, then entering r. 
+	## Restart GNOME Shell by pressing Alt+F2, then entering r.
 	## On some systems, you may additionally have to enable the Argos extension using GNOME Tweak Tool.
 
 	# Install my argos scripts
@@ -252,23 +255,25 @@ gnome-extensions:
 	rsync -rv /tmp/gnome-argos-extensions/ --exclude=.gitignore --exclude=.vscode --exclude=LICENSE --exclude=CHANGELOG.md --exclude=images/ --exclude=.git --exclude=Makefile . $(HOME)/.config/argos
 	-rm -rf /tmp/gnome-argos-extensions
 
+gnome-dash-to-dock: ## Configure dask to dock
+gnome-dash-to-dock:
 	# Dash to Dock Theme
-	# gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#729fcf'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock force-straight-corner false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
-	# gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
-	# gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
-	# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.70000000000000000
+	gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#729fcf'
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
+	gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+	gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+	gsettings set org.gnome.shell.extensions.dash-to-dock force-straight-corner false
+	gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
+	gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
+	gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
+	gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
+	gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
+	gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+	gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
+	gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.70000000000000000
 
 gnome-themes: ## Install GNOME themes and configure them
 gnome-themes:
@@ -290,14 +295,21 @@ gnome-themes:
 	# install dependencies
 	sudo bash ~/install-gnome-themes/install-requirements-debian
 
-	# run install script
+	# run install script (THIS TAKES A LONG TIME)
 	@~/install-gnome-themes/install-gnome-themes
 
 	# Enable all possible from above
-	-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-	-gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
+	## You can echo back current settings with `gsettings get ...`
+	-gsettings set org.gnome.desktop.interface gtk-theme 'vimix-laptop-beryl'
+	-gsettings set org.gnome.desktop.interface cursor-theme 'Paper'
 	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
-	-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
+	-gsettings set org.gnome.shell.extensions.user-theme name 'vimix-laptop-beryl'
+
+gnome-extras: ## Install gtk3
+gnome-extras:
+	# https://askubuntu.com/questions/695796/view-list-of-all-available-unique-icons-with-their-names-and-thumbnail/695958
+	sudo apt-get install -y gtk-3-examples
+	@gtk3-icon-browser &
 
 icloud-for-linux: ## Installs icloud-for-linux snap
 icloud-for-linux: snap
@@ -308,6 +320,13 @@ nodejs:
 	# Using Ubuntu
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
+
+nordvpn: ## install nordvpn
+nordvpn:
+	curl -o /tmp/nordvpn-release_1.0.0_all.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+	sudo apt install /tmp/nordvpn-release_1.0.0_all.deb
+	sudo apt-get update
+	sudo apt install -y nordvpn
 
 peek: ## Install Peek (GIF Screen Recorder)
 peek:
@@ -364,6 +383,7 @@ python-three-six-supporting:
 
 	# upgrade pip
 	python3.6 -m pip install --user --upgrade pip
+	-python3.6 -m pip install --upgrade keyrings.alt --user
 
 	# python3 pytest
 	sudo apt install -y python3-pytest
@@ -409,6 +429,7 @@ python-three-seven-supporting:
 
 	# upgrade pip
 	python3.7 -m pip install --user --upgrade pip
+	-python3.7 -m pip install --upgrade keyrings.alt --user
 
 	# python3 pytest
 	sudo apt install -y python3-pytest
@@ -460,7 +481,7 @@ steam: flatpak
 
 sublime-text: ## Install Sublime Text as a snap
 sublime-text: snap
-	sudo snap install sublime-text --classic 
+	sudo snap install sublime-text --classic
 
 tresorit: ## Install Tresorit
 tresorit:
@@ -497,7 +518,7 @@ zim-desktop-wiki: update
 	sudo add-apt-repository ppa:jaap.karssenberg/zim
 	sudo apt-get update
 	sudo apt-get install zim
-	
+
 zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
 zsh: update
 
@@ -506,9 +527,9 @@ zsh: update
 	# https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH
 	###############################################
 	sudo apt -y install zsh
-	
+
 	zsh --version
-	
+
 	# change shell
 	# chsh -s $(shell which zsh)
 
@@ -521,7 +542,7 @@ zsh: update
 
 test: ## Test conditional flow
 test: DARGS?=
-test: 
+test:
 	@echo $(MAKEFLAGS)
 	# ifneq (,$(findstring main-install,$(MAKEFLAGS)))
 	# 	@echo "hello main-install"

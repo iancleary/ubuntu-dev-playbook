@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Peek (GIF Screen Recorder)
 - Added Brave Browser
 - Added [icloud-for-linux](https://snapcraft.io/icloud-for-linux) snap
+- Added Nordvpn
+- moved dash-to-dock to unique target
+- fixed python3.* [keyring.alt pip issue with package upgrade](https://bugs.launchpad.net/usd-importer/+bug/1794041)
 - Added standard-notes snap
 
 ### Added
