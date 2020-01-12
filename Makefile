@@ -448,6 +448,10 @@ spotify: ## Install Spotify as a snap
 spotify: snap
 	sudo snap install spotify
 
+standard-notes: ## Install standard-notes as a snap
+standard-notes: snap
+	sudo snap install standard-notes
+
 steam: ## Install Steam via Flatpak
 steam: flatpak
 	flatpak -y install flathub com.valvesoftware.Steam
