@@ -27,21 +27,6 @@ ansible: ## Install ansible
 ansible:
 	sudo apt -y install ansible
 
-brave: ## Install Brave browser
-brave:
-	# https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
-	sudo apt install apt-transport-https curl
-
-	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-
-	source /etc/os-release
-
-	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $(OS_VERSION_NAME) main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-$(OS_VERSION_NAME).list
-
-	sudo apt update
-
-	sudo apt install brave-browser
-
 cherrytree: ## Installs Cherrytree deb by adding PPA
 cherrytree:
 	sudo add-apt-repository ppa:giuspen/ppa
@@ -311,10 +296,6 @@ gnome-extras:
 	sudo apt-get install -y gtk-3-examples
 	@gtk3-icon-browser &
 
-icloud-for-linux: ## Installs icloud-for-linux snap
-icloud-for-linux: snap
-	sudo snap install icloud-for-linux
-
 nodejs: ## Install node.js
 nodejs:
 	# Using Ubuntu
@@ -336,7 +317,7 @@ peek:
 poetry: ## Install Poetry (Python Packaging and Dependencey Management)
 poetry:
 	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
-	sudo apt-get install python3-venv
+	sudo apt-get install -y python3-venv
 	python3.7 -m pip install --user poetry
 
 postman: ## Install Postman as a snap
@@ -513,12 +494,6 @@ yarn-globals:
 	# yarn global remove @gridsome/cli
 	yarn global add @gridsome/cli
 
-zim-desktop-wiki: ## Install zim-desktop-wiki from Ubuntu PPA
-zim-desktop-wiki: update
-	sudo add-apt-repository ppa:jaap.karssenberg/zim
-	sudo apt-get update
-	sudo apt-get install zim
-
 zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
 zsh: update
 
@@ -539,15 +514,5 @@ zsh: update
 	curl -Lo /tmp/oh-my-zsh/install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 	-@sh /tmp/oh-my-zsh/install.sh
 	-rm -rf /tmp/oh-my-zsh/
-
-test: ## Test conditional flow
-test: DARGS?=
-test:
-	@echo $(MAKEFLAGS)
-	# ifneq (,$(findstring main-install,$(MAKEFLAGS)))
-	# 	@echo "hello main-install"
-	# else
-	# 	@echo "regular path"
-	# endif
 
 .DEFAULT_GOAL := help
