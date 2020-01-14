@@ -21,6 +21,8 @@ jobs:
       run: make python-three-seven-install
     - name: Python 3.7 supporting
       run: make python-three-seven-supporting
+    - name: Yet Another Dotfile Manager
+      run: make yadm
     - name: Yarn (and Nodejs)
       run: make yarn
     - name: Yarn Globals

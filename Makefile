@@ -478,6 +478,10 @@ unifi-controller:
 	mkdir -p ~/unifi/log
 	docker run --rm --init -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -p 10001:10001/udp -e TZ='America/Phoenix' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
 
+yadm: ## Yet Another Dotfile Manager (yadm.io)
+yadm:
+	sudo apt-get install -y yadm
+
 yarn: ## Install node.js and yarn
 yarn: update nodejs
 
