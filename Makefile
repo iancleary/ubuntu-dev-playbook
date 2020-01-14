@@ -470,6 +470,14 @@ tresorit:
 	chmod +x ~/Downloads/tresorit_installer.run
 	$(echo $0) ~/Downloads/tresorit_installer.run
 
+
+unifi-controller: ## Download and run UniFi Controller Docker Image
+unifi-controller:
+	# https://hub.docker.com/r/jacobalberty/unifi
+	mkdir -p ~/unifi/data
+	mkdir -p ~/unifi/log
+	docker run --rm --init -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -p 10001:10001/udp -e TZ='America/Phoenix' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
+
 yarn: ## Install node.js and yarn
 yarn: update nodejs
 
