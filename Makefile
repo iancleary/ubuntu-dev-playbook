@@ -464,14 +464,14 @@ sublime-text: ## Install Sublime Text as a snap
 sublime-text: snap
 	sudo snap install sublime-text --classic
 
-tick-tick: ## Standalone app for ticktick.com using nativefier
-tick-tick:
+ticktick: ## Standalone app for ticktick.com using nativefier
+ticktick:
 	-rm -rf /tmp/nativefier/ticktick
 	mkdir -p /tmp/nativefier/ticktick
-	nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon icons/tick-tick.png
+	nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon icons/ticktick.png
 	-sudo mkdir /opt/ticktick
 	sudo cp -r /tmp/nativefier/ticktick /opt
-	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/tick-tick.desktop
+	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/ticktick.desktop
 	update-desktop-database $(HOME)/.local/share/applications
 
 tresorit: ## Install Tresorit
