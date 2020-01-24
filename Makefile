@@ -464,6 +464,16 @@ sublime-text: ## Install Sublime Text as a snap
 sublime-text: snap
 	sudo snap install sublime-text --classic
 
+tick-tick: ## Standalone app for ticktick.com using nativefier
+tick-tick:
+	-rm -rf /tmp/nativefier/ticktick
+	mkdir -p /tmp/nativefier/ticktick
+	nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon icons/tick-tick.png
+	-sudo mkdir /opt/ticktick
+	sudo cp -r /tmp/nativefier/ticktick /opt
+	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/tick-tick.desktop
+	update-desktop-database $(HOME)/.local/share/applications
+
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
@@ -505,6 +515,9 @@ yarn-globals:
 	yarn global add @vue/cli
 	# yarn global remove @gridsome/cli
 	yarn global add @gridsome/cli
+
+	# https://github.com/jiahaog/nativefier
+	yarn global add nativefier
 
 zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
 zsh: update
