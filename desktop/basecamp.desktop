@@ -7,20 +7,20 @@ Type=Application
 Version=1.0
 
 # The name of the application
-Name=TickTick
-GenericName=TickTick
+Name=Basecamp
+GenericName=Basecamp
 
 # A comment which can/will be used as a tooltip
-Comment=Checklist and Task Manager
+Comment=Project and Team Communication
 
 # The path to the folder in which the executable is run
-Path=/opt/ticktick/TickTick-linux-x64
+Path=/opt/basecamp/Basecamp-linux-x64
 
 # The executable of the application, possibly with arguments.
-Exec=/opt/ticktick/TickTick-linux-x64/TickTick
+Exec=/opt/basecamp/Basecamp-linux-x64/Basecamp
 
 # The name of the icon that will be used to display this entry
-Icon=/opt/ticktick/TickTick-linux-x64/resources/app/icon.png
+Icon=/opt/basecamp/Basecamp-linux-x64/resources/app/icon.png
 
 # Describes whether this application needs to be run in a terminal or not
 Terminal=false

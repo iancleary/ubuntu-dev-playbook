@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added TickTick Native App using [nativefier](https://github.com/jiahaog/nativefier)
 - Added [Yet Another Dotfile Manager](https://yadm.io)
 
 ## [0.3.0]

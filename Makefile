@@ -27,6 +27,18 @@ ansible: ## Install ansible
 ansible:
 	sudo apt -y install ansible
 
+# basecamp: ## Standalone app for basecamp.com using nativefier
+# basecamp:
+# 	-rm -rf /tmp/nativefier/basecamp
+# 	mkdir -p /tmp/nativefier/basecamp
+# 	nativefier "https://launchpad.37signals.com" /tmp/nativefier/basecamp --icon icons/basecamp.png --name "Basecamp" --single-instance --internal-urls ".*?"
+# 	-sudo rm -rf /opt/basecamp
+# 	-sudo mkdir /opt/basecamp
+# 	sudo cp -r /tmp/nativefier/basecamp /opt
+# 	-rm $(HOME)/.local/share/applications/basecamp.desktop
+# 	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/basecamp.desktop
+# 	update-desktop-database $(HOME)/.local/share/applications
+
 cherrytree: ## Installs Cherrytree deb by adding PPA
 cherrytree:
 	sudo add-apt-repository ppa:giuspen/ppa
@@ -468,9 +480,11 @@ ticktick: ## Standalone app for ticktick.com using nativefier
 ticktick:
 	-rm -rf /tmp/nativefier/ticktick
 	mkdir -p /tmp/nativefier/ticktick
-	nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon icons/ticktick.png
+	nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon icons/ticktick.png --name "TickTick" --single-instance
+	-sudo rm -rf /opt/ticktick
 	-sudo mkdir /opt/ticktick
 	sudo cp -r /tmp/nativefier/ticktick /opt
+	-rm $(HOME)/.local/share/applications/ticktick.desktop
 	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/ticktick.desktop
 	update-desktop-database $(HOME)/.local/share/applications
 
