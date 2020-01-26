@@ -337,7 +337,7 @@ postman: snap
 	sudo snap install postman
 
 python-three-six-install: ## Install python3.6 using apt (main install)
-python-three-six-install: upgrade
+python-three-six-install: update
 	# Start by updating the packages list and installing the prerequisites:
 	sudo apt install software-properties-common
 
@@ -349,7 +349,7 @@ python-three-six-install: upgrade
 	sudo apt install -y python3-pip
 
 python-three-six-altinstall: ## Install python3.6 as altinstall (prerequisites and )
-python-three-six-altinstall: upgrade
+python-three-six-altinstall: update
 	sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 		libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 		xz-utils tk-dev libffi-dev liblzma-dev
