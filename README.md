@@ -4,7 +4,7 @@
 
 ## Personal Makefile to install common packages on Ubuntu based distributions
 
-- Install `ansible`, `cherrytree`, `Visual Studio Code`, `Chromium`, `docker`, `docker-compose`, `Flatpak`, `Nordvpn`, `nodejs`, `Peek`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Slack`, `Snap`, `Spotify`, `Standard Notes`, `Steam`, `Sublime Text`, `Tresorit`, `yarn`,  and `zsh`
+- Install `ansible`, `cherrytree`, `Visual Studio Code`, `Chromium`, `docker`, `docker-compose`, `Flatpak`, `Nordvpn`, `nodejs`, `Peek`, `postman`, `python3.7`, `Signal Desktop`, `Slack`, `Snap`, `Spotify`, `Standard Notes`, `Steam`, `Sublime Text`, `Telegram`, `TickTick`, `Tresorit`, `yarn`,  and `zsh`
 - Configure GNOME keybindings and personal preferences
 - Install GNOME themes from [tliron/install-gnome-themes](https://github.com/tliron/install-gnome-themes)
 

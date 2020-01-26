@@ -27,6 +27,18 @@ ansible: ## Install ansible
 ansible:
 	sudo apt -y install ansible
 
+# basecamp: ## Standalone app for basecamp.com using nativefier
+# basecamp:
+# 	-rm -rf /tmp/nativefier/basecamp
+# 	mkdir -p /tmp/nativefier/basecamp
+# 	nativefier "https://launchpad.37signals.com" /tmp/nativefier/basecamp --icon icons/basecamp.png --name "Basecamp" --single-instance --internal-urls ".*?"
+# 	-sudo rm -rf /opt/basecamp
+# 	-sudo mkdir /opt/basecamp
+# 	sudo cp -r /tmp/nativefier/basecamp /opt
+# 	-rm $(HOME)/.local/share/applications/basecamp.desktop
+# 	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/basecamp.desktop
+# 	update-desktop-database $(HOME)/.local/share/applications
+
 cherrytree: ## Installs Cherrytree deb by adding PPA
 cherrytree:
 	sudo add-apt-repository ppa:giuspen/ppa
@@ -325,7 +337,7 @@ postman: snap
 	sudo snap install postman
 
 python-three-six-install: ## Install python3.6 using apt (main install)
-python-three-six-install: upgrade
+python-three-six-install: update
 	# Start by updating the packages list and installing the prerequisites:
 	sudo apt install software-properties-common
 
@@ -337,7 +349,7 @@ python-three-six-install: upgrade
 	sudo apt install -y python3-pip
 
 python-three-six-altinstall: ## Install python3.6 as altinstall (prerequisites and )
-python-three-six-altinstall: upgrade
+python-three-six-altinstall: update
 	sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 		libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 		xz-utils tk-dev libffi-dev liblzma-dev
@@ -464,6 +476,18 @@ sublime-text: ## Install Sublime Text as a snap
 sublime-text: snap
 	sudo snap install sublime-text --classic
 
+ticktick: ## Standalone app for ticktick.com using nativefier
+ticktick:
+	-rm -rf /tmp/nativefier/ticktick
+	mkdir -p /tmp/nativefier/ticktick
+	nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon icons/ticktick.png --name "TickTick" --single-instance
+	-sudo rm -rf /opt/ticktick
+	-sudo mkdir /opt/ticktick
+	sudo cp -r /tmp/nativefier/ticktick /opt
+	-rm $(HOME)/.local/share/applications/ticktick.desktop
+	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/ticktick.desktop
+	update-desktop-database $(HOME)/.local/share/applications
+
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
@@ -505,6 +529,9 @@ yarn-globals:
 	yarn global add @vue/cli
 	# yarn global remove @gridsome/cli
 	yarn global add @gridsome/cli
+
+	# https://github.com/jiahaog/nativefier
+	yarn global add nativefier
 
 zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
 zsh: update
