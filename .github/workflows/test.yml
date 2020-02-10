@@ -13,6 +13,8 @@ jobs:
       run: make docker
     - name: Docker-compose install
       run: make docker-compose
+    - name: Flameshot install
+      run: make flameshot
     - name: Python 3.6 install
       run: make python-three-six-install
     - name: Python 3.6 supporting

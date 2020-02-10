@@ -130,7 +130,15 @@ flameshot: ## Install flameshot, update gnome keybindings
 flameshot: update
 
 	# Ubuntu >=18.04
-	sudo apt install -y flameshot
+	# sudo apt install -y flameshot (apt fetches a 0.5.x version)
+
+	# Below is 0.6.0 version directly from github
+
+	sudo apt remove -y flameshot
+	rm -rf /tmp/flameshot/
+	mkdir /tmp/flameshot/
+	wget 'https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb' -P /tmp/flameshot
+	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb
 
 	# Update gnome keybindings
 	# source: https://askubuntu.com/a/1116076
