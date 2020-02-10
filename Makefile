@@ -132,12 +132,21 @@ flameshot: update
 	# Ubuntu >=18.04
 	# sudo apt install -y flameshot (apt fetches a 0.5.x version)
 
-	# Below is 0.6.0 version directly from github
+	## Snap cannot be found
+	# sudo snap install flameshot-app
 
+	## Download deb (0.6.0) from GitHub
 	sudo apt remove -y flameshot
 	rm -rf /tmp/flameshot/
 	mkdir /tmp/flameshot/
 	wget 'https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb' -P /tmp/flameshot
+
+	## Install dependencies (https://askubuntu.com/a/40050)
+	# mark dependencies
+	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb
+	# install required dependencies
+	sudo apt-get -f install
+	# successfully install package
 	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb
 
 	# Update gnome keybindings
@@ -149,8 +158,6 @@ flameshot: update
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/usr/bin/flameshot gui'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
 
-	## doesn't seem to work
-	# sudo snap install flameshot-app
 
 flatpak: ## Install flatpack on GNOME
 flatpak: update
