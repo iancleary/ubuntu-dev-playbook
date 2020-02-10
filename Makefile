@@ -126,11 +126,27 @@ docker-compose:
 	# Test the installation
 	docker-compose --version
 
-flameshot: ## Install flameshot, update gnome keybindings
-flameshot: update
+flameshot-install: ## Install Flameshot
+flameshot-install: update
 
 	# Ubuntu >=18.04
-	sudo apt install -y flameshot
+	# sudo apt install -y flameshot (apt fetches a 0.5.x version, want >= 0.6.0)
+
+	## Snap cannot be found
+	# sudo snap install flameshot-app
+
+	## Download deb (0.6.0) from GitHub
+	sudo apt remove -y flameshot
+	rm -rf /tmp/flameshot/
+	mkdir /tmp/flameshot/
+	wget 'https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb' -P /tmp/flameshot
+
+	## Install dependencies (https://askubuntu.com/a/248675/1042945)
+	# Install package, and install required dependencies
+	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb || sudo apt-get -y --fix-broken install
+
+flameshot: ## Install Flameshot and Update gnome keybindings
+flameshot: flameshot-install
 
 	# Update gnome keybindings
 	# source: https://askubuntu.com/a/1116076
@@ -141,8 +157,6 @@ flameshot: update
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/usr/bin/flameshot gui'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
 
-	## doesn't seem to work
-	# sudo snap install flameshot-app
 
 flatpak: ## Install flatpack on GNOME
 flatpak: update
