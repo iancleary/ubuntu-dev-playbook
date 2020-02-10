@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Flameshot install
-      run: make flameshot
+      run: make flameshot-install
     - name: Docker install
       run: make docker
     - name: Docker-compose install

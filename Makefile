@@ -126,11 +126,11 @@ docker-compose:
 	# Test the installation
 	docker-compose --version
 
-flameshot: ## Install flameshot, update gnome keybindings
-flameshot: update
+flameshot-install: ## Install Flameshot
+flameshot-install: update
 
 	# Ubuntu >=18.04
-	# sudo apt install -y flameshot (apt fetches a 0.5.x version)
+	# sudo apt install -y flameshot (apt fetches a 0.5.x version, want >= 0.6.0)
 
 	## Snap cannot be found
 	# sudo snap install flameshot-app
@@ -141,13 +141,12 @@ flameshot: update
 	mkdir /tmp/flameshot/
 	wget 'https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb' -P /tmp/flameshot
 
-	## Install dependencies (https://askubuntu.com/a/40050)
-	# mark dependencies, install required dependencies
+	## Install dependencies (https://askubuntu.com/a/248675/1042945)
+	# Install package, and install required dependencies
 	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb || sudo apt-get -y --fix-broken install
-	# install required dependencies
-	# sudo apt-get -f install
-	# successfully install package
-	# sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb
+
+flameshot: ## Install Flameshot and Update gnome keybindings
+flameshot: flameshot-install
 
 	# Update gnome keybindings
 	# source: https://askubuntu.com/a/1116076
