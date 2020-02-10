@@ -142,12 +142,12 @@ flameshot: update
 	wget 'https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb' -P /tmp/flameshot
 
 	## Install dependencies (https://askubuntu.com/a/40050)
-	# mark dependencies
-	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb
+	# mark dependencies, install required dependencies
+	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb || sudo apt-get -y --fix-broken install
 	# install required dependencies
-	sudo apt-get -f install
+	# sudo apt-get -f install
 	# successfully install package
-	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb
+	# sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb
 
 	# Update gnome keybindings
 	# source: https://askubuntu.com/a/1116076
