@@ -30,6 +30,7 @@
 * `Sublime Text`,
 * `Telegram`,
 * `TickTick`,
+* `Timeshift` <https://github.com/teejee2008/timeshift>,
 * `Tresorit`,
 * `yarn`,
 * `zsh`

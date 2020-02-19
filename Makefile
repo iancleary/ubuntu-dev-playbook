@@ -516,6 +516,12 @@ ticktick:
 	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/ticktick.desktop
 	update-desktop-database $(HOME)/.local/share/applications
 
+timeshift: ## GPL v3 System restore tool for Linux
+timeshift: update
+	sudo add-apt-repository -y ppa:teejee2008/timeshift
+	sudo apt-get update
+	sudo apt-get install -y timeshift
+
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run

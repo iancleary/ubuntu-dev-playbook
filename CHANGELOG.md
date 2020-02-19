@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added [Yet Another Dotfile Manager](https://yadm.io)
 - Flameshot: download and install 0.6.0 deb from Github (apt installs 0.5.1-2 at time of writing)
 - Stacer: download and install 1.1.0 deb from Github
+- Timeshift: added ppa per <https://github.com/teejee2008/timeshift>
 
 ## [0.3.0]
 
