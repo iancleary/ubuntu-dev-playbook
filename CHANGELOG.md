@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Timeshift: added ppa per <https://github.com/teejee2008/timeshift>
 - Python upgrade Setuptools, [reference](https://stackoverflow.com/questions/14426491/python-3-importerror-no-module-named-setuptools)
 - Added `gh` CLI <https://github.com/cli/cli/releases/tag/v0.5.5>
+- Added Protonmail-bridge beta client
 
 ## [0.3.0]
 
