@@ -14,6 +14,7 @@
 * `docker-compose`,
 * `flameshot`,
 * `Flatpak`,
+* `gh` GitHub CLI <https://github.com/cli/cli#installation-and-upgrading>
 * `Nordvpn`,
 * `nodejs`,
 * `Peek`,
