@@ -18,6 +18,7 @@
 * `nodejs`,
 * `Peek`,
 * `postman`,
+* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
 * `python3.6`,
 * `python3.7`,
 * `Signal Desktop`,

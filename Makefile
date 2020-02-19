@@ -350,6 +350,18 @@ postman: ## Install Postman as a snap
 postman: snap
 	sudo snap install postman
 
+protonmail-bridge: ## Install Protonmail Bridge deb
+protonmail-bridge:
+	## Download deb (1.2.3-1) from website
+	-sudo apt remove -y protonmail-bridge
+	rm -rf /tmp/protonmail-bridge/
+	mkdir /tmp/protonmail-bridge/
+	wget 'https://protonmail.com/download/protonmail-bridge_1.2.3-1_amd64.deb' -P /tmp/protonmail-bridge
+
+	## Install dependencies (https://askubuntu.com/a/248675/1042945)
+	# Install package, and install required dependencies
+	sudo dpkg --skip-same-version -i /tmp/protonmail-bridge/protonmail-bridge_1.2.3-1_amd64.deb || sudo apt-get -y --fix-broken install
+
 python-three-six-install: ## Install python3.6 using apt (main install)
 python-three-six-install: update
 	# Start by updating the packages list and installing the prerequisites:
