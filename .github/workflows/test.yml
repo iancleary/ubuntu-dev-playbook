@@ -3,12 +3,16 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  test-certain-targets:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
+    - name: Stacer install
+      run: make stacer
+    - name: Timeshift install
+      run: make timeshift
     - name: Flameshot install
       run: make flameshot-install
     - name: Docker install
@@ -29,7 +33,7 @@ jobs:
       run: make yarn
     - name: Yarn Globals
       run: make yarn-globals
-    - name: Snap Installs (Code, Chromium, Postman, Slack, Telegram, Signal, Spotify, Sublime Text)
+    - name: Snap Installs
       run: |
         make code
         make chromium
