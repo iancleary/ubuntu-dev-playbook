@@ -13,6 +13,8 @@ jobs:
       run: make stacer
     - name: Timeshift install
       run: make timeshift
+    - name: GitHub CLI install
+      run: make github-cli
     - name: Flameshot install
       run: make flameshot-install
     - name: Docker install
