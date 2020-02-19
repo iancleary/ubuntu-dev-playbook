@@ -33,7 +33,7 @@ jobs:
       run: make yarn
     - name: Yarn Globals
       run: make yarn-globals
-    - name: Snap Installs (Code, Chromium, Postman, Slack, Telegram, Signal, Spotify, Sublime Text)
+    - name: Snap Installs
       run: |
         make code
         make chromium
