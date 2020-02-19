@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Flameshot: download and install 0.6.0 deb from Github (apt installs 0.5.1-2 at time of writing)
 - Stacer: download and install 1.1.0 deb from Github
 - Timeshift: added ppa per <https://github.com/teejee2008/timeshift>
+- Python upgrade Setuptools, [reference](https://stackoverflow.com/questions/14426491/python-3-importerror-no-module-named-setuptools)
 
 ## [0.3.0]
 
