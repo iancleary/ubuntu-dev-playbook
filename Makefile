@@ -251,11 +251,11 @@ gnome-preferences:
 gnome-extensions: ## Install GNOME extensions
 gnome-extensions:
 	# Install Tweak Tool
-	-sudo add-apt-repository universe
-	sudo apt install gnome-tweak-tool
+	-sudo add-apt-repository -y universe
+	sudo apt install -y gnome-tweak-tool
 
 	# extensions.gnome.org read installed extensions
-	sudo apt-get install chrome-gnome-shell
+	sudo apt install -y chrome-gnome-shell
 
 	# Install common extensions via apt
 	sudo apt install -y gnome-shell-extensions
