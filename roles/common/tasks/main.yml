@@ -1,0 +1,32 @@
+---
+
+- name: install core packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - make
+    - snapd
+    - zsh
+    - flatpak
+
+- name: install confined snaps
+  snap:
+    name: "{{ item }}"
+  loop:
+    - "chromium"
+    - "postman"
+    - "signal-desktop"
+    - "spotify"
+    - "standard-notes"
+    - "telegram-desktop"
+
+- name: install classicly confined snaps
+  snap:
+    name: "{{item}}"
+    classic: yes
+  loop:
+    - "slack"
+    - "sublime-text"
