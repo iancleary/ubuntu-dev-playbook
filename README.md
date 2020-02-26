@@ -124,3 +124,5 @@ Before Ansible 2.5:
 Passwords for enable mode
 
 <https://docs.ansible.com/ansible/latest/user_guide/become.html>
+
+gsettings and dconf-editor commands via the [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html) module

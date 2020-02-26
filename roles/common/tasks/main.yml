@@ -11,6 +11,7 @@
     - snapd
     - zsh
     - flatpak
+    - gnome-software-plugin-flatpak
 
 - name: install confined snaps
   snap:
@@ -30,3 +31,14 @@
   loop:
     - "slack"
     - "sublime-text"
+
+- name: install cherrytree PPA
+  apt_repository:
+    repo: ppa:giuspen/ppa
+    state: present
+
+- name: install cherrytree package
+  become: true
+  apt:
+    name: "cherrytree"
+    state: present
