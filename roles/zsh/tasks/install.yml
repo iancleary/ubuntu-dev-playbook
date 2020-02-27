@@ -1,12 +1,13 @@
 ---
-- name: install dependencies
+- name: install zsh dependencies
   become: yes
-  package:
-    name:
+  apt:
+    name: "{{ item }}"
+    state: present
+    loop:
       - git
       - zsh
-    state: present
-    
+
 - name: clone oh-my-zsh
   tags:
     # Suppress warning: [ANSIBLE0006] git used in place of git module
