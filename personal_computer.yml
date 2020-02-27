@@ -3,7 +3,7 @@
   roles:
     #- zsh
     #- common
-    #- gnome
+    #- gnome-themes
     #- cherrytree
     #- docker
     ## - install-docker ## This removes docker and should be renamed
