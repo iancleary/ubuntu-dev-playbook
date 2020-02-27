@@ -125,6 +125,19 @@ Passwords for enable mode
 
 <https://docs.ansible.com/ansible/latest/user_guide/become.html>
 
+### Python Interpreter
+
+[ansible.cfg](ansible.cfg)
+
+```ini
+[defaults]
+#ansible_python_interpreter = "/usr/bin/python3"
+interpreter_python ="/usr/bin/python3"
+```
+
+Reference:
+<https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html>
+
 ### Ansible Modules Used
 
 * [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
