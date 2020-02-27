@@ -19,6 +19,15 @@
     - "standard-notes"
     - "telegram-desktop"
 
+- name: setup plugs # https://github.com/ansible/ansible/issues/58403
+  become: yes
+  become_method: sudo
+  changed_when: false
+  shell: 'snap connect {{ item.app }}:{{ item.plug }}'
+  with_items:
+    - plug: home
+      app: chromium
+
 - name: install classicly confined snaps
   snap:
     name: "{{item}}"
