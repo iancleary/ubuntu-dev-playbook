@@ -1,4 +1,13 @@
 - hosts: localhost
   connection: local
   roles:
+    - zsh
     - common
+    - gnome
+    - cherrytree
+    - docker
+    # - install-docker ## This removes docker and should be renamed
+    - python
+    - peek
+    - snaps
+    - timeshift

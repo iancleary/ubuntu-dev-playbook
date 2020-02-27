@@ -1,0 +1,15 @@
+
+- name: install flatpak packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - flatpak
+    - gnome-software-plugin-flatpak
+
+- name: install flatpak remote
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo

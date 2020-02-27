@@ -1,0 +1,11 @@
+
+- name: install cherrytree PPA
+  apt_repository:
+    repo: ppa:giuspen/ppa
+    state: present
+
+- name: install cherrytree package
+  become: true
+  apt:
+    name: "cherrytree"
+    state: present

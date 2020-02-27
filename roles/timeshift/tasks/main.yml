@@ -1,0 +1,12 @@
+
+- name: install timeshift PPA
+  apt_repository:
+    repo: ppa:teejee2008/timeshift
+    state: present
+
+- name: install timeshift package
+  become: true
+  apt:
+    name: "timeshift"
+    state: present
+    update_cache: yes

@@ -1,0 +1,28 @@
+
+- name: install snapd apt dependency
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - snapd
+
+- name: install confined snaps
+  snap:
+    name: "{{ item }}"
+  loop:
+    - "chromium"
+    - "postman"
+    - "signal-desktop"
+    - "snap-store"
+    - "spotify"
+    - "standard-notes"
+    - "telegram-desktop"
+
+- name: install classicly confined snaps
+  snap:
+    name: "{{item}}"
+    classic: yes
+  loop:
+    - "slack"
+    - "sublime-text"

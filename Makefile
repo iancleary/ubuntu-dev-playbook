@@ -15,35 +15,6 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-update: DARGS?=
-update: ## Apt update
-	sudo apt-get update
-
-upgrade: DARGS?=
-upgrade: ## Apt update & upgrade
-	sudo apt-get update && sudo apt-get -y upgrade && sudo apt -y autoremove
-
-ansible: ## Install ansible
-ansible:
-	sudo apt -y install ansible
-
-# basecamp: ## Standalone app for basecamp.com using nativefier
-# basecamp:
-# 	-rm -rf /tmp/nativefier/basecamp
-# 	mkdir -p /tmp/nativefier/basecamp
-# 	nativefier "https://launchpad.37signals.com" /tmp/nativefier/basecamp --icon icons/basecamp.png --name "Basecamp" --single-instance --internal-urls ".*?"
-# 	-sudo rm -rf /opt/basecamp
-# 	-sudo mkdir /opt/basecamp
-# 	sudo cp -r /tmp/nativefier/basecamp /opt
-# 	-rm $(HOME)/.local/share/applications/basecamp.desktop
-# 	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/basecamp.desktop
-# 	update-desktop-database $(HOME)/.local/share/applications
-
-cherrytree: ## Installs Cherrytree deb by adding PPA
-cherrytree:
-	sudo add-apt-repository ppa:giuspen/ppa
-	sudo apt install -y cherrytree
-
 chromium: ## Install Chromium as a snap
 chromium: snap
 	sudo snap install chromium
@@ -51,38 +22,12 @@ chromium: snap
 	# allows opening files
 	sudo snap connect chromium:home
 
-code: ## Install Microsoft Visual Studio Code as a snap
-code: snap
-	sudo snap install code --classic
 
 docker: ## Install docker with apt
 docker: DARGS?=
 docker:
 	# Uninstall old versions
 	sudo apt-get remove docker docker-engine docker.io containerd runc
-
-	# Set up the repository
-	sudo apt-get update
-
-	# Install packages to allow apt ot use a repository over HTTPS
-	sudo apt-get -y install \
-		apt-transport-https \
-		ca-certificates \
-		curl \
-		gnupg-agent \
-		software-properties-common
-
-	# Add Docker's official GPG key
-	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-	# Setup the stable repository
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(OS_VERSION_NAME) stable"
-
-	# Update the apt package update
-	sudo apt-get update
-
-	# Install the latest version of Docker CE and containerd
-	sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 
 	# Verify that Docker CE is installed correctly by running the hello-world image.
 	sudo docker run hello-world
@@ -105,14 +50,6 @@ docker-run-as-non-root:
 	# Log out and log back in so that your group membership is re-evaluated.
 	# If testing on a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
 	# On a desktop Linux environment such as X Windows, log out of your session completely and then log back in.
-
-docker-start-on-boot: ## Start docker on boot
-docker-start-on-boot:
-	sudo systemctl enable docker
-
-docker-stopped-on-boot: ## Don't start docker on boot
-docker-stopped-on-boot:
-	sudo systemctl disable docker
 
 docker-compose: ## Install Docker Compose
 docker-compose:
@@ -300,39 +237,11 @@ gnome-dash-to-dock:
 
 gnome-themes: ## Install GNOME themes and configure them
 gnome-themes:
-	###############################################
-	# Theming and GNOME Options
-	# Install Icons and Themes
-	###############################################
-
-	# Paper Icons (https://snwh.org/paper/download)
-	# add daily builds PPA
-	-sudo add-apt-repository -u ppa:snwh/ppa
-	# Install icon theme
-	-sudo apt-get install paper-gtk-theme
-	-sudo apt-get install paper-icon-theme
-	-sudo apt-get install paper-cursor-theme
-
-	## install script for GNOME Themes
-	-git clone https://github.com/tliron/install-gnome-themes ~/install-gnome-themes
-	# install dependencies
-	sudo bash ~/install-gnome-themes/install-requirements-debian
-
-	# run install script (THIS TAKES A LONG TIME)
-	@~/install-gnome-themes/install-gnome-themes
 
 	# Enable all possible from above
 	## You can echo back current settings with `gsettings get ...`
 	-gsettings set org.gnome.desktop.interface gtk-theme 'vimix-laptop-beryl'
-	-gsettings set org.gnome.desktop.interface cursor-theme 'Paper'
-	-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 	-gsettings set org.gnome.shell.extensions.user-theme name 'vimix-laptop-beryl'
-
-gnome-extras: ## Install gtk3
-gnome-extras:
-	# https://askubuntu.com/questions/695796/view-list-of-all-available-unique-icons-with-their-names-and-thumbnail/695958
-	sudo apt-get install -y gtk-3-examples
-	@gtk3-icon-browser &
 
 nodejs: ## Install node.js
 nodejs:
@@ -347,20 +256,6 @@ nordvpn:
 	sudo apt-get update
 	sudo apt install -y nordvpn
 
-peek: ## Install Peek (GIF Screen Recorder)
-peek:
-	sudo add-apt-repository ppa:peek-developers/stable
-	sudo apt update && sudo apt install -y peek
-
-poetry: ## Install Poetry (Python Packaging and Dependencey Management)
-poetry:
-	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
-	sudo apt-get install -y python3-venv
-	python3.7 -m pip install --user poetry
-
-postman: ## Install Postman as a snap
-postman: snap
-	sudo snap install postman
 
 protonmail-bridge: ## Install Protonmail Bridge deb
 protonmail-bridge:
@@ -374,133 +269,6 @@ protonmail-bridge:
 	# Install package, and install required dependencies
 	sudo dpkg --skip-same-version -i /tmp/protonmail-bridge/protonmail-bridge_1.2.3-1_amd64.deb || sudo apt-get -y --fix-broken install
 
-python-three-six-install: ## Install python3.6 using apt (main install)
-python-three-six-install: update
-	# Start by updating the packages list and installing the prerequisites:
-	sudo apt install software-properties-common
-
-	# install python3.6
-	sudo apt update
-	sudo apt install -y python3.6
-
-	# python3 pip
-	sudo apt install -y python3-pip
-
-python-three-six-altinstall: ## Install python3.6 as altinstall (prerequisites and )
-python-three-six-altinstall: update
-	sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-		libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-		xz-utils tk-dev libffi-dev liblzma-dev
-
-	# fixes for pip SSL issues
-	sudo apt install libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev libgdm-dev libdb4o-cil-dev libpcap-dev
-
-	# sudo apt-get install zlib1g-dev # needed on Pop!_OS 19.10
-
-	# cd ~/Downloads
-	# wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
-	# tar xvf Python-3.6.9.tgz
-	# cd Python-3.6.9
-	#./configure --enable-optimizations --enable-shared \
-		--with-ensurepip=install \
-		--prefix=/usr/local \
-        LDFLAGS="-Wl,--rpath=/usr/local/lib"
-	# make -j8
-	# sudo make altinstall
-	# python3.6
-
-python-three-six-supporting: ## Install useful packages
-python-three-six-supporting:
-
-	# upgrade pip
-	python3.6 -m pip install --user --upgrade pip
-	-python3.6 -m pip install --upgrade keyrings.alt --user
-	-python3.6 -m pip install --user --upgrade setuptools
-
-	# python3 pytest
-	sudo apt install -y python3-pytest
-
-	# At this point, Python 3.6 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.6 --version
-	python3.6 -m pip --version
-	python3.6 -m pytest --version
-
-	python3.6 -m pip install --user twine
-	python3.6 -m pip install --user wheel
-	python3.6 -m pip install --user cookiecutter
-	python3.6 -m pip install --user pipenv
-
-	# add the following to your .bashrc (.zshrc, etc.) file
-	# export PATH="$$HOME/.local/bin:$$PATH"
-
-python-three-seven-install: ## Install python3.7 using apt (main install)
-python-three-seven-install: update
-	# Start by updating the packages list and installing the prerequisites:
-	sudo apt install software-properties-common
-
-	# Next, add the deadsnakes PPA to your sources list:
-	# sudo add-apt-repository ppa:deadsnakes/ppa # not for 19.04
-	# when prompted, press Enter to continue
-
-	# Once the repository is enabled, install Python 3.7 with: (added libpython3.7-dev for pip installs)
-	# - httptools wasn't installing correctly until adding it
-	# - see: https://github.com/huge-success/sanic/issues/1503#issuecomment-469031275
-	sudo apt update
-	sudo apt install -y python3.7 libpython3.7-dev
-
-	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.7 --version
-
-python-three-seven-supporting: ## Install useful packages
-python-three-seven-supporting:
-
-	# python3 pip
-	sudo apt install -y python3-pip
-
-	# upgrade pip
-	python3.7 -m pip install --user --upgrade pip
-	-python3.7 -m pip install --upgrade keyrings.alt --user
-	-python3.7 -m pip install --user --upgrade setuptools
-
-	# python3 pytest
-	sudo apt install -y python3-pytest
-
-	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.7 --version
-	python3.7 -m pip --version
-	python3.7 -m pytest --version
-
-	python3.7 -m pip install --user twine
-	python3.7 -m pip install --user wheel
-	python3.7 -m pip install --user cookiecutter
-	python3.7 -m pip install --user pipenv
-
-	# add the following to your .bashrc (.zshrc, etc.) file
-	# export PATH="$$HOME/.local/bin:$$PATH"
-
-secure-comms: ## Install secure communication snaps
-secure-comms: snap
-	# Signal Desktop Private Messaging
-	sudo snap install signal-desktop
-
-	# Telegram messenger
-	sudo snap install telegram-desktop
-
-slack: ## Install Slack as a snap
-slack: snap
-	sudo snap install slack --classic
-
-snap:  ## Install snapd
-snap:
-	sudo apt install snapd
-	sudo snap install snap-store
-
-spotify: ## Install Spotify as a snap
-spotify: snap
-	sudo snap install spotify
 
 stacer: ## Install Stacer from Github
 stacer: update
@@ -515,20 +283,11 @@ stacer: update
 	# Install package, and install required dependencies
 	sudo dpkg --skip-same-version -i /tmp/stacer/stacer_1.1.0_amd64.deb || sudo apt-get -y --fix-broken install
 
-
-standard-notes: ## Install standard-notes as a snap
-standard-notes: snap
-	sudo snap install standard-notes
-
 steam: ## Install Steam via Flatpak
 steam: flatpak
 	flatpak -y install flathub com.valvesoftware.Steam
 	# Installed but not displayed? Check with: flatpak run com.valvesoftware.Steam
 
-
-sublime-text: ## Install Sublime Text as a snap
-sublime-text: snap
-	sudo snap install sublime-text --classic
 
 ticktick: ## Standalone app for ticktick.com using nativefier
 ticktick:
@@ -541,12 +300,6 @@ ticktick:
 	-rm $(HOME)/.local/share/applications/ticktick.desktop
 	desktop-file-install --dir=$(HOME)/.local/share/applications ./desktop/ticktick.desktop
 	update-desktop-database $(HOME)/.local/share/applications
-
-timeshift: ## GPL v3 System restore tool for Linux
-timeshift: update
-	sudo add-apt-repository -y ppa:teejee2008/timeshift
-	sudo apt-get update
-	sudo apt-get install -y timeshift
 
 tresorit: ## Install Tresorit
 tresorit:
@@ -562,7 +315,7 @@ unifi-controller:
 	mkdir -p ~/unifi/log
 	docker run --rm --init -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -p 10001:10001/udp -e TZ='America/Phoenix' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
 
-yadm: ## Yet Another Dotfile Manager (yadm.io)
+yadm: 
 yadm:
 	sudo apt-get install -y yadm
 
