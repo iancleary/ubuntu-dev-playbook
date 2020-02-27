@@ -125,4 +125,7 @@ Passwords for enable mode
 
 <https://docs.ansible.com/ansible/latest/user_guide/become.html>
 
-gsettings and dconf-editor commands via the [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html) module
+### Ansible Modules Used
+
+* [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
+* [f;atpak_remote](https://docs.ansible.com/ansible/latest/modules/flatpak_remote_module.html)
