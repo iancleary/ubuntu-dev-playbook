@@ -48,17 +48,6 @@ github-cli: update
 	# Install package, and install required dependencies
 	sudo dpkg --skip-same-version -i /tmp/gh/gh_0.5.5_linux_amd64.deb || sudo apt-get -y --fix-broken install
 
-gnome-firefox-theme: ## Install GNOME Firefox theme
-gnome-firefox-theme:
-	################################################
-	# Install gnome firefox theme
-	# https://github.com/rafaelmardojai/firefox-gnome-theme
-	# Updating gnome firefox theme
-	# https://github.com/rafaelmardojai/firefox-gnome-theme#updating
-	###############################################
-	git clone git@github.com:rafaelmardojai/firefox-gnome-theme.git /tmp/firefox-gnome-theme && cd /tmp/firefox-gnome-theme
-	bash /tmp/firefox-gnome-theme/scripts/install.sh -g
-
 gnome-keybindings:  ## Configure GNOME keybindings
 gnome-keybindings:
 	## Adjust key bindings for window/application switching (default is for all of below to switch-applications)
