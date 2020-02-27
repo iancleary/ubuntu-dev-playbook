@@ -48,6 +48,11 @@ code: ## Install Microsoft Visual Studio Code as a snap
 code: snap
 	sudo snap install code --classic
 
+chromium: ## Install Chromium as a snap
+chromium: snap
+	sudo snap install chromium
+	# allows opening files
+	sudo snap connect chromium:home
 
 docker: ## Install docker with apt
 docker: DARGS?=
@@ -104,6 +109,46 @@ docker-run-as-non-root:
 docker-start-on-boot: ## Start docker on boot
 docker-start-on-boot:
 	sudo systemctl enable docker
+
+flameshot-install: ## Install Flameshot
+flameshot-install: update
+
+	# Ubuntu >=18.04
+	# sudo apt install -y flameshot (apt fetches a 0.5.x version, want >= 0.6.0)
+
+	## Snap cannot be found
+	# sudo snap install flameshot-app
+
+	## Download deb (0.6.0) from GitHub
+	-sudo apt remove -y flameshot
+	rm -rf /tmp/flameshot/
+	mkdir /tmp/flameshot/
+	wget 'https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb' -P /tmp/flameshot
+
+	## Install dependencies (https://askubuntu.com/a/248675/1042945)
+	# Install package, and install required dependencies
+	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb || sudo apt-get -y --fix-broken install
+
+flameshot: ## Install Flameshot and Update gnome keybindings
+flameshot: flameshot-install
+
+	# Update gnome keybindings
+	# source: https://askubuntu.com/a/1116076
+	# first is allowed to fail, i.e. when no screenshot value is set
+	gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
+	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/']"
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ name 'flameshot'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/usr/bin/flameshot gui'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
+
+
+flatpak: ## Install flatpack on GNOME
+flatpak: update
+	sudo apt install -y flatpak
+	-sudo apt install -y gnome-software-plugin-flatpak
+	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
 
 gnome-themes: ## Install GNOME themes and configure them
 gnome-themes:
@@ -292,3 +337,28 @@ timeshift: update
 	sudo add-apt-repository -y ppa:teejee2008/timeshift
 	sudo apt-get update
 	sudo apt-get install -y timeshift
+
+yadm:
+yadm:
+	sudo apt-get install -y yadm
+
+zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
+zsh: update
+
+	################################################
+	# Install ZSH and Oh-my-zsh
+	# https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH
+	###############################################
+	sudo apt -y install zsh
+
+	zsh --version
+
+	# change shell
+	# chsh -s $(shell which zsh)
+
+	# install oh-my-zsh
+	-rm -rf /tmp/oh-my-zsh/
+	mkdir /tmp/oh-my-zsh/
+	curl -Lo /tmp/oh-my-zsh/install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+	-@sh /tmp/oh-my-zsh/install.sh
+	-rm -rf /tmp/oh-my-zsh/

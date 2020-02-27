@@ -15,14 +15,6 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-chromium: ## Install Chromium as a snap
-chromium: snap
-	sudo snap install chromium
-
-	# allows opening files
-	sudo snap connect chromium:home
-
-
 docker: ## Install docker with apt
 docker: DARGS?=
 docker:
@@ -31,25 +23,6 @@ docker:
 
 	# Verify that Docker CE is installed correctly by running the hello-world image.
 	sudo docker run hello-world
-
-docker-run-as-non-root: ## Manage Docker as a non-root user
-docker-run-as-non-root: DARGS?=
-docker-run-as-non-root:
-
-	###############################################
-	# Docker CE (Post-installation steps for Linux)
-	# - Manage Docker as a non-root user
-	###############################################
-
-	# Create the docker group.
-	-sudo groupadd docker
-
-	# Add your user to the docker group.
-	sudo usermod -aG docker $(USER)
-
-	# Log out and log back in so that your group membership is re-evaluated.
-	# If testing on a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
-	# On a desktop Linux environment such as X Windows, log out of your session completely and then log back in.
 
 docker-compose: ## Install Docker Compose
 docker-compose:
@@ -62,44 +35,6 @@ docker-compose:
 
 	# Test the installation
 	docker-compose --version
-
-flameshot-install: ## Install Flameshot
-flameshot-install: update
-
-	# Ubuntu >=18.04
-	# sudo apt install -y flameshot (apt fetches a 0.5.x version, want >= 0.6.0)
-
-	## Snap cannot be found
-	# sudo snap install flameshot-app
-
-	## Download deb (0.6.0) from GitHub
-	-sudo apt remove -y flameshot
-	rm -rf /tmp/flameshot/
-	mkdir /tmp/flameshot/
-	wget 'https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb' -P /tmp/flameshot
-
-	## Install dependencies (https://askubuntu.com/a/248675/1042945)
-	# Install package, and install required dependencies
-	sudo dpkg --skip-same-version -i /tmp/flameshot/flameshot_0.6.0_bionic_x86_64.deb || sudo apt-get -y --fix-broken install
-
-flameshot: ## Install Flameshot and Update gnome keybindings
-flameshot: flameshot-install
-
-	# Update gnome keybindings
-	# source: https://askubuntu.com/a/1116076
-	# first is allowed to fail, i.e. when no screenshot value is set
-	gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
-	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/']"
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ name 'flameshot'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/usr/bin/flameshot gui'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
-
-
-flatpak: ## Install flatpack on GNOME
-flatpak: update
-	sudo apt install -y flatpak
-	-sudo apt install -y gnome-software-plugin-flatpak
-	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 github-cli: ## Install the github CLI from GitHub Releases Page
 github-cli: update
@@ -315,9 +250,6 @@ unifi-controller:
 	mkdir -p ~/unifi/log
 	docker run --rm --init -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -p 10001:10001/udp -e TZ='America/Phoenix' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
 
-yadm: 
-yadm:
-	sudo apt-get install -y yadm
 
 yarn: ## Install node.js and yarn
 yarn: update nodejs
@@ -346,25 +278,6 @@ yarn-globals:
 	# https://github.com/jiahaog/nativefier
 	yarn global add nativefier
 
-zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
-zsh: update
 
-	################################################
-	# Install ZSH and Oh-my-zsh
-	# https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH
-	###############################################
-	sudo apt -y install zsh
-
-	zsh --version
-
-	# change shell
-	# chsh -s $(shell which zsh)
-
-	# install oh-my-zsh
-	-rm -rf /tmp/oh-my-zsh/
-	mkdir /tmp/oh-my-zsh/
-	curl -Lo /tmp/oh-my-zsh/install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-	-@sh /tmp/oh-my-zsh/install.sh
-	-rm -rf /tmp/oh-my-zsh/
 
 .DEFAULT_GOAL := help
