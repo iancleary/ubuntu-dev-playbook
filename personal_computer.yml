@@ -1,24 +1,24 @@
 - hosts: localhost
   connection: local
   roles:
-    #- zsh
-    #- common
-    #- gnome-themes
-    #- cherrytree
-    #- docker
+    - {role: zsh, tags: ['zsh']}
+    - {role: common, tags: ['common']}
+    - {role: gnome-themes, tags: ['gnome-themes']}
+    - {role: cherrytree, tags: ['cherrytree']}
+    - {role: docker, tags: ['docker']}
     ## - install-docker ## This removes docker and should be renamed
-    #- python
-    #- peek
-    - snaps
-    #- timeshift
-    #- flameshot
-    #- github-cli
-    #- gnome-keybindings
-    #- gnome-preferences
-    #- gnome-extensions
-    #- nordvpn
-    #- stacer
-    #- flatpak
-    #- steam
-    #- evolution
-    #- libreoffice
+    - {role: python, tags: ['python']}
+    - {role: snaps, tags: ['snaps']}
+    - {role: peek, tags: ['peek']}
+    - {role: flameshot, tags: ['flameshot']}
+    - {role: github-cli, tags: ['github-cli']}
+    - {role: gnome-keybindings, tags: ['gnome-keybindings']}
+    - {role: gnome-preferences, tags: ['gnome-preferences']}
+    - {role: gnome-extensions, tags: ['gnome-extensions']}
+    - {role: nordvpn, tags: ['nordvpn']}
+    - {role: stacer, tags: ['stacer']}
+    - {role: flatpak, tags: ['flatpak']}
+    - {role: steam, tags: ['steam']}
+    - {role: evolution, tags: ['evolution']}
+    - {role: steam, tags: ['steam']}
+    - {role: libreoffice, tags: ['libreoffice']}

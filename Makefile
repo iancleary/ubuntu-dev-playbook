@@ -42,13 +42,12 @@ bootstrap: ## Installs dependencies needed to run playbook
 
 check: DARGS?=
 check: ## Checks personal-computer.yml playbook
-
-	@ansible-playbook --connection=local --inventory=127.0.0.1, personal_computer.yml --check --ask-become-pass -e 'ansible_user='$(whoami) $(DARGS)
+	@ansible-playbook --connection=local --inventory=127.0.0.1, personal_computer.yml --check --ask-become-pass -e 'ansible_user='$(whoami)
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
 
-	@ansible-playbook --connection=local --inventory=127.0.0.1, personal_computer.yml --ask-become-pass -e 'ansible_user='$(whoami) $(DARGS)
+	@ansible-playbook --connection=local --inventory=127.0.0.1, personal_computer.yml --ask-become-pass -e 'ansible_user='$(whoami)
 
 
 .DEFAULT_GOAL := help
