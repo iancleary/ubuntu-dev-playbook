@@ -15,15 +15,6 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-docker: ## Install docker with apt
-docker: DARGS?=
-docker:
-	# Uninstall old versions
-	sudo apt-get remove docker docker-engine docker.io containerd runc
-
-	# Verify that Docker CE is installed correctly by running the hello-world image.
-	sudo docker run hello-world
-
 docker-compose: ## Install Docker Compose
 docker-compose:
 

@@ -21,7 +21,7 @@
   become: true
   apt:
     name: "{{ item }}"
-    state: present
+    state: latest
     update_cache: yes
   loop:
     - docker-ce
