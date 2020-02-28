@@ -71,14 +71,6 @@ nodejs:
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 	sudo apt-get install -y nodejs
 
-nordvpn: ## install nordvpn
-nordvpn:
-	curl -o /tmp/nordvpn-release_1.0.0_all.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-	sudo apt install /tmp/nordvpn-release_1.0.0_all.deb
-	sudo apt-get update
-	sudo apt install -y nordvpn
-
-
 protonmail-bridge: ## Install Protonmail Bridge deb
 protonmail-bridge:
 	## Download deb (1.2.3-1) from website

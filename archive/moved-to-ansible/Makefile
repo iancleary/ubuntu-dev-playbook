@@ -281,6 +281,13 @@ gnome-preferences:
 	# Clock format
 	gsettings set org.gnome.desktop.interface clock-format '24h'
 
+nordvpn: ## install nordvpn
+nordvpn:
+	curl -o /tmp/nordvpn-release_1.0.0_all.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+	sudo apt install /tmp/nordvpn-release_1.0.0_all.deb
+	sudo apt-get update
+	sudo apt install -y nordvpn
+
 peek: ## Install Peek (GIF Screen Recorder)
 peek:
 	sudo add-apt-repository ppa:peek-developers/stable
