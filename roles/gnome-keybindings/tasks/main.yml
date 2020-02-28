@@ -30,29 +30,29 @@
     value: "['<Shift><Alt>Tab']"
     state: present
 
-# Move windows
+# Move windows (<Ctrl><Alt>Direction interferes and wasn't reliable)
 - name: Custom Keybinding Entry - Move To Monitor Down
   dconf:
     key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-down"
-    value: "['<Shift><Ctrl>Down']"
+    value: "['<Shift><Alt>Down']"
     state: present
 
 - name: Custom Keybinding Entry - Move To Monitor Up
   dconf:
     key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-up"
-    value: "['<Shift><Ctrl>Up']"
+    value: "['<Shift><Alt>Up']"
     state: present
 
 - name: Custom Keybinding Entry - Move To Monitor Left
   dconf:
     key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-left"
-    value: "['<Shift><Ctrl>Left']"
+    value: "['<Shift><Alt>Left']"
     state: present
 
 - name: Custom Keybinding Entry - Move To Monitor Right
   dconf:
     key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-right"
-    value: "['<Shift><Ctrl>Right']"
+    value: "['<Shift><Alt>Right']"
     state: present
 
 # Move workspaces
