@@ -83,12 +83,6 @@ protonmail-bridge:
 	# Install package, and install required dependencies
 	sudo dpkg --skip-same-version -i /tmp/protonmail-bridge/protonmail-bridge_1.2.3-1_amd64.deb || sudo apt-get -y --fix-broken install
 
-steam: ## Install Steam via Flatpak
-steam: flatpak
-	flatpak -y install flathub com.valvesoftware.Steam
-	# Installed but not displayed? Check with: flatpak run com.valvesoftware.Steam
-
-
 ticktick: ## Standalone app for ticktick.com using nativefier
 ticktick:
 	-rm -rf /tmp/nativefier/ticktick

@@ -450,6 +450,11 @@ standard-notes: ## Install standard-notes as a snap
 standard-notes: snap
 	sudo snap install standard-notes
 
+steam: ## Install Steam via Flatpak
+steam: flatpak
+	flatpak -y install flathub com.valvesoftware.Steam
+	# Installed but not displayed? Check with: flatpak run com.valvesoftware.Steam
+
 sublime-text: ## Install Sublime Text as a snap
 sublime-text: snap
 	sudo snap install sublime-text --classic

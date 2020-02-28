@@ -17,4 +17,6 @@
     #- gnome-preferences
     #- gnome-extensions
     #- nordvpn
-    - stacer
+    #- stacer
+    - flatpak
+    - steam
