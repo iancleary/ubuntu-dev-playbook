@@ -4,9 +4,9 @@
   apt:
     name: "{{ item }}"
     state: present
-    loop:
-      - git
-      - zsh
+  loop:
+    - git
+    - zsh
 
 - name: clone oh-my-zsh
   tags:
