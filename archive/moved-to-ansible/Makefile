@@ -214,6 +214,38 @@ gnome-keybindings:
 	# Lock Computer (screensaver)
 	gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Super>l'
 
+gnome-extensions: ## Install GNOME extensions
+gnome-extensions:
+	# Install Tweak Tool
+	-sudo add-apt-repository -y universe
+	sudo apt install -y gnome-tweak-tool
+
+	# extensions.gnome.org read installed extensions
+	sudo apt install -y chrome-gnome-shell
+
+	# Install common extensions via apt
+	sudo apt install -y gnome-shell-extensions
+
+gnome-dash-to-dock: ## Configure dask to dock
+gnome-dash-to-dock:
+	# Dash to Dock Theme
+	gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#729fcf'
+	gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
+	gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+	gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+	gsettings set org.gnome.shell.extensions.dash-to-dock force-straight-corner false
+	gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
+	gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
+	gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
+	gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
+	gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
+	gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+	gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
+	gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.7
+
 gnome-preferences: ## Install GNOME preferences
 gnome-preferences:
 	# Set SCP as Monospace (Code) Font
