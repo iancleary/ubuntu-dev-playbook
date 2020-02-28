@@ -36,18 +36,6 @@ docker-compose:
 	# Test the installation
 	docker-compose --version
 
-github-cli: ## Install the github CLI from GitHub Releases Page
-github-cli: update
-	## Download deb (0.6.0) from GitHub
-	-sudo apt remove -y gh
-	rm -rf /tmp/gh/
-	mkdir /tmp/gh/
-	wget 'https://github.com/cli/cli/releases/download/v0.5.5/gh_0.5.5_linux_amd64.deb' -P /tmp/gh
-
-	## Install dependencies (https://askubuntu.com/a/248675/1042945)
-	# Install package, and install required dependencies
-	sudo dpkg --skip-same-version -i /tmp/gh/gh_0.5.5_linux_amd64.deb || sudo apt-get -y --fix-broken install
-
 gnome-extensions: ## Install GNOME extensions
 gnome-extensions:
 

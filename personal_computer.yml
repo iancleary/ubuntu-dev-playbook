@@ -12,6 +12,7 @@
     #- snaps
     #- timeshift
     #- flameshot
+    - github-cli
     #- gnome-keybindings
     #- gnome-preferences
-    - gnome-extensions
+    #- gnome-extensions

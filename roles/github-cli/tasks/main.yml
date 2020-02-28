@@ -1,0 +1,5 @@
+---
+- name: Install Github CLI deb from github
+  become: true
+  apt:
+    deb: 'https://github.com/cli/cli/releases/download/v0.5.5/gh_0.5.5_linux_amd64.deb'
