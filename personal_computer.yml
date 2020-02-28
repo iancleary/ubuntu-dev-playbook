@@ -12,7 +12,8 @@
     #- snaps
     #- timeshift
     #- flameshot
-    - github-cli
+    #- github-cli
     #- gnome-keybindings
     #- gnome-preferences
     #- gnome-extensions
+    - nordvpn
