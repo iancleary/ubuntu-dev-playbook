@@ -20,4 +20,5 @@
     #- stacer
     - flatpak
     #- steam
-    - evolution
+    #- evolution
+    - libreoffice

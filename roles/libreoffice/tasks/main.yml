@@ -1,0 +1,15 @@
+---
+- name: LibreOffice - remove apt packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: absent
+    purge: yes
+    autoremove: yes
+  loop:
+    - libreoffice*
+
+- name: LibreOffice - Install LibreOffice via Flatpak
+  flatpak:
+    name: org.libreoffice.LibreOffice
+    state: present
