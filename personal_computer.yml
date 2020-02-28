@@ -9,7 +9,7 @@
     ## - install-docker ## This removes docker and should be renamed
     #- python
     #- peek
-    #- snaps
+    - snaps
     #- timeshift
     #- flameshot
     #- github-cli
@@ -18,7 +18,7 @@
     #- gnome-extensions
     #- nordvpn
     #- stacer
-    - flatpak
+    #- flatpak
     #- steam
     #- evolution
-    - libreoffice
+    #- libreoffice
