@@ -214,6 +214,31 @@ gnome-keybindings:
 	# Lock Computer (screensaver)
 	gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Super>l'
 
+gnome-preferences: ## Install GNOME preferences
+gnome-preferences:
+	# Set SCP as Monospace (Code) Font
+	# gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro Semi-Bold 12'
+
+	# Better Font Smoothing
+	gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
+
+	# Usability Improvements
+	-gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'adaptive'
+	-gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+	-gsettings set org.gnome.desktop.calendar show-weekdate true
+	-gsettings set org.gnome.desktop.wm.preferences resize-with-right-button true
+	-gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+	-gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
+
+	# Nautilus (File Manager) Usability
+	-gsettings set org.gnome.nautilus.icon-view default-zoom-level 'standard'
+	-gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
+	-gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+	-gsettings set org.gnome.nautilus.list-view use-tree-view true
+
+	# Clock format
+	gsettings set org.gnome.desktop.interface clock-format '24h'
+
 peek: ## Install Peek (GIF Screen Recorder)
 peek:
 	sudo add-apt-repository ppa:peek-developers/stable

@@ -1,0 +1,82 @@
+---
+- name: install dconf-editor
+  become: true
+  apt:
+    name: "dconf-editor"
+    state: present
+
+# Better Font Smoothing
+- name: GNOME Preferences - Better Font Smoothing
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing"
+    value: "'rgba'"
+    state: present
+
+# Desktop Usability improvements
+- name: GNOME Preferences - Mouse Acceleration Profile
+  dconf:
+    key: "/org/gnome/desktop/peripherals/mouse/accel-profile"
+    value: "'adaptive'"
+    state: present
+
+- name: GNOME Preferences - Allow volume above 100%
+  dconf:
+    key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
+    value: "true"
+    state: present
+
+- name: GNOME Preferences - Calendar Show Weekdate
+  dconf:
+    key: "/org/gnome/desktop/calendar/show-weekdate"
+    value: "true"
+    state: present
+
+- name: GNOME Preferences - Nautilus - Clock Format
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-format"
+    value: "'24h'"
+    state: present
+
+- name: GNOME Preferences - Resize with right button
+  dconf:
+    key: "/org/gnome/desktop/wm/resize-with-right-button"
+    value: "true"
+    state: present
+
+- name: GNOME Preferences - Button Layout
+  dconf:
+    key: "/org/gnome/desktop/wm/button-layout"
+    value: "'appmenu:minimize,maximize,close'"
+    state: present
+
+# Nautilus (File Manager) Usability
+- name: GNOME Preferences - Nautilus - Default Zoom Level
+  dconf:
+    key: "/org/gnome/nautilus/icon-view/default-zoom-level"
+    value: "'standard'"
+    state: present
+
+- name: GNOME Preferences - Nautilus - Executable Text Activation
+  dconf:
+    key: "/org/gnome/nautilus/preferences/executable-text-activation"
+    value: "'ask'"
+    state: present
+
+- name: GNOME Preferences - Nautilus - Sort Directories
+  dconf:
+    key: "/org/gtk/Settings/FileChooser/sort-directories-first"
+    value: "true"
+    state: present
+
+- name: GNOME Preferences - Nautilus - User Tree View
+  dconf:
+    key: "/org/gnome/nautilus/list-view/use-tree-view"
+    value: "true"
+    state: present
+
+# Shell Overrides
+- name: GNOME Preferences - Workspaces Only on Primary
+  dconf:
+    key: "/org/gnome/shell/overrides/workspaces-only-on-primary"
+    value: "false"
+    state: present
