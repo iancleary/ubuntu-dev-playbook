@@ -48,42 +48,6 @@ github-cli: update
 	# Install package, and install required dependencies
 	sudo dpkg --skip-same-version -i /tmp/gh/gh_0.5.5_linux_amd64.deb || sudo apt-get -y --fix-broken install
 
-gnome-keybindings:  ## Configure GNOME keybindings
-gnome-keybindings:
-	## Adjust key bindings for window/application switching (default is for all of below to switch-applications)
-	### Rather change gsettings than install an extension!
-
-	# Dconf-editor for tweaking Gnome keyboard shortcuts
-	sudo apt install dconf-editor
-
-	# Window and Application switching for sane people
-	gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
-	gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
-	gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
-	gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
-
-	# Move windows and workspaces
-	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "['<Primary><Shift><Super>Down']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "['<Primary><Shift><Super>Left']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Primary><Shift><Super>Right']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "['<Primary><Shift><Super>Up']"
-
-	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Super>Down']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-last "['<Shift><Alt>End']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Shift><Alt>Left']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Shift><Alt>Right']"
-	gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Super>Up']"
-
-	# Close Windows
-	# gsettings set org.gnome.desktop.wm.keybindings close '<Super>w'
-	gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
-
-	# Launch Terminal
-	gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
-
-	# Lock Computer (screensaver)
-	gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Super>l'
-
 gnome-preferences: ## Install GNOME preferences
 gnome-preferences:
 	# Set SCP as Monospace (Code) Font

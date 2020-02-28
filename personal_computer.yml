@@ -11,4 +11,5 @@
     #- peek
     #- snaps
     #- timeshift
-    - flameshot
+    #- flameshot
+    - gnome-keybindings
