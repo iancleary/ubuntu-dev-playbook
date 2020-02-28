@@ -16,4 +16,5 @@
     #- gnome-keybindings
     #- gnome-preferences
     #- gnome-extensions
-    - nordvpn
+    #- nordvpn
+    - stacer

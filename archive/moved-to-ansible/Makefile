@@ -433,6 +433,19 @@ spotify: snap
 	sudo snap install spotify
 
 
+stacer: ## Install Stacer from Github
+stacer: update
+
+	## Download deb (1.1.0) from GitHub
+	-sudo apt remove -y stacer
+	rm -rf /tmp/stacer/
+	mkdir /tmp/stacer/
+	wget 'https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb' -P /tmp/stacer
+
+	## Install dependencies (https://askubuntu.com/a/248675/1042945)
+	# Install package, and install required dependencies
+	sudo dpkg --skip-same-version -i /tmp/stacer/stacer_1.1.0_amd64.deb || sudo apt-get -y --fix-broken install
+
 standard-notes: ## Install standard-notes as a snap
 standard-notes: snap
 	sudo snap install standard-notes
