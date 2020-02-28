@@ -1,0 +1,15 @@
+---
+- name: Evolution - remove apt packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: absent
+    autoremove: yes
+  loop:
+    - evolution-ews
+    - evolution
+
+- name: Evolution - Install Evolution (includes EWS) via Flatpak
+  flatpak:
+    name: org.gnome.Evolution
+    state: present
