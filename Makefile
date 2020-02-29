@@ -53,6 +53,10 @@ install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
 	@$(ANSIBLE)
 
+zsh:
+zsh: ## Install zsh and oh-my-zsh
+	@$(ANSIBLE) --tags="zsh"
+
 common:
 common: ## Install Common apt packages
 	@$(ANSIBLE) --tags="common"
