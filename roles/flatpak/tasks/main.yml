@@ -9,6 +9,7 @@
     - gnome-software-plugin-flatpak
 
 - name: install flatpak remote
+  become: true
   flatpak_remote:
     name: flathub
     state: present
