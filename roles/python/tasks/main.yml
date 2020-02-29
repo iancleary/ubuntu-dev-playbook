@@ -23,7 +23,7 @@
   become: true
   pip:
     name: "pip"
-    executable: /usr/local/bin/pip3.6
+    executable: /usr/local/bin/pip3
     extra_args: --user
     state: latest
 
@@ -42,7 +42,7 @@
   become: true
   pip:
     name: "{{ item }}"
-    executable: /usr/local/bin/pip3.6
+    executable: /usr/local/bin/pip3
     extra_args: --user
     state: latest
   loop:
