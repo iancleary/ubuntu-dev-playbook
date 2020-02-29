@@ -1,10 +1,11 @@
 
-- name: install cherrytree PPA
+- name: Cherrytee - Add PPA
+  become: true
   apt_repository:
     repo: ppa:giuspen/ppa
     state: present
 
-- name: install cherrytree package
+- name: Cherrytree - Install apt package
   become: true
   apt:
     name: "cherrytree"
