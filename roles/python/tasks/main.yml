@@ -23,7 +23,7 @@
   become: true
   pip:
     name: "pip"
-    executable: pip3.6
+    executable: /usr/local/bin/pip3
     extra_args: --user
     state: latest
 
@@ -77,7 +77,7 @@
   become: true
   pip:
     name: "pip"
-    executable: pip3.7
+    executable: /usr/local/bin/pip3
     extra_args: --user
     state: latest
 
