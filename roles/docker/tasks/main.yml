@@ -46,12 +46,14 @@
     state: present
 
 - name: Docker - Add your user to the group
+  become: true
   user:
     name: "{{ ansible_user }}"
     groups: ["docker"]
     append: yes
 
 - name: Docker - Start Docker on boot
+  become: true
   service:
     name: "docker"
     enabled: yes
