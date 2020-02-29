@@ -38,7 +38,7 @@ jobs:
     # - name: GNOME Preferences
     #   run: make gnome-preferences
     - name: Nordvpn
-      run: make Nordvpn
+      run: make nordvpn
     - name: Stacer
       run: make stacer
     - name: Flatpak
