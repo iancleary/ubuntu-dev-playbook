@@ -1,5 +1,6 @@
 ---
 - name: GNOME Shell Extensions - Enable universe repository 18.04
+  become: true
   apt_repository:
     repo: "{{ item }}"
   loop:
@@ -9,6 +10,7 @@
   when: ansible_distribution_version == "18.04"
 
 - name: GNOME Shell Extensions - Enable universe repository 20.04
+  become: true
   apt_repository:
     repo: "{{ item }}"
   loop:
