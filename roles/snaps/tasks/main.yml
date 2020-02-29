@@ -1,4 +1,4 @@
-
+---
 - name: Snaps - Install snapd apt dependency
   become: true
   apt:

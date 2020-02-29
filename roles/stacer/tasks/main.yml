@@ -1,3 +1,4 @@
+---
 - name: Stacer - Install Stacer deb from GitHub
   become: true
   apt:

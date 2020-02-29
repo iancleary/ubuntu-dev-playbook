@@ -1,6 +1,5 @@
 ---
-
-- name: install core packages
+- name: Common - install apt packages
   become: true
   apt:
     name: "{{ item }}"

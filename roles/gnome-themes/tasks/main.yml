@@ -1,4 +1,4 @@
-
+---
 ## GNOME Themes
 - name: install Paper Icons PPA
   apt_repository:

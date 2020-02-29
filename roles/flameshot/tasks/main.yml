@@ -1,4 +1,4 @@
-
+---
 - name: Install flameshot deb from github
   become: true
   apt:
