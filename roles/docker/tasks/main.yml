@@ -1,5 +1,5 @@
 
-- name: install Docker apt package dependencies
+- name: Docker - install apt package dependencies
   become: true
   apt:
     name: "{{ item }}"
@@ -11,13 +11,23 @@
     - gnupg-agent
     - software-properties-common
 
-- name: Add Docker's official GPG Key
+- name: Docker - Add Docker's official GPG Key
   become: true
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
-- name: install Docker CE and containerd packages
+- name: Docker - Setup Stable Repository 18.04
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+  when: ansible_distribution_version == "18.04"
+
+- name: Docker - Setup Stable Repository 20.04
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+  when: ansible_distribution_version == "20.04"
+
+- name: Docker - install Docker CE and containerd packages
   become: true
   apt:
     name: "{{ item }}"
@@ -28,18 +38,18 @@
     - docker-ce-cli
     - containerd.io
 
-- name: Create the docker group
+- name: Docker - Create the docker group
   group:
     name: docker
     state: present
 
-- name: Add your user to the group
+- name: Docker - Add your user to the group
   user:
     name: "{{ ansible_user }}"
     groups: ["docker"]
     append: yes
 
-- name: Start Docker on boot
+- name: Docker - Start Docker on boot
   service:
     name: "docker"
     enabled: yes
