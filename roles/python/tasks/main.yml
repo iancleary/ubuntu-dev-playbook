@@ -20,6 +20,7 @@
     - python3-venv
 
 - name: Python3.6 upgrade pip to latest
+  become: true
   pip:
     name: "pip"
     executable: pip3.6
@@ -27,6 +28,7 @@
     state: latest
 
 - name: Python3.6 upgrade core packages to latest
+  become: true
   pip:
     name: "{{ item }}"
     executable: pip3.6
@@ -37,6 +39,7 @@
     - setuptools
 
 - name: Python3.6 install helper packages
+  become: true
   pip:
     name: "{{ item }}"
     executable: pip3.6
@@ -71,6 +74,7 @@
     - python3-venv
 
 - name: Python3.7 upgrade pip to latest
+  become: true
   pip:
     name: "pip"
     executable: pip3.7
@@ -78,6 +82,7 @@
     state: latest
 
 - name: Python3.7 upgrade core packages to latest
+  become: true
   pip:
     name: "{{ item }}"
     executable: pip3.7
@@ -88,6 +93,7 @@
     - setuptools
 
 - name: Python3.7 install helper packages
+  become: true
   pip:
     name: "{{ item }}"
     executable: pip3.7
