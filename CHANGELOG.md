@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- moved to Ansible for the backend 
+- added GNOME Evolution, using Flatpak
+- added LibreOffice, using Flatpak
+
+### Removed
+
+- have yet to port (TBD if will port all)
+  - docker-compose, custom gnome-extensions, gnome-themes, nodejs, yarn, tresorit, unifi-controlled
+
+## [0.4.0]
+
 - Added TickTick Native App using [nativefier](https://github.com/jiahaog/nativefier)
 - Added [Yet Another Dotfile Manager](https://yadm.io)
 - Flameshot: download and install 0.6.0 deb from Github (apt installs 0.5.1-2 at time of writing)
@@ -74,7 +85,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.4.0
 [0.3.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.3.0
 [0.2.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.2.0
 [0.1.1]: https://github.com/iancleary/install-scripts/releases/tag/v0.1.1
