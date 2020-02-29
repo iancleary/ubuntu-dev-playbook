@@ -29,14 +29,14 @@ jobs:
       run: make flameshot
     - name: GitHub CLI
       run: make github-cli
-    - name: GNOME Extensions
-      run: make gnome-extensions
-    - name: GNOME Keybindings
-      run: make gnome-keybindings
-    - name: GNOME Themes
-      run: make gnome-themes
-    - name: GNOME Preferences
-      run: make gnome-preferences
+    # - name: GNOME Extensions
+    #   run: make gnome-extensions
+    # - name: GNOME Keybindings
+    #   run: make gnome-keybindings
+    # - name: GNOME Themes
+    #   run: make gnome-themes
+    # - name: GNOME Preferences
+    #   run: make gnome-preferences
     - name: Nordvpn
       run: make Nordvpn
     - name: Stacer
