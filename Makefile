@@ -17,7 +17,7 @@ ANSIBLE=ansible-playbook --connection=local --inventory=127.0.0.1, personal_comp
 help:
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 # adds anything that has a double # comment to the phony help list
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 
 bootstrap:
