@@ -17,8 +17,8 @@ jobs:
       run: make cherrytree
     - name: Docker
       run: make docker
-    - name: Python
-      run: make python
+    # - name: Python
+    #   run: make python
     - name: Snaps
       run: make snaps
     - name: Peek
