@@ -1,5 +1,6 @@
 ---
 - name: Steam - Installs Steam via Flatpak
+  become: true
   flatpak:
     name: com.valvesoftware.Steam
     state: present
