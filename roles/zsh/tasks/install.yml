@@ -1,5 +1,5 @@
 ---
-- name: install zsh dependencies
+- name: Zsh - install apt dependencies
   become: yes
   apt:
     name: "{{ item }}"
@@ -8,7 +8,7 @@
     - git
     - zsh
 
-- name: clone oh-my-zsh
+- name: Zsh - clone oh-my-zsh
   tags:
     # Suppress warning: [ANSIBLE0006] git used in place of git module
     # Git module doesn't allow us to set `core.autocrlf=input`.
@@ -21,7 +21,7 @@
     chdir: '~{{ ansible_user }}'
     creates: '~{{ ansible_user }}/.oh-my-zsh'
 
-- name: set permissions of oh-my-zsh
+- name: Zsh - set permissions of oh-my-zsh
   become: yes
   file:
     path: '~{{ ansible_user }}/.oh-my-zsh'
@@ -31,13 +31,13 @@
     mode: 'go-w'
     recurse: yes
 
-- name: set default shell
+- name: Zsh - set default shell
   become: yes
   user:
     name: '{{ ansible_user }}'
     shell: /bin/zsh
 
-- name: write .zshrc
+- name: Zsh - write .zshrc
   become: yes
   become_user: '{{ ansible_user}}'
   template:

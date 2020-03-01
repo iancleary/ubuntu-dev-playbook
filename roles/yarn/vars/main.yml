@@ -1,0 +1,21 @@
+---
+# Set the version of Node.js to install (8.x", "10.x", "12.x", "13.x", etc.).
+# Version numbers from Nodesource: https://github.com/nodesource/distributions
+nodejs_version: "12.x"
+
+yarn_config_prefix: "/usr/local/lib/yarn"
+
+# Define a list of global packages to be installed with NPM.
+# nodejs_yarn_global_packages: []
+#  # Install a specific version of a package.
+#  - name: jslint
+#    version: 0.9.3
+#  # Install the latest stable release of a package.
+#  - name: node-sass
+#  # This shorthand syntax also works (same as previous example).
+#  - node-sass
+
+nodejs_yarn_global_packages:
+  - name: "@vue/cli"
+  - name: "@gridsome/cli"
+#  - name: "nativefier"

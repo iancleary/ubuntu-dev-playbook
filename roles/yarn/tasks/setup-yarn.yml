@@ -1,0 +1,24 @@
+---
+- name: Yarn - Add Yarn's official GPG Key
+  become: true
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    state: present
+
+- name: Yarn - Setup Stable Repository
+  become: true
+  apt_repository:
+    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
+  register: yarn_repo
+
+- name: Yarn - Update apt cache if repo was added.
+  become: true
+  apt: update_cache=yes
+  when: yarn_repo.changed
+  tags: ['skip_ansible_lint']
+
+- name: Yarn - Install apt package
+  become: true
+  apt:
+    name: "yarn"
+    state: present

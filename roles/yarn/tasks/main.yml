@@ -1,0 +1,34 @@
+---
+- import_tasks: setup-nodejs-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- import_tasks: setup-yarn.yml
+
+- name: Nodejs - Define nodejs_install_user
+  set_fact:
+    nodejs_install_user: "{{ ansible_user | default(lookup('env', 'USER')) }}"
+  when: nodejs_install_user is not defined
+
+- name: Yarn - Create yarn global directory
+  become: true
+  file:
+    path: "{{ yarn_config_prefix }}"
+    owner: "{{ nodejs_install_user }}"
+    group: "{{ nodejs_install_user }}"
+    state: directory
+
+- name: Yarn - Add yarn_config_prefix bin directory to global $PATH.
+  become: true
+  template:
+    src: yarn.sh.j2
+    dest: /etc/profile.d/yarn.sh
+    mode: 0644
+
+- name: Yarn - Ensure Yarn global packages are installed.
+  yarn:
+    name: "{{ item.name | default(item) }}"
+    version: "{{ item.version | default('latest') }}"
+    global: yes
+    state: latest
+  loop: "{{ nodejs_yarn_global_packages }}"
+  tags: ['skip_ansible_lint']
