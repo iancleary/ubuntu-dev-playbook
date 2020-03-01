@@ -11,9 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- moved to Ansible for the backend 
-- added GNOME Evolution, using Flatpak
-- added LibreOffice, using Flatpak
+- Moved to Ansible for the backend 
+- Added GNOME Evolution, using Flatpak
+- Added LibreOffice, using Flatpak
+- Added ZSH installation, custom zshrc template 
 
 ### Removed
 
