@@ -48,7 +48,7 @@ jobs:
     - name: evolution
       run: make evolution
     - name: LibreOffice
-      run: make librefoffice
+      run: make libreoffice
     
     # - name: Yet Another Dotfile Manager
     #   run: make yadm
