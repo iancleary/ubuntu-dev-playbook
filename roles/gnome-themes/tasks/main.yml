@@ -1,6 +1,7 @@
 ---
 ## GNOME Themes
 - name: install Paper Icons PPA
+  become: true
   apt_repository:
     repo: ppa:snwh/ppa
     state: present
