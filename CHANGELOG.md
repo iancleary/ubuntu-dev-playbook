@@ -7,19 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.4.0]
+## [1.0.0]
 
 ### Added
 
 - Moved to Ansible for the backend 
 - Added GNOME Evolution, using Flatpak
 - Added LibreOffice, using Flatpak
+- Added GNOME theme, icon, cursor installation
 - Added ZSH installation, custom zshrc template 
+- Added Yarn (and Nodejs)
 
 ### Removed
 
 - have yet to port (TBD if will port all)
-  - docker-compose, custom gnome-extensions, gnome-themes, nodejs, yarn, tresorit, unifi-controlled
+  - docker-compose, custom gnome-extensions, tresorit, unifi-controller
 
 ## [0.4.0]
 

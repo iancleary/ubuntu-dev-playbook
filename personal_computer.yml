@@ -6,6 +6,7 @@
     - {role: cherrytree, tags: ['cherrytree']}
     - {role: docker, tags: ['docker']}
     #- {role: python, tags: ['python']}
+    - {role: yarn, tags: ['nodejs', 'yarn']}
     - {role: snaps, tags: ['snaps']}
     - {role: peek, tags: ['peek']}
     - {role: timeshift, tags: ['timeshift']}
