@@ -147,5 +147,13 @@ libreoffice:
 libreoffice: ## Install LibreOffice Office Suite, using Flatpak
 	@$(ANSIBLE) --tags="libreoffice"
 
+yarn:
+yarn: ## Installs Yarn (and Nodejs)
+
+	# editing your ~/.bashrc, ~/.zshrc for yarn globals is firm requirement for the last task
+	## Yarn Globals
+	# export PATH="$$HOME/.yarn/bin:$$PATH"
+
+	@$(ANSIBLE) --tags="yarn"
 
 .DEFAULT_GOAL := help
