@@ -5,8 +5,7 @@
     - {role: common, tags: ['common']}
     - {role: cherrytree, tags: ['cherrytree']}
     - {role: docker, tags: ['docker']}
-    ## - install-docker ## This removes docker and should be renamed
-    - {role: python, tags: ['python']}
+    #- {role: python, tags: ['python']}
     - {role: snaps, tags: ['snaps']}
     - {role: peek, tags: ['peek']}
     - {role: timeshift, tags: ['timeshift']}
