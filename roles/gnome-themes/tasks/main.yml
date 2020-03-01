@@ -1,12 +1,12 @@
 ---
 ## GNOME Themes
-- name: install Paper Icons PPA
+- name: GNOME Themes - install Paper Icons PPA
   become: true
   apt_repository:
     repo: ppa:snwh/ppa
     state: present
 
-- name: install paper theme packages
+- name: GNOME Themes - install paper theme packages
   become: true
   apt:
     name: "{{ item }}"
@@ -15,7 +15,7 @@
   loop:
     - paper-icon-theme
 
-- name: install dconf ansible module dependencies
+- name: GNOME Themes - install dconf ansible module dependencies
   become: true
   apt:
     name: "{{ item }}"
@@ -25,13 +25,13 @@
     - dbus
     - dconf-editor
 
-- name: Configure cursor theme in Gnome
+- name: Configure cursor theme in GNOME
   dconf:
     key: "/org/gnome/desktop/interface/cursor-theme"
     value: "'Paper'"
     state: present
 
-- name: Configure icon theme in Gnome
+- name: GNOME Themes - Configure icon theme in Gnome
   dconf:
     key: "/org/gnome/desktop/interface/icon-theme"
     value: "'Paper'"
@@ -39,7 +39,7 @@
 
 ## vimix-gtk-themes
 
-- name: install vimix-gtk-theme dependencies
+- name: GNOME Themes - install vimix-gtk-theme dependencies
   become: true
   apt:
     name: "{{ item }}"
@@ -49,10 +49,34 @@
     - gtk2-engines-murrine
     - gtk2-engines-pixbuf
 
+- name: GNOME Themes - Clone Vimix Github Repo
+  become: true
+  become_user: '{{ ansible_user }}'
+  git:
+    repo: https://github.com/vinceliuice/vimix-gtk-themes/
+    depth: 1
+    dest: /tmp/vimix-gtk-themes
+
+- name: GNOME Themes - Install Vimix GTK Themes
+  become: true
+  become_user: '{{ ansible_user }}'
+  command: 'bash /tmp/vimix-gtk-themes/install.sh'
+
+- name: GNOME Themes - Set GTK Theme
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'vimix-laptop-beryl'"
+    state: present
+
+- name: GNOME Themes - Set User Shell Theme
+  dconf:
+    key: "/org/gnome/shell/extensions/user-theme/name"
+    value: "'vimix-laptop-beryl'"
+    state: present
 
 ## Gnome extras
 
-- name: install gtk-3-examples (gtk3-icon-browser)
+- name: GNOME Themes - install gtk-3-examples (gtk3-icon-browser)
   become: true
   apt:
     name: "{{ item }}"
