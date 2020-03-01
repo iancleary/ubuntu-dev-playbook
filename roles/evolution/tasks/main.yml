@@ -10,6 +10,7 @@
     - evolution
 
 - name: Evolution - Install Evolution (includes EWS) via Flatpak
+  become: true
   flatpak:
     name: org.gnome.Evolution
     state: present
