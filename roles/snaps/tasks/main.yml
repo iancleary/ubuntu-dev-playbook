@@ -35,5 +35,6 @@
     name: "{{item}}"
     classic: yes
   loop:
+    - "code"
     - "slack"
     - "sublime-text"
