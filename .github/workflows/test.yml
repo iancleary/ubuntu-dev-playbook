@@ -9,41 +9,61 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Stacer install
-      run: make stacer
-    - name: Timeshift install
-      run: make timeshift
-    - name: GitHub CLI install
-      run: make github-cli
-    - name: Flameshot install
-      run: make flameshot-install
-    - name: Docker install
-      run: make docker
-    - name: Docker-compose install
-      run: make docker-compose
-    - name: Python 3.6 install
-      run: make python-three-six-install
-    - name: Python 3.6 supporting
-      run: make python-three-six-supporting
-    - name: Python 3.7 install
-      run: make python-three-seven-install
-    - name: Python 3.7 supporting
-      run: make python-three-seven-supporting
-    - name: Yet Another Dotfile Manager
-      run: make yadm
-    - name: Yarn (and Nodejs)
-      run: make yarn
-    - name: Yarn Globals
-      run: make yarn-globals
-    - name: Snap Installs
-      run: |
-        make code
-        make chromium
-        make postman
-        make secure-comms
-        make slack
-        make spotify
-        make sublime-text
-        make standard-notes
     - name: Zsh and oh-my-zsh
       run: make zsh
+    - name: Common
+      run: make common
+    - name: Cherrytree
+      run: make cherrytree
+    - name: Docker
+      run: make docker
+    # - name: Python
+    #   run: make python
+    - name: Snaps
+      run: make snaps
+    - name: Peek
+      run: make peek
+    - name: Timeshift
+      run: make timeshift
+    - name: Flameshot
+      run: make flameshot
+    - name: GitHub CLI
+      run: make github-cli
+    # - name: GNOME Extensions
+    #   run: make gnome-extensions
+    # - name: GNOME Keybindings
+    #   run: make gnome-keybindings
+    # - name: GNOME Themes
+    #   run: make gnome-themes
+    # - name: GNOME Preferences
+    #   run: make gnome-preferences
+    - name: Nordvpn
+      run: make nordvpn
+    - name: Stacer
+      run: make stacer
+    - name: Flatpak
+      run: make flatpak
+    - name: Steam
+      run: make steam
+    - name: evolution
+      run: make evolution
+    - name: LibreOffice
+      run: make libreoffice
+    
+    # - name: Yet Another Dotfile Manager
+    #   run: make yadm
+    # - name: Yarn (and Nodejs)
+    #   run: make yarn
+    # - name: Yarn Globals
+    #   run: make yarn-globals
+    # - name: Snap Installs
+    #   run: |
+    #     make code
+    #     make chromium
+    #     make postman
+    #     make secure-comms
+    #     make slack
+    #     make spotify
+    #     make sublime-text
+    #     make standard-notes
+    

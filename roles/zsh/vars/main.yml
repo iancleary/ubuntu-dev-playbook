@@ -1,0 +1,8 @@
+theme: robbyrussell
+plugins:
+  - ansible
+  - aws
+  - docker
+  - docker-compose
+  - git
+  - pipenv

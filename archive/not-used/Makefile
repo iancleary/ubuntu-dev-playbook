@@ -38,6 +38,17 @@ brave:
 
 	sudo apt install brave-browser
 
+gnome-firefox-theme: ## Install GNOME Firefox theme
+gnome-firefox-theme:
+	################################################
+	# Install gnome firefox theme
+	# https://github.com/rafaelmardojai/firefox-gnome-theme
+	# Updating gnome firefox theme
+	# https://github.com/rafaelmardojai/firefox-gnome-theme#updating
+	###############################################
+	git clone git@github.com:rafaelmardojai/firefox-gnome-theme.git /tmp/firefox-gnome-theme && cd /tmp/firefox-gnome-theme
+	bash /tmp/firefox-gnome-theme/scripts/install.sh -g
+
 icloud-for-linux: ## Installs icloud-for-linux snap
 icloud-for-linux: snap
 	sudo snap install icloud-for-linux

@@ -1,0 +1,10 @@
+---
+- name: Common - install apt packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - make
+    - yadm ## Yet Another Dotfile Manager (yadm.io)

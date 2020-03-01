@@ -1,0 +1,23 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - {role: zsh, tags: ['zsh']}
+    - {role: common, tags: ['common']}
+    - {role: cherrytree, tags: ['cherrytree']}
+    - {role: docker, tags: ['docker']}
+    #- {role: python, tags: ['python']}
+    - {role: snaps, tags: ['snaps']}
+    - {role: peek, tags: ['peek']}
+    - {role: timeshift, tags: ['timeshift']}
+    - {role: flameshot, tags: ['flameshot']}
+    - {role: github-cli, tags: ['github-cli']}
+    - {role: gnome-extensions, tags: ['gnome-extensions']}
+    - {role: gnome-keybindings, tags: ['gnome-keybindings']}
+    - {role: gnome-themes, tags: ['gnome-themes']}
+    - {role: gnome-preferences, tags: ['gnome-preferences']}
+    - {role: nordvpn, tags: ['nordvpn']}
+    - {role: stacer, tags: ['stacer']}
+    - {role: flatpak, tags: ['flatpak']}
+    - {role: steam, tags: ['steam']}
+    - {role: evolution, tags: ['evolution']}
+    - {role: libreoffice, tags: ['libreoffice']}

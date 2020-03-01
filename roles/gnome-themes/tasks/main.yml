@@ -1,0 +1,61 @@
+---
+## GNOME Themes
+- name: install Paper Icons PPA
+  become: true
+  apt_repository:
+    repo: ppa:snwh/ppa
+    state: present
+
+- name: install paper theme packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - paper-icon-theme
+
+- name: install dconf ansible module dependencies
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - dbus
+    - dconf-editor
+
+- name: Configure cursor theme in Gnome
+  dconf:
+    key: "/org/gnome/desktop/interface/cursor-theme"
+    value: "'Paper'"
+    state: present
+
+- name: Configure icon theme in Gnome
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'Paper'"
+    state: present
+
+## vimix-gtk-themes
+
+- name: install vimix-gtk-theme dependencies
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - gtk2-engines-murrine
+    - gtk2-engines-pixbuf
+
+
+## Gnome extras
+
+- name: install gtk-3-examples (gtk3-icon-browser)
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - gtk-3-examples

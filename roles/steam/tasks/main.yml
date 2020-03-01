@@ -1,0 +1,8 @@
+---
+- name: Steam - Installs Steam via Flatpak
+  become: true
+  flatpak:
+    name: com.valvesoftware.Steam
+    state: present
+
+# Installed but not displayed? Check with: flatpak run com.valvesoftware.Steam

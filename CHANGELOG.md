@@ -11,6 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- moved to Ansible for the backend 
+- added GNOME Evolution, using Flatpak
+- added LibreOffice, using Flatpak
+
+### Removed
+
+- have yet to port (TBD if will port all)
+  - docker-compose, custom gnome-extensions, gnome-themes, nodejs, yarn, tresorit, unifi-controlled
+
+## [0.4.0]
+
 - Added TickTick Native App using [nativefier](https://github.com/jiahaog/nativefier)
 - Added [Yet Another Dotfile Manager](https://yadm.io)
 - Flameshot: download and install 0.6.0 deb from Github (apt installs 0.5.1-2 at time of writing)
