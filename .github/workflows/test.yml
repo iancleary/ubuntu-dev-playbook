@@ -26,7 +26,7 @@ jobs:
     - name: Timeshift
       run: make timeshift
     - name: Flameshot
-     run: make flameshot
+      run: make flameshot
     - name: GitHub CLI
       run: make github-cli
     # - name: GNOME Extensions
