@@ -32,17 +32,30 @@ bootstrap: ## Installs dependencies needed to run playbook
 	sudo apt -y autoremove
 
 	# Make for ease of use, python-apt for --check ansible flag
-	sudo apt-get install -y make python-apt python3-apt
+	sudo apt-get install -y make python-apt python-pip python3-apt python3-pip
 
 	## Install latest Ansible (snap is only in Ansible >= 2.8)
 	sudo apt update
 	sudo apt install -y software-properties-common
-	python3 -m pip install --user ansible
-	python3 -m pip install --user psutil # for dconf ansible module
-	#-python -m pip install psutil # for dconf ansible module
+
+	# This plays nicer when not --user installed
+	python3 -m pip install ansible
+	python3 -m pip install psutil # for dconf ansible module
+
+
+	@echo ""
+	@echo ""
+	@echo ""
+	@echo "Update ~/.bashrc with the following, uncomment export line"
+	# Python Path
+	# export PATH="$$HOME/.local/bin:$$PATH"
+	@echo ""
+
+bootstrap-check:
+bootstrap-check: ## Check Boostrap and ~/.bashrc, ~/.zshrc setup
+
 	ansible --version | grep "python version"
 	python3 -m pip list | grep psutil
-	#-python -m pip list | grep psutil
 
 check: DARGS?=
 check: ## Checks personal-computer.yml playbook
