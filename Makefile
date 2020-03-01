@@ -129,7 +129,7 @@ nordvpn: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 
 stacer:
 stacer: ## Install Stacer (Material System Utility)
-	@$(ANSIBLE) --tags="stacer
+	@$(ANSIBLE) --tags="stacer"
 
 flatpak:
 flatpak: ## Install Peek (GIF Screen Recorder) using a PPA and apt
