@@ -110,6 +110,18 @@ docker-start-on-boot: ## Start docker on boot
 docker-start-on-boot:
 	sudo systemctl enable docker
 
+docker-compose: ## Install Docker Compose
+docker-compose:
+
+	# Run this command to download the current stable release of Docker Compose:
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(shell uname -s)-$(shell uname -m)" -o /usr/local/bin/docker-compose
+
+	# Apply executable permissions to the binary:
+	sudo chmod +x /usr/local/bin/docker-compose
+
+	# Test the installation
+	docker-compose --version
+
 flameshot-install: ## Install Flameshot
 flameshot-install: update
 

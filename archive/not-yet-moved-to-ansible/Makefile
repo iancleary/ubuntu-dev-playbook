@@ -15,18 +15,6 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-docker-compose: ## Install Docker Compose
-docker-compose:
-
-	# Run this command to download the current stable release of Docker Compose:
-	sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(shell uname -s)-$(shell uname -m)" -o /usr/local/bin/docker-compose
-
-	# Apply executable permissions to the binary:
-	sudo chmod +x /usr/local/bin/docker-compose
-
-	# Test the installation
-	docker-compose --version
-
 gnome-extensions: ## Install GNOME extensions
 gnome-extensions:
 
