@@ -281,6 +281,12 @@ gnome-preferences:
 	# Clock format
 	gsettings set org.gnome.desktop.interface clock-format '24h'
 
+nodejs: ## Install node.js
+nodejs:
+	# Using Ubuntu
+	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+	sudo apt-get install -y nodejs
+
 nordvpn: ## install nordvpn
 nordvpn:
 	curl -o /tmp/nordvpn-release_1.0.0_all.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
@@ -469,6 +475,35 @@ timeshift: update
 yadm:
 yadm:
 	sudo apt-get install -y yadm
+
+
+yarn: ## Install node.js and yarn
+yarn: update nodejs
+
+	################################################
+	# Install Yarn
+	# https://yarnpkg.com/en/docs/install#debian-stable
+	###############################################
+	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+	@echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+	sudo apt-get update && sudo apt-get install yarn
+
+yarn-globals: ## Install Vue, Gridsome, and Nativefier CLIs
+yarn-globals:
+	yarn --version
+	## Add the next two lines, without the comment, to your .bashrc (.zshrc, etc.) file
+	# export PATH="$$PATH:/opt/yarn-$(shell yarn --version)/bin"
+	# export PATH="$$(yarn global bin):$$PATH"
+	## source it and run again
+
+	#yarn global remove @vue/cli
+	yarn global add @vue/cli
+	# yarn global remove @gridsome/cli
+	yarn global add @gridsome/cli
+
+	# https://github.com/jiahaog/nativefier
+	yarn global add nativefier
+
 
 zsh: ## Install zsh and oh-my-zsh, instructions to change shell to zsh
 zsh: update
