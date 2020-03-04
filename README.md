@@ -66,11 +66,9 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 
 ## Getting Started with this repo
 
-First thing is to install Ansible with Python3.
+The [Makefile](Makefile) is the entry point.
 
-### Installing Ansible with Python3
-
-The Makefile is used a common staring point.
+For a new machine or to ensure I am consistent with my playbook, I run the following bash command:
 
 ```bash
 make all
@@ -81,11 +79,15 @@ This target runs three other targets in series:
 * `bootstrap-check`
 * `install`
 
-#### Make bootstrap
+Let's go through each.
+
+### Make bootstrap
 
 This installs several packages with `apt` and python packages per the [requirements.txt](requirements.txt) file.
 
-#### Make bootstrap-check
+> This includes Ansible, using Python3.
+
+### Make bootstrap-check
 
 This is to confirm both the `ansible` and `psutil` Python3 packages are installed and on the `$PATH`.
 
@@ -96,11 +98,11 @@ This is to confirm both the `ansible` and `psutil` Python3 packages are installe
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-#### Make install
+### Make install
 
 This runs the `personal_computer.yml` Ansible playbook.
 
-These two are more or less equivalent
+The following two commands yield the same bash command:
 
 ```bash
 make install
@@ -112,7 +114,7 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
 
 > Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
 
-### Naming Convention for Make Targets
+## Naming Convention for Make Targets
 
 > `make check` and `make install` are two of the standard  [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html) for this repo.
 
@@ -126,6 +128,20 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
   - This is drives the `psutil` Python3 requirement
 * [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
   - This drives the ansible >=2.8.0 requirement
+
+## One off Commands
+
+You have two options.  
+
+`Make <target>`, replacing *<target>* with what you want.  This runs the install for that tag only.
+
+If you want to run a check first or run select tags, you can use:
+
+```bash
+ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --tags="common,zsh,cherrytree,flameshot,stacer"
+```
+
+> Note: those are also some of my favorites!
 
 
 ---
@@ -145,7 +161,9 @@ I benefited from the source work of others, see [AUTHORS.md](AUTHORS.md).
 
 ---
 
-### Syntax Notes
+## Syntax Notes
+
+For reference:
 
 [Loop syntax reference](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html)
 
