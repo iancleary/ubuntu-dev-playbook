@@ -2,11 +2,11 @@
 
 ![CI Badge](https://github.com/iancleary/personal-ansible/workflows/CI/badge.svg)
 
-## Personal Ansible Playbook to configure my laptops and desktops.
+## Personal Ansible Playbook to configure my laptops and desktops
 
 I care about not having to think too much about my setup between machines, especially when I want to get right to work.  For that reason, it is very comfortable for me to have the same base configuration on each machine (look, feel, keyboard shortcuts, core software, etc.).
 
-### My journey to the current state of this repo:
+### My journey to the current state of this repo
 
 * I found a cool bash script on the internet (*I didn't understand most of it*) 🤷
 * I modified cool bash script for my needs and it worked! 🚀
@@ -17,13 +17,11 @@ I care about not having to think too much about my setup between machines, espec
 * I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
 * I finally took the plunge and decided to use ansible for my configuration. ✔️
 
-
 ## Core Software
 
 This isn't exactly the list of Ansible roles, but below is a list of what the software installs.
 
 > Note: the ~~crossed out~~ out items haven't been ported over from the previous Makefiles.
-
 
 * `ansible`,
 * `cherrytree`,
@@ -60,7 +58,7 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 
 ### Configuration
 
-* The `gnome-*` Ansible roles configure GNOME keybindings and personal preferences. 
+* The `gnome-*` Ansible roles configure GNOME keybindings and personal preferences.
 
 ---
 
@@ -75,6 +73,7 @@ make all
 ```
 
 This target runs three other targets in series:
+
 * `bootstrap`
 * `bootstrap-check`
 * `install`
@@ -118,34 +117,38 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
 
 > `make check` and `make install` are two of the standard  [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html) for this repo.
 
-----
+---
 
-## Requirements.txt 
+## Requirements.txt
 
  Notable Ansible Modules Used with regards to dependencies
 
 * [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
-  - This is drives the `psutil` Python3 requirement
+  * This is drives the `psutil` Python3 requirement
 * [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
-  - This drives the ansible >=2.8.0 requirement
+  * This drives the ansible >=2.8.0 requirement
 
 ## One off Commands
 
-You have two options.  
+You have two options.
 
-`Make <target>`, replacing *<target>* with what you want.  This runs the install for that tag only.
+`Make {target}`, replacing *{target}* with what you want.  This runs the install for that tag only.
 
 If you want to run a check first or run select tags, you can use:
 
 ### Only certain tags
+
 ```bash
 ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --tags="common,zsh,cherrytree,flameshot,stacer"
 ```
 
 ### Check
+
 ```bash
 ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --check
 ```
+
+> Note: Any check against a role that has an `apt_repository` task (that has not been installed yet) will fail to find the corresponding package in the subsequent `apt` task.
 
 ---
 
@@ -160,7 +163,6 @@ See [CHANGELOG](CHANGELOG.md) for history.
 I benefited from the source work of others, see [AUTHORS.md](AUTHORS.md).
 
 > My choice to open source my work here is to share back with you.
-
 
 ---
 
