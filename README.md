@@ -137,8 +137,14 @@ You have two options.
 
 If you want to run a check first or run select tags, you can use:
 
+### Only certain tags
 ```bash
 ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --tags="common,zsh,cherrytree,flameshot,stacer"
+```
+
+### Check
+```bash
+ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --check
 ```
 
 > Note: those are also some of my favorites!
