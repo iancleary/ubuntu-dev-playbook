@@ -147,9 +147,6 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
 ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --check
 ```
 
-> Note: those are also some of my favorites!
-
-
 ---
 
 ## Changes
