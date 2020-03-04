@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: local
   connection: local
   roles:
     - {role: zsh, tags: ['zsh']}
@@ -16,7 +16,9 @@
     - {role: gnome-keybindings, tags: ['gnome-keybindings']}
     - {role: gnome-themes, tags: ['gnome-themes']}
     - {role: gnome-preferences, tags: ['gnome-preferences']}
-    - {role: nordvpn, tags: ['nordvpn']}
+    - {role: nordvpn, tags: ['nordvpn'],
+       when: "'xps' in ansible_hostname or 'desktop' in ansible_hostname"
+      }
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
     - {role: steam, tags: ['steam']}

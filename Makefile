@@ -8,8 +8,8 @@ SHELL:=bash
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
 # Main Ansible Playbook Command
-## if used with bash, outside Makefile, remove the change 'S(shell whoami)' to '$(whoami)'
-ANSIBLE=ansible-playbook --connection=local --inventory=127.0.0.1, personal_computer.yml --ask-become-pass -e 'ansible_user='$(shell whoami)
+ANSIBLE=ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
+
 
 # - to suppress if it doesn't exist
 -include make.env
@@ -39,9 +39,7 @@ bootstrap: ## Installs dependencies needed to run playbook
 	sudo apt install -y software-properties-common
 
 	# This plays nicer when not --user installed
-	python3 -m pip install ansible
-	python3 -m pip install psutil # for dconf ansible module
-
+	python3 -m pip install -r requirements.txt
 
 	@echo ""
 	@echo ""
@@ -59,12 +57,14 @@ bootstrap-check: ## Check Boostrap and ~/.bashrc, ~/.zshrc setup
 
 check: DARGS?=
 check: ## Checks personal-computer.yml playbook
-	#@ansible-playbook --connection=local --inventory=127.0.0.1, personal_computer.yml --check --ask-become-pass -e 'ansible_user='$(whoami)
 	@$(ANSIBLE) --check
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
 	@$(ANSIBLE)
+
+all: ## Does eveything
+all: bootstrap bootstrap-check install
 
 zsh:
 zsh: ## Install zsh and oh-my-zsh
@@ -149,11 +149,7 @@ libreoffice: ## Install LibreOffice Office Suite, using Flatpak
 
 yarn:
 yarn: ## Installs Yarn (and Nodejs)
-
-	# editing your ~/.bashrc, ~/.zshrc for yarn globals is firm requirement for the last task
-	## Yarn Globals
-	# export PATH="$$HOME/.yarn/bin:$$PATH"
-
+	# This role takes care of $$PATH
 	@$(ANSIBLE) --tags="yarn"
 
 .DEFAULT_GOAL := help

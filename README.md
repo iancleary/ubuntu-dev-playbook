@@ -1,10 +1,29 @@
-# install-scripts
+# personal-ansible
 
-![CI Badge](https://github.com/iancleary/install-scripts/workflows/CI/badge.svg)
+![CI Badge](https://github.com/iancleary/personal-ansible/workflows/CI/badge.svg)
 
-## Personal Makefile to install common packages on Ubuntu based distributions
+## Personal Ansible Playbook to configure my laptops and desktops.
 
-### Install Core Software
+I care about not having to think too much about my setup between machines, especially when I want to get right to work.  For that reason, it is very comfortable for me to have the same base configuration on each machine (look, feel, keyboard shortcuts, core software, etc.).
+
+### My journey to the current state of this repo:
+
+* I found a cool bash script on the internet (*I didn't understand most of it*) 🤷
+* I modified cool bash script for my needs and it worked! 🚀
+* I learned about Makefiles. 😄
+* I proceeded to do everything with Makefiles. 🤩🤩🤩
+* I got tired of running successive Make targets over and again 😐.
+* I used ansible at work and decided to take a course to learn more about it. 🤓
+* I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
+* I finally took the plunge and decided to use ansible for my configuration. ✔️
+
+
+## Core Software
+
+This isn't exactly the list of Ansible roles, but below is a list of what the software installs.
+
+> Note: the ~~crossed out~~ out items haven't been ported over from the previous Makefiles.
+
 
 * `ansible`,
 * `cherrytree`,
@@ -14,14 +33,14 @@
 * `docker-compose`,
 * `flameshot`,
 * `Flatpak`,
-* `gh` GitHub CLI <https://github.com/cli/cli#installation-and-upgrading>
+* `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `Nordvpn`,
 * `nodejs`,
 * `Peek`,
 * `postman`,
-* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
-* `python3.6`,
-* `python3.7`,
+* ~~`Protonmail-bridge` <https://protonmail.com/bridge/install>~~,
+* ~~`python3.6`~~,
+* ~~`python3.7`~~,
 * `Signal Desktop`,
 * `Slack`,
 * `Snap`,
@@ -31,65 +50,100 @@
 * `Steam`,
 * `Sublime Text`,
 * `Telegram`,
-* `TickTick`,
+* ~~`TickTick`~~,
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
-* `Tresorit`,
+* ~~`Tresorit`~~,
 * `yarn`,
 * `zsh`
 
+> See the [archive](archive) folder for deleted/old targets.
+
 ### Configuration
 
-* Configure GNOME keybindings and personal preferences
-* Install GNOME themes from [tliron/install-gnome-themes](https://github.com/tliron/install-gnome-themes)
+* The `gnome-*` Ansible roles configure GNOME keybindings and personal preferences. 
 
-### GNOME Extensions
+---
 
-#### Caffeine-plus
+## Getting Started with this repo
+
+First thing is to install Ansible with Python3.
+
+### Installing Ansible with Python3
+
+The Makefile is used a common staring point.
 
 ```bash
-# Install Caffeine-Plus
-git clone git://github.com/qunxyz/gnome-shell-extension-caffeine.git
-cd gnome-shell-extension-caffeine
-bash build.sh
-cp -r caffeine-plus@patapon.info ~/.local/share/gnome-shell/extensions
-## Restart the shell (ALT+F2, r, ENTER) and then enable the extension.
+make all
 ```
 
-### Changes
+This target runs three other targets in series:
+* `bootstrap`
+* `bootstrap-check`
+* `install`
+
+#### Make bootstrap
+
+This installs several packages with `apt` and python packages per the [requirements.txt](requirements.txt) file.
+
+#### Make bootstrap-check
+
+This is to confirm both the `ansible` and `psutil` Python3 packages are installed and on the `$PATH`.
+
+> If the pip installation puts the packages in `--user`, you will need to update your ~/.bashrc, ~/.zshrc file.
+
+```bash
+# ~/.bashrc or ~/.zshrc, etc.
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+#### Make install
+
+This runs the `personal_computer.yml` Ansible playbook.
+
+These two are more or less equivalent
+
+```bash
+make install
+```
+
+```bash
+ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami)
+```
+
+> Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
+
+### Naming Convention for Make Targets
+
+> `make check` and `make install` are two of the standard  [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html) for this repo.
+
+----
+
+## Requirements.txt 
+
+ Notable Ansible Modules Used with regards to dependencies
+
+* [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
+  - This is drives the `psutil` Python3 requirement
+* [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
+  - This drives the ansible >=2.8.0 requirement
+
+
+---
+
+## Changes
 
 See [CHANGELOG](CHANGELOG.md) for history.
 
-See [archive/Makefile](archive/Makefile) for deleted targets.
+---
+
+## Authors
+
+I benefited from the source work of others, see [AUTHORS.md](AUTHORS.md).
+
+> My choice to open source my work here is to share back with you.
 
 
-## Ansible documentation
-
-### Installing latest ansible
-
-<https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu>
-
-Ubuntu builds are available in a PPA here.
-
-To configure the PPA on your machine and install Ansible run these commands:
-
-```bash
-sudo apt update
-sudo apt install -y software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install -y ansible
-```
-
-Note
-
-On older Ubuntu distributions, `software-properties-common` is called `python-software-properties`. You may want to use apt-get instead of apt in older versions. Also, be aware that only newer distributions (i.e. 18.04, 18.10, etc.) have a `-u` or `--update` flag, so adjust your script accordingly.
-
-Debian/Ubuntu packages can also be built from the source checkout, run:
-
-```bash
-make deb
-```
-
-You may also wish to run from source to get the development branch, which is covered below.
+---
 
 ### Syntax Notes
 
@@ -137,8 +191,3 @@ interpreter_python ="/usr/bin/python3"
 
 Reference:
 <https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html>
-
-### Ansible Modules Used
-
-* [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
-* [f;atpak_remote](https://docs.ansible.com/ansible/latest/modules/flatpak_remote_module.html)
