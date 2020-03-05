@@ -49,6 +49,12 @@
     value: "'appmenu:minimize,maximize,close'"
     state: present
 
+- name: GNOME Preferences - Focus Mode
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/focus-mode"
+    value: "'sloppy'"
+    state: present
+
 # Nautilus (File Manager) Usability
 - name: GNOME Preferences - Nautilus - Default Zoom Level
   dconf:
