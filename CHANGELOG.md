@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added GNOME theme, icon, cursor installation
 - Added ZSH installation, custom zshrc template
 - Added Yarn (and Nodejs)
+- GNOME Preferences - set "attach-modal-dialogs" to False
+- GNOME Preferences - set Desktop Window Management "focus-mode" to sloppy
 
 ### Removed
 
