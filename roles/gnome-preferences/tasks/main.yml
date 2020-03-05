@@ -74,6 +74,12 @@
     value: "true"
     state: present
 
+- name: GNOME Preferences - Shell - Attach Modeal Dialogues
+  dconf:
+    key: "/org/gnome/shell/overrides/attach-modal-dialogs"
+    value: "false"
+    state: present
+
 # Shell Overrides
 - name: GNOME Preferences - Workspaces Only on Primary
   dconf:
