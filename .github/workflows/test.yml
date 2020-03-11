@@ -43,6 +43,8 @@ jobs:
       run: make stacer
     - name: Flatpak
       run: make flatpak
+    - name: Planner
+      run: make planner
     - name: Steam
       run: make steam
     - name: evolution

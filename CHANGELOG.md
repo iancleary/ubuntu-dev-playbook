@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Yarn (and Nodejs)
 - GNOME Preferences - set "attach-modal-dialogs" to False
 - GNOME Preferences - set Desktop Window Management "focus-mode" to sloppy
+- Added [Planner](https://flathub.org/apps/details/com.github.alainm23.planner), using Flatpak
 
 ### Removed
 

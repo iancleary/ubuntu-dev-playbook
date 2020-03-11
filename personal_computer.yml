@@ -21,6 +21,7 @@
       }
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
+    - {role: planner, tags: ['planner']}
     - {role: steam, tags: ['steam']}
     - {role: evolution, tags: ['evolution']}
     - {role: libreoffice, tags: ['libreoffice']}

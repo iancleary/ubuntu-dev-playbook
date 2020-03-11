@@ -135,6 +135,10 @@ flatpak:
 flatpak: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 	@$(ANSIBLE) --tags="flatpak"
 
+planner:
+planner: ## Install Planner, using Flatpak
+	@$(ANSIBLE) --tags="flatpak, planner"
+
 steam: flatpak
 steam: ## Install Steam, using Flatpak
 	@$(ANSIBLE) --tags="steam"
