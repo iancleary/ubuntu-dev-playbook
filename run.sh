@@ -1,4 +1,3 @@
-#!/bin/sh
 sudo apt install -y git make
 
 # Setup Repo Locally
