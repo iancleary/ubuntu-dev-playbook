@@ -72,7 +72,7 @@ The [Makefile](Makefile) is the entry point.
 For a new machine, I run the following command to set up my computer:
 
 ```bash
-bash wget -qO- https://github.com/iancleary/personal-ansible/raw/feat/50-run-sh-script/run.sh | sudo bash
+wget -qO- https://github.com/iancleary/personal-ansible/raw/feat/50-run-sh-script/run.sh | sudo bash
 ```
 
 ### Existing Machine
