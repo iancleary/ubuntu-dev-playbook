@@ -20,3 +20,5 @@ fi
 
 # Run Make Targets
 make bootstrap
+make bootstrap-check
+# make all
