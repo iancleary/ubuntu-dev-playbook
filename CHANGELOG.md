@@ -20,11 +20,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GNOME Preferences - set "attach-modal-dialogs" to False
 - GNOME Preferences - set Desktop Window Management "focus-mode" to sloppy
 - Added [Planner](https://flathub.org/apps/details/com.github.alainm23.planner), using Flatpak
+- Added [run.sh](run.sh) new machine script
 
 ### Removed
 
 - have yet to port (TBD if will port all)
-  - docker-compose, custom gnome-extensions, tresorit, unifi-controller
+  - custom gnome-extensions, tresorit, unifi-controller
 
 ## [0.4.0]
 
