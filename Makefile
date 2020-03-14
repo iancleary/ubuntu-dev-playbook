@@ -10,6 +10,8 @@ OS_VERSION_NAME := $(shell lsb_release -cs)
 # Main Ansible Playbook Command
 ANSIBLE=ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
 
+# $$HOME/.local/bin path fix
+FILE=home-local-bin.sh
 
 # - to suppress if it doesn't exist
 -include make.env
@@ -41,17 +43,14 @@ bootstrap: ## Installs dependencies needed to run playbook
 	# This plays nicer when not --user installed
 	python3 -m pip install -r requirements.txt
 
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo "Update ~/.bashrc with the following, uncomment export line"
-	# Python Path
-	# export PATH="$$HOME/.local/bin:$$PATH"
-	@echo ""
+	# Ensure "$$HOME/.local/bin" is part of PATH 
+	sudo cp $(FILE) /etc/profile.d/$(FILE)
+	sudo chmod 0644 /etc/profile.d/$(FILE)
 
 bootstrap-check:
-bootstrap-check: ## Check Boostrap and ~/.bashrc, ~/.zshrc setup
-
+bootstrap-check: ## Check that PATH and requirements are correct
+	
+	# Check that PATH and requirements are correct
 	ansible --version | grep "python version"
 	python3 -m pip list | grep psutil
 
@@ -106,6 +105,10 @@ flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Ke
 github-cli:
 github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 	@$(ANSIBLE) --tags="github-cli"
+
+gnome-boxes:
+gnome-boxes: ## Install GNOME Boxes, using Flatpak
+	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
 
 gnome-extensions:
 gnome-extensions: ## Install GNOME Extensions

@@ -66,7 +66,39 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 
 The [Makefile](Makefile) is the entry point.
 
-For a new machine or to ensure I am consistent with my playbook, I run the following bash command:
+### Quick Note on /etc/profile.d/
+
+Investigate this folder and your ~/.bashrc, ~/.zshrc, etc. files will become simpler and more maintable! 🚀
+
+> Let's stuff a few more lines of configuration into that file, it will be fine 😬😬😬😬.
+
+Tl;dr is that most shells source all files in that folder, similar to `source ~/.bashrc` on a fresh Ubuntu install.  The main advantage for using the `/etc/profile.d/` folder is that it is modular and maintable.
+
+Fast forward to your using that folder as it was intended.
+ 
+> A zen like calm washes over you now that there is a single file per application and use case! 
+
+Your messy filing cabinet of assorted patches is no more. 🔥
+
+### New Machine Setup
+
+For a new machine, I run the following command to set up my computer:
+
+> Please make sure you adjust your hostname as Ansible keys off this variable.   
+> I like to do this during the initial configuration of the machine.
+
+
+```bash
+wget -qO- https://github.com/iancleary/personal-ansible/raw/master/run.sh | sudo bash
+```
+
+This will prompt you for your `sudo` password for the bash script and then once later for `ansible`'s "BECOME PASSWORD" prompt.
+
+Voila! 🎉🎉🎉
+
+### Existing Machine
+
+On an existing machine, I run the following bash command, to ensure I am consistent with my playbook:
 
 ```bash
 make all
@@ -86,16 +118,22 @@ This installs several packages with `apt` and python packages per the [requireme
 
 > This includes Ansible, using Python3.
 
+This also moves the [home-local-bin.sh](home-local-bin.sh) file to the `/etc/profile.d/` folder as described above.
+
+> The `yarn` roles does a similar operation, except with Ansible instead of bash.
+
 ### Make bootstrap-check
 
 This is to confirm both the `ansible` and `psutil` Python3 packages are installed and on the `$PATH`.
 
-> If the pip installation puts the packages in `--user`, you will need to update your ~/.bashrc, ~/.zshrc file.
+If the pip installation falls back to using the `--user` flag, packages will be located in the following directory under `$HOME`:
 
 ```bash
-# ~/.bashrc or ~/.zshrc, etc.
+#/etc/profile.d/home-local-bin.sh
 export PATH="$HOME/.local/bin:$PATH"
 ```
+
+> `make bootstrap` will set this up for you!
 
 ### Make install
 

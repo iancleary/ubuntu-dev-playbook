@@ -105,8 +105,11 @@ alias ohmyzsh="nano ~/.oh-my-zsh"
 # apt upgrades
 alias full-upgrade="sudo apt update && sudo apt -y full-upgrade && sudo apt -y autoremove"
 
-## Python installation
-export PATH="$HOME/.local/bin:$PATH"
-
-## Yarn Globals
-export PATH="$HOME/.yarn/bin:$PATH"
+### ----------------------------------------------
+# Please add per application scripts to the
+# /etc/profile.d/ folder as *.sh files.
+# The scripts do not need a first line of #!/bin/sh
+#
+# All shells (zsh, bash, etc.) source this folder.
+# This allows for modularity in your configuration.
+### ----------------------------------------------
