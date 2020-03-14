@@ -1,5 +1,5 @@
 ## ------------------------
-## Install Dependencies Required for inital script
+## Install Dependencies Required for this script
 sudo apt install -y git make
 
 ## ------------------------
@@ -16,7 +16,7 @@ if [ ! -d "$GIT_REPO" ] ; then
     git clone $URL $GIT_REPO
 else
     cd $GIT_REPO
-    echo "Exited since repo exists"
+    echo "Didn't clone repo since folder exists"
     #exit
 fi
 
