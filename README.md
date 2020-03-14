@@ -66,7 +66,18 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 
 The [Makefile](Makefile) is the entry point.
 
-For a new machine or to ensure I am consistent with my playbook, I run the following bash command:
+
+### New Machine Setup
+
+For a new machine, I run the following command to set up my computer:
+
+```bash
+bash wget -qO- https://github.com/iancleary/personal-ansible/raw/feat/50-run-sh-script/run.sh | sudo bash
+```
+
+### Existing Machine
+
+On an existing machine, I run the following bash command, to ensure I am consistent with my playbook:
 
 ```bash
 make all
