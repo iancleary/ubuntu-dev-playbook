@@ -31,6 +31,12 @@
     value: "true"
     state: present
 
+- name: GNOME Preferences - Show Date in Clock
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-show-date"
+    value: "true"
+    state: present
+
 - name: GNOME Preferences - Nautilus - Clock Format
   dconf:
     key: "/org/gnome/desktop/interface/clock-format"
