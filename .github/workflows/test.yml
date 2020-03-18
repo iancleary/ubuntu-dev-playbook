@@ -3,24 +3,29 @@ name: CI
 on: [push]
 
 jobs:
-  test-certain-targets:
-
+  path-dependent:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Zsh and oh-my-zsh
       run: make zsh
+    - name: Yarn (and Nodejs)
+      run: | 
+        make yarn
+        . /etc/profile
+        vue --version
+        gridsome --version
+
+  common:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
     - name: Common
       run: make common
     - name: Cherrytree
       run: make cherrytree
-    - name: Docker
-      run: make docker
     # - name: Python
     #   run: make python
-    - name: Snaps
-      run: make snaps
     - name: Peek
       run: make peek
     - name: Timeshift
@@ -41,6 +46,27 @@ jobs:
       run: make nordvpn
     - name: Stacer
       run: make stacer
+    # - name: Yet Another Dotfile Manager
+    #   run: make yadm
+
+  snaps:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Snaps
+      run: make snaps
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Docker
+      run: make docker
+
+  flatpak:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
     - name: Flatpak
       run: make flatpak
     - name: Planner
@@ -49,25 +75,5 @@ jobs:
       run: make steam
     - name: evolution
       run: make evolution
-    - name: ProtonMail Bridge
-      run: make protonmail-bridge
     - name: LibreOffice
-      run: make libreoffice
-    
-    # - name: Yet Another Dotfile Manager
-    #   run: make yadm
-    - name: Yarn (and Nodejs)
-      run: make yarn
-    # - name: Yarn Globals
-    #   run: make yarn-globals
-    # - name: Snap Installs
-    #   run: |
-    #     make code
-    #     make chromium
-    #     make postman
-    #     make secure-comms
-    #     make slack
-    #     make spotify
-    #     make sublime-text
-    #     make standard-notes
-    
+      run: make libreoffice 
