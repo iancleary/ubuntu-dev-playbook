@@ -43,13 +43,13 @@ bootstrap: ## Installs dependencies needed to run playbook
 	# This plays nicer when not --user installed
 	python3 -m pip install -r requirements.txt
 
-	# Ensure "$$HOME/.local/bin" is part of PATH 
+	# Ensure "$$HOME/.local/bin" is part of PATH
 	sudo cp $(FILE) /etc/profile.d/$(FILE)
 	sudo chmod 0644 /etc/profile.d/$(FILE)
 
 bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
-	
+
 	# Check that PATH and requirements are correct
 	ansible --version | grep "python version"
 	python3 -m pip list | grep psutil
