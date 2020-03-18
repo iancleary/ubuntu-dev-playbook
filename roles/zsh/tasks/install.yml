@@ -45,3 +45,12 @@
     dest: '~{{ ansible_user }}/.zshrc'
     backup: yes
     mode: 'u=rw,go=r'
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=92132
+- name: Zsh - Ensure /etc/profile.d/* files source correctly
+  become: yes
+  lineinfile:
+    path: /etc/zsh/zshrc
+    state: present
+    insertafter: 'EOF'
+    line: '. /etc/profile'
