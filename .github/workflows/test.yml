@@ -49,6 +49,8 @@ jobs:
       run: make steam
     - name: evolution
       run: make evolution
+    - name: ProtonMail Bridge
+      run: make protonmail-bridge
     - name: LibreOffice
       run: make libreoffice
     
