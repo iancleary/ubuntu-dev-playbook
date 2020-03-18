@@ -10,7 +10,7 @@ jobs:
     - name: Zsh and oh-my-zsh
       run: make zsh
     - name: Yarn (and Nodejs)
-      run: | 
+      run: |
         make yarn
         . /etc/profile
         vue --version
@@ -26,6 +26,8 @@ jobs:
       run: make cherrytree
     # - name: Python
     #   run: make python
+    - name: Firefox
+      run: make firefox
     - name: Peek
       run: make peek
     - name: Timeshift
@@ -83,4 +85,4 @@ jobs:
     - name: evolution
       run: make evolution
     - name: LibreOffice
-      run: make libreoffice 
+      run: make libreoffice
