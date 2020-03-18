@@ -42,11 +42,11 @@ protonmail-bridge:
 	-sudo apt remove -y protonmail-bridge
 	rm -rf /tmp/protonmail-bridge/
 	mkdir /tmp/protonmail-bridge/
-	wget 'https://protonmail.com/download/protonmail-bridge_1.2.3-1_amd64.deb' -P /tmp/protonmail-bridge
+	wget 'https://protonmail.com/download/protonmail-bridge_1.2.5-1_amd64.deb' -P /tmp/protonmail-bridge
 
 	## Install dependencies (https://askubuntu.com/a/248675/1042945)
 	# Install package, and install required dependencies
-	sudo dpkg --skip-same-version -i /tmp/protonmail-bridge/protonmail-bridge_1.2.3-1_amd64.deb || sudo apt-get -y --fix-broken install
+	sudo dpkg --skip-same-version -i /tmp/protonmail-bridge/protonmail-bridge_1.2.5-1_amd64.deb || sudo apt-get -y --fix-broken install
 
 ticktick: ## Standalone app for ticktick.com using nativefier
 ticktick:

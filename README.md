@@ -36,7 +36,7 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 * `nodejs`,
 * `Peek`,
 * `postman`,
-* ~~`Protonmail-bridge` <https://protonmail.com/bridge/install>~~,
+* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
 * ~~`python3.6`~~,
 * ~~`python3.7`~~,
 * `Signal Desktop`,
