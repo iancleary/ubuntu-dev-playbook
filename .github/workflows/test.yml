@@ -12,6 +12,7 @@ jobs:
     - name: Yarn (and Nodejs)
       run: | 
         make yarn
+        . /etc/profile
         vue --version
         gridsome --version
 
