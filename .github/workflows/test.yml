@@ -57,7 +57,10 @@ jobs:
     # - name: Yet Another Dotfile Manager
     #   run: make yadm
     - name: Yarn (and Nodejs)
-      run: make yarn
+      run: | 
+        make yarn
+        vue --version
+        gridsome --version
     # - name: Yarn Globals
     #   run: make yarn-globals
     # - name: Snap Installs
