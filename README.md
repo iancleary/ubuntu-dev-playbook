@@ -1,6 +1,8 @@
 # personal-ansible
 
 ![CI Badge](https://github.com/iancleary/personal-ansible/workflows/CI/badge.svg)
+[![Updates](https://pyup.io/repos/github/iancleary/personal-ansible/shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
+[![Python 3](https://pyup.io/repos/github/iancleary/personal-ansible/python-3-shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
 
 ## Personal Ansible Playbook to configure my laptops and desktops
 
