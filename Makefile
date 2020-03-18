@@ -150,6 +150,10 @@ evolution:
 evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
 	@$(ANSIBLE) --tags="evolution"
 
+protonmail-bridge:
+protonmail-bridge: ## Install Protonmail Bridge Deb from their website
+	@$(ANSIBLE) --tags="protonmail-bridge"
+
 libreoffice:
 libreoffice: ## Install LibreOffice Office Suite, using Flatpak
 	@$(ANSIBLE) --tags="libreoffice"

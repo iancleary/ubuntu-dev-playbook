@@ -24,4 +24,5 @@
     - {role: planner, tags: ['planner']}
     - {role: steam, tags: ['steam']}
     - {role: evolution, tags: ['evolution']}
+    - {role: protonmail-bridge, tags: ['protonmail-bridge']}
     - {role: libreoffice, tags: ['libreoffice']}
