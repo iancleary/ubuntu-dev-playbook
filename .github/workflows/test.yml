@@ -15,7 +15,6 @@ jobs:
         vue --version
         gridsome --version
 
-jobs:
   common:
     runs-on: ubuntu-latest
     steps:
@@ -48,7 +47,6 @@ jobs:
     # - name: Yet Another Dotfile Manager
     #   run: make yadm
 
-jobs:
   snaps:
     runs-on: ubuntu-latest
     steps:
@@ -56,7 +54,6 @@ jobs:
     - name: Snaps
       run: make snap
 
-jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
@@ -66,8 +63,6 @@ jobs:
     - name: Docker
       run: make docker
 
-
-jobs:
   flatpak:
     runs-on: ubuntu-latest
     steps:
