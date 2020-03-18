@@ -26,8 +26,6 @@ jobs:
       run: make cherrytree
     # - name: Python
     #   run: make python
-    - name: Firefox
-      run: make firefox
     - name: Peek
       run: make peek
     - name: Timeshift
@@ -51,12 +49,19 @@ jobs:
     # - name: Yet Another Dotfile Manager
     #   run: make yadm
 
-  snaps:
+  snap-common:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Snaps
+    - name: Snaps - Common
       run: make snaps
+
+  snap-firefox:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Firefox
+      run: make firefox
 
   docker:
     runs-on: ubuntu-latest
