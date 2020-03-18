@@ -63,7 +63,7 @@ jobs:
     - name: Docker
       run: make docker
 
-  flatpak:
+  flatpak-personal:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -73,6 +73,13 @@ jobs:
       run: make planner
     - name: Steam
       run: make steam
+
+  flatpak-office:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Flatpak
+      run: make flatpak
     - name: evolution
       run: make evolution
     - name: LibreOffice
