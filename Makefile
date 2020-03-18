@@ -90,6 +90,10 @@ snaps:
 snaps: ## Install Many Snaps
 	@$(ANSIBLE) --tags="snaps"
 
+firefox:
+firefox: ## Installs firefox as a snap
+	@$(ANSIBLE) --tags="firefox"
+
 peek:
 peek: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 	@$(ANSIBLE) --tags="peek"

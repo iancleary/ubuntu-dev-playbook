@@ -1,0 +1,19 @@
+---
+- name: Firefox - Install snapd apt dependency
+  become: true
+  apt:
+    name: "snapd"
+    state: present
+
+- name: Firefox - remove apt packages
+  become: true
+  apt:
+    name: "firefox*"
+    state: absent
+    purge: yes
+    autoremove: yes
+
+- name: Firefox - Install Firefox via Snap
+  become: true
+  snap:
+    name: firefox

@@ -32,6 +32,7 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 * `docker`,
 * `docker-compose`,
 * `flameshot`,
+* `Firefox`,
 * `Flatpak`,
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `Nordvpn`,

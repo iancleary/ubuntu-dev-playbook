@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - GNOME Preferences: Show date in clock -> true
 - Created Protonmail Bridge Ansible Role
+- Firefox: changed from apt to snap
 
 ## [0.5.0]
 
