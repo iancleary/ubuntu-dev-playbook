@@ -61,6 +61,12 @@
     value: "'sloppy'"
     state: present
 
+- name: GNOME Preferences - Desktop Icons
+  dconf:
+    key: "/org/gnome/desktop/background/show-desktop-icons"
+    value: "false"
+    state: present
+
 # Nautilus (File Manager) Usability
 - name: GNOME Preferences - Nautilus - Default Zoom Level
   dconf:
