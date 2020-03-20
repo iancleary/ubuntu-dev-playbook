@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   path-dependent:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@v1
     - name: Fix Github Actions Apt-Update issues (should be opt in)
