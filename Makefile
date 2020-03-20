@@ -34,7 +34,12 @@ bootstrap: ## Installs dependencies needed to run playbook
 	sudo apt -y autoremove
 
 	# Make for ease of use, python-apt for --check ansible flag
-	sudo apt-get install -y make python-apt python-pip python3-apt python3-pip
+
+	# Python2
+	sudo apt-get install -y python-setuptools python-apt python-pip
+
+	# python3
+	sudo apt-get install -y python3-setuptools python3-apt python3-pip
 
 	## Install latest Ansible (snap is only in Ansible >= 2.8)
 	sudo apt update
