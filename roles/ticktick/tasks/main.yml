@@ -20,6 +20,7 @@
     cmd: nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon /tmp/nativefier/ticktick.png --name "TickTick" --single-instance
 
 - name: TickTick - clean /opt folder
+  become: true
   file:
     state: absent
     path: /opt/ticktick/
@@ -34,7 +35,7 @@
   become: true  
   copy:
     src: /tmp/nativefier/ticktick
-    dest: /opt/ticktick
+    dest: /opt/
     mode: "preserve"
 
 ## TBD, still need to set up desktop file
