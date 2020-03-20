@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Initial bootstrap
+      run: make bootstrap
     - name: Zsh and oh-my-zsh
       run: make zsh
     - name: Yarn (and Nodejs)
