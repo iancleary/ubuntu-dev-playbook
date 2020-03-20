@@ -8,7 +8,7 @@ SHELL:=bash
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
 # Main Ansible Playbook Command
-ANSIBLE=ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
+ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
 
 # $$HOME/.local/bin path fix
 FILE=home-local-bin.sh
