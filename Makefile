@@ -46,7 +46,7 @@ bootstrap: ## Installs dependencies needed to run playbook
 	sudo apt install -y software-properties-common
 
 	# This plays nicer when not --user installed
-	python3 -m pip install -r requirements.txt
+	python3 -m pip install --user -r requirements.txt
 
 	# Ensure "$$HOME/.local/bin" is part of PATH
 	sudo cp $(FILE) /etc/profile.d/$(FILE)
