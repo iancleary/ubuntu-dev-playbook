@@ -12,7 +12,7 @@ jobs:
     - name: Initial bootstrap and check
       run: |
         make bootstrap
-        . /etc/profile
+        export PATH="$HOME/.local/bin:$PATH"
         make bootstrap-check
     - name: Zsh and oh-my-zsh
       run: make zsh
