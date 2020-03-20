@@ -12,8 +12,10 @@ jobs:
     - name: Initial bootstrap and check
       run: |
         make bootstrap
-        export PATH="$HOME/.local/bin:$PATH"
+        export PATH=$HOME/.local/bin:$PATH
+        echo $PATH
         make bootstrap-check
+        ansible-playbook --version  
     - name: Zsh and oh-my-zsh
       run: make zsh
     - name: Yarn (and Nodejs)
