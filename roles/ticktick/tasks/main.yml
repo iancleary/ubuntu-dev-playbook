@@ -1,0 +1,25 @@
+---
+- name: TickTick - clean tmp folder
+  file:
+    state: absent
+    path: /tmp/nativefier/ticktick
+
+- name: TickTick - create tmp folder
+  file:
+    state: directory
+    path: /tmp/nativefier/ticktick
+
+- name: TickTick - Copy Icon png
+  copy:
+    src: "{{ role_path }}/files/ticktick.png"
+    dest: /tmp/nativefier/ticktick.png
+    mode: 0644
+
+- name: TickTick - clean /opt folder
+  file:
+    state: absent
+    path: /opt/ticktick
+    
+- name: TickTick - create app with Nativefier
+  command: 
+    cmd: nativefier "https://ticktick.com" /opt --icon /tmp/nativefier/ticktick.png --name "TickTick" --single-instance

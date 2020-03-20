@@ -167,4 +167,9 @@ yarn: ## Installs Yarn (and Nodejs)
 	# This role takes care of $$PATH
 	@$(ANSIBLE) --tags="yarn"
 
+ticktick:
+ticktick: ## Installs TickTick using yarn global Nativefier
+	@$(ANSIBLE) --tags="ticktick"
+
+
 .DEFAULT_GOAL := help
