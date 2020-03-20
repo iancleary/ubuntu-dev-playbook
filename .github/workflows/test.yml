@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Fix Apt-Update issues
+      run: for apt_file in `grep -lr microsoft /etc/apt/sources.list.d/`; do sudo rm $apt_file; done
     - name: Initial bootstrap
       run: make bootstrap
     - name: Zsh and oh-my-zsh
