@@ -17,6 +17,10 @@ python: 3.6
 addons:
   hostname: travis
 
+branches:
+  only:
+    - master
+
 jobs:
   include:
     - name: Path Dependent
