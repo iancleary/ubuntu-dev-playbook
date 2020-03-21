@@ -35,9 +35,6 @@ bootstrap: ## Installs dependencies needed to run playbook
 
 	# Make for ease of use, python-apt for --check ansible flag
 
-	# Python2
-	sudo apt-get install -y python-setuptools python-apt python-pip
-
 	# python3
 	sudo apt-get install -y python3-setuptools python3-apt python3-pip
 
