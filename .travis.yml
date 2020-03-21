@@ -1,9 +1,11 @@
 version: ~> 1.0
 # for validation of this file
 
-language: bash 
-# bash is equivalient to minimal
+language: shell 
+# shell is equivalient to minimal
 # https://docs.travis-ci.com/user/languages/minimal-and-generic/
+
+os: linux
 
 # 18.04
 dist: bionic
@@ -13,7 +15,7 @@ python: 3.6
 
 jobs:
   include:
-    - before-script:
+    - before_script:
       - python3 -m pip install --user --upgrade pip
       - python3 -m pip install --upgrade keyrings.alt --user
 	    - python3 -m pip install --user --upgrade setuptools
