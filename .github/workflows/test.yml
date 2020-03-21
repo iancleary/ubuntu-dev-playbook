@@ -81,7 +81,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Flatpak
-      run: make flat
+      run: make flatpak
     - name: Planner
       run: make planner
     - name: Steam
