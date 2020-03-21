@@ -16,6 +16,13 @@ python: 3.6
 jobs:
   include:
     - name: Path Dependent
+      before_install:
+        addons:
+          apt:
+            packages:
+            - python3-pip
+            - python3-apt
+            - python3-setuptools
       before_script:
       - pip3 install --user --upgrade pip
       - pip3 install --upgrade keyrings.alt --user
