@@ -13,6 +13,7 @@ dist: bionic
 # Ensure Python 3
 python: 3.6
 
+# For conditional logic for ANISBLE in Makefile
 addons:
   hostname: travis
 

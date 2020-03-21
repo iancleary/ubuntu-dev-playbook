@@ -1,6 +1,6 @@
 # personal-ansible
 
-![CI Badge](https://github.com/iancleary/personal-ansible/workflows/CI/badge.svg)
+[![Build Status](https://img.shields.io/travis/com/iancleary/personal-ansible/master.svg)](https://img.shields.io/travis/com/iancleary/personal-ansible)
 [![Updates](https://pyup.io/repos/github/iancleary/personal-ansible/shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
 [![Python 3](https://pyup.io/repos/github/iancleary/personal-ansible/python-3-shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
 
