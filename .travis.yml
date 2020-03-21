@@ -20,16 +20,11 @@ jobs:
   include:
     - name: Path Dependent
       before_install:
-      - sudo apt-get install -y python3-setuptools python3-apt python3-pip
+      - bash scripts/before_install_apt_dependencies.sh
       install:
-      - pip3 install --user --upgrade pip
-      - pip3 install --upgrade keyrings.alt --user
-      - pip3 install --user --upgrade setuptools
-      - pip3 install --user wheel
-      - pip3 install --user -r requirements.txt
+      - bash scripts/install_python3_dependencies.sh
       before_script:
-      - sudo cp home-local-bin.sh /etc/profile.d/home-local-bin.sh
-      - sudo chmod 0644 /etc/profile.d/home-local-bin.sh
+      - bash scripts/before_script_path_fix.sh
       - . /etc/profile
       script:
       - make zsh
