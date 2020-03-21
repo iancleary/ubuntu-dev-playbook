@@ -14,8 +14,7 @@ dist: bionic
 python: 3.6
 
 addons:
-  hostname:
-  - travis
+  hostname: travis
 
 jobs:
   include:
