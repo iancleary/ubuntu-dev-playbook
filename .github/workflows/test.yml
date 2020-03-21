@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Fix Github Actions Apt-Update issues (should be opt in)
+      run: for apt_file in `grep -lr microsoft /etc/apt/sources.list.d/`; do sudo rm $apt_file; done  
     - name: Zsh and oh-my-zsh
       run: make zsh
     - name: Yarn (and Nodejs)
@@ -20,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Fix Github Actions Apt-Update issues (should be opt in)
+      run: for apt_file in `grep -lr microsoft /etc/apt/sources.list.d/`; do sudo rm $apt_file; done  
     - name: Common
       run: make common
     - name: Cherrytree
@@ -67,6 +71,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Fix Github Actions Apt-Update issues (should be opt in)
+      run: for apt_file in `grep -lr microsoft /etc/apt/sources.list.d/`; do sudo rm $apt_file; done
     - name: Docker
       run: make docker
 

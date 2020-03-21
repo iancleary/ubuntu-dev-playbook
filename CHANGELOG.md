@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created Protonmail Bridge Ansible Role
 - Firefox: changed from apt to snap
 - GNOME Preferences: Show Desktop Icons -> false
+- TickTick: Add Nativefier yarn global and role for TickTick install
 
 ## [0.5.0]
 

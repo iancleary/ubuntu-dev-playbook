@@ -8,7 +8,7 @@ SHELL:=bash
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
 # Main Ansible Playbook Command
-ANSIBLE=ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
+ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
 
 # $$HOME/.local/bin path fix
 FILE=home-local-bin.sh
@@ -34,14 +34,23 @@ bootstrap: ## Installs dependencies needed to run playbook
 	sudo apt -y autoremove
 
 	# Make for ease of use, python-apt for --check ansible flag
-	sudo apt-get install -y make python-apt python-pip python3-apt python3-pip
+
+	# Python2
+	sudo apt-get install -y python-setuptools python-apt python-pip
+
+	# python3
+	sudo apt-get install -y python3-setuptools python3-apt python3-pip
 
 	## Install latest Ansible (snap is only in Ansible >= 2.8)
 	sudo apt update
 	sudo apt install -y software-properties-common
 
 	# This plays nicer when not --user installed
-	python3 -m pip install -r requirements.txt
+	python3 -m pip install --user --upgrade pip
+	-python3 -m pip install --upgrade keyrings.alt --user
+	-python3 -m pip install --user --upgrade setuptools
+	-python3 -m pip install --user wheel
+	python3 -m pip install --user -r requirements.txt
 
 	# Ensure "$$HOME/.local/bin" is part of PATH
 	sudo cp $(FILE) /etc/profile.d/$(FILE)
@@ -166,5 +175,10 @@ yarn:
 yarn: ## Installs Yarn (and Nodejs)
 	# This role takes care of $$PATH
 	@$(ANSIBLE) --tags="yarn"
+
+ticktick:
+ticktick: ## Installs TickTick using yarn global Nativefier
+	@$(ANSIBLE) --tags="ticktick"
+
 
 .DEFAULT_GOAL := help
