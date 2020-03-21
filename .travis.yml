@@ -10,6 +10,7 @@ dist: bionic
 jobs:
   include:
     - before-script:
+      - sudo add-apt-repository universe
       - make bootstrap
       - . /etc/profile
     - script:
