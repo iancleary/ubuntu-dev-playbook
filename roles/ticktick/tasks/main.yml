@@ -17,7 +17,13 @@
 
 - name: TickTick - create app with Nativefier
   command: 
-    cmd: nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon /tmp/nativefier/ticktick.png --name "TickTick" --tray --single-instance
+    cmd: |
+      nativefier "https://ticktick.com" /tmp/nativefier/ticktick
+      --icon /tmp/nativefier/ticktick.png 
+      --name "TickTick" 
+      --internal-urls ".*(ticktick)\.(com).*"
+      --tray 
+      --single-instance
 
 - name: TickTick - clean /opt folder
   become: true
