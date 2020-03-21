@@ -18,14 +18,15 @@ jobs:
     - name: Path Dependent
       before_install:
       - sudo apt-get install -y python3-setuptools python3-apt python3-pip
-      before_script:
+      install:
       - pip3 install --user --upgrade pip
       - pip3 install --upgrade keyrings.alt --user
       - pip3 install --user --upgrade setuptools
       - pip3 install --user wheel
       - pip3 install --user -r requirements.txt
-      - sudo cp $(FILE) /etc/profile.d/$(FILE)
-      - sudo chmod 0644 /etc/profile.d/$(FILE)
+      before_script:
+      - sudo cp home-local-bin.sh /etc/profile.d/home-local-bin.sh
+      - sudo chmod 0644 /etc/profile.d/home-local-bin.sh
       - . /etc/profile
       script:
       - make zsh
