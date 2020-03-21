@@ -7,6 +7,8 @@ language: bash
 
 dist: bionic
 
+python: 3.6
+
 jobs:
   include:
     - before-script:
