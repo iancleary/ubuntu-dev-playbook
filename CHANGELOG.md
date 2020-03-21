@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Common-snaps: Added [breaktimer](https://snapcraft.io/breaktimer) snap
+- Development-tools: Added [VSCodium](https://snapcraft.io/vscodium) snap
+
 ### Changed
 
 - CI: Switched from GitHub Actions to Travis-CI
+- Snaps: moved constituent parts of snap role into separate roles
 
 ## [0.6.0] - 2020-03-20
 
