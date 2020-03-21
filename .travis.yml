@@ -17,12 +17,7 @@ jobs:
   include:
     - name: Path Dependent
       before_install:
-        addons:
-          apt:
-            packages:
-            - python3-pip
-            - python3-apt
-            - python3-setuptools
+      - sudo apt-get install -y python3-setuptools python3-apt python3-pip
       before_script:
       - pip3 install --user --upgrade pip
       - pip3 install --upgrade keyrings.alt --user
