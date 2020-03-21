@@ -5,8 +5,10 @@ language: bash
 # bash is equivalient to minimal
 # https://docs.travis-ci.com/user/languages/minimal-and-generic/
 
+# 18.04
 dist: bionic
 
+# Ensure Python 3
 python: 3.6
 
 jobs:
