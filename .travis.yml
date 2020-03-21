@@ -32,3 +32,80 @@ jobs:
       - . /etc/profile
       - vue --version
       - gridsome --version
+    
+    - name: Common
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make common
+      - make cherrytree
+      - make peek
+      - make timeshift
+      - make flameshot
+      - make github-cli
+      - make nordvpn
+      - make stacer
+    
+    - name: Snaps Common
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make snaps
+
+    - name: Snaps Firefox
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make firefox
+    
+    - name: Docker
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make docker
+    
+    - name: Flatpak Personal
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make flatpak
+      - make planner
+      - make steam
+    
+    - name: Flatpak Office
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make flatpak
+      - make evolution
+      - make libreoffice
