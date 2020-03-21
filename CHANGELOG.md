@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2020-03-20
+
 ### Added
 
 - GNOME Preferences: Show date in clock -> true
@@ -15,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GNOME Preferences: Show Desktop Icons -> false
 - TickTick: Add Nativefier yarn global and role for TickTick install
 
-## [0.5.0]
+## [0.5.0] - 2020-03-14
 
 ### Added
 
@@ -35,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - have yet to port (TBD if will port all)
   - custom gnome-extensions, tresorit, unifi-controller
 
-## [0.4.0]
+## [0.4.0] - 2020-02-28
 
 - Added TickTick Native App using [nativefier](https://github.com/jiahaog/nativefier)
 - Added [Yet Another Dotfile Manager](https://yadm.io)
@@ -46,7 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `gh` CLI <https://github.com/cli/cli/releases/tag/v0.5.5>
 - Added Protonmail-bridge beta client
 
-## [0.3.0]
+## [0.3.0] - 2020-01-12
 
 ### Fixed
 
@@ -102,7 +104,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.6.0
 [0.5.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.5.0
 [0.4.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.4.0
 [0.3.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.3.0

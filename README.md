@@ -51,7 +51,7 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 * `Steam`,
 * `Sublime Text`,
 * `Telegram`,
-* ~~`TickTick`~~,
+* `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
 * ~~`Tresorit`~~,
 * `yarn`,
