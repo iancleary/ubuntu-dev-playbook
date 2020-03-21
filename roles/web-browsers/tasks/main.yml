@@ -1,0 +1,38 @@
+---
+- name: Web Browsers - Install snapd apt dependency
+  become: true
+  apt:
+    name: "snapd"
+    state: present
+
+- name: Web Browsers - remove firefox* apt packages
+  become: true
+  apt:
+    name: "firefox*"
+    state: absent
+    purge: yes
+    autoremove: yes
+
+- name: Web Browsers - Install snapd apt dependency
+  become: true
+  apt:
+    name: "snapd"
+    state: present
+
+- name: Web Browsers - Install Confined Snaps - Chromium and Firefox
+  become: true
+  snap:
+    name: "{{ item }}"
+  loop:
+    - "chromium"
+    - "firefox"
+
+# https://github.com/ansible/ansible/issues/58403
+- name: Web Browsers - Setup Snap Plugs
+  become: yes
+  become_method: sudo
+  changed_when: false
+  shell: 'snap connect {{ item.app }}:{{ item.plug }}'
+  with_items:
+    - plug: home
+      app: chromium

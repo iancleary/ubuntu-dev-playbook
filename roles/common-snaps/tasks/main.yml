@@ -1,0 +1,18 @@
+---
+- name: Snaps - Install snapd apt dependency
+  become: true
+  apt:
+    name: "snapd"
+    state: present
+
+- name: Snaps - Install Confined Snaps
+  become: true
+  snap:
+    name: "{{ item }}"
+  loop:
+    - "snap-store"
+    - "breaktimer"
+    - "drawio"
+    # https://github.com/jgraph/drawio-desktop/issues/138, snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
+    - "spotify"
+    - "standard-notes"

@@ -1,0 +1,21 @@
+---
+- name: Development Tools - Install snapd apt dependency
+  become: true
+  apt:
+    name: "snapd"
+    state: present
+
+- name: Development Tools - Install Confined Postman Snap
+  become: true
+  snap:
+    name: "postman"
+
+- name: Development Tools - Install Classicly Confined VSCode, VSCodium, and Sublime Text Snaps
+  become: true
+  snap:
+    name: "{{item}}"
+    classic: yes
+  loop:
+    - "code"
+    - "codium"
+    - "sublime-text"
