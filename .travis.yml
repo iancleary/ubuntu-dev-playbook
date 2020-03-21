@@ -1,0 +1,116 @@
+version: ~> 1.0
+# for validation of this file
+
+language: shell 
+# shell is equivalient to minimal
+# https://docs.travis-ci.com/user/languages/minimal-and-generic/
+
+os: linux
+
+# 18.04
+dist: bionic
+
+# Ensure Python 3
+python: 3.6
+
+# For conditional logic for ANISBLE in Makefile
+addons:
+  hostname: travis
+
+branches:
+  only:
+    - master
+
+jobs:
+  include:
+    - name: Path Dependent
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make zsh
+      - make yarn
+      - . /etc/profile
+      - vue --version
+      - gridsome --version
+    
+    - name: Common
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make common
+      - make cherrytree
+      - make peek
+      - make timeshift
+      - make flameshot
+      - make github-cli
+      - make nordvpn
+      - make stacer
+    
+    - name: Snaps Common
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make snaps
+
+    - name: Snaps Firefox
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make firefox
+    
+    - name: Docker
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make docker
+    
+    - name: Flatpak Personal
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make flatpak
+      - make planner
+      - make steam
+    
+    - name: Flatpak Office
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make flatpak
+      - make evolution
+      - make libreoffice

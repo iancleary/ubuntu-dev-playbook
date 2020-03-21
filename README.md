@@ -1,6 +1,6 @@
 # personal-ansible
 
-![CI Badge](https://github.com/iancleary/personal-ansible/workflows/CI/badge.svg)
+[![Build Status](https://img.shields.io/travis/com/iancleary/personal-ansible/master.svg)](https://img.shields.io/travis/com/iancleary/personal-ansible)
 [![Updates](https://pyup.io/repos/github/iancleary/personal-ansible/shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
 [![Python 3](https://pyup.io/repos/github/iancleary/personal-ansible/python-3-shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
 
@@ -69,6 +69,8 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 
 The [Makefile](Makefile) is the entry point.
 
+The [scripts](scripts) folder contains common setup between local scripts and Travis-CI.
+
 ### Quick Note on /etc/profile.d/
 
 Investigate this folder and your ~/.bashrc, ~/.zshrc, etc. files will become simpler and more maintable! 🚀
@@ -131,9 +133,21 @@ This is to confirm both the `ansible` and `psutil` Python3 packages are installe
 
 If the pip installation falls back to using the `--user` flag, packages will be located in the following directory under `$HOME`:
 
+> Target: `export PATH="$HOME/.local/bin:$PATH"`
+
 ```bash
 #/etc/profile.d/home-local-bin.sh
-export PATH="$HOME/.local/bin:$PATH"
+
+# https://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem
+function addToPATH {
+  case ":$PATH:" in
+    *":$1:"*) :;; # already there
+    *) PATH="$1:$PATH";; # or PATH="$PATH:$1"
+  esac
+}
+
+# Important for python pip packages installed with --user
+addToPATH $HOME/.local/bin
 ```
 
 > `make bootstrap` will set this up for you!

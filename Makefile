@@ -7,11 +7,18 @@ SHELL:=bash
 # Ubuntu distro string
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
-# Main Ansible Playbook Command
+HOSTNAME = $(shell hostname)
+
+# Main Ansible Playbook Command (prompts for password)
 ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
 
-# $$HOME/.local/bin path fix
-FILE=home-local-bin.sh
+# Travis CI Ansible Playbook Command (doesn't prompt for password)
+TRAVIS=travis
+ifeq "$(HOSTNAME)" "$(TRAVIS)"
+	ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -e 'ansible_user='$(shell whoami)
+endif
+
+$(warning ANSIBLE is $(ANSIBLE)) 
 
 # - to suppress if it doesn't exist
 -include make.env
@@ -25,36 +32,14 @@ help:
 bootstrap:
 bootstrap: ## Installs dependencies needed to run playbook
 
-	#Installing make and ansible
+	# Apt Dependencies (removes apt ansible)
+	bash scripts/before_install_apt_dependencies.sh
 
-	# Remove any version of ansible
-	sudo apt remove -y ansible
-
-	## Remove old packages
-	sudo apt -y autoremove
-
-	# Make for ease of use, python-apt for --check ansible flag
-
-	# Python2
-	sudo apt-get install -y python-setuptools python-apt python-pip
-
-	# python3
-	sudo apt-get install -y python3-setuptools python3-apt python3-pip
-
-	## Install latest Ansible (snap is only in Ansible >= 2.8)
-	sudo apt update
-	sudo apt install -y software-properties-common
-
-	# This plays nicer when not --user installed
-	python3 -m pip install --user --upgrade pip
-	-python3 -m pip install --upgrade keyrings.alt --user
-	-python3 -m pip install --user --upgrade setuptools
-	-python3 -m pip install --user wheel
-	python3 -m pip install --user -r requirements.txt
+	# Python3 Dependencies (install python3 ansible)
+	bash scripts/install_python3_dependencies.sh
 
 	# Ensure "$$HOME/.local/bin" is part of PATH
-	sudo cp $(FILE) /etc/profile.d/$(FILE)
-	sudo chmod 0644 /etc/profile.d/$(FILE)
+	bash scripts/before_script_path_fix.sh
 
 bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
