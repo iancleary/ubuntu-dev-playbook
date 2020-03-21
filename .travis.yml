@@ -67,7 +67,7 @@ jobs:
       script:
       - make snaps
 
-    - name: Snaps Firefox
+    - name: Snaps Web Browsers
       before_install:
       - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -76,7 +76,7 @@ jobs:
       - bash scripts/before_script_path_fix.sh
       - . /etc/profile
       script:
-      - make firefox
+      - make web-browsers
     
     - name: Docker
       before_install:

@@ -9,7 +9,7 @@
     - {role: yarn, tags: ['nodejs', 'yarn']}
     - {role: ticktick, tags: ['ticktick']}
     - {role: snaps, tags: ['snaps']}
-    - {role: firefox, tags: ['firefox']}
+    - {role: web-browsers, tags: ['web-browsers']}
     - {role: peek, tags: ['peek']}
     - {role: timeshift, tags: ['timeshift']}
     - {role: flameshot, tags: ['flameshot']}
