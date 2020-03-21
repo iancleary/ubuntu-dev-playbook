@@ -7,8 +7,18 @@ SHELL:=bash
 # Ubuntu distro string
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
+HOSTNAME = $(shell hostname)
+
 # Main Ansible Playbook Command
 ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory --ask-become-pass -e 'ansible_user='$(shell whoami)
+
+# Travis CI Ansible Playbook Command
+TRAVIS=travis
+ifeq "$(HOSTNAME)" "$(TRAVIS)"
+	ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -e 'ansible_user='$(shell whoami)
+endif
+
+$(warning ANSIBLE is $(ANSIBLE)) 
 
 # $$HOME/.local/bin path fix
 FILE=home-local-bin.sh
