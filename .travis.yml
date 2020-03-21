@@ -38,7 +38,7 @@ jobs:
       - vue --version
       - gridsome --version
     
-    - name: Common
+    - name: Common Deb Packages
       before_install:
       - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -47,16 +47,21 @@ jobs:
       - bash scripts/before_script_path_fix.sh
       - . /etc/profile
       script:
-      - make common
       - make cherrytree
+      - cherrytree --help
       - make peek
+      - peek --version
       - make timeshift
+      - timeshift --help
       - make flameshot
+      - flameshot --version
       - make github-cli
+      - gh --version
       - make nordvpn
+      - nordvpn --version
       - make stacer
     
-    - name: Snaps Common
+    - name: Common Snaps
       before_install:
       - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -65,9 +70,33 @@ jobs:
       - bash scripts/before_script_path_fix.sh
       - . /etc/profile
       script:
-      - make snaps
+      - make common-snaps
 
-    - name: Snaps Web Browsers
+    - name: Chat Clients
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make chat-clients
+
+    - name: Development Tools
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      install:
+      - bash scripts/install_python3_dependencies.sh
+      before_script:
+      - bash scripts/before_script_path_fix.sh
+      - . /etc/profile
+      script:
+      - make development-tools
+      - code --version
+      - codium --version
+
+    - name: Web Browsers
       before_install:
       - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -77,7 +106,7 @@ jobs:
       - . /etc/profile
       script:
       - make web-browsers
-    
+
     - name: Docker
       before_install:
       - bash scripts/before_install_apt_dependencies.sh

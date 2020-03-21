@@ -10,21 +10,8 @@
   snap:
     name: "{{ item }}"
   loop:
+    - "snap-store"
     - "drawio"
     # https://github.com/jgraph/drawio-desktop/issues/138, snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
-    - "postman"
-    - "signal-desktop"
-    - "snap-store"
     - "spotify"
     - "standard-notes"
-    - "telegram-desktop"
-
-- name: Snaps - Install Classicly Confined Snaps
-  become: true
-  snap:
-    name: "{{item}}"
-    classic: yes
-  loop:
-    - "code"
-    - "slack"
-    - "sublime-text"

@@ -2,14 +2,15 @@
   connection: local
   roles:
     - {role: zsh, tags: ['zsh']}
-    - {role: common, tags: ['common']}
     - {role: cherrytree, tags: ['cherrytree']}
     - {role: docker, tags: ['docker']}
     #- {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
     - {role: ticktick, tags: ['ticktick']}
-    - {role: snaps, tags: ['snaps']}
+    - {role: common-snaps, tags: ['common-snaps']}
+    - {role: chat-clients, tags: ['chat-clients']}
     - {role: web-browsers, tags: ['web-browsers']}
+    - {role: development-tools, tags: ['development-tools']}
     - {role: peek, tags: ['peek']}
     - {role: timeshift, tags: ['timeshift']}
     - {role: flameshot, tags: ['flameshot']}
@@ -19,13 +20,13 @@
     - {role: gnome-themes, tags: ['gnome-themes']}
     - {role: gnome-preferences, tags: ['gnome-preferences']}
     - {role: nordvpn, tags: ['nordvpn'],
-       when: "'xps' in ansible_hostname or 'desktop' in ansible_hostname"
+       when: "'xps' in ansible_hostname or 'desktop' in ansible_hostname or 'travis' in ansible_hostname"
       }
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
     - {role: planner, tags: ['planner']}
     - {role: steam, tags: ['steam'],
-       when: "'desktop' in ansible_hostname"
+       when: "'desktop' in ansible_hostname or 'travis' in ansible_hostname"
       }
     - {role: evolution, tags: ['evolution']}
     - {role: protonmail-bridge, tags: ['protonmail-bridge']}

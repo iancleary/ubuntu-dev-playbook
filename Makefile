@@ -80,9 +80,17 @@ python:
 python: ## Install Python 3.6 and 3.7, with extras
 	@$(ANSIBLE) --tags="python"
 
-snaps:
-snaps: ## Install Many Snaps
-	@$(ANSIBLE) --tags="snaps"
+common-snaps:
+common-snaps: ## Install Common Snaps
+	@$(ANSIBLE) --tags="common-snaps"
+
+chat-clients:
+chat-clients: ## Install Chat Client Snaps
+	@$(ANSIBLE) --tags="chat-clients"
+
+development-tools:
+development-tools: ## Install VS Code, Postman, and Sublime Text Snaps
+	@$(ANSIBLE) --tags="development-tools"
 
 web-browsers:
 web-browsers: ## Installs web-browsers as snaps
