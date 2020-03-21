@@ -12,8 +12,13 @@ python: 3.6
 jobs:
   include:
     - before-script:
-      - sudo add-apt-repository -y universe
-      - make bootstrap
+      - python3 -m pip install --user --upgrade pip
+      - python3 -m pip install --upgrade keyrings.alt --user
+	    - python3 -m pip install --user --upgrade setuptools
+	    - python3 -m pip install --user wheel
+	    - python3 -m pip install --user -r requirements.txt
+      - sudo cp $(FILE) /etc/profile.d/$(FILE)
+      - sudo chmod 0644 /etc/profile.d/$(FILE)
       - . /etc/profile
     - script:
       - make zsh
