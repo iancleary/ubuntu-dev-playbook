@@ -1,0 +1,17 @@
+version: ~> 1.0
+# for validation of this file
+
+language: bash 
+# bash is equivalient to minimal
+# https://docs.travis-ci.com/user/languages/minimal-and-generic/
+
+dist: bionic
+
+jobs:
+  include:
+    - script:
+      - make zsh
+      - make yarn
+      - . /etc/profile
+      - vue --version
+      - gridsome --version
