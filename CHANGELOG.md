@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- CI: Switched from GitHub Actions to Travis-CI
+
 ## [0.6.0] - 2020-03-20
 
 ### Added
