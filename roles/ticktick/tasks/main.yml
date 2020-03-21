@@ -17,7 +17,7 @@
 
 - name: TickTick - create app with Nativefier
   command: 
-    cmd: nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon /tmp/nativefier/ticktick.png --name "TickTick" --single-instance
+    cmd: nativefier "https://ticktick.com" /tmp/nativefier/ticktick --icon /tmp/nativefier/ticktick.png --name "TickTick" --tray --single-instance
 
 - name: TickTick - clean /opt folder
   become: true
@@ -38,4 +38,16 @@
     dest: /opt/
     mode: "preserve"
 
-## TBD, still need to set up desktop file
+- name: Read JSON file (can also be a variable).
+  shell: cat /opt/ticktick/TickTick-linux-x64/resources/app/package.json
+  register: json
+
+- name: Get simple value.
+  set_fact:
+    ticktick_nativefier_name: "{{ (json.stdout | from_json).name }}"
+
+- name: TickTick - Add .desktop file
+  template:
+    src: ticktick.desktop.j2
+    dest: ~/.local/share/applications/ticktick.desktop
+    mode: 0644
