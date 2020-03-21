@@ -9,6 +9,9 @@ dist: bionic
 
 jobs:
   include:
+    - before-script:
+      - make bootstrap
+      - . /etc/profile
     - script:
       - make zsh
       - make yarn
