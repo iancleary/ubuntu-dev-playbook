@@ -15,16 +15,17 @@ python: 3.6
 
 jobs:
   include:
-    - before_script:
+    - name: Path Dependent
+      before_script:
       - python3 -m pip install --user --upgrade pip
       - python3 -m pip install --upgrade keyrings.alt --user
-	    - python3 -m pip install --user --upgrade setuptools
-	    - python3 -m pip install --user wheel
-	    - python3 -m pip install --user -r requirements.txt
+      - python3 -m pip install --user --upgrade setuptools
+      - python3 -m pip install --user wheel
+      - python3 -m pip install --user -r requirements.txt
       - sudo cp $(FILE) /etc/profile.d/$(FILE)
       - sudo chmod 0644 /etc/profile.d/$(FILE)
       - . /etc/profile
-    - script:
+      script:
       - make zsh
       - make yarn
       - . /etc/profile
