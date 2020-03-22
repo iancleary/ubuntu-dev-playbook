@@ -4,8 +4,8 @@
   apt:
     name: "{{ item }}"
     state: absent
-    purge: yes
-    autoremove: yes
+    purge: "yes"
+    autoremove: "yes"
   loop:
     - libreoffice*
 
