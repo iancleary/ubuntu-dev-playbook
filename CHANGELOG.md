@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Common-snaps: Added [breaktimer](https://snapcraft.io/breaktimer) snap
 - Development-tools: Added [VSCodium](https://snapcraft.io/vscodium) snap
+- Apt Dependencies Script: Added yamllint
+- CI: Added yamllint
 
 ### Changed
 
