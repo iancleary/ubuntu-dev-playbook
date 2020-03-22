@@ -10,7 +10,8 @@
 - name: Nodejs - Add Nodesource apt key.
   become: true
   apt_key:
-    url: https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280
+    url: >
+      https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280
     id: "68576280"
     state: present
 
@@ -20,8 +21,12 @@
     repo: "{{ item }}"
     state: present
   loop:
-    - "deb https://deb.nodesource.com/node_{{ nodejs_version }} {{ ansible_distribution_release }} main"
-    - "deb-src https://deb.nodesource.com/node_{{ nodejs_version }} {{ ansible_distribution_release }} main"
+    - >-
+      deb https://deb.nodesource.com/node_{{ nodejs_version }}
+       {{ ansible_distribution_release }} main
+    - >-
+      deb-src https://deb.nodesource.com/node_{{ nodejs_version }}
+       {{ ansible_distribution_release }} main
   register: node_repo
 
 - name: Nodejs - Update apt cache if repo was added.

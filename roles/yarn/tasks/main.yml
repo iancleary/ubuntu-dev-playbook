@@ -28,7 +28,7 @@
   yarn:
     name: "{{ item.name | default(item) }}"
     version: "{{ item.version | default('latest') }}"
-    global: yes
+    global: "yes"
     state: latest
   loop: "{{ nodejs_yarn_global_packages }}"
   tags: ['skip_ansible_lint']
