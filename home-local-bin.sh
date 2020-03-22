@@ -1,3 +1,4 @@
+#!/bin/sh
 # https://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem
 function addToPATH {
   case ":$PATH:" in
@@ -7,4 +8,4 @@ function addToPATH {
 }
 
 # Important for python pip packages installed with --user
-addToPATH $HOME/.local/bin
+addToPATH "$HOME/.local/bin"
