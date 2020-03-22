@@ -2,5 +2,5 @@
 - name: Stacer - Install Stacer deb from GitHub
   become: true
   apt:
-    deb: >
+    deb: >-
       https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
