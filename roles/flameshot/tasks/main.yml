@@ -3,5 +3,4 @@
   become: true
   apt:
     deb: >-
-      https://github.com/lupoDharkael/flameshot/releases/download/
-      v0.6.0/flameshot_0.6.0_bionic_x86_64.deb
+      https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb
