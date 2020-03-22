@@ -35,11 +35,7 @@ jobs:
         - bash scripts/before_script_path_fix.sh
         - . /etc/profile
       script:
-        - yamllint .
-        - shellcheck *.sh
-        - shellcheck scripts/*.sh
-        - markdownlint README.md AUTHORS.md
-        # Ignore CHANGELOG.md as it has duplicate headings by design
+        - make lint
 
     - name: Path Dependent
       before_install:

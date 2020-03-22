@@ -59,6 +59,10 @@ install: ## Installs everything via personal-computer.yml playbook
 all: ## Does eveything
 all: bootstrap bootstrap-check install
 
+lint:  ## Lint the repo
+lint:
+	bash scripts/lint.sh
+
 zsh:
 zsh: ## Install zsh and oh-my-zsh
 	@$(ANSIBLE) --tags="zsh"
