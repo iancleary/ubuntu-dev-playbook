@@ -2,4 +2,5 @@
 - name: Install Github CLI deb from github
   become: true
   apt:
-    deb: 'https://github.com/cli/cli/releases/download/v{{gh_version}}/gh_{{gh_version}}_linux_amd64.deb'
+    deb: >-
+      https://github.com/cli/cli/releases/download/v{{gh_version}}/gh_{{gh_version}}_linux_amd64.deb
