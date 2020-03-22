@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - CI: Switched from GitHub Actions to Travis-CI
 - Snaps: moved constituent parts of snap role into separate roles
+- Linted all yaml files
 
 ## [0.6.0] - 2020-03-20
 
