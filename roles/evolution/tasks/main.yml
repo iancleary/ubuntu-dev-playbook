@@ -4,7 +4,7 @@
   apt:
     name: "{{ item }}"
     state: absent
-    autoremove: yes
+    autoremove: "yes"
   loop:
     - evolution-ews
     - evolution
