@@ -38,6 +38,27 @@ brave:
 
 	sudo apt install brave-browser
 
+gnome-extensions: ## Install GNOME extensions
+gnome-extensions:
+
+	# Install Argos
+	## Clone the repository, then copy or symlink the directory argos@pew.worldwidemann.com into ~/.local/share/gnome-shell/extensions. 
+	-rm -rf /tmp/argos
+	git clone git@github.com:p-e-w/argos.git /tmp/argos
+	cp -r /tmp/argos/argos@pew.worldwidemann.com  ~/.local/share/gnome-shell/extensions
+	-rm -rf /tmp/argos
+	## Restart GNOME Shell by pressing Alt+F2, then entering r.
+	## On some systems, you may additionally have to enable the Argos extension using GNOME Tweak Tool.
+
+	# Install my argos scripts
+	-rm -rf /tmp/gnome-argos-extensions
+	git clone git@github.com:iancleary/gnome-argos-extensions.git /tmp/gnome-argos-extensions
+	-rm -rf $(HOME)/.config/argos
+	mkdir $(HOME)/.config/argos
+	## use rsync rather than cp -r to exclude folders
+	rsync -rv /tmp/gnome-argos-extensions/ --exclude=.gitignore --exclude=.vscode --exclude=LICENSE --exclude=CHANGELOG.md --exclude=images/ --exclude=.git --exclude=Makefile . $(HOME)/.config/argos
+	-rm -rf /tmp/gnome-argos-extensions
+
 gnome-firefox-theme: ## Install GNOME Firefox theme
 gnome-firefox-theme:
 	################################################

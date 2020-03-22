@@ -112,6 +112,21 @@ flameshot:
 flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Keybindings
 	@$(ANSIBLE) --tags="flameshot"
 
+flameshot-keybindings: ## Install Flameshot and Update gnome keybindings
+flameshot-keybindings:
+	# For whatever reason, I bricked my GNOME session trying this with ansible
+	# so for now, I'm just going to chain this to the new machine script 
+	# and leave it as a make target
+
+	# Update gnome keybindings
+	# source: https://askubuntu.com/a/1116076
+	
+	gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
+	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/']"
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ name 'flameshot'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/usr/bin/flameshot gui'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
+
 github-cli:
 github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 	@$(ANSIBLE) --tags="github-cli"
@@ -135,6 +150,13 @@ gnome-themes: ## Install and Set GNOME Theme, Icons, and Cursor
 gnome-preferences:
 gnome-preferences: ## Set GNOME Preferences
 	@$(ANSIBLE) --tags="gnome-preferences"
+
+gtk3-icon-browser: ## Launch the GTK Icon Browser
+gtk3-icon-browser:
+	# https://askubuntu.com/questions/695796/view-list-of-all-available-unique-icons-with-their-names-and-thumbnail/695958
+	# sudo apt-get install -y gtk-3-examples
+	# Installs in gnome-preferences role
+	@gtk3-icon-browser &
 
 nordvpn:
 nordvpn: ## Install Peek (GIF Screen Recorder) using a PPA and apt
@@ -163,6 +185,12 @@ evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
 protonmail-bridge:
 protonmail-bridge: ## Install Protonmail Bridge Deb from their website
 	@$(ANSIBLE) --tags="protonmail-bridge"
+
+tresorit: ## Install Tresorit
+tresorit:
+	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
+	chmod +x ~/Downloads/tresorit_installer.run
+	$(echo $0) ~/Downloads/tresorit_installer.run
 
 libreoffice:
 libreoffice: ## Install LibreOffice Office Suite, using Flatpak
