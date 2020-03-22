@@ -23,6 +23,16 @@ branches:
 
 jobs:
   include:
+    - name: Linting
+      before_install:
+      - bash scripts/before_install_apt_dependencies.sh
+      script:
+      - yamllint .
+      - make yarn
+      - . /etc/profile
+      - vue --version
+      - gridsome --version
+
     - name: Path Dependent
       before_install:
       - bash scripts/before_install_apt_dependencies.sh
