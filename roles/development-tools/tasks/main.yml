@@ -5,12 +5,12 @@
     name: "snapd"
     state: present
 
-- name: Development Tools - Install Confined Postman Snap
+- name: Development Tools - Install Postman Snap
   become: true
   snap:
     name: "postman"
 
-- name: Development Tools - Install Classicly Confined VSCode, VSCodium, Sublime Text Snaps
+- name: Development Tools - VSCode, VSCodium, Sublime Text Snaps w/ --classic
   become: true
   snap:
     name: "{{item}}"
