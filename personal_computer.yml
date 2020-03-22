@@ -27,7 +27,7 @@
     - {role: flatpak, tags: ['flatpak']}
     - {role: planner, tags: ['planner']}
     - {role: steam, tags: ['steam'],
-       when: "'desktop' in ansible_hostname or 'travis' in ansible_hostname"
+       when: "ansible_hostname in ['desktop', 'travis']"
     }
     - {role: evolution, tags: ['evolution']}
     - {role: protonmail-bridge, tags: ['protonmail-bridge']}
