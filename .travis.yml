@@ -38,7 +38,8 @@ jobs:
         - yamllint .
         - shellcheck *.sh
         - shellcheck scripts/*.sh
-        - markdownlint *.md
+        - markdownlint README.md AUTHORS.md
+        # Ignore CHANGELOG.md as it has duplicate headings by design
 
     - name: Path Dependent
       before_install:

@@ -1,6 +1,7 @@
 # Authors
 
-To be compliant with the licenses of source work used in the project, their repositories' licenses are included below.
+To be compliant with the licenses of source work used in the project,
+their repositories' licenses are included below.
 
 ## ZSH and Oh-My-Zsh
 
@@ -109,4 +110,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
