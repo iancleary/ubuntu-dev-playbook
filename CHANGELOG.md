@@ -13,12 +13,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development-tools: Added [VSCodium](https://snapcraft.io/vscodium) snap
 - Apt Dependencies Script: Added [yamllint](https://yamllint.readthedocs.io/)
 - CI: linting - [yamllint](https://yamllint.readthedocs.io/) and [shellcheck](https://www.shellcheck.net/)
+- CI: linting - [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
 ### Changed
 
 - CI: Switched from GitHub Actions to Travis-CI
 - Snaps: moved constituent parts of snap role into separate roles
 - Linted all yaml files with [yamllint](https://yamllint.readthedocs.io/)
+- Linted all bash files with [shellcheck](https://www.shellcheck.net/)
+- Linted non CHANGELOG.md files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
 ## [0.6.0] - 2020-03-20
 

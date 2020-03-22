@@ -19,3 +19,4 @@ nodejs_yarn_global_packages:
   - name: "@vue/cli"
   - name: "@gridsome/cli"
   - name: "nativefier"
+  - name: "markdownlint-cli"
