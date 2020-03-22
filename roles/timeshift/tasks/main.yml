@@ -10,4 +10,4 @@
   apt:
     name: "timeshift"
     state: present
-    update_cache: yes
+    update_cache: "yes"
