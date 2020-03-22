@@ -2,39 +2,6 @@
 - name: Install flameshot deb from github
   become: true
   apt:
-    deb: https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb
-
-#- name: Remove default screenshot keybinding
-#  become: true
-#  dconf:
-#    key: "/org/gnome/settings-daemon/plugins/media-keys/screenshot"
-#    value: "'[]'"
-#    state: present
-#
-#- name: Custom Keybinding Entry - Initialize
-#  become: true
-#  dconf:
-#    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
-#    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/']"
-#    state: present
-#
-#- name: Custom Keybinding Entry - Name
-#  become: true
-#  dconf:
-#    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/name"
-#    value: "'flameshot'"
-#    state: present
-#
-#- name: Custom Keybinding Entry - Command
-#  become: true
-#  dconf:
-#    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/command"
-#    value: "'/usr/bin/flameshot gui'"
-#    state: present
-#
-#- name: Custom Keybinding Entry - Binding
-#  become: true
-#  dconf:
-#    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/binding"
-#    value: "'Print'"
-#    state: present
+    deb: >-
+      https://github.com/lupoDharkael/flameshot/releases/download/
+      v0.6.0/flameshot_0.6.0_bionic_x86_64.deb
