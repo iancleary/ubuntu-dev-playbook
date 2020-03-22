@@ -9,14 +9,14 @@
   register: console_setup_file
 
 - name: install console-setup
-  become: yes
+  become: "yes"
   apt:
     name: console-setup
     state: present
   when: console_setup_file.stat.exists
 
 - name: edit console-setup to utf-8
-  become: yes
+  become: "yes"
   lineinfile:
     dest: /etc/default/console-setup
     regexp: ^CHARMAP=

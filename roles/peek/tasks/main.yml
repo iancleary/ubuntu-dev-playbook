@@ -1,5 +1,5 @@
 ---
-##Install Peek (GIF Screen Recorder)
+# Install Peek (GIF Screen Recorder)
 - name: Peek - Install Peek Develepors PPA
   become: true
   apt_repository:
@@ -11,6 +11,6 @@
   apt:
     name: "{{ item }}"
     state: present
-    update_cache: yes
+    update_cache: "yes"
   loop:
     - peek

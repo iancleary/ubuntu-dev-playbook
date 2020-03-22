@@ -1,4 +1,4 @@
-
+---
 - name: Docker - install apt package dependencies
   become: true
   apt:
@@ -20,13 +20,15 @@
 - name: Docker - Setup Stable Repository 18.04
   become: true
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    repo: >-
+      deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
   when: ansible_distribution_version == "18.04"
 
 - name: Docker - Setup Stable Repository 20.04
   become: true
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    repo: >-
+      deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
   when: ansible_distribution_version == "20.04"
 
 - name: Docker - install Docker CE and containerd packages
@@ -34,7 +36,7 @@
   apt:
     name: "{{ item }}"
     state: latest
-    update_cache: yes
+    update_cache: "yes"
   loop:
     - docker-ce
     - docker-ce-cli
@@ -50,13 +52,13 @@
   user:
     name: "{{ ansible_user }}"
     groups: ["docker"]
-    append: yes
+    append: "yes"
 
 - name: Docker - Start Docker on boot
   become: true
   service:
     name: "docker"
-    enabled: yes
+    enabled: "yes"
 
 - name: Docker - Check current docker-compose version.
   command: docker-compose --version
