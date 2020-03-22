@@ -11,14 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Common-snaps: Added [breaktimer](https://snapcraft.io/breaktimer) snap
 - Development-tools: Added [VSCodium](https://snapcraft.io/vscodium) snap
-- Apt Dependencies Script: Added yamllint
-- CI: Added yamllint
+- Apt Dependencies Script: Added [yamllint](https://yamllint.readthedocs.io/)
+- CI: linting - [yamllint](https://yamllint.readthedocs.io/) and [shellcheck](https://www.shellcheck.net/)
 
 ### Changed
 
 - CI: Switched from GitHub Actions to Travis-CI
 - Snaps: moved constituent parts of snap role into separate roles
-- Linted all yaml files
+- Linted all yaml files with [yamllint](https://yamllint.readthedocs.io/)
 
 ## [0.6.0] - 2020-03-20
 
