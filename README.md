@@ -6,7 +6,13 @@
 
 ## Personal Ansible Playbook to configure my laptops and desktops
 
-I care about not having to think too much about my setup between machines, especially when I want to get right to work.  For that reason, it is very comfortable for me to have the same base configuration on each machine (look, feel, keyboard shortcuts, core software, etc.).
+I care about not having to think too much about my setup between machines.
+Especially when I want to get right to work.
+
+For that reason, it is very comfortable for me
+to have the same base configuration
+on each machine (look, feel,
+keyboard shortcuts, core software, etc.).
 
 ### My journey to the current state of this repo
 
@@ -21,9 +27,11 @@ I care about not having to think too much about my setup between machines, espec
 
 ## Core Software
 
-This isn't exactly the list of Ansible roles, but below is a list of what the software installs.
+This isn't exactly the list of Ansible roles,
+but below is a list of what the software installs.
 
-> Note: the ~~crossed out~~ out items haven't been ported over from the previous Makefiles.
+> Note: the ~~crossed out~~ out items haven't
+> been ported over from the previous Makefiles.
 
 * `ansible`,
 * `cherrytree`,
@@ -69,43 +77,80 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 
 ## Getting Started with this repo
 
+### Makefile
+
 The [Makefile](Makefile) is the entry point.
+
+### Common Utilty Scripts
 
 The [scripts](scripts) folder contains common setup between local scripts and Travis-CI.
 
 ### Quick Note on /etc/profile.d/
 
-Investigate this folder and your ~/.bashrc, ~/.zshrc, etc. files will become simpler and more maintable! 🚀
+Investigate this folder and your
+~/.bashrc, ~/.zshrc, etc. files
+will become simpler and more maintable! 🚀
 
 > Let's stuff a few more lines of configuration into that file, it will be fine 😬😬😬😬.
 
-Tl;dr is that most shells source all files in that folder, similar to `source ~/.bashrc` on a fresh Ubuntu install.  The main advantage for using the `/etc/profile.d/` folder is that it is modular and maintable.
+Tl;dr is that most shells source all files in that folder,
+similar to `source ~/.bashrc` on a fresh Ubuntu install.
+The main advantage for using the `/etc/profile.d/` folder
+is that it is modular and maintable.
 
 Fast forward to your using that folder as it was intended.
- 
-> A zen like calm washes over you now that there is a single file per application and use case! 
+
+> A zen like calm washes over you now that there is
+> a single file per application and use case!
 
 Your messy filing cabinet of assorted patches is no more. 🔥
 
-### New Machine Setup
+> The `. /etc/profile` command is used to
+> manually source the `/etc/profile.d/ folder.
 
-For a new machine, I run the following command to set up my computer:
+### Testing
 
-> Please make sure you adjust your hostname as Ansible keys off this variable.   
+Continuous Integration Testing is done with the
+[.travis.yml](.travis.yml) file and [PyUp](https://pyup.io/).
+
+Multiple jobs test independent portions of the installation.
+
+### Linting
+
+Linting is performed on common file types:
+
+* YAML files with [yamllint](https://yamllint.readthedocs.io/)
+* Bash files with [shellcheck](https://www.shellcheck.net/)
+* Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+
+---
+
+## New Machine Setup
+
+For a new machine, I run the following command
+to set up my computer:
+
+> Please make sure you adjust your hostname as Ansible keys off this variable.
 > I like to do this during the initial configuration of the machine.
 
-
 ```bash
-wget -qO- https://github.com/iancleary/personal-ansible/raw/master/run.sh | sudo bash
+wget -qO- \
+https://github.com/iancleary/personal-ansible/raw/master/run.sh | \
+sudo bash
 ```
 
-This will prompt you for your `sudo` password for the bash script and then once later for `ansible`'s "BECOME PASSWORD" prompt.
+This will prompt you for your `sudo` password
+for the bash script and then once later for
+`ansible`'s "BECOME PASSWORD" prompt.
 
 Voila! 🎉🎉🎉
 
-### Existing Machine
+---
 
-On an existing machine, I run the following bash command, to ensure I am consistent with my playbook:
+## Existing Machine
+
+On an existing machine, I run the following bash command,
+to ensure I am consistent with my playbook:
 
 ```bash
 make all
@@ -121,19 +166,24 @@ Let's go through each.
 
 ### Make bootstrap
 
-This installs several packages with `apt` and python packages per the [requirements.txt](requirements.txt) file.
+This installs several packages with `apt` and
+python packages per the [requirements.txt](requirements.txt) file.
 
 > This includes Ansible, using Python3.
 
-This also moves the [home-local-bin.sh](home-local-bin.sh) file to the `/etc/profile.d/` folder as described above.
+This also moves the [home-local-bin.sh](home-local-bin.sh)
+file to the `/etc/profile.d/` folder as described above.
 
-> The `yarn` roles does a similar operation, except with Ansible instead of bash.
+> The `yarn` roles does a similar operation,
+> except with Ansible instead of bash.
 
 ### Make bootstrap-check
 
-This is to confirm both the `ansible` and `psutil` Python3 packages are installed and on the `$PATH`.
+This is to confirm both the `ansible` and `psutil`
+Python3 packages are installed and on the `$PATH`.
 
-If the pip installation falls back to using the `--user` flag, packages will be located in the following directory under `$HOME`:
+If the pip installation falls back to using the `--user` flag,
+packages will be located in the following directory under `$HOME`:
 
 > Target: `export PATH="$HOME/.local/bin:$PATH"`
 
@@ -170,9 +220,11 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
 
 > Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
 
-## Naming Convention for Make Targets
+### Naming Convention for Make Targets
 
-> `make check` and `make install` are two of the standard  [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html) for this repo.
+> `make check` and `make install` are two of the standard
+> [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html)
+> for this repo.
 
 ---
 
@@ -189,23 +241,34 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
 
 You have two options.
 
-`Make {target}`, replacing *{target}* with what you want.  This runs the install for that tag only.
+`Make {target}`, replacing *{target}* with what you want.
+This runs the install for that tag only.
 
 If you want to run a check first or run select tags, you can use:
 
 ### Only certain tags
 
 ```bash
-ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --tags="common,zsh,cherrytree,flameshot,stacer"
+ansible-playbook personal_computer.yml \
+-i inventory \
+--ask-become-pass \
+-e 'ansible_user='$(whoami) \
+--tags="common-snaps,zsh,cherrytree,flameshot,stacer"
 ```
 
 ### Check
 
 ```bash
-ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansible_user='$(whoami) --check
+ansible-playbook personal_computer.yml \
+-i inventory \
+--ask-become-pass \
+-e 'ansible_user='$(whoami) \
+--check
 ```
 
-> Note: Any check against a role that has an `apt_repository` task (that has not been installed yet) will fail to find the corresponding package in the subsequent `apt` task.
+> Note: Any check against a role that has an `apt_repository` task
+> (that has not been installed yet) will fail to
+> find the corresponding package in the subsequent `apt` task.
 
 ---
 

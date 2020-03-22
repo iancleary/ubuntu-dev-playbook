@@ -27,8 +27,10 @@ jobs:
     - name: Linting
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
+        - nvm install 12.16.1
       install:
         - bash scripts/install_python3_dependencies.sh
+        - npm install -g markdownlint-cli
       before_script:
         - bash scripts/before_script_path_fix.sh
         - . /etc/profile
@@ -36,6 +38,7 @@ jobs:
         - yamllint .
         - shellcheck *.sh
         - shellcheck scripts/*.sh
+        - markdownlint *.md
 
     - name: Path Dependent
       before_install:
