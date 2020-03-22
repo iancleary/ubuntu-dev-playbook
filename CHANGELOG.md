@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Snaps: moved constituent parts of snap role into separate roles
 - Linted all yaml files with [yamllint](https://yamllint.readthedocs.io/)
 - Linted all bash files with [shellcheck](https://www.shellcheck.net/)
-- Linted README.md with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+- Linted non CHANGELOG.md files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
 ## [0.6.0] - 2020-03-20
 
