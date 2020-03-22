@@ -17,4 +17,4 @@
   become: true
   snap:
     name: "slack"
-    classic: yes
+    classic: "yes"
