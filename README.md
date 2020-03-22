@@ -39,7 +39,7 @@ This isn't exactly the list of Ansible roles, but below is a list of what the so
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `Nordvpn`,
 * `nodejs`,
-* [Peek](https://github.com/phw/peek) animated GIT screen recorder,
+* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
 * [Postman](https://www.postman.com/) for API testing,
 * `Protonmail-bridge` <https://protonmail.com/bridge/install>,
 * ~~`python3.6`~~,
