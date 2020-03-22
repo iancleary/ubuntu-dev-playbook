@@ -1,10 +1,11 @@
+---
 - hosts: local
   connection: local
   roles:
     - {role: zsh, tags: ['zsh']}
     - {role: cherrytree, tags: ['cherrytree']}
     - {role: docker, tags: ['docker']}
-    #- {role: python, tags: ['python']}
+    # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
     - {role: ticktick, tags: ['ticktick']}
     - {role: common-snaps, tags: ['common-snaps']}
@@ -20,14 +21,14 @@
     - {role: gnome-themes, tags: ['gnome-themes']}
     - {role: gnome-preferences, tags: ['gnome-preferences']}
     - {role: nordvpn, tags: ['nordvpn'],
-       when: "'xps' in ansible_hostname or 'desktop' in ansible_hostname or 'travis' in ansible_hostname"
-      }
+       when: "ansible_hostname in ['xps', 'desktop', 'travis']"
+    }
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
     - {role: planner, tags: ['planner']}
     - {role: steam, tags: ['steam'],
        when: "'desktop' in ansible_hostname or 'travis' in ansible_hostname"
-      }
+    }
     - {role: evolution, tags: ['evolution']}
     - {role: protonmail-bridge, tags: ['protonmail-bridge']}
     - {role: libreoffice, tags: ['libreoffice']}
