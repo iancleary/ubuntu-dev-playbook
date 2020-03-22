@@ -1,4 +1,4 @@
-
+---
 - name: install flatpak packages
   become: true
   apt:
