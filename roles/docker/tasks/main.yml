@@ -77,8 +77,6 @@
 - name: Docker - Install Docker Compose (if configured).
   become: true
   get_url:
-    url: >-
-      https://github.com/docker/compose/releases/download/
-      {{ docker_compose_version }}/docker-compose-Linux-x86_64
+    url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64
     dest: "{{ docker_compose_path }}"
     mode: 0755
