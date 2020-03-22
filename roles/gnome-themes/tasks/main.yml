@@ -11,7 +11,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    update_cache: yes
+    update_cache: "yes"
   loop:
     - paper-icon-theme
 
@@ -20,7 +20,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    update_cache: yes
+    update_cache: "yes"
   loop:
     - dbus
     - dconf-editor
@@ -44,7 +44,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    update_cache: yes
+    update_cache: "yes"
   loop:
     - gtk2-engines-murrine
     - gtk2-engines-pixbuf
