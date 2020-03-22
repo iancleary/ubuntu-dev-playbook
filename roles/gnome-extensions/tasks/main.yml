@@ -1,5 +1,5 @@
 ---
-- name: GNOME Shell Extensions - Enable universe repository 18.04
+- name: GNOME - Enable universe repository 18.04
   become: true
   apt_repository:
     repo: "{{ item }}"
@@ -9,7 +9,7 @@
     - "deb http://security.ubuntu.com/ubuntu bionic-security universe"
   when: ansible_distribution_version == "18.04"
 
-- name: GNOME Shell Extensions - Enable universe repository 20.04
+- name: GNOME - Enable universe repository 20.04
   become: true
   apt_repository:
     repo: "{{ item }}"
@@ -19,7 +19,7 @@
     - "deb http://security.ubuntu.com/ubuntu focal-security universe"
   when: ansible_distribution_version == "20.04"
 
-- name: GNOME Shell Extensions - apt packages
+- name: GNOME - apt packages
   become: true
   apt:
     name: "{{ item }}"
@@ -30,124 +30,144 @@
     - gnome-shell-extensions
 
 # Window and Application switching
-- name: GNOME Shell Extensions - Dash to Dock - Apply Custom Theme
+- name: GNOME - Dash to Dock - Apply Custom Theme
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Custom Background Color
+- name: GNOME - Dash to Dock - Custom Background Color
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/custom-background-color"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/custom-background-color
     value: "false"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Custom Theme Customize Running Dots
+- name: GNOME - Dash to Dock - Custom Theme Customize Running Dots
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-customize-running-dots"
+    key: >
+      /org/gnome/shell/extensions/dash-to-dock/custom-theme-customize-running-dots
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Custom Theme Running Dots Color
+- name: GNOME - Dash to Dock - Custom Theme Running Dots Color
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-running-dots-color"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/custom-theme-running-dots-color
     value: "'#729fcf'"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Custom Theme Shrink
+- name: GNOME - Dash to Dock - Custom Theme Shrink
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Dock Fixed
+- name: GNOME - Dash to Dock - Dock Fixed
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/dock-fixed
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Dock Position LEFT
+- name: GNOME - Dash to Dock - Dock Position LEFT
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/dock-position"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/dock-position
     value: "'LEFT'"
     state: present
 
 
-- name: GNOME Shell Extensions - Dash to Dock - Extend Height
+- name: GNOME - Dash to Dock - Extend Height
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/extend-height"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/extend-height
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Force Straight Corner
+- name: GNOME - Dash to Dock - Force Straight Corner
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/force-straight-corner"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/force-straight-corner
     value: "false"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Icon Size Fixed
+- name: GNOME - Dash to Dock - Icon Size Fixed
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/icon-size-fixed"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/icon-size-fixed
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Intellihide Mode
+- name: GNOME - Dash to Dock - Intellihide Mode
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/intellihide-mode
     value: "'ALL_WINDOWS'"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Intellihide Status
+- name: GNOME - Dash to Dock - Intellihide Status
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/intellihide"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/intellihide
     value: "'ALL_WINDOWS'"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Isolate Workspaces
+- name: GNOME - Dash to Dock - Isolate Workspaces
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/isolate-workspaces"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/isolate-workspaces
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Show Apps at Top
+- name: GNOME - Dash to Dock - Show Apps at Top
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/show-apps-at-top"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Unity Backlit Items
+- name: GNOME - Dash to Dock - Unity Backlit Items
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/unity-backlit-items"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/unity-backlit-items
     value: "false"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Transparency Mode
+- name: GNOME - Dash to Dock - Transparency Mode
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/transparency-mode"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/transparency-mode
     value: "'FIXED'"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Running Indicator Style
+- name: GNOME - Dash to Dock - Running Indicator Style
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/running-indicator-style"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/running-indicator-style
     value: "'SEGMENTED'"
     state: present
 
 # 0.7 always converts to 0.69999999999999996, due to the Double data type
-- name: GNOME Shell Extensions - Dash to Dock - Background Opacity
+- name: GNOME - Dash to Dock - Background Opacity
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/background-opacity"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/background-opacity
     value: "0.69999999999999996"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Enable Multi-Monitor Docks
+- name: GNOME - Dash to Dock - Enable Multi-Monitor Docks
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/multi-monitor"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/multi-monitor
     value: "true"
     state: present
 
-- name: GNOME Shell Extensions - Dash to Dock - Pressure Threshold
+- name: GNOME - Dash to Dock - Pressure Threshold
   dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/pressure-threshold"
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/pressure-threshold
     value: "0.0"
     state: present
