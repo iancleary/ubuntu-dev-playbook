@@ -16,13 +16,13 @@
     mode: 0644
 
 - name: TickTick - create app with Nativefier
-  command: 
+  command:
     cmd: |
       nativefier "https://ticktick.com" /tmp/nativefier/ticktick
-      --icon /tmp/nativefier/ticktick.png 
-      --name "TickTick" 
+      --icon /tmp/nativefier/ticktick.png
+      --name "TickTick"
       --internal-urls ".*(ticktick)\.(com).*"
-      --tray 
+      --tray
       --single-instance
 
 - name: TickTick - clean /opt folder
@@ -30,7 +30,7 @@
   file:
     state: absent
     path: /opt/ticktick/
-    
+
 - name: TickTick - create /opt folder
   become: true
   file:
@@ -38,7 +38,7 @@
     path: /opt/ticktick/
 
 - name: TickTick - Copy app from /tmp to /opt
-  become: true  
+  become: true
   copy:
     src: /tmp/nativefier/ticktick
     dest: /opt/
