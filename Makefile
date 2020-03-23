@@ -18,7 +18,7 @@ ifeq "$(HOSTNAME)" "$(TRAVIS)"
 	ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -e 'ansible_user='$(shell whoami)
 endif
 
-$(warning ANSIBLE is $(ANSIBLE)) 
+$(warning ANSIBLE is $(ANSIBLE))
 
 # - to suppress if it doesn't exist
 -include make.env
@@ -115,12 +115,12 @@ flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Ke
 flameshot-keybindings: ## Install Flameshot and Update gnome keybindings
 flameshot-keybindings:
 	# For whatever reason, I bricked my GNOME session trying this with ansible
-	# so for now, I'm just going to chain this to the new machine script 
+	# so for now, I'm just going to chain this to the new machine script
 	# and leave it as a make target
 
 	# Update gnome keybindings
 	# source: https://askubuntu.com/a/1116076
-	
+
 	gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
 	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/']"
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ name 'flameshot'
