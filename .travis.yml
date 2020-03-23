@@ -161,6 +161,7 @@ jobs:
     - name: GNOME
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
+        - sudo apt install -y gnome-session
       install:
         - bash scripts/install_python3_dependencies.sh
       before_script:
