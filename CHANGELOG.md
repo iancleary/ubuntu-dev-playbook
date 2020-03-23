@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CI: linting - [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 - Added `flameshot-keybindings` and `tresorit` Make targets to New Machine Setup
 - Added [carbon-cli](https://github.com/mixn/carbon-now-cli) to Yarn globals
+- CI: Added coverage for GNOME roles
 
 ### Changed
 

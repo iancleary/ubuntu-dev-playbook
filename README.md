@@ -74,7 +74,12 @@ for beautiful images of my code - right inside my terminal,
 
 ### Configuration
 
-* The `gnome-*` Ansible roles configure GNOME keybindings and personal preferences.
+The GNOME Ansible roles configure my GNOME personal preferences.
+
+* Extensions: [gnome-extensions](roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](roles/gnome-preferences/tasks/main.yml)
+* Themes: [gnome-themes](roles/gnome-themes/tasks/main.yml)
 
 ---
 
