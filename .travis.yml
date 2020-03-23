@@ -157,3 +157,17 @@ jobs:
         - make flatpak
         - make evolution
         - make libreoffice
+
+    - name: GNOME
+      before_install:
+        - bash scripts/before_install_apt_dependencies.sh
+      install:
+        - bash scripts/install_python3_dependencies.sh
+      before_script:
+        - bash scripts/before_script_path_fix.sh
+        - . /etc/profile
+      script:
+        - make gnome-extensions
+        - make gnome-keybindings
+        - make gnome-themes
+        - make gnome-preferences
