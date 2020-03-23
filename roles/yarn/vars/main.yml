@@ -20,3 +20,4 @@ nodejs_yarn_global_packages:
   - name: "@gridsome/cli"
   - name: "nativefier"
   - name: "markdownlint-cli"
+  - name: "carbon-now-cli"
