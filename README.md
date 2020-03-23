@@ -38,6 +38,7 @@ but below is a list of what the software installs.
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Visual Studio Code`,
 * [VSCodium](https://vscodium.com/),
+* [carbon-cli](https://github.com/mixn/carbon-now-cli) for beautiful images of my code - right inside my terminal,
 * `Chromium`,
 * `docker`,
 * `docker-compose`,
