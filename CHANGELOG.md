@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Apt Dependencies Script: Added [yamllint](https://yamllint.readthedocs.io/)
 - CI: linting - [yamllint](https://yamllint.readthedocs.io/) and [shellcheck](https://www.shellcheck.net/)
 - CI: linting - [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+- Added `flameshot-keybindings` and `tresorit` Make targets to New Machine Setup
 
 ### Changed
 
