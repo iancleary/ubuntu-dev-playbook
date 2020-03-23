@@ -5,6 +5,12 @@
     name: "dconf-editor"
     state: present
 
+- name: install gtk-3-examples
+  become: true
+  apt:
+    name: "gtk-3-examples"
+    state: present
+
 # Better Font Smoothing
 - name: GNOME Preferences - Better Font Smoothing
   dconf:

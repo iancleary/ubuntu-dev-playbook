@@ -42,6 +42,7 @@ but below is a list of what the software installs.
 * `docker`,
 * `docker-compose`,
 * [Flameshot](https://flameshot.js.org/#/),
+* Flameshot keybinding to the Print Screen key using `gsettings`,
 * `Firefox`,
 * `Flatpak`,
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
@@ -63,7 +64,7 @@ but below is a list of what the software installs.
 * `Telegram`,
 * `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
-* ~~`Tresorit`~~,
+* `Tresorit`,
 * `yarn`,
 * `zsh`
 
