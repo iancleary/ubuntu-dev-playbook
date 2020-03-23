@@ -57,7 +57,7 @@ install: ## Installs everything via personal-computer.yml playbook
 	@$(ANSIBLE)
 
 all: ## Does eveything
-all: bootstrap bootstrap-check install
+all: bootstrap bootstrap-check install flameshot-keybindings tresorit
 
 lint:  ## Lint the repo
 lint:
