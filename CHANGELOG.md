@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `flameshot-keybindings` and `tresorit` Make targets to New Machine Setup
 - Added [carbon-cli](https://github.com/mixn/carbon-now-cli) to Yarn globals
 - CI: Added coverage for GNOME roles
+- CI: Combined jobs since Travis Open Source allows 5 parallel jobs
 
 ### Changed
 
