@@ -74,6 +74,29 @@ icloud-for-linux: ## Installs icloud-for-linux snap
 icloud-for-linux: snap
 	sudo snap install icloud-for-linux
 
+python-three-six-altinstall: ## Install python3.6 as altinstall (prerequisites and )
+python-three-six-altinstall: update
+	sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+		libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+		xz-utils tk-dev libffi-dev liblzma-dev
+
+	# fixes for pip SSL issues
+	sudo apt install libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev libgdm-dev libdb4o-cil-dev libpcap-dev
+
+	# sudo apt-get install zlib1g-dev # needed on Pop!_OS 19.10
+
+	# cd ~/Downloads
+	# wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
+	# tar xvf Python-3.6.9.tgz
+	# cd Python-3.6.9
+	#./configure --enable-optimizations --enable-shared \
+		--with-ensurepip=install \
+		--prefix=/usr/local \
+        LDFLAGS="-Wl,--rpath=/usr/local/lib"
+	# make -j8
+	# sudo make altinstall
+	# python3.6
+
 snap:  ## Install snapd
 snap:
 	sudo apt install snapd

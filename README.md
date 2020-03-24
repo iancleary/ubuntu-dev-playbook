@@ -53,8 +53,8 @@ for beautiful images of my code - right inside my terminal,
 * [Peek](https://github.com/phw/peek) animated GIF screen recorder,
 * [Postman](https://www.postman.com/) for API testing,
 * `Protonmail-bridge` <https://protonmail.com/bridge/install>,
-* ~~`python3.6`~~,
-* ~~`python3.7`~~,
+* `python3.6`,
+* `python3.7`,
 * `Signal Desktop`,
 * `Slack`,
 * `Snap`,
@@ -70,7 +70,7 @@ for beautiful images of my code - right inside my terminal,
 * `yarn`,
 * `zsh`
 
-> See the [archive](archive) folder for deleted/old targets.
+> See the [archive](archive) folder for not used targets.
 
 ### Configuration
 

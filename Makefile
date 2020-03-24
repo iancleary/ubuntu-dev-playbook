@@ -26,7 +26,7 @@ $(warning ANSIBLE is $(ANSIBLE))
 help:
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 # adds anything that has a double # comment to the phony help list
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
 bootstrap:
@@ -83,6 +83,96 @@ docker: ## Install Docker and Docker-Compose
 python:
 python: ## Install Python 3.6 and 3.7, with extras
 	@$(ANSIBLE) --tags="python"
+
+python-three-six-install: ## Install python3.6 using apt (main install)
+python-three-six-install:
+
+	sudo apt-get update
+
+	# Start by updating the packages list and installing the prerequisites:
+	sudo apt install software-properties-common
+
+	# install python3.6
+	sudo apt update
+	sudo apt install -y python3.6
+
+	# python3 pip
+	sudo apt install -y python3-pip
+
+python-three-six-supporting: ## Install useful packages
+python-three-six-supporting:
+
+	# upgrade pip
+	python3.6 -m pip install --user --upgrade pip
+	-python3.6 -m pip install --upgrade keyrings.alt --user
+	-python3.6 -m pip install --user --upgrade setuptools
+
+	# python3 pytest
+	sudo apt install -y python3-pytest
+
+	# At this point, Python 3.6 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.6 --version
+	python3.6 -m pip --version
+	python3.6 -m pytest --version
+
+	python3.6 -m pip install --user twine
+	python3.6 -m pip install --user wheel
+	python3.6 -m pip install --user cookiecutter
+	python3.6 -m pip install --user pipenv
+
+python-three-seven-install: ## Install python3.7 using apt (main install)
+python-three-seven-install:
+
+	sudo apt-get update
+
+	# Start by updating the packages list and installing the prerequisites:
+	sudo apt install software-properties-common
+
+	# Next, add the deadsnakes PPA to your sources list:
+	# sudo add-apt-repository ppa:deadsnakes/ppa # not for 19.04
+	# when prompted, press Enter to continue
+
+	# Once the repository is enabled, install Python 3.7 with: (added libpython3.7-dev for pip installs)
+	# - httptools wasn't installing correctly until adding it
+	# - see: https://github.com/huge-success/sanic/issues/1503#issuecomment-469031275
+	sudo apt update
+	sudo apt install -y python3.7 libpython3.7-dev
+
+	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.7 --version
+
+python-three-seven-supporting: ## Install useful packages
+python-three-seven-supporting:
+
+	# python3 pip
+	sudo apt install -y python3-pip
+
+	# upgrade pip
+	python3.7 -m pip install --user --upgrade pip
+	-python3.7 -m pip install --upgrade keyrings.alt --user
+	-python3.7 -m pip install --user --upgrade setuptools
+
+	# python3 pytest
+	sudo apt install -y python3-pytest
+
+	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.7 --version
+	python3.7 -m pip --version
+	python3.7 -m pytest --version
+
+	python3.7 -m pip install --user twine
+	python3.7 -m pip install --user wheel
+	python3.7 -m pip install --user cookiecutter
+	python3.7 -m pip install --user pipenv
+
+poetry: ## Install Poetry (Python Packaging and Dependency Management)
+poetry:
+	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
+	sudo apt-get install -y python3-venv
+	python3.7 -m pip install --user poetry
 
 common-snaps:
 common-snaps: ## Install Common Snaps
