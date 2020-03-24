@@ -85,7 +85,10 @@ python: ## Install Python 3.6 and 3.7, with extras
 	@$(ANSIBLE) --tags="python"
 
 python-three-six-install: ## Install python3.6 using apt (main install)
-python-three-six-install: update
+python-three-six-install:
+
+	sudo apt-get update
+
 	# Start by updating the packages list and installing the prerequisites:
 	sudo apt install software-properties-common
 
@@ -119,7 +122,10 @@ python-three-six-supporting:
 	python3.6 -m pip install --user pipenv
 
 python-three-seven-install: ## Install python3.7 using apt (main install)
-python-three-seven-install: update
+python-three-seven-install:
+
+	sudo apt-get update
+
 	# Start by updating the packages list and installing the prerequisites:
 	sudo apt install software-properties-common
 
