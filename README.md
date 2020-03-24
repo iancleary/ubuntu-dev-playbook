@@ -164,11 +164,12 @@ to ensure I am consistent with my playbook:
 make all
 ```
 
-This target runs three other targets in series:
+This target runs four other targets in series:
 
 * `bootstrap`
 * `bootstrap-check`
 * `install`
+* `non-ansible`
 
 Let's go through each.
 
@@ -227,6 +228,23 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
 ```
 
 > Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
+
+### Make non-ansible
+
+This the targets that I found easier to maintain with bash or Makefile scripts.
+
+```bash
+# No user input required
+make flameshot-keybindings
+make python-three-six-install
+make python-three-six-supporting
+make python-three-seven-install
+make python-three-seven-supporting
+make poetry
+
+# Needs to run last as requires user input
+make tresorit
+```
 
 ### Naming Convention for Make Targets
 
