@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Make non-ansible role for new machine script
+
 ### Changed
 
 - CI: Moved flameshot test to GNOME job 

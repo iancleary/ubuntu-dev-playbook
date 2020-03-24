@@ -56,8 +56,22 @@ install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
 	@$(ANSIBLE)
 
-all: ## Does eveything
-all: bootstrap bootstrap-check install flameshot-keybindings tresorit
+all: ## Does eveything with Ansible and Make targets
+all: bootstrap bootstrap-check install non-ansible
+
+non-ansible:
+non-ansible: ## Runs all non-ansible make targets for fresh install (all target)
+
+	# No user input required
+	make flameshot-keybindings
+	make python-three-six-install
+	make python-three-six-supporting
+	make python-three-seven-install
+	make python-three-seven-supporting
+	make poetry
+
+	# Needs to run last as requires user input
+	make tresorit
 
 lint:  ## Lint the repo
 lint:
