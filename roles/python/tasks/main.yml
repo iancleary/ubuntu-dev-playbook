@@ -16,6 +16,8 @@
   loop:
     - python3.6
     - python3-pip
+    - python3-setuptools
+    - python3-apt
     - python3-pytest
     - python3-venv
 
@@ -69,6 +71,8 @@
   loop:
     - python3.7
     - libpython3.7-dev
+    - python3-setuptools
+    - python3-apt
     - python3-pip
     - python3-pytest
     - python3-venv
