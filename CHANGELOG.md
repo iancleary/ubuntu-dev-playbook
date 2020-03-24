@@ -10,10 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Make non-ansible role for new machine script
+- GNOME terminal: set `theme-variant` to 'dark'
 
 ### Changed
 
-- CI: Moved flameshot test to GNOME job 
+- CI: Moved flameshot test to GNOME job
 to test `make flameshot-keybindings`
 - Moved Python3.6 and Python3.7 `make` targets to main Makefile
 
