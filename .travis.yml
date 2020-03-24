@@ -68,8 +68,6 @@ jobs:
         - peek --version
         - make timeshift
         - timeshift --help
-        - make flameshot
-        - flameshot --version
         - make github-cli
         - gh --version
         - make nordvpn
@@ -107,7 +105,7 @@ jobs:
         - make evolution
         - make libreoffice
 
-    - name: GNOME
+    - name: GNOME Preferences and Flameshot
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
         - sudo apt install -y gnome-shell gnome-session
@@ -119,6 +117,9 @@ jobs:
         - bash scripts/before_script_path_fix.sh
         - . /etc/profile
       script:
+        - make flameshot
+        - flameshot --version
+        - make flameshot-keybindings
         - make gnome-extensions
         - make gnome-keybindings
         - make gnome-themes
