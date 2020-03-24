@@ -53,7 +53,7 @@ jobs:
         - vue --version
         - gridsome --version
 
-    - name: Common Deb Packages (Cherrytree, Peek, Timeshift, Flameshot, GitHub CLI, NordVPN, Stacer)
+    - name: Common Apt/Deb Packages (Python, Cherrytree, Peek, Timeshift, Flameshot, GitHub CLI, NordVPN, Stacer)
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -62,6 +62,11 @@ jobs:
         - bash scripts/before_script_path_fix.sh
         - . /etc/profile
       script:
+        - make python-three-six-install
+        - make python-three-six-supporting
+        - make python-three-seven-install
+        - make python-three-seven-supporting
+        - make poetry
         - make cherrytree
         - cherrytree --help
         - make peek
