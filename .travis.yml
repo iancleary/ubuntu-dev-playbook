@@ -53,7 +53,7 @@ jobs:
         - vue --version
         - gridsome --version
 
-    - name: Common Deb Packages
+    - name: Common Deb Packages (Cherrytree, Peek, Timeshift, Flameshot, GitHub CLI, NordVPN, Stacer)
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -75,7 +75,6 @@ jobs:
         - make nordvpn
         - nordvpn --version
         - make stacer
-        - make docker
 
     - name: Common Snaps, Chat Clients, Development Tools, Web Browsers
       before_install:
