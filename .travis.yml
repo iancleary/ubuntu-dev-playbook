@@ -37,7 +37,7 @@ jobs:
       script:
         - make lint
 
-    - name: Path Dependent
+    - name: Docker, Zsh, Nodejs, and Yarn
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -46,13 +46,14 @@ jobs:
         - bash scripts/before_script_path_fix.sh
         - . /etc/profile
       script:
+        - make docker
         - make zsh
         - make yarn
         - . /etc/profile
         - vue --version
         - gridsome --version
 
-    - name: Common Deb Packages
+    - name: Common Deb Packages (Cherrytree, Peek, Timeshift, Flameshot, GitHub CLI, NordVPN, Stacer)
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -75,7 +76,7 @@ jobs:
         - nordvpn --version
         - make stacer
 
-    - name: Common Snaps
+    - name: Common Snaps, Chat Clients, Development Tools, Web Browsers
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -85,54 +86,13 @@ jobs:
         - . /etc/profile
       script:
         - make common-snaps
-
-    - name: Chat Clients
-      before_install:
-        - bash scripts/before_install_apt_dependencies.sh
-      install:
-        - bash scripts/install_python3_dependencies.sh
-      before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
-      script:
         - make chat-clients
-
-    - name: Development Tools
-      before_install:
-        - bash scripts/before_install_apt_dependencies.sh
-      install:
-        - bash scripts/install_python3_dependencies.sh
-      before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
-      script:
         - make development-tools
         - code --version
         - codium --version
-
-    - name: Web Browsers
-      before_install:
-        - bash scripts/before_install_apt_dependencies.sh
-      install:
-        - bash scripts/install_python3_dependencies.sh
-      before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
-      script:
         - make web-browsers
 
-    - name: Docker
-      before_install:
-        - bash scripts/before_install_apt_dependencies.sh
-      install:
-        - bash scripts/install_python3_dependencies.sh
-      before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
-      script:
-        - make docker
-
-    - name: Flatpak Personal
+    - name: Flatpak - Personal, Office
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
       install:
@@ -144,17 +104,6 @@ jobs:
         - make flatpak
         - make planner
         - make steam
-
-    - name: Flatpak Office
-      before_install:
-        - bash scripts/before_install_apt_dependencies.sh
-      install:
-        - bash scripts/install_python3_dependencies.sh
-      before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
-      script:
-        - make flatpak
         - make evolution
         - make libreoffice
 
