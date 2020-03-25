@@ -2,6 +2,7 @@
 
 ## ------------------------
 ## Install Dependencies Required for this script
+sudo apt-get update
 sudo apt install -y git make
 
 ## ------------------------
@@ -16,10 +17,10 @@ mkdir -p $FOLDER
 cd $FOLDER || exit
 if [ ! -d "$GIT_REPO" ] ; then
     git clone $URL $GIT_REPO
-else
     cd $GIT_REPO || exit
+else
     echo "Didn't clone repo since folder exists"
-    #exit
+    cd $GIT_REPO || exit
 fi
 
 ## ------------------------
