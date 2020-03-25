@@ -125,7 +125,6 @@ jobs:
         - make flameshot
         - flameshot --version
         - make flameshot-keybindings
-        - make gnome-terminal
         - make gnome-extensions
         - make gnome-keybindings
         - make gnome-themes

@@ -62,6 +62,12 @@
   become_user: '{{ ansible_user }}'
   command: 'bash /tmp/vimix-gtk-themes/install.sh'
 
+- name: GNOME Themes - Set Terminal to Dark
+  dconf:
+    key: "/org/gnome/Terminal/Legacy/Settings/theme-variant"
+    value: "'dark'"
+    state: present
+
 - name: GNOME Themes - Set GTK Theme
   dconf:
     key: "/org/gnome/desktop/interface/gtk-theme"
