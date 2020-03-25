@@ -40,6 +40,8 @@ bootstrap: ## Installs dependencies needed to run playbook
 
 	# Ensure "$$HOME/.local/bin" is part of PATH
 	bash scripts/before_script_path_fix.sh
+	# Source folder (to ensure initial setup loads this file)
+	. /etc/profile
 
 bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
