@@ -1,8 +1,8 @@
 #!/bin/sh
 FOLDER=$HOME/.local/bin
 
-sudo chown -R "$USER:$USER" $FOLDER
-sudo chmod -R 755 $FOLDER
+sudo chown -R "$USER:$USER" "$FOLDER"
+sudo chmod -R 755 "$FOLDER"
 
 pip3 install --user --upgrade pip
 pip3 install --upgrade keyrings.alt --user
