@@ -24,6 +24,11 @@
     dest: /etc/profile.d/yarn.sh
     mode: 0644
 
+- name: Yarn - Reload Path
+  become: true
+  shell:
+    cmd: ". /etc/profile"
+
 - name: Yarn - Ensure Yarn global packages are installed.
   yarn:
     name: "{{ item.name | default(item) }}"

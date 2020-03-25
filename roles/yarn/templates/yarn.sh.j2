@@ -1,22 +1,22 @@
 # https://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem
-function addToPATH {
+addToPATH() {
   case ":$PATH:" in
     *":$1:"*) :;; # already there
     *) PATH="$1:$PATH";; # or PATH="$PATH:$1"
   esac
 }
 
-addToPATH {{ yarn_config_prefix }}/bin
+addToPATH "{{ yarn_config_prefix }}/bin"
 
-addToPATH $HOME/.yarn/bin
+addToPATH "$HOME/.yarn/bin"
 
 export YARN_CONFIG_PREFIX={{ yarn_config_prefix }}
 
-function addToNODE_PATH {
+addToNODE_PATH() {
   case ":$NODE_PATH:" in
     *":$1:"*) :;; # already there
     *) NODE_PATH="$1:$NODE_PATH";; # or NODE_PATH="$NODE_PATH:$1"
   esac
 }
 
-addToNODE_PATH {{ yarn_config_prefix }}/lib/node_modules
+addToNODE_PATH "{{ yarn_config_prefix }}/lib/node_modules"
