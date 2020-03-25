@@ -64,6 +64,7 @@ non-ansible: ## Runs all non-ansible make targets for fresh install (all target)
 
 	# No user input required
 	make flameshot-keybindings
+	make gnome-terminal
 	make python-three-six-install
 	make python-three-six-supporting
 	make python-three-seven-install
@@ -246,6 +247,10 @@ gnome-extensions: ## Install GNOME Extensions
 gnome-keybindings:
 gnome-keybindings: ## Set my GNOME Keybindings
 	@$(ANSIBLE) --tags="gnome-keybindings"
+
+gnome-terminal:
+gnome-terminal: ## Configure GNOME terminal to use the dark theme-variant
+	gsettings set org.gnome.Terminal.Legacy.Settings theme-variant "'dark'"
 
 gnome-themes:
 gnome-themes: ## Install and Set GNOME Theme, Icons, and Cursor

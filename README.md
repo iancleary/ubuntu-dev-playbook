@@ -236,6 +236,7 @@ This the targets that I found easier to maintain with bash or Makefile scripts.
 ```bash
 # No user input required
 make flameshot-keybindings
+make gnome-terminal
 make python-three-six-install
 make python-three-six-supporting
 make python-three-seven-install

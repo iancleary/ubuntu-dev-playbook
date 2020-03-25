@@ -113,7 +113,7 @@ jobs:
     - name: GNOME Preferences and Flameshot
       before_install:
         - bash scripts/before_install_apt_dependencies.sh
-        - sudo apt install -y gnome-shell gnome-session
+        - sudo apt install -y gnome-shell gnome-session gnome-terminal
         - sudo apt install -y dconf-gsettings-backend dconf-tools dconf-cli
         - sudo apt install -y gsettings-desktop-schemas
       install:
@@ -125,6 +125,7 @@ jobs:
         - make flameshot
         - flameshot --version
         - make flameshot-keybindings
+        - make gnome-terminal
         - make gnome-extensions
         - make gnome-keybindings
         - make gnome-themes
