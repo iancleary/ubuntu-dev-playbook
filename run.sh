@@ -17,11 +17,16 @@ mkdir -p $FOLDER
 cd $FOLDER || exit
 if [ ! -d "$GIT_REPO" ] ; then
     git clone $URL $GIT_REPO
-    cd $GIT_REPO || exit
 else
     echo "Didn't clone repo since folder exists"
-    cd $GIT_REPO || exit
 fi
+
+# Fix permissions and ownership
+sudo chown -R "$USER:$USER" $GIT_REPO
+sudo chmod -R 755 $GIT_REPO
+
+# Enter Repo
+cd $GIT_REPO || exit
 
 ## ------------------------
 ## Run Make Target to bootstrap, bootstrap-check, and install
