@@ -143,8 +143,8 @@ to set up my computer:
 
 ```bash
 wget -qO- \
-https://github.com/iancleary/personal-ansible/raw/master/run.sh | \
-sudo bash
+https://github.com/iancleary/personal-ansible/raw/task/93-dry-run/run.sh | \
+bash
 ```
 
 This will prompt you for your `sudo` password
