@@ -44,4 +44,9 @@ make bootstrap-check
 
 # Install Everything
 make install
+
+# Start Flameshot
+flameshot > /dev/null 2>&1
+
+# Install non-ansible
 make non-ansible
