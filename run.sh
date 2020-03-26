@@ -48,5 +48,16 @@ make install
 # Start Flameshot
 flameshot > /dev/null 2>&1
 
-# Install non-ansible
+# Upgrade System After Fresh Install
+sudo apt update
+sudo apt -y full-upgrade
+sudo apt -y autoremove
+
+# Install non-ansible (no user input required)
 make non-ansible
+
+# Needs to run last as requires user input
+make tresorit
+
+# Restart to start using machine
+sudo reboot
