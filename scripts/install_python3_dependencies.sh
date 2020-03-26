@@ -1,6 +1,8 @@
 #!/bin/sh
 FOLDER=$HOME/.local/bin
 
+mkdir -p $FOLDER
+
 sudo chown -R "$USER:$USER" "$FOLDER"
 sudo chmod -R 755 "$FOLDER"
 
