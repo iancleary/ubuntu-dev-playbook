@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Chown and chmod `$HOME/.local/bin`
 - Chown and chmod cloned repo in `run.sh`
 - Source `. /etc/profile` in yarn role
+- Start Flameshot automatically
 
 ### Changed
 
