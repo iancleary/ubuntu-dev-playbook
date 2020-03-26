@@ -10,13 +10,14 @@ sudo apt install -y git make
 FOLDER=personal
 GIT_USER=iancleary
 GIT_REPO=personal-ansible
+GIT_BRANCH=task/93-dry-run
 URL=https://github.com/$GIT_USER/$GIT_REPO.git
 
 cd ~ || exit
 mkdir -p $FOLDER
 cd $FOLDER || exit
 if [ ! -d "$GIT_REPO" ] ; then
-    git clone $URL $GIT_REPO
+    git clone -b $GIT_BRANCH $URL $GIT_REPO
 else
     echo "Didn't clone repo since folder exists"
 fi
