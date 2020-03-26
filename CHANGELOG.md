@@ -10,13 +10,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Make non-ansible role for new machine script
-- GNOME terminal: set `theme-variant` to 'dark'
+- GNOME terminal: set `theme-variant` to 'dark' (fixed)
+- GNOME Extensions: Set dock icon size to 24
+- Chown and chmod `$HOME/.local/bin`
+- Chown and chmod cloned repo in `run.sh`
+- Source `. /etc/profile` in yarn role
 
 ### Changed
 
 - CI: Moved flameshot test to GNOME job
 to test `make flameshot-keybindings`
 - Moved Python3.6 and Python3.7 `make` targets to main Makefile
+- `sh` linting in `yarn.sh.j2` template
+- Changed `.travis.yml` to use Makefile for lifecyle
+
+## Removed
+
+- Removed `sudo` from `sudo bash` in new machine script
 
 ## [0.7.0] - 2020-03-23
 
