@@ -144,7 +144,7 @@ to set up my computer:
 ```bash
 wget -qO- \
 https://github.com/iancleary/personal-ansible/raw/master/run.sh | \
-sudo bash
+bash
 ```
 
 This will prompt you for your `sudo` password
@@ -236,15 +236,11 @@ This the targets that I found easier to maintain with bash or Makefile scripts.
 ```bash
 # No user input required
 make flameshot-keybindings
-make gnome-terminal
 make python-three-six-install
 make python-three-six-supporting
 make python-three-seven-install
 make python-three-seven-supporting
 make poetry
-
-# Needs to run last as requires user input
-make tresorit
 ```
 
 ### Naming Convention for Make Targets

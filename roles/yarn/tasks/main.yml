@@ -24,6 +24,11 @@
     dest: /etc/profile.d/yarn.sh
     mode: 0644
 
+- name: Yarn - Reload Path for yarn.sh
+  become: true
+  shell:
+    cmd: ". /etc/profile"
+
 - name: Yarn - Ensure Yarn global packages are installed.
   yarn:
     name: "{{ item.name | default(item) }}"
@@ -32,3 +37,8 @@
     state: latest
   loop: "{{ nodejs_yarn_global_packages }}"
   tags: ['skip_ansible_lint']
+
+- name: Yarn - Reload Path for new globals
+  become: true
+  shell:
+    cmd: ". /etc/profile"

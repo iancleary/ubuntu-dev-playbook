@@ -101,6 +101,13 @@
     value: "true"
     state: present
 
+- name: GNOME - Dash to Dock - Icon Size
+  dconf:
+    key: >-
+      /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
+    value: "24"
+    state: present
+
 - name: GNOME - Dash to Dock - Intellihide Mode
   dconf:
     key: >-

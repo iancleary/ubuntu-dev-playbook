@@ -29,17 +29,25 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
-bootstrap:
-bootstrap: ## Installs dependencies needed to run playbook
-
+bootstrap-before-install:
+bootstrap-before-install:
 	# Apt Dependencies (removes apt ansible)
 	bash scripts/before_install_apt_dependencies.sh
 
+bootstrap-install:
+bootstrap-install:
 	# Python3 Dependencies (install python3 ansible)
 	bash scripts/install_python3_dependencies.sh
 
+bootstrap-before-script:
+bootstrap-before-script:
 	# Ensure "$$HOME/.local/bin" is part of PATH
 	bash scripts/before_script_path_fix.sh
+	# Source folder (to ensure initial setup loads this file)
+	. /etc/profile
+
+bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script
+bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
@@ -64,15 +72,11 @@ non-ansible: ## Runs all non-ansible make targets for fresh install (all target)
 
 	# No user input required
 	make flameshot-keybindings
-	make gnome-terminal
 	make python-three-six-install
 	make python-three-six-supporting
 	make python-three-seven-install
 	make python-three-seven-supporting
 	make poetry
-
-	# Needs to run last as requires user input
-	make tresorit
 
 lint:  ## Lint the repo
 lint:
@@ -247,10 +251,6 @@ gnome-extensions: ## Install GNOME Extensions
 gnome-keybindings:
 gnome-keybindings: ## Set my GNOME Keybindings
 	@$(ANSIBLE) --tags="gnome-keybindings"
-
-gnome-terminal:
-gnome-terminal: ## Configure GNOME terminal to use the dark theme-variant
-	gsettings set org.gnome.Terminal.Legacy.Settings theme-variant "'dark'"
 
 gnome-themes:
 gnome-themes: ## Install and Set GNOME Theme, Icons, and Cursor

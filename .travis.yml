@@ -26,25 +26,23 @@ jobs:
   include:
     - name: Linting
       before_install:
-        - bash scripts/before_install_apt_dependencies.sh
+        - make bootstrap-before-install
         - nvm install 12.16.1
       install:
-        - bash scripts/install_python3_dependencies.sh
+        - make bootstrap-install
         - npm install -g markdownlint-cli
       before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
+        - make bootstrap-before-script
       script:
         - make lint
 
     - name: Docker, Zsh, Nodejs, and Yarn
       before_install:
-        - bash scripts/before_install_apt_dependencies.sh
+        - make bootstrap-before-install
       install:
-        - bash scripts/install_python3_dependencies.sh
+        - make bootstrap-install
       before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
+        - make bootstrap-before-script
       script:
         - make docker
         - make zsh
@@ -55,12 +53,11 @@ jobs:
 
     - name: Common Apt/Deb Packages (Python, Cherrytree, Peek, Timeshift, Flameshot, GitHub CLI, NordVPN, Stacer)
       before_install:
-        - bash scripts/before_install_apt_dependencies.sh
+        - make bootstrap-before-install
       install:
-        - bash scripts/install_python3_dependencies.sh
+        - make bootstrap-install
       before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
+        - make bootstrap-before-script
       script:
         - make python-three-six-install
         - make python-three-six-supporting
@@ -81,12 +78,11 @@ jobs:
 
     - name: Common Snaps, Chat Clients, Development Tools, Web Browsers
       before_install:
-        - bash scripts/before_install_apt_dependencies.sh
+        - make bootstrap-before-install
       install:
-        - bash scripts/install_python3_dependencies.sh
+        - make bootstrap-install
       before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
+        - make bootstrap-before-script
       script:
         - make common-snaps
         - make chat-clients
@@ -97,12 +93,11 @@ jobs:
 
     - name: Flatpak - Personal, Office
       before_install:
-        - bash scripts/before_install_apt_dependencies.sh
+        - make bootstrap-before-install
       install:
-        - bash scripts/install_python3_dependencies.sh
+        - make bootstrap-install
       before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
+        - make bootstrap-before-script
       script:
         - make flatpak
         - make planner
@@ -112,20 +107,18 @@ jobs:
 
     - name: GNOME Preferences and Flameshot
       before_install:
-        - bash scripts/before_install_apt_dependencies.sh
+        - make bootstrap-before-install
         - sudo apt install -y gnome-shell gnome-session gnome-terminal
         - sudo apt install -y dconf-gsettings-backend dconf-tools dconf-cli
         - sudo apt install -y gsettings-desktop-schemas
       install:
-        - bash scripts/install_python3_dependencies.sh
+        - make bootstrap-install
       before_script:
-        - bash scripts/before_script_path_fix.sh
-        - . /etc/profile
+        - make bootstrap-before-script
       script:
         - make flameshot
         - flameshot --version
         - make flameshot-keybindings
-        - make gnome-terminal
         - make gnome-extensions
         - make gnome-keybindings
         - make gnome-themes
