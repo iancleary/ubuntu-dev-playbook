@@ -10,7 +10,7 @@ sudo apt install -y git make
 FOLDER=personal
 GIT_USER=iancleary
 GIT_REPO=personal-ansible
-GIT_BRANCH=task/93-dry-run
+GIT_BRANCH=master
 URL=https://github.com/$GIT_USER/$GIT_REPO.git
 
 cd ~ || exit

@@ -143,7 +143,7 @@ to set up my computer:
 
 ```bash
 wget -qO- \
-https://github.com/iancleary/personal-ansible/raw/task/93-dry-run/run.sh | \
+https://github.com/iancleary/personal-ansible/raw/master/run.sh | \
 bash
 ```
 
@@ -241,9 +241,6 @@ make python-three-six-supporting
 make python-three-seven-install
 make python-three-seven-supporting
 make poetry
-
-# Needs to run last as requires user input
-make tresorit
 ```
 
 ### Naming Convention for Make Targets
