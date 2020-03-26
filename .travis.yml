@@ -47,7 +47,6 @@ jobs:
         - make docker
         - make zsh
         - make yarn
-        - . /etc/profile
         - vue --version
         - gridsome --version
 
