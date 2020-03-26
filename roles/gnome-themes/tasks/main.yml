@@ -54,7 +54,7 @@
   become_user: '{{ ansible_user }}'
   git:
     repo: https://github.com/vinceliuice/vimix-gtk-themes/
-    depth: 1
+    depth: "1"
     dest: /tmp/vimix-gtk-themes
 
 - name: GNOME Themes - Install Vimix GTK Themes
@@ -64,7 +64,7 @@
 
 - name: GNOME Themes - Set Terminal to Dark
   dconf:
-    key: "/org/gnome/Terminal/Legacy/Settings/theme-variant"
+    key: "/org/gnome/terminal/legacy/theme-variant"
     value: "'dark'"
     state: present
 
