@@ -4,3 +4,17 @@
   apt:
     deb: >-
       https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb
+
+- name: account $HOME
+  shell: "echo $HOME"
+  register: account_homedir
+  changed_when: false
+  check_mode: no
+
+- name: Make flameshot startup automatically
+  copy:
+    src: "{{ role_path }}/files/Flameshot.desktop"
+    dest: "{{ account_homedir.stdout }}/.config/autostart/Flameshot.desktop"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0644"
