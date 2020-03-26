@@ -30,6 +30,18 @@ sudo chmod -R 755 $GIT_REPO
 cd $GIT_REPO || exit
 
 ## ------------------------
-## Run Make Target to bootstrap, bootstrap-check, and install
+## Run Make Targets
 
-make all
+# Initial Bootstrap to Setup Machine
+make bootstrap
+
+# Source home-local-bin.sh file in /etc/profile.d/
+# shellcheck disable=SC1091
+. /etc/profile
+
+# Check Path
+make bootstrap-check
+
+# Install Everything
+make install
+make non-ansible
