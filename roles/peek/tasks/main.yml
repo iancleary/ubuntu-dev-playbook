@@ -1,16 +1,6 @@
 ---
-# Install Peek (GIF Screen Recorder)
-- name: Peek - Install Peek Develepors PPA
+- name: Peek - GIF Screen Recorder via Flatpak
   become: true
-  apt_repository:
-    repo: ppa:peek-developers/stable
+  flatpak:
+    name: com.uploadedlobster.peek
     state: present
-
-- name: Peek - Install apt package
-  become: true
-  apt:
-    name: "{{ item }}"
-    state: present
-    update_cache: "yes"
-  loop:
-    - peek

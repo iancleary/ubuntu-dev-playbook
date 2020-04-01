@@ -66,8 +66,6 @@ jobs:
         - make poetry
         - make cherrytree
         - cherrytree --help
-        - make peek
-        - peek --version
         - make timeshift
         - timeshift --help
         - make github-cli
@@ -101,6 +99,7 @@ jobs:
       script:
         - make flatpak
         - make planner
+        - make peek
         - make steam
         - make evolution
         - make libreoffice
