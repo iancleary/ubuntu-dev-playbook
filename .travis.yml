@@ -100,7 +100,6 @@ jobs:
         - make flatpak
         - make planner
         - make peek
-        - peek --version
         - make steam
         - make evolution
         - make libreoffice
