@@ -26,6 +26,7 @@ to test `make flameshot-keybindings`
 - `sh` linting in `yarn.sh.j2` template
 - Changed `.travis.yml` to use Makefile for lifecyle
 - Peek: switched from a deb to Flatpak
+- Upgraded github-cli version to 0.6.3
 
 ## Removed
 
