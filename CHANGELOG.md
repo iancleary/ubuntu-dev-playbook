@@ -27,6 +27,7 @@ to test `make flameshot-keybindings`
 - Changed `.travis.yml` to use Makefile for lifecyle
 - Peek: switched from a deb to Flatpak
 - Upgraded github-cli version to 0.6.3
+- Upgraded protonmail-bridge to 1.2.6-1
 
 ## Removed
 
