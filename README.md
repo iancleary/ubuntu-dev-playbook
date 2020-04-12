@@ -1,10 +1,10 @@
-# personal-ansible
+# ansible-desktop
 
-[![Build Status](https://img.shields.io/travis/com/iancleary/personal-ansible/master.svg)](https://img.shields.io/travis/com/iancleary/personal-ansible)
-[![Updates](https://pyup.io/repos/github/iancleary/personal-ansible/shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
-[![Python 3](https://pyup.io/repos/github/iancleary/personal-ansible/python-3-shield.svg)](https://pyup.io/repos/github/iancleary/personal-ansible/)
+[![Build Status](https://img.shields.io/travis/com/iancleary/ansible-desktop/master.svg)](https://img.shields.io/travis/com/iancleary/ansible-desktop)
+[![Updates](https://pyup.io/repos/github/iancleary/ansible-desktop/shield.svg)](https://pyup.io/repos/github/iancleary/ansible-desktop/)
+[![Python 3](https://pyup.io/repos/github/iancleary/ansible-desktop/python-3-shield.svg)](https://pyup.io/repos/github/iancleary/ansible-desktop/)
 
-## Personal Ansible Playbook to configure my laptops and desktops
+## Ansible Playbook to configure my laptops and desktops
 
 I care about not having to think too much about my setup between machines.
 Especially when I want to get right to work.
