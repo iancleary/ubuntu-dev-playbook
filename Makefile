@@ -137,6 +137,7 @@ python-three-six-supporting:
 
 	python3.6 -m pip install --user twine
 	python3.6 -m pip install --user wheel
+	python3.6 -m pip install --user flit
 	python3.6 -m pip install --user cookiecutter
 	python3.6 -m pip install --user pipenv
 
@@ -184,14 +185,59 @@ python-three-seven-supporting:
 
 	python3.7 -m pip install --user twine
 	python3.7 -m pip install --user wheel
+	python3.7 -m pip install --user flit
 	python3.7 -m pip install --user cookiecutter
 	python3.7 -m pip install --user pipenv
+
+python-three-eight-install: ## Install python3.7 using apt (main install)
+python-three-eight-install:
+
+	sudo apt-get update
+
+	# Start by updating the packages list and installing the prerequisites:
+	sudo apt install software-properties-common
+
+	# Once the repository is enabled, install Python 3.8 with: (added libpython3.8-dev for pip installs)
+	# - httptools wasn't installing correctly until adding it
+	# - see: https://github.com/huge-success/sanic/issues/1503#issuecomment-469031275
+	sudo apt update
+	sudo apt install -y python3.8 libpython3.8-dev
+
+	# At this point, Python 3.8 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.8 --version
+
+python-three-eight-supporting: ## Install useful packages
+python-three-eight-supporting:
+
+	# python3 pip
+	sudo apt install -y python3-pip
+
+	# upgrade pip
+	python3.8 -m pip install --user --upgrade pip
+	-python3.8 -m pip install --upgrade keyrings.alt --user
+	-python3.8 -m pip install --user --upgrade setuptools
+
+	# python3 pytest
+	sudo apt install -y python3-pytest
+
+	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
+	# You can verify it by typing:
+	python3.8 --version
+	python3.8 -m pip --version
+	python3.8 -m pytest --version
+
+	python3.8 -m pip install --user twine
+	python3.8 -m pip install --user wheel
+	python3.8 -m pip install --user flit
+	python3.8 -m pip install --user cookiecutter
+	python3.8 -m pip install --user pipenv
 
 poetry: ## Install Poetry (Python Packaging and Dependency Management)
 poetry:
 	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
 	sudo apt-get install -y python3-venv
-	python3.7 -m pip install --user poetry
+	python3.8 -m pip install --user poetry
 
 common-snaps:
 common-snaps: ## Install Common Snaps
