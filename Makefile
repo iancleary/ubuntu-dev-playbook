@@ -137,6 +137,7 @@ python-three-six-supporting:
 
 	python3.6 -m pip install --user twine
 	python3.6 -m pip install --user wheel
+	python3.6 -m pip install --user flit
 	python3.6 -m pip install --user cookiecutter
 	python3.6 -m pip install --user pipenv
 
@@ -184,6 +185,7 @@ python-three-seven-supporting:
 
 	python3.7 -m pip install --user twine
 	python3.7 -m pip install --user wheel
+	python3.7 -m pip install --user flit
 	python3.7 -m pip install --user cookiecutter
 	python3.7 -m pip install --user pipenv
 
@@ -227,6 +229,7 @@ python-three-eight-supporting:
 
 	python3.8 -m pip install --user twine
 	python3.8 -m pip install --user wheel
+	python3.8 -m pip install --user flit
 	python3.8 -m pip install --user cookiecutter
 	python3.8 -m pip install --user pipenv
 
