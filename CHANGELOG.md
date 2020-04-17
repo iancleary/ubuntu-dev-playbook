@@ -30,6 +30,7 @@ to test `make flameshot-keybindings`
 - Peek: switched from a deb to Flatpak
 - Upgraded github-cli version to 0.6.3
 - Upgraded protonmail-bridge to 1.2.6-1
+- Changed `pip3` to `python3 -m pip` for version compatibility
 
 ## Removed
 
