@@ -3,4 +3,4 @@
   become: true
   apt:
     deb: >-
-      https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
+      {{stacer_url}}/v{{ stacer_version }}/stacer_{{ stacer_version }}_amd64.deb
