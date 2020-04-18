@@ -7,6 +7,7 @@
     - {role: docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
+    - {role: jetbrains-mono, tags: ['jetbrains-mono']}
     - {role: ticktick, tags: ['ticktick']}
     - {role: common-snaps, tags: ['common-snaps']}
     - {role: chat-clients, tags: ['chat-clients']}
