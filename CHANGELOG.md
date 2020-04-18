@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Start Flameshot automatically
 - Upgrade system in run.sh, reboot when done
 - Python 3.8 and flit
+- Added [ncspot snap](https://snapcraft.io/ncspot)
 
 ### Changed
 
