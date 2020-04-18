@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- [JetBrains Mono Font](https://www.jetbrains.com/lp/mono/) via [Download JetBrainMono-1.0.3.zip](https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip)
+
 ## [0.8.0] - 2020-04-18
 
 ### Added

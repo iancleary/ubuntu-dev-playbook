@@ -99,6 +99,10 @@ docker:
 docker: ## Install Docker and Docker-Compose
 	@$(ANSIBLE) --tags="docker"
 
+jetbrains-mono:
+jetbrains-mono: ## Install JetBrains Mono font
+	@$(ANSIBLE) --tags="jetbrains-mono"
+
 python:
 python: ## Install Python 3.6 and 3.7, with extras
 	@$(ANSIBLE) --tags="python"
