@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2020-04-18
+
 ### Added
 
 - Make non-ansible role for new machine script
@@ -161,7 +163,8 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.8.0
 [0.7.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.7.0
 [0.6.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.6.0
 [0.5.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.5.0
