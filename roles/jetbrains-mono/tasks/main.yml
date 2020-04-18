@@ -2,7 +2,7 @@
 ## JetBrains Mono Font
 - name: Download JetBrains
   get_url:
-    url: https://download.jetbrains.com/fonts/JetBrainsMono-{{ jetbrains_mono_version }}.zip
+    url: "{{ jetbrains_mono_url }}-{{ jetbrains_mono_version }}.zip"
     dest: /tmp/
     mode: '0755'
 
@@ -11,7 +11,7 @@
   unarchive:
     src: /tmp/JetBrainsMono-{{ jetbrains_mono_version }}.zip
     dest: /usr/share/fonts
-    remote_src: yes
+    remote_src: "yes"
 
 - name: Install font
   command: fc-cache -f -v

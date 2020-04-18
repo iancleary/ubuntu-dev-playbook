@@ -14,5 +14,6 @@ editor.fontFamily
 JSON
 
 ```json
-"editor.fontFamily": "‘Jetbrains Mono’,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+"editor.fontFamily":
+  "‘Jetbrains Mono’,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
 ```
