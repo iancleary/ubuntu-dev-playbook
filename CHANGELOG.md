@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [JetBrains Mono Font](https://www.jetbrains.com/lp/mono/) via [Download JetBrainMono-1.0.3.zip](https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip)
+- [group_vars](group_vars) folder
+
+## Changed
+
+- Moved role vars/ to defaults/ when group_vars make sense
 
 ## [0.8.0] - 2020-04-18
 

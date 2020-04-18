@@ -1,0 +1,22 @@
+---
+docker_compose_version: 1.25.4
+flameshot_version: 0.6.0
+gh_version: 0.6.4
+jetbrains_mono_version: 1.0.3
+protonmail_bridge_version: 1.2.6-1
+nodejs_version: "12.x"
+nodejs_yarn_global_packages:
+  - name: "@vue/cli"
+  - name: "@gridsome/cli"
+  - name: "nativefier"
+  - name: "markdownlint-cli"
+  - name: "carbon-now-cli"
+stacer_version: 1.1.0
+zsh_theme: robbyrussell
+zsh_plugins:
+  - ansible
+  - aws
+  - docker
+  - docker-compose
+  - git
+  - pipenv

@@ -43,7 +43,7 @@
 
 - name: Zsh - write .zshrc
   become: "yes"
-  become_user: '{{ ansible_user}}'
+  become_user: '{{ ansible_user }}'
   template:
     src: zshrc.j2
     dest: '~{{ ansible_user }}/.zshrc'

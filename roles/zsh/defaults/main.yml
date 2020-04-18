@@ -1,6 +1,6 @@
 ---
-theme: robbyrussell
-plugins:
+zsh_theme: robbyrussell
+zsh_plugins:
   - ansible
   - aws
   - docker

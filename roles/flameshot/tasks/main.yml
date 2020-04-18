@@ -3,7 +3,7 @@
   become: true
   apt:
     deb: >-
-      https://github.com/lupoDharkael/flameshot/releases/download/v0.6.0/flameshot_0.6.0_bionic_x86_64.deb
+      {{ flameshot_url }}/v{{ flameshot_version }}/flameshot_{{ flameshot_version }}_bionic_x86_64.deb
 
 - name: account $HOME
   shell: "echo $HOME"
