@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Changed
 
 - Moved role vars/ to defaults/ when group_vars make sense
+- Changed `gnome-extensions` to have dock on bottom, and multi-monitor dock turned off
 
 ## [0.8.0] - 2020-04-18
 

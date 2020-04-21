@@ -72,11 +72,11 @@
     value: "true"
     state: present
 
-- name: GNOME - Dash to Dock - Dock Position LEFT
+- name: GNOME - Dash to Dock - Dock Position BOTTOM
   dconf:
     key: >-
       /org/gnome/shell/extensions/dash-to-dock/dock-position
-    value: "'LEFT'"
+    value: "'BOTTOM'"
     state: present
 
 
@@ -169,7 +169,7 @@
   dconf:
     key: >-
       /org/gnome/shell/extensions/dash-to-dock/multi-monitor
-    value: "true"
+    value: "false"
     state: present
 
 - name: GNOME - Dash to Dock - Pressure Threshold
