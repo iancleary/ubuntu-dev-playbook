@@ -10,12 +10,12 @@ OS_VERSION_NAME := $(shell lsb_release -cs)
 HOSTNAME = $(shell hostname)
 
 # Main Ansible Playbook Command (prompts for password)
-ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) --ask-become-pass -e 'ansible_user='$(shell whoami)
+ANSIBLE=ansible-playbook personal_computer.yml -v -l $(HOSTNAME) --ask-become-pass -e 'ansible_user='$(shell whoami)
 
 # Travis CI Ansible Playbook Command (doesn't prompt for password)
 TRAVIS=travis
 ifeq "$(HOSTNAME)" "$(TRAVIS)"
-	ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) -e 'ansible_user='$(shell whoami)
+	ANSIBLE=ansible-playbook personal_computer.yml -v -l $(HOSTNAME) -e 'ansible_user='$(shell whoami)
 endif
 
 $(warning ANSIBLE is $(ANSIBLE))

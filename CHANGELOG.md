@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Moved role vars/ to defaults/ when group_vars make sense
 - Changed `gnome-extensions` to have dock on bottom, and multi-monitor dock turned off
+- `inventory` now uses the `all` group; `{hostname}.yml` can live in:
+  - [group_vars](group_vars) folder (version controlled; not sensitive)
+  - `/etc/ansible/group_vars` (not versino controlled; sensitive)
 
 ## [0.8.0] - 2020-04-18
 
