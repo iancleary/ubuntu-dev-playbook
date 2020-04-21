@@ -251,6 +251,19 @@ make poetry
 
 ---
 
+## Per Machine Setup
+
+The [inventory](inventory) file uses the `all` group to ensure be used locally
+
+If you want per machine variables, create a `{hostname}.yml` in either:
+
+* The [group_vars](group_vars) folder local to the repo (version controlled; not sensitive)
+* The machine's `/etc/ansible/group_vars/` folder (not version controlled; sensitive)
+
+This allows one hostname to remain private outside of version control
+
+---
+
 ## Requirements.txt
 
  Notable Ansible Modules Used with regards to dependencies
