@@ -253,7 +253,7 @@ make poetry
 
 ## Per Machine Setup
 
-The [inventory](inventory) file uses the `all` group to ensure be used locally
+The [inventory](inventory) file uses the `localhost` group to ensure be used locally
 
 If you want per machine variables, create a `{hostname}.yml` in either:
 
