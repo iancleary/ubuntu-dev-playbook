@@ -55,7 +55,6 @@ jobs:
         - carbon-now --version
         - make ticktick
 
-
     - name: Common Apt/Deb Packages (Python, Cherrytree, Peek, Timeshift, Flameshot, GitHub CLI, NordVPN, Stacer)
       before_install:
         - make bootstrap-before-install
