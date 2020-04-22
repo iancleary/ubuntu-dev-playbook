@@ -37,6 +37,7 @@ but below is a list of what the software installs.
 * `cherrytree`,
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Visual Studio Code`,
+* [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
 * [VSCodium](https://vscodium.com/),
 * [carbon-cli](https://github.com/mixn/carbon-now-cli)
 for beautiful images of my code - right inside my terminal,
@@ -270,7 +271,6 @@ If you want per machine variables, create a `{hostname}.yml` in either:
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 
-
 #### Example
 
 For example, a `my-awesome-hostname.yml` could be:
@@ -284,8 +284,6 @@ nodejs_yarn_global_packages:
   - name: "markdownlint-cli"
   - name: "carbon-now-cli"
 ```
-
-
 
 ---
 
