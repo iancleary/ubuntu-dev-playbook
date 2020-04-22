@@ -253,7 +253,15 @@ make poetry
 
 ## Per Machine Setup
 
-The [inventory](inventory) file uses the `localhost` group to ensure be used locally
+The [inventory](inventory) file uses the `localhost` and `{hostname}` groups to ensure
+the IPv4 address used is `127.0.0.1`.
+
+```bash
+[hostname]
+127.0.0.1
+```
+
+### Host specific variables
 
 If you want per machine variables, create a `{hostname}.yml` in either:
 
@@ -261,6 +269,23 @@ If you want per machine variables, create a `{hostname}.yml` in either:
 * The machine's `/etc/ansible/group_vars/` folder (not version controlled; sensitive)
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
+
+
+#### Example
+
+For example, a `my-awesome-hostname.yml` could be:
+
+```yaml
+---
+nodejs_yarn_global_packages:
+  - name: "@vue/cli"
+  - name: "@gridsome/cli"
+  - name: "nativefier"
+  - name: "markdownlint-cli"
+  - name: "carbon-now-cli"
+```
+
+
 
 ---
 
