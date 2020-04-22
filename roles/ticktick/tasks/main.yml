@@ -50,6 +50,12 @@
     path: "/opt/ticktick/TickTick-linux-x64/resources/app/package.json"
     name: "TickTick"
 
+- name: Create a directory if it does not exist
+  file:
+    path: ~/.local/share/applications/
+    state: directory
+    mode: '0755'
+
 - name: TickTick - Add .desktop file
   template:
     src: ticktick.desktop.j2
