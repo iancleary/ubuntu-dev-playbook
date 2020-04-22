@@ -44,13 +44,11 @@
     dest: /opt/
     mode: "preserve"
 
-- name: Read JSON file (can also be a variable).
-  shell: cat /opt/ticktick/TickTick-linux-x64/resources/app/package.json
-  register: json
-
-- name: Get simple value.
-  set_fact:
-    ticktick_nativefier_name: "{{ (json.stdout | from_json).name }}"
+- name: Update name in package.json
+  become: true
+  json_mod:
+    path: "/opt/ticktick/TickTick-linux-x64/resources/app/package.json"
+    name: "TickTick"
 
 - name: TickTick - Add .desktop file
   template:
