@@ -50,6 +50,10 @@ jobs:
         - . /etc/profile
         - vue --version
         - gridsome --version
+        - nativefier --version
+        - markdownlint --version
+        - carbon-now --version
+        - make ticktick
 
     - name: Common Apt/Deb Packages (Python, Cherrytree, Peek, Timeshift, Flameshot, GitHub CLI, NordVPN, Stacer)
       before_install:
