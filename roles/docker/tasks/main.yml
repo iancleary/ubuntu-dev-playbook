@@ -17,19 +17,13 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
+# 20.04 has everything needed within Ubuntu's repositories  
 - name: Docker - Setup Stable Repository 18.04
   become: true
   apt_repository:
     repo: >-
       deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
   when: ansible_distribution_version == "18.04"
-
-# - name: Docker - Setup Stable Repository 20.04
-#   become: true
-#   apt_repository:
-#     repo: >-
-#       deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
-#   when: ansible_distribution_version == "20.04"
 
 - name: Docker - install Docker CE and containerd packages
   become: true
