@@ -17,7 +17,7 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
-# 20.04 has everythin needed within Ubuntu's repository  
+# 20.04 has everything needed within Ubuntu's repositories  
 - name: Docker - Setup Stable Repository 18.04
   become: true
   apt_repository:
