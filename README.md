@@ -88,7 +88,7 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 * Extensions: [gnome-extensions](roles/gnome-extensions/tasks/main.yml)
 * Keybindings: [gnome-keybindings](roles/gnome-keybindings/tasks/main.yml)
 * Preferences: [gnome-preferences](roles/gnome-preferences/tasks/main.yml)
-* Themes: [gnome-themes](roles/gnome-themes/tasks/main.yml)
+* Themes (18.04 only): [gnome-themes](roles/gnome-themes/tasks/main.yml)
 
 ---
 
@@ -243,13 +243,12 @@ ansible-playbook personal_computer.yml -i inventory --ask-become-pass -e 'ansibl
 This the targets that I found easier to maintain with bash or Makefile scripts.
 
 ```bash
-# No user input required
+# configure Flameshot with gsettings to bind to PrtScr
 make flameshot-keybindings
-make python-three-six-install
-make python-three-six-supporting
-make python-three-seven-install
-make python-three-seven-supporting
-make poetry
+
+# Ubuntu 20.04 defaults
+make python-three-eight-install
+make python-three-eight-supporting
 ```
 
 ### Naming Convention for Make Targets
@@ -281,7 +280,7 @@ If you want per machine variables, create a `{hostname}.yml` in either:
 
 #### Example
 
-For example, a `my-awesome-hostname.yml` could be:
+For example, a `/etc/ansible/group_vars/my-awesome-hostname.yml` could be:
 
 ```yaml
 ---
@@ -319,7 +318,7 @@ If you want to run a check first or run select tags, you can use:
 ansible-playbook personal_computer.yml \
 -i inventory \
 --ask-become-pass \
--e 'ansible_user='$(whoami) \
+-e '{"ansible_user": "$(whoami)"}' \
 --tags="common-snaps,zsh,cherrytree,flameshot,stacer"
 ```
 
@@ -329,7 +328,7 @@ ansible-playbook personal_computer.yml \
 ansible-playbook personal_computer.yml \
 -i inventory \
 --ask-become-pass \
--e 'ansible_user='$(whoami) \
+-e '{"ansible_user": "$(whoami)"}' \
 --check
 ```
 
