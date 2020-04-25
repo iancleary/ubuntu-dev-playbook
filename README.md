@@ -25,6 +25,14 @@ keyboard shortcuts, core software, etc.).
 * I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
 * I finally took the plunge and decided to use ansible for my configuration. ✔️
 
+## Supported Ubuntu LTS Versions
+
+* Ubuntu 18.04
+* Ubuntu 20.04
+
+> There are no plans to support non-LTS versions.  
+> Software support is LTS version dependent.
+
 ## Core Software
 
 This isn't exactly the list of Ansible roles,
