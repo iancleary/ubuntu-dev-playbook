@@ -1,7 +1,7 @@
 ---
 docker_compose_version: 1.25.4
 flameshot_version: 0.6.0
-gh_version: 0.6.4
+gh_version: 0.7.0
 jetbrains_mono_version: 1.0.3
 protonmail_bridge_version: 1.2.6-1
 nodejs_version: "12.x"

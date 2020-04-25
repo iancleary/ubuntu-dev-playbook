@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `gnome-extensions` to have dock on bottom, and multi-monitor dock turned off
 - `inventory` now uses the `localhost` and `{hostname}` groups.
 - Removed unneeded apt_repository task for Docker on Ubuntu 20.04
+- Bumped gh CLI version to 0.7.0
 
 ## [0.8.0] - 2020-04-18
 
