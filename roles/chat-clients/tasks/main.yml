@@ -5,16 +5,15 @@
     name: "snapd"
     state: present
 
-- name: Chat Clients - Install Confined Signal and Telegram Snaps
+- name: Chat Clients - Install Confined Snaps
   become: true
   snap:
     name: "{{ item }}"
-  loop:
-    - "signal-desktop"
-    - "telegram-desktop"
+  with_items: "{{ snaps_chat }}"
 
-- name: Chat Clients - Install Classicly Confined Slack Snap
+- name: Chat Clients - Install Classicly Confined Snaps
   become: true
   snap:
-    name: "slack"
+    name: "{{ item }}"
     classic: "yes"
+  with_items: "{{ snaps_chat_classic }}"

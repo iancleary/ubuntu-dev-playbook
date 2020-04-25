@@ -17,6 +17,11 @@ nodejs_yarn_global_packages:
   - name: "nativefier"
   - name: "markdownlint-cli"
   - name: "carbon-now-cli"
+snaps_chat:
+  - "signal-desktop"
+  - "telegram-desktop" 
+snaps_chat_classic:
+  - "slack"
 snaps_common:
   - "snap-store"
   - "breaktimer"
