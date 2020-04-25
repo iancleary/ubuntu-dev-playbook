@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [group_vars](group_vars) folder
 - [library/json_mod](library/json_mod) module, from [bradymholt/json_mod](https://gist.github.com/bradymholt/17cb99185c7b80b0f34a)
 - Kite AI Autocompletion and Docs for Python, via [kite.com](https://kite.com/)
+- Flameshot detection on installed package version
 
 ## Changed
 
