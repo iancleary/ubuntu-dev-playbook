@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Ticktick from `make install` as it fails during fresh install
 - `sudo reboot` from end of [run.sh](run.sh)
+- Moved `Poetry` to archive
 
 ## [0.8.0] - 2020-04-18
 

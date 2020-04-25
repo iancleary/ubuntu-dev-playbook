@@ -244,12 +244,6 @@ python-three-eight-supporting:
 	python3.8 -m pip install --user cookiecutter
 	python3.8 -m pip install --user pipenv
 
-poetry: ## Install Poetry (Python Packaging and Dependency Management)
-poetry:
-	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
-	sudo apt-get install -y python3-venv
-	python3.8 -m pip install --user poetry
-
 common-snaps:
 common-snaps: ## Install Common Snaps
 	@$(ANSIBLE) --tags="common-snaps"

@@ -97,6 +97,12 @@ python-three-six-altinstall: update
 	# sudo make altinstall
 	# python3.6
 
+poetry: ## Install Poetry (Python Packaging and Dependency Management)
+poetry:
+	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
+	sudo apt-get install -y python3-venv
+	python3.8 -m pip install --user poetry
+
 snap:  ## Install snapd
 snap:
 	sudo apt install snapd
