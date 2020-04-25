@@ -9,6 +9,8 @@ OS_VERSION_NAME := $(shell lsb_release -cs)
 
 HOSTNAME = $(shell hostname)
 
+# Both ANSIBLE commands need the "ansible_user" for the zsh role
+
 # Main Ansible Playbook Command (prompts for password)
 ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) --ask-become-pass -e '{"ansible_user": "$(shell whoami)"}'
 
