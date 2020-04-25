@@ -2,6 +2,7 @@
 - name: Gather the apt package facts
   package_facts:
     manager: auto
+  no_log: "true"
 
 - name: Check whether a package called flameshot is installed
   debug:
