@@ -69,7 +69,6 @@ jobs:
         - make python-three-seven-supporting
         - make python-three-eight-install
         - make python-three-eight-supporting
-        - make poetry
         - make cherrytree
         - cherrytree --help
         - make timeshift
