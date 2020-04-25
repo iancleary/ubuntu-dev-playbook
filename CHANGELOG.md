@@ -22,6 +22,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `inventory` now uses the `localhost` and `{hostname}` groups.
 - Removed unneeded apt_repository task for Docker on Ubuntu 20.04
 - Bumped gh CLI version to 0.7.0
+- Moved peek role after Flatpak to ensure dependencies are met
+- GNOME Themes role on performed on Ubuntu 18.04 due to PPA availability at 20.04 launch
+
+## Removed
+
+- Ticktick from `make install` as it fails during fresh install
 
 ## [0.8.0] - 2020-04-18
 

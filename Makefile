@@ -62,7 +62,8 @@ check: ## Checks personal-computer.yml playbook
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
-	@$(ANSIBLE)
+	@$(ANSIBLE) --skip-tags="ticktick"
+	# ticktick doesn't work on fresh install for some reason
 
 all: ## Does eveything with Ansible and Make targets
 all: bootstrap bootstrap-check install non-ansible

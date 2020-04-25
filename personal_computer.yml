@@ -13,19 +13,21 @@
     - {role: chat-clients, tags: ['chat-clients']}
     - {role: web-browsers, tags: ['web-browsers']}
     - {role: development-tools, tags: ['development-tools']}
-    - {role: peek, tags: ['peek']}
     - {role: timeshift, tags: ['timeshift']}
     - {role: flameshot, tags: ['flameshot']}
     - {role: github-cli, tags: ['github-cli']}
     - {role: gnome-extensions, tags: ['gnome-extensions']}
     - {role: gnome-keybindings, tags: ['gnome-keybindings']}
-    - {role: gnome-themes, tags: ['gnome-themes']}
+    - {role: gnome-themes, tags: ['gnome-themes'],
+       when: ansible_distribution_version == "18.04"
+    }
     - {role: gnome-preferences, tags: ['gnome-preferences']}
     - {role: nordvpn, tags: ['nordvpn'],
        when: "ansible_hostname in ['xps', 'desktop', 'travis']"
     }
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
+    - {role: peek, tags: ['peek']}
     - {role: planner, tags: ['planner']}
     - {role: steam, tags: ['steam'],
        when: "ansible_hostname in ['desktop', 'travis']"
