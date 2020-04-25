@@ -25,7 +25,7 @@
       deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
   when: ansible_distribution_version == "18.04"
 
-- name: Docker - install Docker CE and containerd packages
+- name: Docker - install Docker - 18.04
   become: true
   apt:
     name: "{{ item }}"
@@ -35,6 +35,15 @@
     - docker-ce
     - docker-ce-cli
     - containerd.io
+  when: ansible_distribution_version == "18.04"
+
+- name: Docker - install Docker - 20.04
+  become: true
+  apt:
+    name: docker.io
+    state: latest
+    update_cache: "yes"
+  when: ansible_distribution_version == "20.04"
 
 - name: Docker - Create the docker group
   group:
