@@ -158,6 +158,7 @@ python-three-six-supporting:
 	python3.6 -m pip install --user flit
 	python3.6 -m pip install --user cookiecutter
 	python3.6 -m pip install --user pipenv
+	python3.6 -m pip install --user pre-commit
 
 python-three-seven-install: ## Install python3.7 using apt (main install)
 python-three-seven-install:
@@ -206,6 +207,7 @@ python-three-seven-supporting:
 	python3.7 -m pip install --user flit
 	python3.7 -m pip install --user cookiecutter
 	python3.7 -m pip install --user pipenv
+	python3.7 -m pip install --user pre-commit
 
 python-three-eight-install: ## Install python3.7 using apt (main install)
 python-three-eight-install:
@@ -250,6 +252,7 @@ python-three-eight-supporting:
 	python3.8 -m pip install --user flit
 	python3.8 -m pip install --user cookiecutter
 	python3.8 -m pip install --user pipenv
+	python3.8 -m pip install --user pre-commit
 
 common-snaps:
 common-snaps: ## Install Common Snaps

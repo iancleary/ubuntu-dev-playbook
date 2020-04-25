@@ -15,8 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Kite AI Autocompletion and Docs for Python, via [kite.com](https://kite.com/)
 - Flameshot detection on installed package version
 - Docker support for Ubuntu 20.04
-- Code Extensions variable
+- Snaps and Code Extensions variables per [#83](https://github.com/iancleary/ansible-desktop/issues/83)
 - Snaps variables
+- Added pre-commit python package per [#116](https://github.com/iancleary/ansible-desktop/issues/116)
 
 ## Changed
 
