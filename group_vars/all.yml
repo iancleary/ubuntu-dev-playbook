@@ -1,6 +1,12 @@
 ---
 docker_compose_version: 1.25.4
 flameshot_version: 0.6.0
+flatpak_applications:
+  - "com.uploadedlobster.peek"
+  - "com.github.alainm23.planner"
+  - "com.valvesoftware.Steam"
+  - "org.gnome.Evolution"
+  - "org.libreoffice.LibreOffice"
 gh_version: 0.7.0
 jetbrains_mono_version: 1.0.3
 protonmail_bridge_version: 1.2.6-1

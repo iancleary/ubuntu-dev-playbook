@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Moved peek role after Flatpak to ensure dependencies are met
 - GNOME Themes role on performed on Ubuntu 18.04 due to PPA availability at 20.04 launch
 - Fixed repo name in README
+- Moved flatpak application list to group_vars
+- Updated evolution and libreoffice roles to remove apt packages
 
 ## Removed
 

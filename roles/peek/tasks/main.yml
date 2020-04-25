@@ -1,6 +1,0 @@
----
-- name: Peek - GIF Screen Recorder via Flatpak
-  become: true
-  flatpak:
-    name: com.uploadedlobster.peek
-    state: present

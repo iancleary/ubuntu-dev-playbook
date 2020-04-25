@@ -27,11 +27,7 @@
     }
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
-    - {role: peek, tags: ['peek']}
-    - {role: planner, tags: ['planner']}
-    - {role: steam, tags: ['steam'],
-       when: "ansible_hostname in ['desktop', 'travis']"
-    }
-    - {role: evolution, tags: ['evolution']}
+    # Installed Evolution and LibreOffice with Flatpak
+    - {role: evolution-remove-apt, tags: ['evolution-remove-apt']}
+    - {role: libreoffice-remove-apt, tags: ['libreoffice-remove-apt']}
     - {role: protonmail-bridge, tags: ['protonmail-bridge']}
-    - {role: libreoffice, tags: ['libreoffice']}
