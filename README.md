@@ -144,7 +144,7 @@ to set up my computer:
 
 ```bash
 wget -qO- \
-https://github.com/iancleary/personal-ansible/raw/master/run.sh | \
+https://github.com/iancleary/ansible-desktop/raw/master/run.sh | \
 bash
 ```
 

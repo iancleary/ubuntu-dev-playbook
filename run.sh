@@ -9,7 +9,7 @@ sudo apt install -y git make
 ## Setup Repo Locally
 FOLDER=personal
 GIT_USER=iancleary
-GIT_REPO=personal-ansible
+GIT_REPO=ansible-desktop
 GIT_BRANCH=master
 URL=https://github.com/$GIT_USER/$GIT_REPO.git
 
@@ -60,4 +60,5 @@ make non-ansible
 make tresorit
 
 # Restart to start using machine
-sudo reboot
+# Prompt?
+# sudo reboot

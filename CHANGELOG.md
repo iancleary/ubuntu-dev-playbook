@@ -24,10 +24,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bumped gh CLI version to 0.7.0
 - Moved peek role after Flatpak to ensure dependencies are met
 - GNOME Themes role on performed on Ubuntu 18.04 due to PPA availability at 20.04 launch
+- Fixed repo name in README
 
 ## Removed
 
 - Ticktick from `make install` as it fails during fresh install
+- `sudo reboot` from end of [run.sh](run.sh)
 
 ## [0.8.0] - 2020-04-18
 
