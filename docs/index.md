@@ -1,8 +1,7 @@
 # ansible-desktop
 
 [![Build Status](https://img.shields.io/travis/com/iancleary/ansible-desktop/master.svg)](https://img.shields.io/travis/com/iancleary/ansible-desktop)
-[![Updates](https://pyup.io/repos/github/iancleary/ansible-desktop/shield.svg)](https://pyup.io/repos/github/iancleary/ansible-desktop/)
-[![Python 3](https://pyup.io/repos/github/iancleary/ansible-desktop/python-3-shield.svg)](https://pyup.io/repos/github/iancleary/ansible-desktop/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a90303b-4694-4407-964b-0caa5a68827c/deploy-status)](https://app.netlify.com/sites/iancleary-ansible-desktop/deploys)
 
 ## Ansible Playbook to configure my laptops and desktops
 
