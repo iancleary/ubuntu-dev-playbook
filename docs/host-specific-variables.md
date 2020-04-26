@@ -1,6 +1,6 @@
 # Per Machine Setup
 
-The [inventory](https://github.com/iancleary/ansible-desktop/inventory) file uses the `localhost` and `{hostname}` groups to ensure
+The [inventory](https://github.com/iancleary/ansible-desktop/blob/master/inventory) file uses the `localhost` and `{hostname}` groups to ensure
 the IPv4 address used is `127.0.0.1`.
 
 ```bash
@@ -12,13 +12,13 @@ the IPv4 address used is `127.0.0.1`.
 
 If you want per machine variables, create a `{hostname}.yml` in either:
 
-* The [group_vars](group_vars) folder local to the repo (version controlled; not sensitive)
+* The [group_vars](https://github.com/iancleary/ansible-desktop/tree/master/group_vars) folder local to the repo (version controlled; not sensitive)
 * The machine's `/etc/ansible/group_vars/` folder (not version controlled; sensitive)
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 
 In either case, the `{hostname}.yml` file will override the `all.yml` file within
-the [group_vars](https://github.com/iancleary/ansible-desktop/group_vars) folder.
+the [group_vars](https://github.com/iancleary/ansible-desktop/tree/master/group_vars) folder.
 
 Please see Ansible's documentation for the order of precedence.
 
@@ -50,7 +50,7 @@ nodejs_yarn_global_packages:
   - name: "carbon-now-cli"
 ```
 
-Then add an entry in the [inventory](https://github.com/iancleary/ansible-desktop/inventory) file:
+Then add an entry in the [inventory](https://github.com/iancleary/ansible-desktop/blob/master/inventory) file:
 
 ```ini
 [localhost]

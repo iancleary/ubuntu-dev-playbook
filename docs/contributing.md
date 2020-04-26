@@ -40,7 +40,7 @@ make lint
 #### Testing
 
 Continuous Integration Testing is done with the
-[.travis.yml](.travis.yml) file and [PyUp](https://pyup.io/).
+[.travis.yml](https://github.com/iancleary/ansible-desktop/blob/master/.travis.yml) file and [PyUp](https://pyup.io/).
 
 Multiple jobs test independent portions of the installation.
 

@@ -122,12 +122,6 @@ for the bash script and then once later for
 
 Voila! 🎉🎉🎉
 
----
-
-
-
----
-
 ## Changes
 
 See [CHANGELOG](CHANGELOG.md) for history.
