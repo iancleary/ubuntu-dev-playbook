@@ -5,17 +5,29 @@
     name: "snapd"
     state: present
 
-- name: Development Tools - Install Postman Snap
+- name: Development Confined Snaps
   become: true
   snap:
-    name: "postman"
+    name: "{{ item }}"
+  with_items: "{{ snaps_development }}"
 
-- name: Development Tools - VSCode, VSCodium, Sublime Text Snaps w/ --classic
+- name: Development Classically Confined Snaps
   become: true
   snap:
     name: "{{item}}"
     classic: "yes"
-  loop:
-    - "code"
-    - "codium"
-    - "sublime-text"
+  with_items: "{{ snaps_development_classic }}"
+
+- name: Register currently installed code extensions
+  shell: code --list-extensions
+  register: installed_code_extensions
+  changed_when: "false"
+
+- name: Debug currently installed code extensions
+  debug:
+    var: installed_code_extensions.stdout_lines
+
+- name: Code Extensions
+  shell: code --install-extension "{{ item }}"
+  with_items: "{{ code_extensions }}"
+  when: "item not in installed_code_extensions.stdout_lines"

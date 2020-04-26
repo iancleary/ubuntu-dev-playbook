@@ -69,7 +69,6 @@ jobs:
         - make python-three-seven-supporting
         - make python-three-eight-install
         - make python-three-eight-supporting
-        - make poetry
         - make cherrytree
         - cherrytree --help
         - make timeshift
@@ -92,7 +91,8 @@ jobs:
         - make chat-clients
         - make development-tools
         - code --version
-        - codium --version
+        # - codium --version
+        # not using currently
         - make web-browsers
 
     - name: Flatpak - Personal, Office
@@ -121,7 +121,8 @@ jobs:
       before_script:
         - make bootstrap-before-script
       script:
-        - make flameshot
+        - make flameshot  # fresh install
+        - make flameshot  # test not installing when version string matches
         - flameshot --version
         - make flameshot-keybindings
         - make gnome-extensions

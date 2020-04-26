@@ -9,13 +9,15 @@ OS_VERSION_NAME := $(shell lsb_release -cs)
 
 HOSTNAME = $(shell hostname)
 
+# Both ANSIBLE commands need the "ansible_user" for the zsh role
+
 # Main Ansible Playbook Command (prompts for password)
-ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) --ask-become-pass -e 'ansible_user='$(shell whoami)
+ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) --ask-become-pass -e '{"ansible_user": "$(shell whoami)"}'
 
 # Travis CI Ansible Playbook Command (doesn't prompt for password)
 TRAVIS=travis
 ifeq "$(HOSTNAME)" "$(TRAVIS)"
-	ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) -e 'ansible_user='$(shell whoami)
+	ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) -e '{"ansible_user": "$(shell whoami)"}'
 endif
 
 $(warning ANSIBLE is $(ANSIBLE))
@@ -62,9 +64,10 @@ check: ## Checks personal-computer.yml playbook
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
-	@$(ANSIBLE)
+	@$(ANSIBLE) --skip-tags="ticktick"
+	# ticktick doesn't work on fresh install for some reason
 
-all: ## Does eveything with Ansible and Make targets
+all: ## Does most eveything with Ansible and Make targets
 all: bootstrap bootstrap-check install non-ansible
 
 non-ansible:
@@ -72,15 +75,31 @@ non-ansible: ## Runs all non-ansible make targets for fresh install (all target)
 
 	# No user input required
 	make flameshot-keybindings
-	make python-three-six-install
-	make python-three-six-supporting
-	make python-three-seven-install
-	make python-three-seven-supporting
-	make poetry
+
+	# Dropping these as Ubuntu 20.04 defaults to Python3.8
+	# make python-three-six-install
+	# make python-three-six-supporting
+	# make python-three-seven-install
+	# make python-three-seven-supporting
+
+	# Ubuntu 20.04 defaults
+	make python-three-eight-install
+	make python-three-eight-supporting
 
 lint:  ## Lint the repo
 lint:
 	bash scripts/lint.sh
+
+docs-develop:
+docs-develop: ## setup pipenv to develop docs
+	pipenv
+	pipenv run python3 -m pip install -r requirements.txt
+	pipenv shell
+	# make docs-live
+
+docs-live:
+docs-live: ## create live docs
+	bash scripts/docs-live.sh
 
 zsh:
 zsh: ## Install zsh and oh-my-zsh
@@ -150,6 +169,7 @@ python-three-six-supporting:
 	python3.6 -m pip install --user flit
 	python3.6 -m pip install --user cookiecutter
 	python3.6 -m pip install --user pipenv
+	python3.6 -m pip install --user pre-commit
 
 python-three-seven-install: ## Install python3.7 using apt (main install)
 python-three-seven-install:
@@ -198,6 +218,7 @@ python-three-seven-supporting:
 	python3.7 -m pip install --user flit
 	python3.7 -m pip install --user cookiecutter
 	python3.7 -m pip install --user pipenv
+	python3.7 -m pip install --user pre-commit
 
 python-three-eight-install: ## Install python3.7 using apt (main install)
 python-three-eight-install:
@@ -242,12 +263,7 @@ python-three-eight-supporting:
 	python3.8 -m pip install --user flit
 	python3.8 -m pip install --user cookiecutter
 	python3.8 -m pip install --user pipenv
-
-poetry: ## Install Poetry (Python Packaging and Dependency Management)
-poetry:
-	# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
-	sudo apt-get install -y python3-venv
-	python3.8 -m pip install --user poetry
+	python3.8 -m pip install --user pre-commit
 
 common-snaps:
 common-snaps: ## Install Common Snaps
@@ -266,8 +282,8 @@ web-browsers: ## Installs web-browsers as snaps
 	@$(ANSIBLE) --tags="web-browsers"
 
 peek:
-peek: ## Install Peek (GIF Screen Recorder) using a PPA and apt
-	@$(ANSIBLE) --tags="peek"
+peek: ## Install Peek (GIF Screen Recorder) using a Flatpak
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.uploadedlobster.peek"]}'
 
 timeshift:
 timeshift: ## Install Timeshift (Backup Utility) using a PPA and apt
@@ -296,9 +312,9 @@ github-cli:
 github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 	@$(ANSIBLE) --tags="github-cli"
 
-gnome-boxes:
-gnome-boxes: ## Install GNOME Boxes, using Flatpak
-	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
+# gnome-boxes:
+# gnome-boxes: ## Install GNOME Boxes, using Flatpak
+# 	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
 
 gnome-extensions:
 gnome-extensions: ## Install GNOME Extensions
@@ -337,15 +353,15 @@ flatpak: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 
 planner:
 planner: ## Install Planner, using Flatpak
-	@$(ANSIBLE) --tags="flatpak, planner"
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.github.alainm23.planner"]}'
 
 steam: flatpak
 steam: ## Install Steam, using Flatpak
-	@$(ANSIBLE) --tags="steam"
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.valvesoftware.Steam"]}'
 
 evolution:
 evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
-	@$(ANSIBLE) --tags="evolution"
+	@$(ANSIBLE) --tags="flatpak,evolution-remove-apt" -e '{"flatpak_applications": ["org.gnome.Evolution"]}'
 
 protonmail-bridge:
 protonmail-bridge: ## Install Protonmail Bridge Deb from their website
@@ -359,7 +375,7 @@ tresorit:
 
 libreoffice:
 libreoffice: ## Install LibreOffice Office Suite, using Flatpak
-	@$(ANSIBLE) --tags="libreoffice"
+	@$(ANSIBLE) --tags="flatpak,libreoffice-remove-apt" -e '{"flatpak_applications": ["org.libreoffice.LibreOffice"]}'
 
 yarn:
 yarn: ## Installs Yarn (and Nodejs)

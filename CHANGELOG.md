@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [group_vars](group_vars) folder
 - [library/json_mod](library/json_mod) module, from [bradymholt/json_mod](https://gist.github.com/bradymholt/17cb99185c7b80b0f34a)
 - Kite AI Autocompletion and Docs for Python, via [kite.com](https://kite.com/)
+- Flameshot detection on installed package version
+- Docker support for Ubuntu 20.04
+- Code Extensions variables per [#83](https://github.com/iancleary/ansible-desktop/issues/83)
+- Snaps variables
+- Added pre-commit python package per [#116](https://github.com/iancleary/ansible-desktop/issues/116)
 
 ## Changed
 
@@ -20,6 +25,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `gnome-extensions` to have dock on bottom, and multi-monitor dock turned off
 - `inventory` now uses the `localhost` and `{hostname}` groups.
 - Removed unneeded apt_repository task for Docker on Ubuntu 20.04
+- Bumped gh CLI version to 0.7.0
+- Moved peek role after Flatpak to ensure dependencies are met
+- GNOME Themes role on performed on Ubuntu 18.04 due to PPA availability at 20.04 launch
+- Fixed repo name in README
+- Moved flatpak application list to group_vars
+- Updated evolution and libreoffice roles to remove apt packages
+
+## Removed
+
+- Ticktick from `make install` as it fails during fresh install
+- `sudo reboot` from end of [run.sh](run.sh)
+- Moved `Poetry` to archive
 
 ## [0.8.0] - 2020-04-18
 

@@ -1,6 +1,0 @@
----
-- name: Planner - Task and project manager via Flatpak
-  become: true
-  flatpak:
-    name: com.github.alainm23.planner
-    state: present

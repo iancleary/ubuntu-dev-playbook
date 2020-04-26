@@ -1,7 +1,13 @@
 ---
 docker_compose_version: 1.25.4
 flameshot_version: 0.6.0
-gh_version: 0.6.4
+flatpak_applications:
+  - "com.uploadedlobster.peek"
+  - "com.github.alainm23.planner"
+  - "com.valvesoftware.Steam"
+  - "org.gnome.Evolution"
+  - "org.libreoffice.LibreOffice"
+gh_version: 0.7.0
 jetbrains_mono_version: 1.0.3
 protonmail_bridge_version: 1.2.6-1
 nodejs_version: "12.x"
@@ -11,6 +17,74 @@ nodejs_yarn_global_packages:
   - name: "nativefier"
   - name: "markdownlint-cli"
   - name: "carbon-now-cli"
+snaps_chat:
+  - "signal-desktop"
+  - "telegram-desktop"
+snaps_chat_classic:
+  - "slack"
+snaps_common:
+  - "snap-store"
+  - "breaktimer"
+  - "drawio"
+  # https://github.com/jgraph/drawio-desktop/issues/138,
+  # snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
+  - "spotify"
+  - "ncspot"
+  - "standard-notes"
+snaps_development:
+  - "postman"
+snaps_development_classic:
+  - "code"
+  # - "codium" # Code without telemetry
+  - "sublime-text"
+snaps_web_browsers:
+  - "chromium"
+  - "firefox"
+snaps_web_browsers_plugs:
+  - plug: "home"
+    app: "chromium"
+code_extensions:
+  ## Git Utilities
+  - eamodio.gitlens
+  - donjayamanne.githistory
+
+  ## Docker and Remote Development
+  - ms-azuretools.vscode-docker
+  - ms-vscode-remote.remote-containers
+  - ms-vscode-remote.remote-ssh
+  - ms-vscode-remote.remote-ssh-edit
+  # - ms-vscode-remote.remote-wsl
+  - ms-vscode-remote.vscode-remote-extensionpack
+
+  ## Markdown Linting
+  - DavidAnson.vscode-markdownlint
+
+  ## General Development
+  - christian-kohler.path-intellisense
+  - vscode-icons-team.vscode-icons
+  - riccardoNovaglia.missinglineendoffile
+  - shardulm94.trailing-spaces
+  # - Shan.code-settings-sync
+
+  ## Python Development
+  - ms-python.python
+  - himanoa.Python-autopep8
+  - njpwerner.autodocstring
+  - wholroyd.jinja
+  # Pyright Attribution to tiangolo and florimondmanca
+  # https://twitter.com/tiangolo/status/1252891149708275713?s=21
+  # > Disabled type checking in the extension settings as I rely on mypy,
+  # > but autoimport and unused import colouring alone make it a
+  # > 100% worthwhile companion on VSCode
+  - ms-pyright.pyright
+
+  ## Vue.js Development
+  - octref.vetur
+  - dbaeumer.vscode-eslint
+  - pranaygp.vscode-css-peek
+
+  ## YAML
+  - redhat.vscode-yaml
 stacer_version: 1.1.0
 zsh_theme: robbyrussell
 zsh_plugins:

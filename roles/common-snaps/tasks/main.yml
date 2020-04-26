@@ -5,16 +5,8 @@
     name: "snapd"
     state: present
 
-- name: Snaps - Install Confined Snaps
+- name: Common Confined Snaps
   become: true
   snap:
     name: "{{ item }}"
-  loop:
-    - "snap-store"
-    - "breaktimer"
-    - "drawio"
-    # https://github.com/jgraph/drawio-desktop/issues/138,
-    # snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
-    - "spotify"
-    - "ncspot"
-    - "standard-notes"
+  with_items: "{{ snaps_common }}"

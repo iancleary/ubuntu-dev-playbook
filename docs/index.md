@@ -3,7 +3,6 @@
 [![Build Status](https://img.shields.io/travis/com/iancleary/ansible-desktop/master.svg)](https://img.shields.io/travis/com/iancleary/ansible-desktop)
 [![Updates](https://pyup.io/repos/github/iancleary/ansible-desktop/shield.svg)](https://pyup.io/repos/github/iancleary/ansible-desktop/)
 [![Python 3](https://pyup.io/repos/github/iancleary/ansible-desktop/python-3-shield.svg)](https://pyup.io/repos/github/iancleary/ansible-desktop/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0a90303b-4694-4407-964b-0caa5a68827c/deploy-status)](https://app.netlify.com/sites/iancleary-ansible-desktop/deploys)
 
 ## Ansible Playbook to configure my laptops and desktops
 
@@ -32,7 +31,7 @@ keyboard shortcuts, core software, etc.).
 * Ubuntu 20.04
 
 > There are no plans to support non-LTS versions.
-> Software support is LTS version dependent.
+> Software (support) is LTS version dependent.
 
 ## Core Software
 
@@ -80,27 +79,49 @@ for beautiful images of my code - right inside my terminal,
 * `yarn`,
 * `zsh`
 
-> See the [archive](archive) folder for not used targets.
+> See the [archive](https://github.com/iancleary/ansible-desktop/tree/masterarchive) folder for not used targets.
 
 ### Configuration
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
-* Extensions: [gnome-extensions](roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](roles/gnome-preferences/tasks/main.yml)
-* Themes (18.04 only): [gnome-themes](roles/gnome-themes/tasks/main.yml)
+* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-preferences/tasks/main.yml)
+* Themes (18.04 only): [gnome-themes](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-themes/tasks/main.yml)
 
 ---
 
-## Documentation
+## Getting Started with this repo
 
-Detailed documentation is hosted by Netlify at <https://ansible-desktop.iancleary.me>.
+### Makefile
 
-### Existing Machine
+The [Makefile](https://github.com/iancleary/ansible-desktop/blob/master/Makefile)  is the entry point.
 
-For a walkthrough of my process on existing machince, please visit
-<https://ansible-desktop.iancleary.me/makefile>.
+### Common Utilty Scripts
+
+The [scripts](https://github.com/iancleary/ansible-desktop/tree/master/scripts) folder contains common setup between local scripts and Travis-CI.
+
+### Testing
+
+Continuous Integration Testing is done with the
+[.travis.yml](https://github.com/iancleary/ansible-desktop/blob/master/.travis.yml) file and [PyUp](https://pyup.io/).
+
+Multiple jobs test independent portions of the installation.
+
+> While testing the playbook in order would be ideal,
+> the prefernce here is to have the Continuous Integration
+> finish faster.
+
+### Linting
+
+Linting is performed on common file types:
+
+* YAML files with [yamllint](https://yamllint.readthedocs.io/)
+* Bash files with [shellcheck](https://www.shellcheck.net/)
+* Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+
+---
 
 ## New Machine Setup
 
@@ -122,14 +143,25 @@ for the bash script and then once later for
 
 Voila! 🎉🎉🎉
 
+---
+
+## Requirements_ansible.txt
+
+ Notable Ansible Modules Used with regards to dependencies
+
+* [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
+  * This is drives the `psutil` Python3 requirement
+* [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
+  * This drives the ansible >=2.8.0 requirement
+
 ## Changes
 
-See [CHANGELOG](CHANGELOG.md) for history.
+See [CHANGELOG](https://github.com/iancleary/ansible-desktop/blob/master/CHANGELOG.md) for history.
 
 ---
 
 ## Authors
 
-I benefited from the source work of others, see [AUTHORS.md](docs/AUTHORS.md).
+I benefited from the source work of others, see [AUTHORS.md](AUTHORS.md).
 
 > My choice to open source my work here is to share back with you.
