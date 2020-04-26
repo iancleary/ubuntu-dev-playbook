@@ -24,11 +24,10 @@
   changed_when: "false"
 
 - name: Debug currently installed code extensions
-  debug: 
+  debug:
     var: installed_code_extensions.stdout_lines
 
 - name: Code Extensions
   shell: code --install-extension "{{ item }}"
   with_items: "{{ code_extensions }}"
   when: "item not in installed_code_extensions.stdout_lines"
-    

@@ -19,7 +19,7 @@ nodejs_yarn_global_packages:
   - name: "carbon-now-cli"
 snaps_chat:
   - "signal-desktop"
-  - "telegram-desktop" 
+  - "telegram-desktop"
 snaps_chat_classic:
   - "slack"
 snaps_common:
@@ -43,11 +43,11 @@ snaps_web_browsers:
 snaps_web_browsers_plugs:
   - plug: "home"
     app: "chromium"
-code_extensions:  
+code_extensions:
   ## Git Utilities
   - eamodio.gitlens
   - donjayamanne.githistory
-  
+
   ## Docker and Remote Development
   - ms-azuretools.vscode-docker
   - ms-vscode-remote.remote-containers
@@ -68,13 +68,13 @@ code_extensions:
 
   ## Python Development
   - ms-python.python
-  - himanoa.Python-autopep8  
+  - himanoa.Python-autopep8
   - njpwerner.autodocstring
   - wholroyd.jinja
   # Pyright Attribution to tiangolo and florimondmanca
   # https://twitter.com/tiangolo/status/1252891149708275713?s=21
-  # > Disabled type checking in the extension settings as I rely on mypy, 
-  # > but autoimport and unused import colouring alone make it a 
+  # > Disabled type checking in the extension settings as I rely on mypy,
+  # > but autoimport and unused import colouring alone make it a
   # > 100% worthwhile companion on VSCode
   - ms-pyright.pyright
 
@@ -85,7 +85,6 @@ code_extensions:
 
   ## YAML
   - redhat.vscode-yaml
-  
 stacer_version: 1.1.0
 zsh_theme: robbyrussell
 zsh_plugins:

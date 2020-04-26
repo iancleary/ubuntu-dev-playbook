@@ -120,8 +120,8 @@ jobs:
       before_script:
         - make bootstrap-before-script
       script:
-        - make flameshot # fresh install
-        - make flameshot # test not installing when version string matches
+        - make flameshot  # fresh install
+        - make flameshot  # test not installing when version string matches
         - flameshot --version
         - make flameshot-keybindings
         - make gnome-extensions
