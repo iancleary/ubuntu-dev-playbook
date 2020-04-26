@@ -30,7 +30,7 @@ keyboard shortcuts, core software, etc.).
 * Ubuntu 18.04
 * Ubuntu 20.04
 
-> There are no plans to support non-LTS versions.  
+> There are no plans to support non-LTS versions.
 > Software support is LTS version dependent.
 
 ## Core Software
@@ -294,7 +294,7 @@ nodejs_yarn_global_packages:
 
 ---
 
-## Requirements.txt
+## Requirements_ansible.txt
 
  Notable Ansible Modules Used with regards to dependencies
 
