@@ -1,0 +1,20 @@
+site_name: ansible-desktop
+site_description: Ansible Configuration of Ubuntu LTS Desktops!
+site_url: https://ansible-desktop.iancleary.me
+
+theme:
+    name: 'material'
+
+repo_name: iancleary/ansible-desktop
+repo_url: https://github.com/iancleary/ansible-desktop
+edit_uri: 'blob/master'
+
+nav:
+    - Introduction: 'index.md'
+    - Start with the Makefile: 'makefile.md'
+    - Configure for your Machine: 'host-specific-variables.md'
+    - Shell Configuration Scripts: 'shell-configuration.md'
+    - Fonts: 'jetbrains-mono.md'
+    - Ansible Playbook Command Examples: 'ansible-playbook-examples.md'
+    - Ansible Syntax and Configuration: 'ansible-syntax-and-configuration.md'
+    - Authors and Attribution: 'AUTHORS.md'

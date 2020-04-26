@@ -90,6 +90,17 @@ lint:  ## Lint the repo
 lint:
 	bash scripts/lint.sh
 
+docs-develop:
+docs-develop: ## setup pipenv to develop docs
+	pipenv
+	pipenv run python3 -m pip install -r requirements.txt
+	pipenv shell
+	# make docs-live
+
+docs-live:
+docs-live: ## create live docs
+	bash scripts/docs-live.sh
+
 zsh:
 zsh: ## Install zsh and oh-my-zsh
 	@$(ANSIBLE) --tags="zsh"

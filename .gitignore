@@ -72,6 +72,10 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Pipenv
+Pipfile
+Pipfile.lock
+
 # pyenv
 .python-version
 
@@ -127,4 +131,3 @@ yarn-error.log*
 
 # unknown
 .DS_Store
-
