@@ -29,4 +29,3 @@
     # Installed Evolution and LibreOffice with Flatpak
     - {role: evolution-remove-apt, tags: ['evolution-remove-apt']}
     - {role: libreoffice-remove-apt, tags: ['libreoffice-remove-apt']}
-    - {role: protonmail-bridge, tags: ['protonmail-bridge']}
