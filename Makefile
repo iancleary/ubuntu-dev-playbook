@@ -111,8 +111,8 @@ common: ## Install Common apt packages
 
 
 cherrytree:
-cherrytree: ## Install Cherrytree using a PPA and apt
-	@$(ANSIBLE) --tags="cherrytree"
+cherrytree: ## Install Cherrytree using snaps
+	@$(ANSIBLE) --tags="common-snaps" -e '{"snaps_common": ["cherrytree"]}'
 
 docker:
 docker: ## Install Docker and Docker-Compose

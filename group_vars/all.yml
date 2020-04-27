@@ -25,6 +25,7 @@ snaps_chat_classic:
 snaps_common:
   - "snap-store"
   - "breaktimer"
+  - "cherrytree"
   - "drawio"
   # https://github.com/jgraph/drawio-desktop/issues/138,
   # snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)

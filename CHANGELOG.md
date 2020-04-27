@@ -31,12 +31,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed repo name in README
 - Moved flatpak application list to group_vars
 - Updated evolution and libreoffice roles to remove apt packages
+- Switched to Cherrytree as a snap
 
 ## Removed
 
 - Ticktick from `make install` as it fails during fresh install
 - `sudo reboot` from end of [run.sh](run.sh)
 - Moved `Poetry` to archive
+- Cherrytree role (apt installation)
 
 ## [0.8.0] - 2020-04-18
 
