@@ -3,7 +3,7 @@ docker_compose_version: 1.25.4
 flameshot_version: 0.6.0
 flatpak_applications:
   - "com.uploadedlobster.peek"
-  - "com.github.alainm23.planner"
+  # - "com.github.alainm23.planner" # not used
   - "com.valvesoftware.Steam"
   - "org.gnome.Evolution"
   - "org.libreoffice.LibreOffice"
