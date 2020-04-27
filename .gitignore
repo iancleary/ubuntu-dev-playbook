@@ -131,3 +131,6 @@ yarn-error.log*
 
 # unknown
 .DS_Store
+
+# Private inventory file
+.inventory
