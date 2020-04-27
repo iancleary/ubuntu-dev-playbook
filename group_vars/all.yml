@@ -92,7 +92,7 @@ code_extensions:
   - pranaygp.vscode-css-peek
 
   ## YAML
-  # - redhat.vscode-yaml # doesn't allow hostname in .travis.yml
+  - redhat.vscode-yaml # doesn't allow hostname in .travis.yml
 stacer_version: 1.1.0
 zsh_theme: robbyrussell
 zsh_plugins:
