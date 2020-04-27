@@ -1,6 +1,0 @@
----
-- name: Protonmail Bridge - Install deb from beta invitation
-  become: true
-  apt:
-    deb: >-
-      https://protonmail.com/download/protonmail-bridge_{{protonmail_bridge_version}}_amd64.deb

@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Moved flatpak application list to group_vars
 - Updated evolution and libreoffice roles to remove apt packages
 - Switched to Cherrytree as a snap
+- Switched Protonmail Bridge from apt to Flatpak
 
 ## Removed
 

@@ -6,6 +6,7 @@ flatpak_applications:
   # - "com.github.alainm23.planner" # not used
   - "com.valvesoftware.Steam"
   - "org.gnome.Evolution"
+  - "ch.protonmail.protonmail-bridge"
   - "org.libreoffice.LibreOffice"
 gh_version: 0.7.0
 jetbrains_mono_version: 1.0.3
