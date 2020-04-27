@@ -69,8 +69,6 @@ jobs:
         - make python-three-seven-supporting
         - make python-three-eight-install
         - make python-three-eight-supporting
-        - make cherrytree
-        - cherrytree --help
         - make timeshift
         - timeshift --help
         - make github-cli
@@ -93,6 +91,8 @@ jobs:
         - code --version
         # - codium --version
         # not using currently
+        - make cherrytree
+        - cherrytree --help
         - make web-browsers
 
     - name: Flatpak - Personal, Office
