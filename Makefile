@@ -9,15 +9,24 @@ OS_VERSION_NAME := $(shell lsb_release -cs)
 
 HOSTNAME = $(shell hostname)
 
+
+# Allows user to specify private hostname in ".inventory file"
+PRIVATE_INVENTORY = ".inventory"
+ifeq ($(shell test -e $(PRIVATE_INVENTORY) && echo -n yes),yes)
+	INVENTORY=$(PRIVATE_INVENTORY)
+else
+    INVENTORY = "inventory"
+endif
+
 # Both ANSIBLE commands need the "ansible_user" for the zsh role
 
 # Main Ansible Playbook Command (prompts for password)
-ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) --ask-become-pass -e '{"ansible_user": "$(shell whoami)"}'
+ANSIBLE=ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) --ask-become-pass -e '{"ansible_user": "$(shell whoami)"}'
 
 # Travis CI Ansible Playbook Command (doesn't prompt for password)
 TRAVIS=travis
 ifeq "$(HOSTNAME)" "$(TRAVIS)"
-	ANSIBLE=ansible-playbook personal_computer.yml -v -i inventory -l $(HOSTNAME) -e '{"ansible_user": "$(shell whoami)"}'
+	ANSIBLE=ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e '{"ansible_user": "$(shell whoami)"}'
 endif
 
 $(warning ANSIBLE is $(ANSIBLE))
@@ -350,10 +359,6 @@ stacer: ## Install Stacer (Material System Utility)
 flatpak:
 flatpak: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 	@$(ANSIBLE) --tags="flatpak"
-
-planner:
-planner: ## Install Planner, using Flatpak
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.github.alainm23.planner"]}'
 
 steam: flatpak
 steam: ## Install Steam, using Flatpak

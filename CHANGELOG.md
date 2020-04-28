@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code Extensions variables per [#83](https://github.com/iancleary/ansible-desktop/issues/83)
 - Snaps variables
 - Added pre-commit python package per [#116](https://github.com/iancleary/ansible-desktop/issues/116)
+- Ansible VS Code Extension
 
 ## Changed
 
@@ -32,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Moved flatpak application list to group_vars
 - Updated evolution and libreoffice roles to remove apt packages
 - Switched to Cherrytree as a snap
+- Switched Protonmail Bridge from apt to Flatpak
 
 ## Removed
 

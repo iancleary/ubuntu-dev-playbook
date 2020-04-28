@@ -104,7 +104,7 @@ jobs:
         - make bootstrap-before-script
       script:
         - make flatpak
-        - make planner
+        # - make planner
         - make peek
         - make steam
         - make evolution

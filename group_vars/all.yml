@@ -3,9 +3,10 @@ docker_compose_version: 1.25.4
 flameshot_version: 0.6.0
 flatpak_applications:
   - "com.uploadedlobster.peek"
-  - "com.github.alainm23.planner"
+  # - "com.github.alainm23.planner" # not used
   - "com.valvesoftware.Steam"
   - "org.gnome.Evolution"
+  - "ch.protonmail.protonmail-bridge"
   - "org.libreoffice.LibreOffice"
 gh_version: 0.7.0
 jetbrains_mono_version: 1.0.3
@@ -45,9 +46,8 @@ snaps_web_browsers_plugs:
   - plug: "home"
     app: "chromium"
 code_extensions:
-  ## Git Utilities
-  - eamodio.gitlens
-  - donjayamanne.githistory
+  ## Ansible
+  - vscoss.vscode-ansible
 
   ## Docker and Remote Development
   - ms-azuretools.vscode-docker
@@ -57,15 +57,19 @@ code_extensions:
   # - ms-vscode-remote.remote-wsl
   - ms-vscode-remote.vscode-remote-extensionpack
 
-  ## Markdown Linting
-  - DavidAnson.vscode-markdownlint
-
   ## General Development
   - christian-kohler.path-intellisense
   - vscode-icons-team.vscode-icons
   - riccardoNovaglia.missinglineendoffile
   - shardulm94.trailing-spaces
   # - Shan.code-settings-sync
+
+  ## Git Utilities
+  - eamodio.gitlens
+  - donjayamanne.githistory
+
+  ## Markdown Linting
+  - DavidAnson.vscode-markdownlint
 
   ## Python Development
   - ms-python.python
@@ -79,13 +83,16 @@ code_extensions:
   # > 100% worthwhile companion on VSCode
   - ms-pyright.pyright
 
+  ## Travis-CI
+  # - felixrieseberg.vsc-travis-ci-status # has issues with status resolution
+
   ## Vue.js Development
   - octref.vetur
   - dbaeumer.vscode-eslint
   - pranaygp.vscode-css-peek
 
   ## YAML
-  - redhat.vscode-yaml
+  - redhat.vscode-yaml # doesn't allow hostname in .travis.yml
 stacer_version: 1.1.0
 zsh_theme: robbyrussell
 zsh_plugins:

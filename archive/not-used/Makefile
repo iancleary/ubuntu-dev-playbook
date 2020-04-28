@@ -74,6 +74,10 @@ icloud-for-linux: ## Installs icloud-for-linux snap
 icloud-for-linux: snap
 	sudo snap install icloud-for-linux
 
+planner:
+planner: ## Install Planner, using Flatpak
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.github.alainm23.planner"]}'
+
 python-three-six-altinstall: ## Install python3.6 as altinstall (prerequisites and )
 python-three-six-altinstall: update
 	sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
