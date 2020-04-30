@@ -83,6 +83,9 @@ code_extensions:
   # > 100% worthwhile companion on VSCode
   - ms-pyright.pyright
 
+  ## Spellchecking
+  - streetsidesoftware.code-spell-checker
+
   ## Travis-CI
   # - felixrieseberg.vsc-travis-ci-status # has issues with status resolution
 

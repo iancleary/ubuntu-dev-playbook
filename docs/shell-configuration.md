@@ -2,14 +2,14 @@
 
 Investigate this folder and your
 ~/.bashrc, ~/.zshrc, etc. files
-will become simpler and more maintable! 🚀
+will become simpler and more maintainable! 🚀
 
 > Let's stuff a few more lines of configuration into that file, it will be fine 😬😬😬😬.
 
 Tl;dr is that most shells source all files in that folder,
 similar to `source ~/.bashrc` on a fresh Ubuntu install.
 The main advantage for using the `/etc/profile.d/` folder
-is that it is modular and maintable.
+is that it is modular and maintainable.
 
 Fast forward to your using that folder as it was intended.
 
