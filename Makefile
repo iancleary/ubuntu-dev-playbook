@@ -137,9 +137,9 @@ jetbrains-mono:
 jetbrains-mono: ## Install JetBrains Mono font
 	@$(ANSIBLE) --tags="jetbrains-mono"
 
-python:
-python: ## Install Python 3.6 and 3.7, with extras
-	@$(ANSIBLE) --tags="python"
+# python:
+# python: ## Install Python 3.6 and 3.7, with extras
+# 	@$(ANSIBLE) --tags="python"
 
 python-three-six-install: ## Install python3.6 using apt (main install)
 python-three-six-install:
@@ -229,7 +229,7 @@ python-three-seven-supporting:
 	python3.7 -m pip install --user pipenv
 	python3.7 -m pip install --user pre-commit
 
-python-three-eight-install: ## Install python3.7 using apt (main install)
+python-three-eight-install: ## Install python3.8 using apt (main install)
 python-three-eight-install:
 
 	sudo apt-get update

@@ -31,7 +31,7 @@
     value: "true"
     state: present
 
-- name: GNOME Preferences - Calendar Show Weekdate
+- name: GNOME Preferences - Calendar Show Week Date
   dconf:
     key: "/org/gnome/desktop/calendar/show-weekdate"
     value: "true"
@@ -98,7 +98,7 @@
     value: "true"
     state: present
 
-- name: GNOME Preferences - Shell - Attach Modeal Dialogues
+- name: GNOME Preferences - Shell - Attach Modal Dialogues
   dconf:
     key: "/org/gnome/shell/overrides/attach-modal-dialogs"
     value: "false"

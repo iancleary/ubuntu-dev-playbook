@@ -20,9 +20,9 @@ keyboard shortcuts, core software, etc.).
 * I learned about Makefiles. 😄
 * I proceeded to do everything with Makefiles. 🤩🤩🤩
 * I got tired of running successive Make targets over and again 😐.
-* I used ansible at work and decided to take a course to learn more about it. 🤓
+* I used Ansible at work and decided to take a course to learn more about it. 🤓
 * I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
-* I finally took the plunge and decided to use ansible for my configuration. ✔️
+* I finally took the plunge and decided to use Ansible for my configuration. ✔️
 
 ## Supported Ubuntu LTS Versions
 
@@ -63,6 +63,7 @@ for beautiful images of my code - right inside my terminal,
 * `Protonmail-bridge` <https://protonmail.com/bridge/install>,
 * `python3.6`,
 * `python3.7`,
+* `python3.8`,
 * `Signal Desktop`,
 * `Slack`,
 * `Snap`,
@@ -104,12 +105,12 @@ The [scripts](https://github.com/iancleary/ansible-desktop/tree/master/scripts) 
 ### Testing
 
 Continuous Integration Testing is done with the
-[.travis.yml](https://github.com/iancleary/ansible-desktop/blob/master/.travis.yml) file and [PyUp](https://pyup.io/).
+[.travis.yml](https://github.com/iancleary/ansible-desktop/blob/master/.travis.yml) file.
 
 Multiple jobs test independent portions of the installation.
 
 > While testing the playbook in order would be ideal,
-> the prefernce here is to have the Continuous Integration
+> the preference here is to have the Continuous Integration
 > finish faster.
 
 ### Linting
