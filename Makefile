@@ -73,8 +73,9 @@ check: ## Checks personal-computer.yml playbook
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
-	@$(ANSIBLE) --skip-tags="ticktick"
+	@$(ANSIBLE) --skip-tags="ticktick, nautilus-mounts"
 	# ticktick doesn't work on fresh install for some reason
+	# no planned test coverage to nautilus-mounts as it deals with file mounts
 
 all: ## Does most eveything with Ansible and Make targets
 all: bootstrap bootstrap-check install non-ansible
@@ -136,6 +137,10 @@ kite: ## Install Kite, AI Autocomplete and Docs for Python
 jetbrains-mono:
 jetbrains-mono: ## Install JetBrains Mono font
 	@$(ANSIBLE) --tags="jetbrains-mono"
+
+nautilus-mounts:
+nautilus-mounts: ## Setup for CIFS Network Mounts, with Nautilus Scripts
+	@$(ANSIBLE) --tags="nautilus-mounts"
 
 # python:
 # python: ## Install Python 3.6 and 3.7, with extras

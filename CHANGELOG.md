@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Snaps variables
 - Added pre-commit python package per [#116](https://github.com/iancleary/ansible-desktop/issues/116)
 - Ansible VS Code Extension
+- Nautilus Mounts, Scripts to convert mounted paths to UNC paths
+- `group_vars/*/*` to `.gitignore` to allow any host to use a sub-folder privately
 
 ## Changed
 
@@ -34,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated evolution and libreoffice roles to remove apt packages
 - Switched to Cherrytree as a snap
 - Switched Protonmail Bridge from apt to Flatpak
+- `run.sh` script to create private group_vars folder for any hostname
 
 ## Removed
 
