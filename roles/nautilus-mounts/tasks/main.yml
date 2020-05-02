@@ -13,6 +13,13 @@
     mode: '0755'
   with_items: "{{ nautilus_mounts | default([]) }}"
 
+- name: Ensure Nautilus Scripts Folder Exists
+  become: true
+  file:
+    path: "~{{ ansible_user }}/.local/share/nautilus/scripts/"
+    state: directory
+    mode: '0755'
+
 - name: Copy template to Nautilus Scripts folder
   become: "yes"
   become_user: '{{ ansible_user }}'

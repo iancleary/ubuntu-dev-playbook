@@ -116,7 +116,6 @@ jobs:
         - sudo apt install -y gnome-shell gnome-session gnome-terminal
         - sudo apt install -y dconf-gsettings-backend dconf-tools dconf-cli
         - sudo apt install -y gsettings-desktop-schemas
-        - sudo apt install -y nautilus nautilus-scripts-manager
       install:
         - make bootstrap-install
       before_script:
