@@ -11,9 +11,9 @@ flatpak_applications:
 gh_version: 0.7.0
 jetbrains_mono_version: 1.0.3
 protonmail_bridge_version: 1.2.6-1
-nautilus_mounts:
-  - mount: "folder"
-    unc_path: "\\\\server\\folder\\"  # escaped slashes
+# nautilus_mounts:
+#   - mount: "folder"
+#     unc_path: "\\\\server\\folder\\"  # escaped slashes
 nodejs_version: "12.x"
 nodejs_yarn_global_packages:
   - name: "@vue/cli"

@@ -130,3 +130,4 @@ jobs:
         - make gnome-themes
         - make gnome-preferences
         - make jetbrains-mono
+        - make nautilus-mounts

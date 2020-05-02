@@ -11,7 +11,7 @@
     path: "/{{ nautilus_mount_prefix }}/{{ item.mount }}"
     state: directory
     mode: '0755'
-  with_items: "{{ nautilus_mounts }}"
+  with_items: "{{ nautilus_mounts | default([]) }}"
 
 - name: Copy template to Nautilus Scripts folder
   become: "yes"
