@@ -40,6 +40,11 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
+setup_inventory_and_group_vars:
+setup_inventory_and_group_vars:
+	# Ensure chosen hostname is present in group_vars and .inventory folder
+	bash scripts/setup_inventory_and_group_vars.sh
+
 bootstrap-before-install:
 bootstrap-before-install:
 	# Apt Dependencies (removes apt ansible)
@@ -57,7 +62,7 @@ bootstrap-before-script:
 	# Source folder (to ensure initial setup loads this file)
 	. /etc/profile
 
-bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script
+bootstrap: setup_inventory_and_group_vars bootstrap-before-install bootstrap-install bootstrap-before-script
 bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:

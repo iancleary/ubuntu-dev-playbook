@@ -29,9 +29,6 @@ sudo chmod -R 755 $GIT_REPO
 # Enter Repo
 cd $GIT_REPO || exit
 
-# Ensure chosen hostname is present in group_vars folder
-mkdir -p "group_vars/$(hostname)"
-touch "group_vars/$(hostname)/all.yml"
 
 ## ------------------------
 ## Run Make Targets
