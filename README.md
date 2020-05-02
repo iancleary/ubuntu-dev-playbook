@@ -121,6 +121,35 @@ for the bash script and then once later for
 
 Voila! 🎉🎉🎉
 
+### Customization
+
+If you want to edit the variables, hit `CTRL + C` at `ansible`'s "BECOME PASSWORD" prompt.
+
+The script created two extra files that ensure that the `ansible-playbook` will on your host name.
+
+> Note: Both files are intentionally not version controlled.
+> This allows hostname specific group_vars relative to the playbook.
+
+* a private `.inventory` file
+
+```bash
+#.inventory
+[$(hostname)]
+127.0.0.1
+```
+
+* a group_vars file
+
+```yml
+# group_vars/$(hostname)/all.yml
+---
+# You can copy and modify variables over from ../all.yml
+```
+
+Then run `make all`
+
+Voila (with your edits)! 🚀🚀🚀
+
 ## Changes
 
 See [CHANGELOG](CHANGELOG.md) for history.
