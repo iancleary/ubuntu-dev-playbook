@@ -8,6 +8,7 @@
     - {role: yarn, tags: ['nodejs', 'yarn']}
     - {role: jetbrains-mono, tags: ['jetbrains-mono']}
     - {role: ticktick, tags: ['ticktick']}
+    - {role: nautilus-mounts, tags: ['nautilus-mounts']}
     - {role: common-snaps, tags: ['common-snaps']}
     - {role: chat-clients, tags: ['chat-clients']}
     - {role: web-browsers, tags: ['web-browsers']}

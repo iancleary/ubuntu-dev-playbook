@@ -29,6 +29,7 @@ sudo chmod -R 755 $GIT_REPO
 # Enter Repo
 cd $GIT_REPO || exit
 
+
 ## ------------------------
 ## Run Make Targets
 

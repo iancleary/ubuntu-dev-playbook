@@ -1,0 +1,6 @@
+---
+nautilus_mount_prefix: "/mnt"
+nautilus_mounts: []
+# nautilus_mounts: # Example Usage
+#   - mount: "folder"
+#     unc_path: "\\\\server\\folder\\"  # escaped slashes

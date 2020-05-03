@@ -11,6 +11,9 @@ flatpak_applications:
 gh_version: 0.7.0
 jetbrains_mono_version: 1.0.3
 protonmail_bridge_version: 1.2.6-1
+# nautilus_mounts:
+#   - mount: "folder"
+#     unc_path: "\\\\server\\folder\\"  # escaped slashes
 nodejs_version: "12.x"
 nodejs_yarn_global_packages:
   - name: "@vue/cli"
@@ -95,7 +98,7 @@ code_extensions:
   - pranaygp.vscode-css-peek
 
   ## YAML
-  - redhat.vscode-yaml # doesn't allow hostname in .travis.yml
+  - redhat.vscode-yaml  # doesn't allow hostname in .travis.yml
 stacer_version: 1.1.0
 zsh_theme: robbyrussell
 zsh_plugins:

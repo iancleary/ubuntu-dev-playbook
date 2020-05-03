@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+{{ ansible_managed | comment }}
+
+import subprocess
+import os
+import copy
+
+import pyperclip
+
+## Dependencies
+# python3 -m pip install --user pyperclip
+# sudo apt-get install xclip
+
+# current_directory
+# current = os.getenv(
+#     "NAUTILUS_SCRIPT_CURRENT_URI"
+#     )
+
+selected = os.getenv(
+    "NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"
+    )
+
+# convert path (escaped slashes necessary for text output)
+edited = selected.replace("file://", "")
+
+# alias escaped backslash
+clipboard_backslash = "\\"
+
+# copy to clip board (escaped slashes not necessary for clipboard)
+found_match = False
+{% for item in nautilus_mounts %}
+if edited.startswith("{{ nautilus_mount_prefix }}/{{ item.mount }}/") and not found_match:
+    edited_clipboard = edited.replace("{{ nautilus_mount_prefix }}/{{ item.mount }}/", f"{{ item.unc_path.replace("\\","\\\\") }}")
+    found_match = True
+{% endfor %}
+
+edited_clipboard = edited_clipboard.replace("/", f"{clipboard_backslash}")
+
+pyperclip.copy(edited_clipboard)
+
+# display output to the user
+# subprocess.Popen([
+#     "zenity", "--info", "--title=Path info", f"--text={current}+\n{edited}+\n{final}", "--no-wrap"
+#     ])

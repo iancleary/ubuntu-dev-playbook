@@ -40,6 +40,11 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
+setup_inventory_and_group_vars:
+setup_inventory_and_group_vars:
+	# Ensure chosen hostname is present in group_vars and .inventory folder
+	bash scripts/setup_inventory_and_group_vars.sh
+
 bootstrap-before-install:
 bootstrap-before-install:
 	# Apt Dependencies (removes apt ansible)
@@ -57,7 +62,7 @@ bootstrap-before-script:
 	# Source folder (to ensure initial setup loads this file)
 	. /etc/profile
 
-bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script
+bootstrap: setup_inventory_and_group_vars bootstrap-before-install bootstrap-install bootstrap-before-script
 bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:
@@ -73,8 +78,9 @@ check: ## Checks personal-computer.yml playbook
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
-	@$(ANSIBLE) --skip-tags="ticktick"
+	@$(ANSIBLE) --skip-tags="ticktick, nautilus-mounts"
 	# ticktick doesn't work on fresh install for some reason
+	# no planned test coverage to nautilus-mounts as it deals with file mounts
 
 all: ## Does most eveything with Ansible and Make targets
 all: bootstrap bootstrap-check install non-ansible
@@ -136,6 +142,10 @@ kite: ## Install Kite, AI Autocomplete and Docs for Python
 jetbrains-mono:
 jetbrains-mono: ## Install JetBrains Mono font
 	@$(ANSIBLE) --tags="jetbrains-mono"
+
+nautilus-mounts:
+nautilus-mounts: ## Setup for CIFS Network Mounts, with Nautilus Scripts
+	@$(ANSIBLE) --tags="nautilus-mounts"
 
 # python:
 # python: ## Install Python 3.6 and 3.7, with extras

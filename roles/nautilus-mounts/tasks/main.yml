@@ -1,0 +1,30 @@
+---
+- name: Install apt packages
+  become: true
+  apt:
+    name: "xclip"
+    state: present
+
+- name: Create Local Folders
+  become: true
+  file:
+    path: "/{{ nautilus_mount_prefix }}/{{ item.mount }}"
+    state: directory
+    mode: '0755'
+  with_items: "{{ nautilus_mounts | default([]) }}"
+
+- name: Ensure Nautilus Scripts Folder Exists
+  become: true
+  file:
+    path: "~{{ ansible_user }}/.local/share/nautilus/scripts/"
+    state: directory
+    mode: '0755'
+
+- name: Copy template to Nautilus Scripts folder
+  become: "yes"
+  become_user: '{{ ansible_user }}'
+  template:
+    src: copy-unc-path-to-clipboard.sh.j2
+    dest: '~{{ ansible_user }}/.local/share/nautilus/scripts/copy-unc-path-to-clipboard.sh'
+    backup: "yes"
+    mode: 'u=rwx,go=r' # needs to be executable to show up in right click menu
