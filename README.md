@@ -79,8 +79,6 @@ for beautiful images of my code - right inside my terminal,
 * `yarn`,
 * `zsh`
 
-> See the [archive](archive) folder for not used targets.
-
 ### Configuration
 
 The GNOME Ansible roles configure my GNOME personal preferences.

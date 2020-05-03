@@ -45,6 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `sudo reboot` from end of [run.sh](run.sh)
 - Moved `Poetry` to archive
 - Cherrytree role (apt installation)
+- Removed [Archive](https://github.com/iancleary/ansible-desktop/blob/4ed8084cbcf95928239effc0f2cb74b7c47d4170/archive/not-used/) folder
 
 ## [0.8.0] - 2020-04-18
 
