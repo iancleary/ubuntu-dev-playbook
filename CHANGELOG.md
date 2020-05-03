@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ansible VS Code Extension
 - Nautilus Mounts, Scripts to convert mounted paths to UNC paths
 - `group_vars/*/*` to `.gitignore` to allow any host to use a sub-folder privately
+- [Python-Poetry](https://python-poetry.org/docs/) to the python3.8 supporting make target
 
 ## Changed
 

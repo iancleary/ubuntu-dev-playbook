@@ -283,6 +283,8 @@ python-three-eight-supporting:
 	python3.8 -m pip install --user cookiecutter
 	python3.8 -m pip install --user pipenv
 	python3.8 -m pip install --user pre-commit
+	# https://python-poetry.org/docs/
+	python3.8 -m pip install --user poetry
 
 common-snaps:
 common-snaps: ## Install Common Snaps
