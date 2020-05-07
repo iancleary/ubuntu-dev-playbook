@@ -105,7 +105,8 @@ zsh_plugins:
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
   # - ansible
   # - aws
-  # - docker
-  # - docker-compose
+  - docker
+  - docker-compose
   - git
   - pipenv
+  - yarn
