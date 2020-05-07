@@ -7,3 +7,6 @@ zsh_plugins:
   - docker-compose
   - git
   - pipenv
+zsh_default_shell_command: "/bin/zsh"
+zsh_custom_default_shell_command: "false"
+# "/opt/pbis/bin/config LoginShellTemplate $(which zsh)"

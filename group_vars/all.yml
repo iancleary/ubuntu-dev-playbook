@@ -102,9 +102,10 @@ code_extensions:
 stacer_version: 1.1.0
 zsh_theme: robbyrussell
 zsh_plugins:
-  - ansible
-  - aws
-  - docker
-  - docker-compose
+  # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+  # - ansible
+  # - aws
+  # - docker
+  # - docker-compose
   - git
   - pipenv
