@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `zsh_default_shell_command` and `zsh_custom_default_shell_command` per [#134](https://github.com/iancleary/ansible-desktop/pull/134)
+
+### Updated
+
+- `zsh_plugins` to drop `ansible` and `aws`; add `yarn`
+
 ## [0.9.0] - 2020-05-03
 
 ### Added
