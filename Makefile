@@ -285,6 +285,10 @@ python-three-eight-supporting:
 	python3.8 -m pip install --user pre-commit
 	# https://python-poetry.org/docs/
 	python3.8 -m pip install --user poetry
+	sudo apt-get install -y python3-venv
+	# https://github.com/python-poetry/poetry/issues/721#issuecomment-623399861
+	# Ubuntu 20.04 https://wiki.ubuntu.com/FocalFossa/ReleaseNotes#Python3_by_default
+	-sudo apt install python-is-python3
 
 common-snaps:
 common-snaps: ## Install Common Snaps
