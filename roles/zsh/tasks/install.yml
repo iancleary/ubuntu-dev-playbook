@@ -35,11 +35,18 @@
     mode: 'go-w'
     recurse: "yes"
 
-- name: Zsh - set default shell
+- name: Zsh - set default shell (Default Method)
   become: "yes"
   user:
     name: '{{ ansible_user }}'
-    shell: /bin/zsh
+    shell: "{{ zsh_default_shell_command }}"
+  when: "not zsh_custom_default_shell_command|bool"
+
+- name: Zsh - set default shell (Non-Default Method)
+  become: "yes"
+  command:
+    cmd: "{{ zsh_default_shell_command }}"
+  when: "zsh_custom_default_shell_command|bool"
 
 - name: Zsh - write .zshrc
   become: "yes"
@@ -57,4 +64,8 @@
     path: /etc/zsh/zshrc
     state: present
     insertafter: 'EOF'
-    line: '. /etc/profile'
+    regexp: '^. /etc/profile'
+    line: . /etc/profile
+  ignore_errors: "yes"
+  # errors when user is not in /etc/passwd/
+  # privilege escalation related?

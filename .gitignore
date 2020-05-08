@@ -122,7 +122,7 @@ yarn-error.log*
 
 # Editor directories and files
 .idea
-.vscode
+# .vscode # I want my cspell tracked across machines
 *.suo
 *.ntvs*
 *.njsproj
