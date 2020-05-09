@@ -1,0 +1,53 @@
+---
+gnome_preferences:
+  # Better Font Smoothing
+  - key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing"
+    value: "'rgba'"
+  # Desktop Usability improvements
+  # Mouse Acceleration Profile
+  - key: "/org/gnome/desktop/peripherals/mouse/accel-profile"
+    value: "'adaptive'"
+  # Allow volume above 100%
+  - key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
+    value: "true"
+  # Calendar Show Week Date
+  - key: "/org/gnome/desktop/calendar/show-weekdate"
+    value: "true"
+  # Show Date in Clock
+  - key: "/org/gnome/desktop/interface/clock-show-date"
+    value: "true"
+  # Nautilus - Clock Format
+  - key: "/org/gnome/desktop/interface/clock-format"
+    value: "'24h'"
+  # Resize with right button
+  - key: "/org/gnome/desktop/wm/resize-with-right-button"
+    value: "true"
+  # Button Layout
+  - key: "/org/gnome/desktop/wm/button-layout"
+    value: "'appmenu:minimize,maximize,close'"
+  # Focus Mode
+  - key: "/org/gnome/desktop/wm/preferences/focus-mode"
+    value: "'sloppy'"
+  # Desktop Icons
+  - key: "/org/gnome/desktop/background/show-desktop-icons"
+    value: "false"
+  # Nautilus (File Manager) Usability
+  # Nautilus - Default Zoom Level
+  - key: "/org/gnome/nautilus/icon-view/default-zoom-level"
+    value: "'standard'"
+  # Nautilus - Executable Text Activation
+  - key: "/org/gnome/nautilus/preferences/executable-text-activation"
+    value: "'ask'"
+  # Nautilus - Sort Directories
+  - key: "/org/gtk/Settings/FileChooser/sort-directories-first"
+    value: "true"
+  # Nautilus - User Tree View
+  - key: "/org/gnome/nautilus/list-view/use-tree-view"
+    value: "true"
+  # Shell - Attach Modal Dialogues
+  - key: "/org/gnome/shell/overrides/attach-modal-dialogs"
+    value: "false"
+  # Shell Overrides
+  # Workspaces Only on Primary
+  - key: "/org/gnome/shell/overrides/workspaces-only-on-primary"
+    value: "false"

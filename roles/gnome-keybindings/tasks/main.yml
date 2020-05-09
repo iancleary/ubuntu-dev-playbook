@@ -5,104 +5,16 @@
     name: "dconf-editor"
     state: present
 
+- name: Check Key Existence
+  dconf:
+    key: "{{ item.key}}"
+    state: read
+  with_items: "{{ gnome_keybindings }}"
+
 # Window and Application switching
-- name: Custom Keybinding Entry - Switch Application
+- name: Custom Keybinding Entries
   dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-applications"
-    value: "['<Super>Tab']"
+    key: "{{ item.key}}"
+    value: "{{ item.value }}"
     state: present
-
-- name: Custom Keybinding Entry - Switch Application Backwards
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-applications-backward"
-    value: "['<Shift><Super>Tab']"
-    state: present
-
-- name: Custom Keybinding Entry - Switch Windows
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-windows"
-    value: "['<Alt>Tab']"
-    state: present
-
-- name: Custom Keybinding Entry - Switch Windows Backwards
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-windows-backward"
-    value: "['<Shift><Alt>Tab']"
-    state: present
-
-# Move windows (<Ctrl><Alt>Direction interferes and wasn't reliable)
-- name: Custom Keybinding Entry - Move To Monitor Down
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-down"
-    value: "['<Shift><Alt>Down']"
-    state: present
-
-- name: Custom Keybinding Entry - Move To Monitor Up
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-up"
-    value: "['<Shift><Alt>Up']"
-    state: present
-
-- name: Custom Keybinding Entry - Move To Monitor Left
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-left"
-    value: "['<Shift><Alt>Left']"
-    state: present
-
-- name: Custom Keybinding Entry - Move To Monitor Right
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-monitor-right"
-    value: "['<Shift><Alt>Right']"
-    state: present
-
-# Move workspaces
-- name: Custom Keybinding Entry - Move To Workspace Down
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-down"
-    value: "['<Shift><Super>Down']"
-    state: present
-
-- name: Custom Keybinding Entry - Move To Workspace Up
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-up"
-    value: "['<Shift><Super>Up']"
-    state: present
-
-- name: Custom Keybinding Entry - Move To Workspace Left
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-left"
-    value: "['<Shift><Super>Left']"
-    state: present
-
-- name: Custom Keybinding Entry - Move To Workspace Right
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-right"
-    value: "['<Shift><Super>Right']"
-    state: present
-
-- name: Custom Keybinding Entry - Move To Workspace Last
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-last"
-    value: "['<Shift><Super>End']"
-    state: present
-
-# Close Windows
-- name: Custom Keybinding Entry - Close Window
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/close"
-    value: "['<Super>w']"
-    state: present
-
-# Launch Terminal
-- name: Custom Keybinding Entry - Launch Terminal
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/terminal"
-    value: "'<Super>t'"
-    state: present
-
-# Close Windows
-- name: Custom Keybinding Entry - Lock Computer
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver"
-    value: "'<Super>l'"
-    state: present
+  with_items: "{{ gnome_keybindings }}"

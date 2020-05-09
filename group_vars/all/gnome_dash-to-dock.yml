@@ -1,0 +1,67 @@
+---
+# Dash to Dock Settings
+gnome_dash_to_dock_preferences:
+# Apply Custom Theme
+  - key: "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme"
+    value: "true"
+  # Custom Background Color
+  - key: "/org/gnome/shell/extensions/dash-to-dock/custom-background-color"
+    value: "false"
+  # Custom Theme Customize Running Dots
+  - key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-customize-running-dots"
+    value: "true"
+  # Custom Theme Running Dots Color
+  - key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-running-dots-color"
+    value: "'#729fcf'"
+  # Custom Theme Shrink
+  - key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink"
+    value: "true"
+  # Dock Fixed
+  - key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
+    value: "false"
+  # Dock Position BOTTOM
+  - key: "/org/gnome/shell/extensions/dash-to-dock/dock-position"
+    value: "'BOTTOM'"
+  # Extend Height
+  - key: "/org/gnome/shell/extensions/dash-to-dock/extend-height"
+    value: "true"
+  # Force Straight Corner
+  - key: "/org/gnome/shell/extensions/dash-to-dock/force-straight-corner"
+    value: "false"
+  # Icon Size Fixed
+  - key: "/org/gnome/shell/extensions/dash-to-dock/icon-size-fixed"
+    value: "true"
+  # Icon Size
+  - key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size"
+    value: "24"
+  # Intellihide Mode
+  - key: "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode"
+    value: "'ALL_WINDOWS'"
+  # Intellihide Status
+  - key: "/org/gnome/shell/extensions/dash-to-dock/intellihide"
+    value: "'ALL_WINDOWS'"
+  # Isolate Workspaces
+  - key: "/org/gnome/shell/extensions/dash-to-dock/isolate-workspaces"
+    value: "true"
+  # Show Apps at Top
+  - key: "/org/gnome/shell/extensions/dash-to-dock/show-apps-at-top"
+    value: "true"
+  # Unity Backlit Items
+  - key: "/org/gnome/shell/extensions/dash-to-dock/unity-backlit-items"
+    value: "false"
+  # Transparency Mode
+  - key: "/org/gnome/shell/extensions/dash-to-dock/transparency-mode"
+    value: "'FIXED'"
+  # Running Indicator Style
+  - key: "/org/gnome/shell/extensions/dash-to-dock/running-indicator-style"
+    value: "'SEGMENTED'"
+  # 0.7 always converts to 0.69999999999999996, due to the Double data type
+  # Background Opacity
+  - key: "/org/gnome/shell/extensions/dash-to-dock/background-opacity"
+    value: "0.69999999999999996"
+  # Enable Multi-Monitor Docks
+  - key: "/org/gnome/shell/extensions/dash-to-dock/multi-monitor"
+    value: "false"
+  # Pressure Threshold
+  - key: "/org/gnome/shell/extensions/dash-to-dock/pressure-threshold"
+    value: "0.0"

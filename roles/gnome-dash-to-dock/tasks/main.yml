@@ -9,11 +9,11 @@
   dconf:
     key: "{{ item.key}}"
     state: read
-  with_items: "{{ gnome_preferences }}"
+  with_items: "{{ gnome_dash_to_dock_preferences }}"
 
-- name: Preferences
+- name: Dash to Dock Preferences
   dconf:
     key: "{{ item.key}}"
     value: "{{ item.value }}"
     state: present
-  with_items: "{{ gnome_preferences }}"
+  with_items: "{{ gnome_dash_to_dock_preferences }}"

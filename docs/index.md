@@ -88,7 +88,6 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 * Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-extensions/tasks/main.yml)
 * Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-keybindings/tasks/main.yml)
 * Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-preferences/tasks/main.yml)
-* Themes (18.04 only): [gnome-themes](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-themes/tasks/main.yml)
 
 ---
 

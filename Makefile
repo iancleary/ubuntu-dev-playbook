@@ -332,20 +332,20 @@ github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 # gnome-boxes: ## Install GNOME Boxes, using Flatpak
 # 	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
 
+gnome-dash-to-dock:
+gnome-dash-to-dock: ## Set my GNOME Dash to Dock Preferences
+	@$(ANSIBLE) --tags="gnome-dash-to-dock"
+
 gnome-extensions:
 gnome-extensions: ## Install GNOME Extensions
 	@$(ANSIBLE) --tags="gnome-extensions"
 
 gnome-keybindings:
-gnome-keybindings: ## Set my GNOME Keybindings
+gnome-keybindings: ## Set my GNOME Keybindings Preferences
 	@$(ANSIBLE) --tags="gnome-keybindings"
 
-gnome-themes:
-gnome-themes: ## Install and Set GNOME Theme, Icons, and Cursor
-	@$(ANSIBLE) --tags="gnome-themes"
-
 gnome-preferences:
-gnome-preferences: ## Set GNOME Preferences
+gnome-preferences: ## Set my general GNOME shell Preferences
 	@$(ANSIBLE) --tags="gnome-preferences"
 
 gtk3-icon-browser: ## Launch the GTK Icon Browser
