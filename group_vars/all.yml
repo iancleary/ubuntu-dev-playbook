@@ -22,29 +22,32 @@ nodejs_yarn_global_packages:
   - name: "markdownlint-cli"
   - name: "carbon-now-cli"
 snaps_chat:
-  - "signal-desktop"
-  - "telegram-desktop"
-snaps_chat_classic:
-  - "slack"
+  - name: "signal-desktop"
+  - name: "telegram-desktop"
+  - name: "slack"
+    classic: "yes"
 snaps_common:
-  - "snap-store"
-  - "breaktimer"
-  - "cherrytree"
-  - "drawio"
+  - name: "snap-store"
+  - name: "breaktimer"
+  - name: "cherrytree"
+  - name: "drawio"
   # https://github.com/jgraph/drawio-desktop/issues/138,
   # snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
-  - "spotify"
-  - "ncspot"
-  - "standard-notes"
+  - name: "spotify"
+  - name: "ncspot"
+  - name: "standard-notes"
+  - name: "authy"
+    channel: "beta"
 snaps_development:
-  - "postman"
-snaps_development_classic:
-  - "code"
+  - name: "postman"
+  - name: "code"
+    classic: "yes"
   # - "codium" # Code without telemetry
-  - "sublime-text"
+  - name: "sublime-text"
+    classic: "yes"
 snaps_web_browsers:
-  - "chromium"
-  - "firefox"
+  - name: "chromium"
+  - name: "firefox"
 snaps_web_browsers_plugs:
   - plug: "home"
     app: "chromium"

@@ -16,7 +16,9 @@
 - name: Web Browsers - Install Confined Snaps - Chromium and Firefox
   become: true
   snap:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    channel: "{{ item.channel | default('stable')}}"
+    classic: "{{ item.classic | default('no')}}"
   with_items: "{{ snaps_web_browsers }}"
 
 # https://github.com/ansible/ansible/issues/58403

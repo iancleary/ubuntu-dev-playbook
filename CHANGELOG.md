@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 
 - `zsh_plugins` to drop `ansible` and `aws`; add `yarn`
+- Snap variables to include `channel`, `classic`, and `name` dictionary items per [#137](https://github.com/iancleary/ansible-desktop/issues/137)
 
 ## [0.9.0] - 2020-05-03
 
