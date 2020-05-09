@@ -1,0 +1,11 @@
+---
+zsh_theme: robbyrussell
+zsh_plugins:
+  # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+  # - ansible
+  # - aws
+  - docker
+  - docker-compose
+  - git
+  - pipenv
+  - yarn

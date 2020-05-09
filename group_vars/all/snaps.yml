@@ -1,0 +1,31 @@
+---
+snaps_chat:
+  - name: "signal-desktop"
+  - name: "telegram-desktop"
+  - name: "slack"
+    classic: "yes"
+snaps_common:
+  - name: "snap-store"
+  - name: "breaktimer"
+  - name: "cherrytree"
+  - name: "drawio"
+  # https://github.com/jgraph/drawio-desktop/issues/138,
+  # snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
+  - name: "spotify"
+  - name: "ncspot"
+  - name: "standard-notes"
+  - name: "authy"
+    channel: "beta"
+snaps_development:
+  - name: "postman"
+  - name: "code"
+    classic: "yes"
+  # - "codium" # Code without telemetry
+  - name: "sublime-text"
+    classic: "yes"
+snaps_web_browsers:
+  - name: "chromium"
+  - name: "firefox"
+snaps_web_browsers_plugs:
+  - plug: "home"
+    app: "chromium"

@@ -1,0 +1,8 @@
+---
+nodejs_version: "12.x"
+nodejs_yarn_global_packages:
+  - name: "@vue/cli"
+  - name: "@gridsome/cli"
+  - name: "nativefier"
+  - name: "markdownlint-cli"
+  - name: "carbon-now-cli"

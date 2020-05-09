@@ -1,0 +1,8 @@
+---
+flatpak_applications:
+  - "com.uploadedlobster.peek"
+  # - "com.github.alainm23.planner" # not used
+  - "com.valvesoftware.Steam"
+  - "org.gnome.Evolution"
+  - "ch.protonmail.protonmail-bridge"
+  - "org.libreoffice.LibreOffice"
