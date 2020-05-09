@@ -79,13 +79,3 @@
     key: "/org/gnome/shell/extensions/user-theme/name"
     value: "'vimix-laptop-beryl'"
     state: present
-
-## Gnome extras
-
-- name: GNOME Themes - install gtk-3-examples (gtk3-icon-browser)
-  become: true
-  apt:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - gtk-3-examples
