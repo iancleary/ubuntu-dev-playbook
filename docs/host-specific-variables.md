@@ -24,7 +24,7 @@ This creates two files:
 ```yml
 # ./group_vars/{hostname}/all.yml
 ---
-# You can copy and modify variables over from ../all.yml
+# You can copy and modify variables over from group_vars/all/*.yml
 ```
 
 and
@@ -38,7 +38,7 @@ and
 ### Order of precedence for variables
 
 * Any content in the `group_vars/{hostname}/all.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [group_vars/all.yml](https://github.com/iancleary/ansible-desktop/tree/master/group_vars/all.yml) folder local to the repo (version controlled; not sensitive)
+* The version controlled [group_vars/all/*.yml](https://github.com/iancleary/ansible-desktop/tree/master/group_vars/all/) folder local to the repo (version controlled; not sensitive)
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 
@@ -55,7 +55,7 @@ nodejs_yarn_global_packages:
 
 ## Example Forking This Repo
 
-For example, a `./group_vars/all.yml` could be:
+For example, a `./group_vars/all/node_yarn.yml` could be:
 
 ```yaml
 ---

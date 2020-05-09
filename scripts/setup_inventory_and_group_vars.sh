@@ -8,7 +8,7 @@ GROUP_VARS_FILE="group_vars/$(hostname)"
 if [ ! -f "$GROUP_VARS_FILE" ]; then
     mkdir -p "$GROUP_VARS_FILE"
     # -e tells echo to interpret backslash escapes
-    echo -e "---\n# You can copy and modify variables over from ../all.yml" > "group_vars/$(hostname)/all.yml"
+    echo -e "---\n# You can copy and modify variables over from ../all/*.yml" > "group_vars/$(hostname)/all.yml"
 fi
 
 PRIVATE_INVENTORY_FILE=".inventory"
