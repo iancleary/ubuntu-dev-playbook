@@ -5,6 +5,12 @@
     name: "dconf-editor"
     state: present
 
+- name: Check Key Existence
+  dconf:
+    key: "{{ item.key}}"
+    state: read
+  with_items: "{{ gnome_preferences }}"
+
 - name: Preferences
   dconf:
     key: "{{ item.key}}"
