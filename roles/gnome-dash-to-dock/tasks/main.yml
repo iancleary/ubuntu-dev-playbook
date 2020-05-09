@@ -9,12 +9,11 @@
   dconf:
     key: "{{ item.key}}"
     state: read
-  with_items: "{{ gnome_keybindings }}"
+  with_items: "{{ gnome_dash_to_dock_preferences }}"
 
-# Window and Application switching
-- name: Custom Keybinding Entries
+- name: Dash to Dock Preferences
   dconf:
     key: "{{ item.key}}"
     value: "{{ item.value }}"
     state: present
-  with_items: "{{ gnome_keybindings }}"
+  with_items: "{{ gnome_dash_to_dock_preferences }}"

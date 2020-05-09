@@ -16,6 +16,7 @@
     - {role: timeshift, tags: ['timeshift']}
     - {role: flameshot, tags: ['flameshot']}
     - {role: github-cli, tags: ['github-cli']}
+    - {role: gnome-dash-to-dock, tags: ['gnome-dash-to-dock']}
     - {role: gnome-extensions, tags: ['gnome-extensions']}
     - {role: gnome-keybindings, tags: ['gnome-keybindings']}
     - {role: gnome-themes, tags: ['gnome-themes'],
