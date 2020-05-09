@@ -125,6 +125,7 @@ jobs:
         - flameshot --version
         - make flameshot-keybindings
         - make gnome-extensions
+        - make gnome-dash-to-dock
         - make gnome-keybindings
         - make gnome-themes
         - make gnome-preferences
