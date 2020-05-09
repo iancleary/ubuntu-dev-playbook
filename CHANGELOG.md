@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Snap variables to include `channel`, `classic`, and `name` dictionary items per [#137](https://github.com/iancleary/ansible-desktop/issues/137)
 - Moved group_vars from `group_vars/all.yml` to `group_vars/all/*.yml` per [#139](https://github.com/iancleary/ansible-desktop/issues/139)
 
+### Removed
+
+- GNOME Themes target (happy with 20.04 `yaru` theme 😍)
+
 ## [0.9.0] - 2020-05-03
 
 ### Added

@@ -344,10 +344,6 @@ gnome-keybindings:
 gnome-keybindings: ## Set my GNOME Keybindings Preferences
 	@$(ANSIBLE) --tags="gnome-keybindings"
 
-gnome-themes:
-gnome-themes: ## Install and Set GNOME Theme, Icons, and Cursor
-	@$(ANSIBLE) --tags="gnome-themes"
-
 gnome-preferences:
 gnome-preferences: ## Set my general GNOME shell Preferences
 	@$(ANSIBLE) --tags="gnome-preferences"

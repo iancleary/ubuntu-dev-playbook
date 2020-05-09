@@ -127,6 +127,5 @@ jobs:
         - make gnome-extensions
         - make gnome-dash-to-dock
         - make gnome-keybindings
-        - make gnome-themes
         - make gnome-preferences
         - make jetbrains-mono
