@@ -120,15 +120,6 @@ zsh:
 zsh: ## Install zsh and oh-my-zsh
 	@$(ANSIBLE) --tags="zsh"
 
-common:
-common: ## Install Common apt packages
-	@$(ANSIBLE) --tags="common"
-
-
-cherrytree:
-cherrytree: ## Install Cherrytree using snaps
-	@$(ANSIBLE) --tags="common-snaps" -e '{"snaps_common": ["cherrytree"]}'
-
 docker:
 docker: ## Install Docker and Docker-Compose
 	@$(ANSIBLE) --tags="docker"
