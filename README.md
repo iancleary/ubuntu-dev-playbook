@@ -141,7 +141,7 @@ The script created two extra files that ensure that the `ansible-playbook` will 
 ```yml
 # group_vars/$(hostname)/all.yml
 ---
-# You can copy and modify variables over from ../all.yml
+# You can copy and modify variables over from group_vars/all/*.yml
 ```
 
 Then run `make all`

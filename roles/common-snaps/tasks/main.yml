@@ -5,8 +5,10 @@
     name: "snapd"
     state: present
 
-- name: Common Confined Snaps
+- name: Common Snaps
   become: true
   snap:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    channel: "{{ item.channel | default('stable')}}"
+    classic: "{{ item.classic | default('no')}}"
   with_items: "{{ snaps_common }}"

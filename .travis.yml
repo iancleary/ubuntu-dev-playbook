@@ -86,13 +86,12 @@ jobs:
         - make bootstrap-before-script
       script:
         - make common-snaps
+        - cherrytree --help
         - make chat-clients
         - make development-tools
         - code --version
         # - codium --version
         # not using currently
-        - make cherrytree
-        - cherrytree --help
         - make web-browsers
 
     - name: Flatpak - Personal, Office

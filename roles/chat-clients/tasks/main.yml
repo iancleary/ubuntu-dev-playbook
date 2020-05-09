@@ -5,15 +5,10 @@
     name: "snapd"
     state: present
 
-- name: Chat Clients - Install Confined Snaps
+- name: Chat Clients - Install Snaps
   become: true
   snap:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    channel: "{{ item.channel | default('stable')}}"
+    classic: "{{ item.classic | default('no')}}"
   with_items: "{{ snaps_chat }}"
-
-- name: Chat Clients - Install Classicly Confined Snaps
-  become: true
-  snap:
-    name: "{{ item }}"
-    classic: "yes"
-  with_items: "{{ snaps_chat_classic }}"

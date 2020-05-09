@@ -136,7 +136,12 @@ yarn-error.log*
 .inventory
 
 # Private group_vars subfolders
-group_vars/*/*
+# This ignores subfolders, but tracks all
+# https://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder
+group_vars/*
+!group_vars/all/
+# you could add other folders here by copying the above line
+#
 # (run.sh creates a group_vars/hostname/ folder for your hostname)
 # This allows more than just me to use this repo
-# note that group_vars/all.yml is version controlled
+# note that group_vars/all/*.yml is version controlled
