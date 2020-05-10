@@ -1,4 +1,6 @@
 ---
+antibody_version: "6.0.1"
+zsh_use_antibody: "true"
 zsh_theme: robbyrussell
 zsh_plugins:
   - ansible

@@ -1,0 +1,6 @@
+---
+- name: Install Anitbody deb from github
+  become: true
+  apt:
+    deb: >-
+      https://github.com/getantibody/antibody/releases/download/v{{antibody_version}}/antibody_{{antibody_version}}_linux_amd64.deb
