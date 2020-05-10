@@ -72,7 +72,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=({{ zsh_plugins | join(' ') }})
+# plugins=({{ zsh_plugins | join(' ') }}) # deprecated with antibody
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,7 +81,10 @@ source <(antibody init)
 ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
 
 # https://github.com/getantibody/antibody/issues/261#issuecomment-616205908
-antibody bundle robbyrussell/oh-my-zsh path:lib
+{% if zsh_plugins|length > 0 %}
+antibody bundle robbyrussell/oh-my-zsh path:lib path:plugins/{{ zsh_plugins | join(' path:plugins/') }}
+{% endif %}
+
 
 # User configuration
 
