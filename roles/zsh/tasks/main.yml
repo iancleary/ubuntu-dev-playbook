@@ -3,7 +3,6 @@
 
 - name: Enable antibody shell plugin manager
   include_tasks: antibody.yml
-  when: zsh_use_antibody == 'true'
 
 - name: console setup for Debian family distributions
   include_tasks: debian-console-setup.yml
