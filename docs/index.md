@@ -41,6 +41,7 @@ but below is a list of what the software installs.
 > been ported over from the previous Makefiles.
 
 * `ansible`,
+* [antibody](https://getantibody.github.io/) shell plugin manager (concurrent and compiled)
 * `cherrytree`,
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Visual Studio Code`,

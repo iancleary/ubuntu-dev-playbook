@@ -1,4 +1,5 @@
 ---
+antibody_version: "6.0.1"
 zsh_theme: robbyrussell
 zsh_plugins:
   - ansible
