@@ -46,9 +46,6 @@ make bootstrap-check
 # Install Everything
 make install
 
-# Start Flameshot
-flameshot > /dev/null 2>&1
-
 # Upgrade System After Fresh Install
 sudo apt update
 sudo apt -y full-upgrade
