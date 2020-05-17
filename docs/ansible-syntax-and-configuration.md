@@ -9,12 +9,12 @@ After Ansible 2.5:
 ```yaml
 - name: install core packages
   become: true
-  apt:s
+  apt:
     name: "{{ item }}"
     state: present
-    loop:
-      - git
-      - make
+  loop:
+    - git
+    - make
 ```
 
 Before Ansible 2.5:
