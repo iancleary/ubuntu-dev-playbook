@@ -21,12 +21,12 @@ endif
 # Both ANSIBLE commands need the "ansible_user" for the zsh role
 
 # Main Ansible Playbook Command (prompts for password)
-ANSIBLE=ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) --ask-become-pass -e '{"ansible_user": "$(shell whoami)"}'
+ANSIBLE=ansible-galaxy install -r requirements.yml && ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) --ask-become-pass -e '{"ansible_user": "$(shell whoami)"}'
 
 # Travis CI Ansible Playbook Command (doesn't prompt for password)
 TRAVIS=travis
 ifeq "$(HOSTNAME)" "$(TRAVIS)"
-	ANSIBLE=ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e '{"ansible_user": "$(shell whoami)"}'
+	ANSIBLE=ansible-galaxy install -r requirements.yml && ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e '{"ansible_user": "$(shell whoami)"}'
 endif
 
 $(warning ANSIBLE is $(ANSIBLE))

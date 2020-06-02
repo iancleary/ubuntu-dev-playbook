@@ -1,21 +1,5 @@
 ---
 ## JetBrains Mono Font
-- name: Download JetBrains
-  get_url:
-    url: "{{ jetbrains_mono_url }}-{{ jetbrains_mono_version }}.zip"
-    dest: /tmp/
-    mode: '0755'
-
-- name: Unarchive font to /usr/share/fonts
-  become: true
-  unarchive:
-    src: /tmp/JetBrainsMono-{{ jetbrains_mono_version }}.zip
-    dest: /usr/share/fonts
-    remote_src: "yes"
-
-- name: Install font
-  command: fc-cache -f -v
-
 - name: Configure fonts - Interface Text
   dconf:
     key: "/org/gnome/desktop/interface/font-name"
