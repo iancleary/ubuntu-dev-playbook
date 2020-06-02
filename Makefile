@@ -132,6 +132,7 @@ kite: ## Install Kite, AI Autocomplete and Docs for Python
 
 jetbrains-mono:
 jetbrains-mono: ## Install JetBrains Mono font
+	ansible-galaxy install iancleary.jetbrains_mono
 	@$(ANSIBLE) --tags="jetbrains-mono"
 
 nautilus-mounts:
