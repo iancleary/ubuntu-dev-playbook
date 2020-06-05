@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Imported [iancleary.jetbrains_mono](https://galaxy.ansible.com/iancleary/jetbrains_mono) ansible role
+- [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin
+- [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-) plugin
 
 ### Changed
 
