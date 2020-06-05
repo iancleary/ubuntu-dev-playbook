@@ -25,7 +25,7 @@ snaps_development:
     classic: "yes"
 snaps_web_browsers:
   - name: "chromium"
-  - name: "firefox"
+  # - name: "firefox" # Using deb until gnome-extensions installations work with firefox snap
 snaps_web_browsers_plugs:
   - plug: "home"
     app: "chromium"
