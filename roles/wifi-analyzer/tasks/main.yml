@@ -1,0 +1,5 @@
+---
+- name: Install LinSSID Deb
+  become: "yes"
+  apt:
+    name: "linssid"

@@ -76,6 +76,7 @@ jobs:
         - make nordvpn
         - nordvpn --version
         - make stacer
+        - make wifi-analyzer
 
     - name: Common Snaps, Chat Clients, Development Tools, Web Browsers
       before_install:
