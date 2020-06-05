@@ -44,6 +44,9 @@ code_extensions:
   ## Spellchecking
   - streetsidesoftware.code-spell-checker
 
+  ## Themes
+  - sdras.night-owl
+
   ## Travis-CI
   # - felixrieseberg.vsc-travis-ci-status # has issues with status resolution
 
