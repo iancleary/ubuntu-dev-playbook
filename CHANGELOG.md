@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin
 - [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-) plugin
 - [LinSSID wifi-analyzer](https://help.ncf.ca/WiFi_Analyzer_for_Linux), attribution: [Linux Unplugged #355](https://podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121)
+- Code Extensions: `hediet.vscode-drawio`, `mhutchie.git-graph`, and `sdras.vue-vscode-snippets`
 
 ### Changed
 
