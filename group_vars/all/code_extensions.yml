@@ -18,9 +18,13 @@ code_extensions:
   - shardulm94.trailing-spaces
   # - Shan.code-settings-sync
 
+  ## Draw.io
+  - hediet.vscode-drawio
+
   ## Git Utilities
   - eamodio.gitlens
   - donjayamanne.githistory
+  - mhutchie.git-graph
 
   ## Markdown Linting
   - DavidAnson.vscode-markdownlint
@@ -40,6 +44,9 @@ code_extensions:
   ## Spellchecking
   - streetsidesoftware.code-spell-checker
 
+  ## Themes
+  - sdras.night-owl
+
   ## Travis-CI
   # - felixrieseberg.vsc-travis-ci-status # has issues with status resolution
 
@@ -47,6 +54,7 @@ code_extensions:
   - octref.vetur
   - dbaeumer.vscode-eslint
   - pranaygp.vscode-css-peek
+  - sdras.vue-vscode-snippets
 
   ## YAML
   - redhat.vscode-yaml  # doesn't allow hostname in .travis.yml

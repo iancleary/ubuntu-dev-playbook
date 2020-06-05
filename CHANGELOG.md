@@ -10,11 +10,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Imported [iancleary.jetbrains_mono](https://galaxy.ansible.com/iancleary/jetbrains_mono) ansible role
+- [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin
+- [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-) plugin
+- [LinSSID wifi-analyzer](https://help.ncf.ca/WiFi_Analyzer_for_Linux), attribution: [Linux Unplugged #355](https://podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121)
+- Code Extensions: `hediet.vscode-drawio`, `mhutchie.git-graph`, and `sdras.vue-vscode-snippets`
+- Code Theme: `sdras.night-owl`
 
 ### Changed
 
 - Terminal key to just single value '<Super>t'
 - Upgrade `gh` version to 0.8.0
+- Default firefox to deb until GNOME extensions can be installed using firefox snap
 
 ### Removed
 

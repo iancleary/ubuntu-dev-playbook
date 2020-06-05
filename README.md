@@ -40,8 +40,12 @@ but below is a list of what the software installs.
 > Note: the ~~crossed out~~ out items haven't
 > been ported over from the previous Makefiles.
 
+| Role | Description |
+|:-------------|:-------------:|
+| [github-cli](roles/github-cli) | [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
+|  [zsh](roles/zsh) | ZSH Shell with [antibody](https://getantibody.github.io/) plugin manager|
+
 * `ansible`,
-* [antibody](https://getantibody.github.io/) shell plugin manager (concurrent and compiled)
 * `cherrytree`,
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Visual Studio Code`,
@@ -56,7 +60,6 @@ for beautiful images of my code - right inside my terminal,
 * Flameshot keybinding to the Print Screen key using `gsettings`,
 * `Firefox`,
 * `Flatpak`,
-* `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `Nordvpn`,
 * `nodejs`,
 * [Peek](https://github.com/phw/peek) animated GIF screen recorder,

@@ -4,6 +4,9 @@
 - name: Enable antibody shell plugin manager
   include_tasks: antibody.yml
 
+- name: Clone ZSH Plugins
+  include_tasks: zsh-plugins.yml
+
 - name: console setup for Debian family distributions
   include_tasks: debian-console-setup.yml
   when: ansible_os_family == 'Debian'

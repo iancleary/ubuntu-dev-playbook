@@ -12,6 +12,7 @@
     state: absent
     purge: "yes"
     autoremove: "yes"
+  when: "'firefox' in snaps_web_browsers"
 
 - name: Web Browsers - Install Confined Snaps - Chromium and Firefox
   become: true
