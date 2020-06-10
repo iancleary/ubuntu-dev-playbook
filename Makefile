@@ -367,6 +367,10 @@ flatpak:
 flatpak: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 	@$(ANSIBLE) --tags="flatpak"
 
+cherrytree: flatpak
+cherrytree: ## Install Cherrytree, using Flatpak
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.giuspen.cherrytree"]}'
+
 steam: flatpak
 steam: ## Install Steam, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.valvesoftware.Steam"]}'

@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Terminal key to just single value '<Super>t'
 - Upgrade `gh` version to 0.9.0
 - Default firefox to deb until GNOME extensions can be installed using firefox snap
+- Switched Cherrytree from Snap to Flatpak
 
 ### Removed
 
