@@ -32,18 +32,29 @@ keyboard shortcuts, core software, etc.).
 > There are no plans to support non-LTS versions.
 > Software support is LTS version dependent.
 
-## Core Software
+## Ansible Galaxy Roles
 
-This isn't exactly the list of Ansible roles,
-but below is a list of what the software installs.
-
-> Note: the ~~crossed out~~ out items haven't
-> been ported over from the previous Makefiles.
+--------------------------
 
 | Role | Description |
 |:-------------|:-------------:|
-| [github-cli](roles/github-cli) | [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
-|  [zsh](roles/zsh) | ZSH Shell with [antibody](https://getantibody.github.io/) plugin manager|
+|  [iancleary.jetbrains_mono](https://github.com/iancleary/ansible-role-jetbrains_mono) | installs [Jetbrains-Mono](https://www.jetbrains.com/lp/mono/) font|
+|  [iancleary.zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), and the [antibody](https://getantibody.github.io/) plugin manager|
+
+## Local Roles
+
+--------------------------
+
+| Role | Description |
+|:-------------|:-------------:|
+| [github-cli](roles/github-cli) | [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)|
+
+## Core Software
+
+--------------------------
+
+This isn't exactly the list of Ansible roles,
+but below is a list of what the repo helps install.
 
 * `ansible`,
 * `cherrytree`,
@@ -80,8 +91,7 @@ for beautiful images of my code - right inside my terminal,
 * `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
 * `Tresorit`,
-* `yarn`,
-* `zsh`
+* `yarn`
 
 ### Configuration
 
@@ -91,7 +101,7 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 * Keybindings: [gnome-keybindings](roles/gnome-keybindings/tasks/main.yml)
 * Preferences: [gnome-preferences](roles/gnome-preferences/tasks/main.yml)
 
----
+--------------------------
 
 ## Documentation
 
@@ -101,6 +111,8 @@ Detailed documentation is hosted by Netlify at <https://ansible-desktop.ianclear
 
 For a walk through of my process on existing machine, please visit
 <https://ansible-desktop.iancleary.me/makefile>.
+
+--------------------------
 
 ## New Machine Setup
 
@@ -121,6 +133,8 @@ for the bash script and then once later for
 `ansible`'s "BECOME PASSWORD" prompt.
 
 Voila! 🎉🎉🎉
+
+--------------------------
 
 ### Customization
 
@@ -151,11 +165,13 @@ Then run `make all`
 
 Voila (with your edits)! 🚀🚀🚀
 
+--------------------------
+
 ## Changes
 
 See [CHANGELOG](CHANGELOG.md) for history.
 
----
+--------------------------
 
 ## Authors
 

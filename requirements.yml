@@ -1,3 +1,4 @@
 ---
   # Default is from Ansible Galaxy
 - src: iancleary.jetbrains_mono
+- src: iancleary.zsh_antibody

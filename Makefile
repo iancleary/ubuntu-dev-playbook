@@ -18,21 +18,25 @@ else
     INVENTORY = "inventory"
 endif
 
-# Both ANSIBLE commands need the "ansible_user" for the zsh role
+# Format is from https://github.com/iancleary/ansible-role-zsh_antibody
+USER = '{"users": [{"username": "$(shell whoami)"}]}'
 
 # Main Ansible Playbook Command (prompts for password)
-ANSIBLE=ansible-galaxy install -r requirements.yml && ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) --ask-become-pass -e '{"ansible_user": "$(shell whoami)"}'
+INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
+ANSIBLE_PLAYBOOK = ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e $(USER)
+
+ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
 # Travis CI Ansible Playbook Command (doesn't prompt for password)
-TRAVIS=travis
+TRAVIS = travis
 ifeq "$(HOSTNAME)" "$(TRAVIS)"
-	ANSIBLE=ansible-galaxy install -r requirements.yml && ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e '{"ansible_user": "$(shell whoami)"}'
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
 endif
-
-$(warning ANSIBLE is $(ANSIBLE))
 
 # - to suppress if it doesn't exist
 -include make.env
+
+$(warning ANSIBLE is $(ANSIBLE))
 
 help:
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html

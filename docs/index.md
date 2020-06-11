@@ -32,6 +32,23 @@ keyboard shortcuts, core software, etc.).
 > There are no plans to support non-LTS versions.
 > Software (support) is LTS version dependent.
 
+## Ansible Galaxy Roles
+
+--------------------------
+
+| Role | Description |
+|:-------------|:-------------:|
+|  [iancleary.jetbrains_mono](https://github.com/iancleary/ansible-role-jetbrains_mono) | installs [Jetbrains-Mono](https://www.jetbrains.com/lp/mono/) font|
+|  [iancleary.zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), and the [antibody](https://getantibody.github.io/) plugin manager|
+
+## Local Roles
+
+--------------------------
+
+| Role | Description |
+|:-------------|:-------------:|
+| [github-cli](https://github.com/iancleary/ansible-desktop/tree/master/roles/github-cli) | Installs the [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading) deb|
+
 ## Core Software
 
 This isn't exactly the list of Ansible roles,
@@ -77,8 +94,7 @@ for beautiful images of my code - right inside my terminal,
 * `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
 * `Tresorit`,
-* `yarn`,
-* `zsh`
+* `yarn`
 
 > See the [archive](https://github.com/iancleary/ansible-desktop/tree/masterarchive) folder for not used targets.
 
@@ -90,7 +106,7 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 * Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-keybindings/tasks/main.yml)
 * Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-preferences/tasks/main.yml)
 
----
+--------------------------
 
 ## Getting Started with this repo
 
@@ -121,7 +137,7 @@ Linting is performed on common file types:
 * Bash files with [shellcheck](https://www.shellcheck.net/)
 * Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
----
+--------------------------
 
 ## New Machine Setup
 
@@ -143,7 +159,7 @@ for the bash script and then once later for
 
 Voila! 🎉🎉🎉
 
----
+--------------------------
 
 ## Requirements_ansible.txt
 
@@ -154,11 +170,13 @@ Voila! 🎉🎉🎉
 * [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
   * This drives the ansible >=2.8.0 requirement
 
+--------------------------
+
 ## Changes
 
 See [CHANGELOG](https://github.com/iancleary/ansible-desktop/blob/master/CHANGELOG.md) for history.
 
----
+--------------------------
 
 ## Authors
 

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Imported [iancleary.jetbrains_mono](https://galaxy.ansible.com/iancleary/jetbrains_mono) ansible role
+- Imported [iancleary.zsh_antibody](https://galaxy.ansible.com/iancleary/zsh_antibody) ansible role
 - [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin
 - [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-) plugin
 - [LinSSID wifi-analyzer](https://help.ncf.ca/WiFi_Analyzer_for_Linux), attribution: [Linux Unplugged #355](https://podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121)
@@ -26,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Buggy starting of flameshot in `run.sh`
+- Local zsh role
 
 ## [0.10.0] - 2020-05-10
 
