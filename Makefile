@@ -371,11 +371,11 @@ flatpak:
 flatpak: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 	@$(ANSIBLE) --tags="flatpak"
 
-cherrytree: flatpak
+cherrytree:
 cherrytree: ## Install Cherrytree, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.giuspen.cherrytree"]}'
 
-steam: flatpak
+steam:
 steam: ## Install Steam, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.valvesoftware.Steam"]}'
 
@@ -385,7 +385,7 @@ evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
 
 protonmail-bridge:
 protonmail-bridge: ## Install Protonmail Bridge Deb from their website
-	@$(ANSIBLE) --tags="protonmail-bridge"
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["ch.protonmail.protonmail-bridge"]}'
 
 tresorit: ## Install Tresorit
 tresorit:
