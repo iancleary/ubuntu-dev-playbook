@@ -8,7 +8,7 @@ theme:
 
 repo_name: iancleary/ansible-desktop
 repo_url: https://github.com/iancleary/ansible-desktop
-edit_uri: 'blob/master'
+edit_uri: 'blob/main'
 
 nav:
     - Introduction: 'index.md'

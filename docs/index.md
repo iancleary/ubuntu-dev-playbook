@@ -1,6 +1,6 @@
 # ansible-desktop
 
-[![Build Status](https://img.shields.io/travis/com/iancleary/ansible-desktop/master.svg)](https://img.shields.io/travis/com/iancleary/ansible-desktop)
+[![Build Status](https://img.shields.io/travis/com/iancleary/ansible-desktop/main.svg)](https://img.shields.io/travis/com/iancleary/ansible-desktop)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0a90303b-4694-4407-964b-0caa5a68827c/deploy-status)](https://app.netlify.com/sites/iancleary-ansible-desktop/deploys)
 
 ## Ansible Playbook to configure my laptops and desktops
@@ -47,7 +47,7 @@ keyboard shortcuts, core software, etc.).
 
 | Role | Description |
 |:-------------|:-------------:|
-| [github-cli](https://github.com/iancleary/ansible-desktop/tree/master/roles/github-cli) | Installs the [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading) deb|
+| [github-cli](https://github.com/iancleary/ansible-desktop/tree/main/roles/github-cli) | Installs the [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading) deb|
 
 ## Core Software
 
@@ -96,15 +96,13 @@ for beautiful images of my code - right inside my terminal,
 * `Tresorit`,
 * `yarn`
 
-> See the [archive](https://github.com/iancleary/ansible-desktop/tree/masterarchive) folder for not used targets.
-
 ### Configuration
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
-* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/master/roles/gnome-preferences/tasks/main.yml)
+* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-preferences/tasks/main.yml)
 
 --------------------------
 
@@ -112,16 +110,16 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 
 ### Makefile
 
-The [Makefile](https://github.com/iancleary/ansible-desktop/blob/master/Makefile)  is the entry point.
+The [Makefile](https://github.com/iancleary/ansible-desktop/blob/main/Makefile)  is the entry point.
 
 ### Common Utilty Scripts
 
-The [scripts](https://github.com/iancleary/ansible-desktop/tree/master/scripts) folder contains common setup between local scripts and Travis-CI.
+The [scripts](https://github.com/iancleary/ansible-desktop/tree/main/scripts) folder contains common setup between local scripts and Travis-CI.
 
 ### Testing
 
 Continuous Integration Testing is done with the
-[.travis.yml](https://github.com/iancleary/ansible-desktop/blob/master/.travis.yml) file.
+[.travis.yml](https://github.com/iancleary/ansible-desktop/blob/main/.travis.yml) file.
 
 Multiple jobs test independent portions of the installation.
 
@@ -149,7 +147,7 @@ to set up my computer:
 
 ```bash
 wget -qO- \
-https://github.com/iancleary/ansible-desktop/raw/master/run.sh | \
+https://github.com/iancleary/ansible-desktop/raw/main/run.sh | \
 bash
 ```
 
@@ -174,7 +172,7 @@ Voila! 🎉🎉🎉
 
 ## Changes
 
-See [CHANGELOG](https://github.com/iancleary/ansible-desktop/blob/master/CHANGELOG.md) for history.
+See [CHANGELOG](https://github.com/iancleary/ansible-desktop/blob/main/CHANGELOG.md) for history.
 
 --------------------------
 

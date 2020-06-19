@@ -10,7 +10,7 @@ sudo apt install -y git make
 FOLDER=personal
 GIT_USER=iancleary
 GIT_REPO=ansible-desktop
-GIT_BRANCH=master
+GIT_BRANCH=main
 URL=https://github.com/$GIT_USER/$GIT_REPO.git
 
 cd ~ || exit
