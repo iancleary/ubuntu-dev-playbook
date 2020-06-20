@@ -15,6 +15,10 @@ jobs:
       #   run: docker pull iancleary/ubuntu1804-ansible-desktop
       # - name: Start Docker Container with volume map
       #   run: docker start -i-t -v &GITHUB_WORKSPACE:/
+      - name: Use Node.js 12.16.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.16.1
       - name: before_install
         run: |
           make bootstrap-before-install
