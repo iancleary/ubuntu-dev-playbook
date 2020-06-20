@@ -18,7 +18,6 @@ jobs:
       - name: before_install
         run: |
           make bootstrap-before-install
-          nvm install 12.16.1
       - name: install
         run: |
           make bootstrap-before-script
