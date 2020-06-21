@@ -31,22 +31,25 @@
       {{ flameshot_url }}/v{{ flameshot_version }}/flameshot_{{ flameshot_version }}_bionic_x86_64.deb
   when: "'flameshot' not in ansible_facts.packages or flameshot_version not in flameshot_installed_version"
 
-- name: account $HOME
-  shell: "echo $HOME"
-  register: account_homedir
-  changed_when: false
-  check_mode: "no"
-
-- name: Create autostart directory if it does not exist
+- name: Create autostart directory if it doesn't exist
   file:
-    path: "{{ account_homedir.stdout }}/.config/autostart/"
+    path: "~{{ user.username }}/.config/autostart/"
     state: directory
     mode: "0755"
+  with_items: '{{ users }}'
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'
 
 - name: Make flameshot startup automatically
   copy:
     src: "{{ role_path }}/files/Flameshot.desktop"
-    dest: "{{ account_homedir.stdout }}/.config/autostart/Flameshot.desktop"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    dest: "~{{ user.username }}/.config/autostart/Flameshot.desktop"
+    owner: "{{ user.username }}"
+    group: "{{ user.username }}"
     mode: "0644"
+  ignore_errors: yes # for GitHub Actions group being docker (fix wanted!)
+  with_items: '{{ users }}'
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'

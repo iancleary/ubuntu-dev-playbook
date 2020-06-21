@@ -18,9 +18,6 @@ code_extensions:
   - shardulm94.trailing-spaces
   # - Shan.code-settings-sync
 
-  ## Draw.io
-  - hediet.vscode-drawio
-
   ## Git Utilities
   - eamodio.gitlens
   - donjayamanne.githistory

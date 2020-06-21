@@ -19,17 +19,23 @@ else
 endif
 
 # Format is from https://github.com/iancleary/ansible-role-zsh_antibody
-USER = '{"users": [{"username": "$(shell whoami)"}]}'
+USER_STRING = '{"users": [{"username": "$(shell whoami)"}]}'
 
 # Main Ansible Playbook Command (prompts for password)
 INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
-ANSIBLE_PLAYBOOK = ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e $(USER)
+ANSIBLE_PLAYBOOK = ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e $(USER_STRING)
 
 ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
 # Travis CI Ansible Playbook Command (doesn't prompt for password)
 TRAVIS = travis
 ifeq "$(HOSTNAME)" "$(TRAVIS)"
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+endif
+
+# GitHub Actions Ansible Playbook Command (doesn't prompt for password)
+RUNNER = runner
+ifeq "$(HOSTNAME)" "$(RUNNER)"
 	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
 endif
 
