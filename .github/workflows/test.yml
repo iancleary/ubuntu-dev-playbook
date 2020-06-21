@@ -49,6 +49,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: Source Path
+        run: . /etc/profile
       - name: Docker
         run: make docker
       - name: ZSH Antibody
@@ -84,11 +86,15 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: Source Path
+        run: . /etc/profile
       - name: Python 3.6
+        if: matrix.os == "ubuntu-18.04"
         run: |
           make python-three-six-install
           make python-three-six-supporting
       - name: Python 3.7
+        if: matrix.os == "ubuntu-18.04"
         run: |
           make python-three-seven-install
           make python-three-seven-supporting
@@ -110,3 +116,68 @@ jobs:
         run: make stacer
       - name: Wifi Analyzer
         run: make wifi-analyzer
+
+  common-snaps:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: Common Snaps
+        run: make common-snaps
+      - name: Chat Clients
+        run: make chat-clients
+      - name: Development Tools
+        run: |
+          make development-tools
+          code --version
+      - name: Web Browsers
+        run: make web-browsers
+
+  gnome-preferences-and-flameshot:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+          sudo apt install -y gnome-shell gnome-session gnome-terminal
+          sudo apt install -y dconf-gsettings-backend dconf-tools dconf-cli
+          sudo apt install -y gsettings-desktop-schemas
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: Flameshot
+        run: make flameshot
+      - name: Flameshot (check idempotence)
+        run: make flameshot
+      - name: Flameshot version
+        run: flameshot --version
+      - name: Flameshot keybindings
+        run: make flameshot-keybindings
+      - name: GNOME Preferences
+        run: |
+          make gnome-extensions
+          make gnome-dash-to-dock
+          make gnome-keybindings
+          make gnome-preferences
+      - name: Jetbrains Mono
+        run: make jetbrains-mono
