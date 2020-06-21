@@ -51,7 +51,6 @@
   copy:
     src: "{{ role_path }}/files/Flameshot.desktop"
     dest: "~{{ user.username }}/.config/autostart/Flameshot.desktop"
-    path: "~{{ user.username }}/.config/autostart/"
     owner: "{{ user.username }}"
     group: "{{ user.username }}"
     mode: "0644"
