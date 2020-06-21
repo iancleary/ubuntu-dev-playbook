@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Update Github Actions Path
+        run: echo "::add-path::/home/runner/.local/bin"
       # - name: Pull Docker Image
       #   run: docker pull iancleary/ubuntu1804-ansible-desktop
       # - name: Start Docker Container with volume map
@@ -40,6 +42,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Update Github Actions Path
+        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -49,10 +53,6 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Source Path
-        run: . /etc/profile
-      - name: Debug
-        run: ::debug::$PATH
       - name: Docker
         run: make docker
       - name: ZSH Antibody
@@ -79,6 +79,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Update Github Actions Path
+        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -127,6 +129,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Update Github Actions Path
+        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -155,6 +159,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Update Github Actions Path
+        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
