@@ -119,7 +119,7 @@ The [scripts](https://github.com/iancleary/ansible-desktop/tree/main/scripts) fo
 ### Testing
 
 Continuous Integration Testing is done with the
-[.travis.yml](https://github.com/iancleary/ansible-desktop/blob/main/.travis.yml) file.
+[.github/workflows/test.yml](https://github.com/iancleary/ansible-desktop/blob/main/.github/workflows/test.yml) file.
 
 Multiple jobs test independent portions of the installation.
 

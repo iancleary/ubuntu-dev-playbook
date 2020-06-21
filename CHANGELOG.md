@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0] - 2020-06-21
+
 ### Added
 
 - Imported [iancleary.jetbrains_mono](https://galaxy.ansible.com/iancleary/jetbrains_mono) ansible role
@@ -248,15 +250,16 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/install-scripts/compare/v0.10.0...HEAD
-[0.10.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.10.0
-[0.9.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.9.0
-[0.8.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.8.0
-[0.7.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.7.0
-[0.6.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.6.0
-[0.5.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.5.0
-[0.4.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.4.0
-[0.3.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.3.0
-[0.2.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.2.0
-[0.1.1]: https://github.com/iancleary/install-scripts/releases/tag/v0.1.1
-[0.1.0]: https://github.com/iancleary/install-scripts/releases/tag/v0.1.0
+[Unreleased]: https://github.com/iancleary/ansible-desktop/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.11.0
+[0.10.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.10.0
+[0.9.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.9.0
+[0.8.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.8.0
+[0.7.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.7.0
+[0.6.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.6.0
+[0.5.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.5.0
+[0.4.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.4.0
+[0.3.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.3.0
+[0.2.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.2.0
+[0.1.1]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.1.1
+[0.1.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.1.0
