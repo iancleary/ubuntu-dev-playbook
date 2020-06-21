@@ -17,10 +17,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Update Github Actions Path
         run: echo "::add-path::/home/runner/.local/bin"
-      # - name: Pull Docker Image
-      #   run: docker pull iancleary/ubuntu1804-ansible-desktop
-      # - name: Start Docker Container with volume map
-      #   run: docker start -i-t -v &GITHUB_WORKSPACE:/
       - name: Use Node.js 12.16.1
         uses: actions/setup-node@v1
         with:
