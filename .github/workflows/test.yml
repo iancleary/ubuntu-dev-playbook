@@ -39,7 +39,7 @@ jobs:
       - name: lint
         run: |
           make lint
-  docker-zsh-nodejs-yarn:
+  zsh-nodejs-yarn:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -64,8 +64,8 @@ jobs:
         run: make zsh
       - name: Yarn
         run: make yarn
-      - name: Source Path
-        run: . /etc/profile
+      - name: Update Github Actions Path
+        run: echo "::add-path::/home/runner/.yarn/bin"
       - name: Check Versions
         run: |
           vue --version

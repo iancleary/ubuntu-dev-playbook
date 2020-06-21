@@ -1,9 +1,17 @@
 # ansible-desktop
 
-[![Build Status](https://img.shields.io/travis/com/iancleary/ansible-desktop/main.svg)](https://img.shields.io/travis/com/iancleary/ansible-desktop)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0a90303b-4694-4407-964b-0caa5a68827c/deploy-status)](https://app.netlify.com/sites/iancleary-ansible-desktop/deploys)
+<p align="center">
+    <em>Ansible Playbook to configure my laptops and desktops</em>
+</p>
 
-## Ansible Playbook to configure my laptops and desktops
+<p align="center">
+
+<a href="https://app.netlify.com/sites/iancleary-ansible-desktop/deploys" target="_blank">
+    <img src="https://api.netlify.com/api/v1/badges/0a90303b-4694-4407-964b-0caa5a68827c/deploy-status" alt="Netlify Status">
+<a href="https://github.com/iancleary/ansible-desktop/actions?query=workflow%3ATest" target="_blank">
+    <img src="https://github.com/iancleary/ansible-desktop/workflows/Test/badge.svg" alt="Test">
+</a>
+</p>
 
 I care about not having to think too much about my setup between machines.
 Especially when I want to get right to work.
@@ -29,7 +37,8 @@ keyboard shortcuts, core software, etc.).
 * Ubuntu 18.04
 * Ubuntu 20.04
 
-> There are no plans to support non-LTS versions.
+> There are no plans to support or test non-LTS versions.
+>
 > Software support is LTS version dependent.
 
 ## Ansible Galaxy Roles
