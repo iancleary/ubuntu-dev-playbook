@@ -2,6 +2,9 @@ name: Test
 
 on: push
 
+env:
+  hostname: runner
+
 jobs:
   lint:
     runs-on: ${{ matrix.os }}
