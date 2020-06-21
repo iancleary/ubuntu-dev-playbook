@@ -89,12 +89,12 @@ jobs:
       - name: Source Path
         run: . /etc/profile
       - name: Python 3.6
-        if: matrix.os == "ubuntu-18.04"
+        if: ${{ matrix.os }} == "ubuntu-18.04"
         run: |
           make python-three-six-install
           make python-three-six-supporting
       - name: Python 3.7
-        if: matrix.os == "ubuntu-18.04"
+        if: ${{ matrix.os }} == "ubuntu-18.04"
         run: |
           make python-three-seven-install
           make python-three-seven-supporting
