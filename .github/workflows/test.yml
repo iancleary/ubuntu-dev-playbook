@@ -57,6 +57,10 @@ jobs:
           make bootstrap-install
       - name: Setup Inventory and Group Vars for Hostname
         run: make setup_inventory_and_group_vars
+      - name: unmask docker in systemd
+        run: |
+          sudo systemctl unmask docker
+          sudo systemctl start docker
       - name: Docker
         run: make docker
       - name: ZSH Antibody
@@ -171,7 +175,7 @@ jobs:
         run: |
           make bootstrap-before-install
           sudo apt install -y gnome-shell gnome-session gnome-terminal
-          sudo apt install -y dconf-gsettings-backend dconf-tools dconf-cli
+          sudo apt install -y dconf-gsettings-backend dconf-editor dconf-cli
           sudo apt install -y gsettings-desktop-schemas
       - name: before_script
         run: |
