@@ -23,9 +23,90 @@ jobs:
         run: |
           make bootstrap-before-install
           npm install -g markdownlint-cli
-      - name: install
+      - name: before_script
         run: |
           make bootstrap-before-script
-      - name: script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: lint
         run: |
           make lint
+  docker-zsh-nodejs-yarn:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: Docker
+        run: make docker
+      - name: ZSH Antibody
+        run: make zsh
+      - name: Yarn
+        run: make yarn
+      - name: Source Path
+        run: . /etc/profile
+      - name: Check Versions
+        run: |
+          vue --version
+          gridsome --version
+          nativefier --version
+          markdownlint --version
+          carbon-now --version
+      - name: TickTick
+        run: make ticktick
+
+  common-apt-deb-packages:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: Python 3.6
+        run: |
+          make python-three-six-install
+          make python-three-six-supporting
+      - name: Python 3.7
+        run: |
+          make python-three-seven-install
+          make python-three-seven-supporting
+      - name: Python 3.8
+        run: |
+          make python-three-eight-install
+          make python-three-eight-supporting
+      - name: Timeshift
+        run: make timeshift
+      - name: Github CLI
+        run: |
+          make github-cli
+          gh --version
+      - name: Nordvpn
+        run: |
+          make nordvpn
+          nordvpn --version
+      - name: Stacer
+        run: make stacer
+      - name: Wifi Analyzer
+        run: make wifi-analyzer
