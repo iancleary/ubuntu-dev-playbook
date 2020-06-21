@@ -31,6 +31,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: Setup Inventory and Group Vars for Hostname
+        run: make setup_inventory_and_group_vars
       - name: lint
         run: |
           make lint
@@ -53,6 +55,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: Setup Inventory and Group Vars for Hostname
+        run: make setup_inventory_and_group_vars
       - name: Docker
         run: make docker
       - name: ZSH Antibody
@@ -90,8 +94,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Source Path
-        run: . /etc/profile
+      - name: Setup Inventory and Group Vars for Hostname
+        run: make setup_inventory_and_group_vars
       - name: Python 3.6
         if: ${{ matrix.os }} == "ubuntu-18.04"
         run: |
@@ -140,6 +144,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: Setup Inventory and Group Vars for Hostname
+        run: make setup_inventory_and_group_vars
       - name: Common Snaps
         run: make common-snaps
       - name: Chat Clients
@@ -173,6 +179,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: Setup Inventory and Group Vars for Hostname
+        run: make setup_inventory_and_group_vars
       - name: Flameshot
         run: make flameshot
       - name: Flameshot (check idempotence)
