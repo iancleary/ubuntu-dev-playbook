@@ -51,6 +51,8 @@ jobs:
           make bootstrap-install
       - name: Source Path
         run: . /etc/profile
+      - name: Debug
+        run: ::debug::$PATH
       - name: Docker
         run: make docker
       - name: ZSH Antibody
