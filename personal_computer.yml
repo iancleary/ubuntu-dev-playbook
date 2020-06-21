@@ -22,7 +22,7 @@
     - {role: gnome-keybindings, tags: ['gnome-keybindings']}
     - {role: gnome-preferences, tags: ['gnome-preferences']}
     - {role: nordvpn, tags: ['nordvpn'],
-       when: "ansible_hostname in ['xps', 'desktop', 'travis']"
+       when: "ansible_hostname in ['xps', 'desktop']"
     }
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
