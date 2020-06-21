@@ -48,6 +48,7 @@
     owner: "{{ user.username }}"
     group: "{{ user.username }}"
     mode: "0644"
+  ignore_errors: yes # for GitHub Actions group being docker (fix wanted!)
   with_items: '{{ users }}'
   loop_control:
     loop_var: user

@@ -16,11 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [LinSSID wifi-analyzer](https://help.ncf.ca/WiFi_Analyzer_for_Linux), attribution: [Linux Unplugged #355](https://podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121)
 - Code Extensions: `hediet.vscode-drawio`, `mhutchie.git-graph`, and `sdras.vue-vscode-snippets`
 - Code Theme: `sdras.night-owl`
+- GitHub Actions CI for [ubuntu18.04 and ubuntu20.04](https://github.com/actions/virtual-environments/) coverage
 
 ### Changed
 
 - Terminal key to just single value '<Super>t'
-- Upgrade `gh` version to 0.9.0
+- Upgrade `gh` version to 0.10.0
 - Default firefox to deb until GNOME extensions can be installed using firefox snap
 - Switched Cherrytree from Snap to Flatpak
 
@@ -28,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Buggy starting of flameshot in `run.sh`
 - Local zsh role
+- .travis.yml file
 
 ## [0.10.0] - 2020-05-10
 
