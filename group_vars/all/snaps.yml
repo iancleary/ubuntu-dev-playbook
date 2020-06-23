@@ -15,6 +15,7 @@ snaps_common:
   - name: "standard-notes"
   - name: "authy"
     channel: "beta"
+  - name: "hey-mail"
 snaps_development:
   - name: "postman"
   - name: "code"
