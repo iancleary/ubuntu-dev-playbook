@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- [hey-email](https://snapcraft.io/hey-mail) snap for <https://hey.com/>
+
 ## [0.11.0] - 2020-06-21
 
 ### Added
