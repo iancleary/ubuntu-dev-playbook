@@ -1,0 +1,6 @@
+---
+- name: pulseaudio and pavucontrol
+  become: true
+  apt:
+    name: ['pulseaudio', 'pavucontrol']
+    state: present

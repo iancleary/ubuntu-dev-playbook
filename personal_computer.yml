@@ -9,6 +9,7 @@
     - {role: iancleary.jetbrains_mono, tags: ['jetbrains-mono']} # installs font
     - {role: jetbrains_mono, tags: ['jetbrains-mono']} # sets gnome defaults
     - {role: ticktick, tags: ['ticktick']}
+    - {role: pulseaudio, tags: ['pulseaudio']}
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}
     - {role: common-snaps, tags: ['common-snaps']}
     - {role: chat-clients, tags: ['chat-clients']}

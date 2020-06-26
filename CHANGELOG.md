@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [hey-email](https://snapcraft.io/hey-mail) snap for <https://hey.com/>
+- `pavucontrol` GUI for pulseaudio (control and stability of headphones for audio/video conferencing)
 
 ## [0.11.0] - 2020-06-21
 
