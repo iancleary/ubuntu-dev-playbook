@@ -148,6 +148,10 @@ nautilus-mounts:
 nautilus-mounts: ## Setup for CIFS Network Mounts, with Nautilus Scripts
 	@$(ANSIBLE) --tags="nautilus-mounts"
 
+pulseaudio:
+pulseaudio: ## Install pulseaudio GUI
+	@$(ANSIBLE) --tags="pulseaudio"
+
 # python:
 # python: ## Install Python 3.6 and 3.7, with extras
 # 	@$(ANSIBLE) --tags="python"

@@ -162,6 +162,8 @@ jobs:
         run: make stacer
       - name: Wifi Analyzer
         run: make wifi-analyzer
+      - name: Pulse Audio
+        run: make pulseaudio
 
   common-snaps:
     runs-on: ${{ matrix.os }}
