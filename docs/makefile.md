@@ -73,10 +73,12 @@ make install
 ansible-playbook personal_computer.yml \
 -i inventory \
 --ask-become-pass \
--e '{"ansible_user": "$(whoami)"}'
+-e '{"users": [{"username": "$(shell whoami)"}]}'
 ```
 
 > Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
+
+The "-e" is for extra variable and is from my Ansible Galaxy role [iancleary/ansible-role-zsh_antibody#example-playbook](https://github.com/iancleary/ansible-role-zsh_antibody#example-playbook)
 
 ### Make non-ansible
 
@@ -89,6 +91,9 @@ make flameshot-keybindings
 # Ubuntu 20.04 defaults
 make python-three-eight-install
 make python-three-eight-supporting
+
+...
+
 ```
 
 ## Naming Convention for Make Targets
