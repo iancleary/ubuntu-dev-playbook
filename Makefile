@@ -2,13 +2,30 @@
 .PHONY: help
 
 # Shell that make should use
-SHELL:=bash
+# Make changes to path persistent
+# https://stackoverflow.com/a/13468229/13577666
+SHELL := /bin/bash
+PATH := $(PATH)
 
 # Ubuntu distro string
 OS_VERSION_NAME := $(shell lsb_release -cs)
 
 HOSTNAME = $(shell hostname)
 
+# This next section is needed to ensure $$HOME is on PATH in the initial shell session
+# The file from bash scripts/before_script_path_fix.sh
+# is only loaded in a new shell session.
+LOCAL_BIN = $(shell echo $$HOME/.local/bin)
+# $(warning LOCAL_BIN is $(LOCAL_BIN))
+
+# Source for conditional: https://stackoverflow.com/a/2741747/13577666
+ifneq (,$(findstring $(LOCAL_BIN),$(PATH)))
+	# Found: all set; do nothing, $(LOCAL_BIN) is on PATH
+	PATH := $(PATH);
+else
+	# Not found: adding $(LOCAL_BIN) to PATH for this shell session
+export PATH := $(LOCAL_BIN):$(PATH); @echo $(PATH)
+endif
 
 # Allows user to specify private hostname in ".inventory file"
 PRIVATE_INVENTORY = ".inventory"
@@ -77,10 +94,8 @@ bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
-
-	# Check that PATH and requirements are correct
-	ansible --version | grep "python version"
-	python3 -m pip list | grep psutil
+	@ansible --version | grep "python version"
+	@python3 -m pip list | grep psutil
 
 check: DARGS?=
 check: ## Checks personal-computer.yml playbook
