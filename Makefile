@@ -130,6 +130,10 @@ zsh:
 zsh: ## Install zsh and oh-my-zsh
 	@$(ANSIBLE) --tags="zsh"
 
+yadm:
+yadm: ## Install yadm dotfile manager
+	@$(ANSIBLE) --tags="yadm"
+
 docker:
 docker: ## Install Docker and Docker-Compose
 	@$(ANSIBLE) --tags="docker"

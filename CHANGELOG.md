@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [hey-email](https://snapcraft.io/hey-mail) snap for <https://hey.com/>
 - `pavucontrol` GUI for pulseaudio (control and stability of headphones for audio/video conferencing)
+- [yadm](yadm.io) dotfile manager
 
 ## [0.11.0] - 2020-06-21
 
