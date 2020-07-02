@@ -84,10 +84,9 @@ bootstrap-install:
 
 bootstrap-before-script:
 bootstrap-before-script:
-	# Ensure "$$HOME/.local/bin" is part of PATH
+	# Ensure "$$HOME/.local/bin" is part of PATH on future shell sessions
+	# The top of the Makefile takes care of this in the initial session
 	bash scripts/before_script_path_fix.sh
-	# Source folder (to ensure initial setup loads this file)
-	. /etc/profile
 
 bootstrap: setup_inventory_and_group_vars bootstrap-before-install bootstrap-install bootstrap-before-script
 bootstrap: ## Installs dependencies needed to run playbook
