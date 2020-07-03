@@ -36,10 +36,6 @@ cd $GIT_REPO || exit
 # Initial Bootstrap to Setup Machine
 make bootstrap
 
-# Source home-local-bin.sh file in /etc/profile.d/
-# shellcheck disable=SC1091
-. /etc/profile
-
 # Check Path
 make bootstrap-check
 

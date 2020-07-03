@@ -15,7 +15,7 @@ If you want to run a check first or run select tags, you can use:
 ansible-playbook personal_computer.yml \
 -i inventory \
 --ask-become-pass \
--e '{"ansible_user": "$(whoami)"}' \
+-e '{"users": [{"username": "$(shell whoami)"}]}' \
 --tags="common-snaps,zsh,cherrytree,flameshot,stacer"
 ```
 
@@ -25,7 +25,7 @@ ansible-playbook personal_computer.yml \
 ansible-playbook personal_computer.yml \
 -i inventory \
 --ask-become-pass \
--e '{"ansible_user": "$(whoami)"}' \
+-e '{"users": [{"username": "$(shell whoami)"}]}' \
 --check
 ```
 

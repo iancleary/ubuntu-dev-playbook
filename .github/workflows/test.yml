@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: Use Node.js 12.16.1
         uses: actions/setup-node@v1
         with:
@@ -44,8 +42,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -81,8 +77,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -114,8 +108,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -139,8 +131,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -173,8 +163,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -205,8 +193,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
@@ -239,8 +225,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.local/bin"
       - name: before_install
         run: |
           make bootstrap-before-install
