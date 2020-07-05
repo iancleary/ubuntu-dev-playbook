@@ -14,8 +14,8 @@ This clones my dotfiles repo via HTTPS using yadm's [bootstrap](https://yadm.io/
 
 My Bootstrap script is [iancleary/dotfiles/blob/main/.config/yadm/bootstrap](https://github.com/iancleary/dotfiles/blob/main/.config/yadm/bootstrap). It's purpose is to:
 
-* load my SSH keys,
-* decrypt the private key,
+* loads my dotfiles (including SSH keys)
+* decrypt the private key (prompts for password),
 * add the key to ssh-agent,
-* test the connection,
+* tests the connection,
 * and exit.
