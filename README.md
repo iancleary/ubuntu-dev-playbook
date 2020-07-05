@@ -93,6 +93,7 @@ for beautiful images of my code - right inside my terminal,
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
 * `Tresorit`,
 * `yarn`
+* [yadm](https://yadm.io/docs/getting_started) dotfile manager
 
 ### Configuration
 

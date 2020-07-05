@@ -1,4 +1,0 @@
-- name: Install yadm Deb
-  become: "yes"
-  apt:
-    name: "yadm"
