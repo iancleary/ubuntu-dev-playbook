@@ -41,68 +41,118 @@ keyboard shortcuts, core software, etc.).
 |  [iancleary.jetbrains_mono](https://github.com/iancleary/ansible-role-jetbrains_mono) | installs [Jetbrains-Mono](https://www.jetbrains.com/lp/mono/) font|
 |  [iancleary.zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), and the [antibody](https://getantibody.github.io/) plugin manager|
 
-## Local Roles
-
---------------------------
-
-| Role | Description |
-|:-------------|:-------------:|
-| [github-cli](https://github.com/iancleary/ansible-desktop/tree/main/roles/github-cli) | Installs the [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading) deb|
-
 ## Core Software
 
 This isn't exactly the list of Ansible roles,
 but below is a list of what the software installs.
 
-> Note: the ~~crossed out~~ out items haven't
-> been ported over from the previous Makefiles.
+### Application Base
+
+* `Flatpak`,
+* `Snap`,
+
+### Backups
+
+* `Timeshift` <https://github.com/teejee2008/timeshift>,
+
+### Chat Clients
+
+* `Signal Desktop`,
+* `Slack`,
+* `Telegram`,
+
+### Development Tooling
 
 * `ansible`,
-* [antibody](https://getantibody.github.io/) shell plugin manager (concurrent and compiled)
-* `cherrytree`,
-* [Breaktimer](https://snapcraft.io/breaktimer),
-* `Visual Studio Code`,
-* [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
-* [VSCodium](https://vscodium.com/),
-* [carbon-cli](https://github.com/mixn/carbon-now-cli)
-for beautiful images of my code - right inside my terminal,
-* `Chromium`,
 * `docker`,
 * `docker-compose`,
-* [Flameshot](https://flameshot.js.org/#/),
-* Flameshot keybinding to the Print Screen key using `gsettings`,
-* `Firefox`,
-* `Flatpak`,
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
-* `Nordvpn`,
 * `nodejs`,
-* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
-* [Postman](https://www.postman.com/) for API testing,
-* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
 * `python3.6`,
 * `python3.7`,
 * `python3.8`,
-* `Signal Desktop`,
-* `Slack`,
-* `Snap`,
-* `Spotify`,
-* `Stacer` <https://github.com/oguzhaninan/Stacer>,
-* `Standard Notes`,
-* `Steam`,
-* `Sublime Text`,
-* `Telegram`,
-* `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
-* `Timeshift` <https://github.com/teejee2008/timeshift>,
-* `Tresorit`,
 * `yarn`
 
-### Configuration
+### Dotfiles
+
+* [yadm](https://yadm.io/docs/getting_started) dotfile manager
+
+### Email
+
+* HEY Mail, by Basecamp, [hey-main snap](https://snapcraft.io/hey-mail)
+* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
+
+### File Storage
+
+* `Tresorit`,
+
+### Games
+
+* `Steam`,
+
+### GNOME Configuration
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
-* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-preferences/tasks/main.yml)
+* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/blob/main/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/blob/main/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/blob/main/roles/gnome-preferences/tasks/main.yml)
+
+### Integrated Development Environments (IDE)
+
+* [VSCode](https://code.visualstudio.com/),
+
+> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)!
+
+* [Postman](https://www.postman.com/) for API testing,
+
+* [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
+
+### Music
+
+* `Spotify`,
+
+### Notes
+
+* `cherrytree`,
+* `Standard Notes`,
+
+### System Info
+
+* `Stacer` <https://github.com/oguzhaninan/Stacer>,
+
+### Tasks
+
+* `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
+
+### Terminal
+
+* [antibody](https://getantibody.github.io/) shell plugin manager (concurrent and compiled)
+* `zsh`
+
+### Screenshots and GIFs
+
+* [carbon-cli](https://github.com/mixn/carbon-now-cli)
+for beautiful images of my code - right inside my terminal,
+* [Flameshot](https://flameshot.js.org/#/),
+
+> Flameshot keybinding to the Print Screen key using `gsettings`
+
+* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
+
+### Text Editors
+
+* `Sublime Text`,
+
+### Utilities
+
+* [Breaktimer](https://snapcraft.io/breaktimer),
+* `Nordvpn`,
+
+### Web Browsers
+
+* `Chromium`,
+* `Firefox`,
 
 --------------------------
 
