@@ -41,14 +41,6 @@ keyboard shortcuts, core software, etc.).
 |  [iancleary.jetbrains_mono](https://github.com/iancleary/ansible-role-jetbrains_mono) | installs [Jetbrains-Mono](https://www.jetbrains.com/lp/mono/) font|
 |  [iancleary.zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), and the [antibody](https://getantibody.github.io/) plugin manager|
 
-## Local Roles
-
---------------------------
-
-| Role | Description |
-|:-------------|:-------------:|
-| [github-cli](https://github.com/iancleary/ansible-desktop/tree/main/roles/github-cli) | Installs the [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading) deb|
-
 ## Core Software
 
 This isn't exactly the list of Ansible roles,

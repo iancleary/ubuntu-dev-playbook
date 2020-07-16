@@ -42,14 +42,6 @@ keyboard shortcuts, core software, etc.).
 |  [iancleary.jetbrains_mono](https://github.com/iancleary/ansible-role-jetbrains_mono) | installs [Jetbrains-Mono](https://www.jetbrains.com/lp/mono/) font|
 |  [iancleary.zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), and the [antibody](https://getantibody.github.io/) plugin manager|
 
-## Local Roles
-
---------------------------
-
-| Role | Description |
-|:-------------|:-------------:|
-| [github-cli](roles/github-cli) | [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)|
-
 ## Core Software
 
 --------------------------
@@ -77,6 +69,7 @@ but below is a list of what the repo helps install.
 * `ansible`,
 * `docker`,
 * `docker-compose`,
+* `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `nodejs`,
 * `python3.6`,
 * `python3.7`,
@@ -118,6 +111,10 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 
 * [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
 
+### Music
+
+* `Spotify`,
+
 ### Notes
 
 * `cherrytree`,
@@ -131,9 +128,10 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 
 * `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
 
-### Music
+### Terminal
 
-* `Spotify`,
+* [antibody](https://getantibody.github.io/) shell plugin manager (concurrent and compiled)
+* `zsh`
 
 ### Screenshots and GIFs
 
