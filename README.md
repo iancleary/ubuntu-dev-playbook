@@ -57,51 +57,107 @@ keyboard shortcuts, core software, etc.).
 This isn't exactly the list of Ansible roles,
 but below is a list of what the repo helps install.
 
+### Application Base
+
+* `Flatpak`,
+* `Snap`,
+
+### Backups
+
+* `Timeshift` <https://github.com/teejee2008/timeshift>,
+
+### Chat Clients
+
+* `Signal Desktop`,
+* `Slack`,
+* `Telegram`,
+
+### Development Tooling
+
 * `ansible`,
-* `cherrytree`,
-* [Breaktimer](https://snapcraft.io/breaktimer),
-* `Visual Studio Code`,
-* [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
-* [VSCodium](https://vscodium.com/),
-* [carbon-cli](https://github.com/mixn/carbon-now-cli)
-for beautiful images of my code - right inside my terminal,
-* `Chromium`,
 * `docker`,
 * `docker-compose`,
-* [Flameshot](https://flameshot.js.org/#/),
-* Flameshot keybinding to the Print Screen key using `gsettings`,
-* `Firefox`,
-* `Flatpak`,
-* `Nordvpn`,
 * `nodejs`,
-* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
-* [Postman](https://www.postman.com/) for API testing,
-* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
 * `python3.6`,
 * `python3.7`,
 * `python3.8`,
-* `Signal Desktop`,
-* `Slack`,
-* `Snap`,
-* `Spotify`,
-* `Stacer` <https://github.com/oguzhaninan/Stacer>,
-* `Standard Notes`,
-* `Steam`,
-* `Sublime Text`,
-* `Telegram`,
-* `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
-* `Timeshift` <https://github.com/teejee2008/timeshift>,
-* `Tresorit`,
 * `yarn`
+
+### Dotfiles
+
 * [yadm](https://yadm.io/docs/getting_started) dotfile manager
 
-### Configuration
+### Email
+
+* HEY Mail, by Basecamp, [hey-main snap](https://snapcraft.io/hey-mail)
+* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
+
+### File Storage
+
+* `Tresorit`,
+
+### Games
+
+* `Steam`,
+
+### GNOME Configuration
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
 * Extensions: [gnome-extensions](roles/gnome-extensions/tasks/main.yml)
 * Keybindings: [gnome-keybindings](roles/gnome-keybindings/tasks/main.yml)
 * Preferences: [gnome-preferences](roles/gnome-preferences/tasks/main.yml)
+
+### Integrated Development Environments (IDE)
+
+* [VSCode](https://code.visualstudio.com/),
+
+> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)!
+
+* [Postman](https://www.postman.com/) for API testing,
+
+* [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
+
+### Notes
+
+* `cherrytree`,
+* `Standard Notes`,
+
+### System Info
+
+* `Stacer` <https://github.com/oguzhaninan/Stacer>,
+
+### Tasks
+
+* `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
+
+### Music
+
+* `Spotify`,
+
+### Screenshots and GIFs
+
+* [carbon-cli](https://github.com/mixn/carbon-now-cli)
+for beautiful images of my code - right inside my terminal,
+* [Flameshot](https://flameshot.js.org/#/),
+
+> Flameshot keybinding to the Print Screen key using `gsettings`
+
+* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
+
+### Text Editors
+
+* `Sublime Text`,
+
+### Utilities
+
+* [Breaktimer](https://snapcraft.io/breaktimer),
+* `Nordvpn`,
+
+### Web Browsers
+
+* `Chromium`,
+* `Firefox`,
 
 --------------------------
 

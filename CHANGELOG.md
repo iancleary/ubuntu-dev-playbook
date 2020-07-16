@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - updated Makefile to have persistent PATH to resolve [#164](https://github.com/iancleary/ansible-desktop/issues/164), thanks for the help [ieguiguren](https://github.com/ieguiguren).
 - Dropped `zsh-users/zsh-autosuggestions` plugin from [iancleary/ansible-role-zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) role
+- Reorganized software documentation section into alphabetical categories
 
 ## [0.11.0] - 2020-06-21
 
