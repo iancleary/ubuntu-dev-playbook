@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `pavucontrol` GUI for pulseaudio (control and stability of headphones for audio/video conferencing)
 - [yadm](yadm.io) dotfile manager
 - [pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) VSCode Extension
+- [Okular KDE Document Viewer](https://flathub.org/apps/details/org.kde.okular)
 
 ### Changed
 
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - kite autocompletion
 - `.vscode` folder (spellcheck is in dotfiles not repo)
+- Evolution and Protonmail-Bridge flatpaks
 
 ## [0.11.0] - 2020-06-21
 
