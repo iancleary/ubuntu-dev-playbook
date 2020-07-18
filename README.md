@@ -83,7 +83,6 @@ but below is a list of what the repo helps install.
 ### Email
 
 * HEY Mail, by Basecamp, [hey-main snap](https://snapcraft.io/hey-mail)
-* `Protonmail-bridge` <https://protonmail.com/bridge/install>,
 
 ### File Storage
 
