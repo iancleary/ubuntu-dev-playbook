@@ -401,6 +401,10 @@ steam:
 steam: ## Install Steam, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.valvesoftware.Steam"]}'
 
+okular:
+okular: ## Install Okular, using Flatpak
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["org.kde.okular"]}'
+
 evolution:
 evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
 	@$(ANSIBLE) --tags="flatpak,evolution-remove-apt" -e '{"flatpak_applications": ["org.gnome.Evolution"]}'
