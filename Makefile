@@ -152,12 +152,6 @@ docker:
 docker: ## Install Docker and Docker-Compose
 	@$(ANSIBLE) --tags="docker"
 
-kite:
-kite: ## Install Kite, AI Autocomplete and Docs for Python
-	bash scripts/install_kite.sh
-
-	# VS Code Extension is `kiteco.kite`
-
 jetbrains-mono:
 jetbrains-mono: ## Install JetBrains Mono font
 	@$(ANSIBLE) --tags="jetbrains-mono"
