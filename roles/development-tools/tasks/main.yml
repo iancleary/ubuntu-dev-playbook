@@ -14,7 +14,7 @@
   with_items: "{{ snaps_development }}"
 
 - name: Register currently installed code extensions
-  shell: code --list-extensions
+  shell: /snap/bin/code --list-extensions
   register: installed_code_extensions
   changed_when: "false"
 
@@ -23,6 +23,6 @@
     var: installed_code_extensions.stdout_lines
 
 - name: Code Extensions
-  shell: code --install-extension "{{ item }}"
+  shell: /snap/bin/code --install-extension "{{ item }}"
   with_items: "{{ code_extensions }}"
   when: "item not in installed_code_extensions.stdout_lines"

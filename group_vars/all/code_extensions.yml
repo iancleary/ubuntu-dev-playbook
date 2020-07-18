@@ -37,6 +37,7 @@ code_extensions:
   # > but autoimport and unused import colouring alone make it a
   # > 100% worthwhile companion on VSCode
   - ms-pyright.pyright
+  - ms-python.vscode-pylance
 
   ## Spellchecking
   - streetsidesoftware.code-spell-checker

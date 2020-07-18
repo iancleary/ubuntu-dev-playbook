@@ -12,12 +12,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [hey-email](https://snapcraft.io/hey-mail) snap for <https://hey.com/>
 - `pavucontrol` GUI for pulseaudio (control and stability of headphones for audio/video conferencing)
 - [yadm](yadm.io) dotfile manager
+- [pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) VSCode Extension
+- [Okular KDE Document Viewer](https://flathub.org/apps/details/org.kde.okular)
 
 ### Changed
 
 - updated Makefile to have persistent PATH to resolve [#164](https://github.com/iancleary/ansible-desktop/issues/164), thanks for the help [ieguiguren](https://github.com/ieguiguren).
 - Dropped `zsh-users/zsh-autosuggestions` plugin from [iancleary/ansible-role-zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) role
 - Reorganized software documentation section into alphabetical categories
+- Bumped `gh` to `v0.11.0`
+
+### Removed
+
+- kite autocompletion
+- `.vscode` folder (spellcheck is in dotfiles not repo)
+- Evolution and Protonmail-Bridge flatpaks
 
 ## [0.11.0] - 2020-06-21
 

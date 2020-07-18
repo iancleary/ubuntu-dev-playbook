@@ -152,12 +152,6 @@ docker:
 docker: ## Install Docker and Docker-Compose
 	@$(ANSIBLE) --tags="docker"
 
-kite:
-kite: ## Install Kite, AI Autocomplete and Docs for Python
-	bash scripts/install_kite.sh
-
-	# VS Code Extension is `kiteco.kite`
-
 jetbrains-mono:
 jetbrains-mono: ## Install JetBrains Mono font
 	@$(ANSIBLE) --tags="jetbrains-mono"
@@ -406,6 +400,10 @@ cherrytree: ## Install Cherrytree, using Flatpak
 steam:
 steam: ## Install Steam, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.valvesoftware.Steam"]}'
+
+okular:
+okular: ## Install Okular, using Flatpak
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["org.kde.okular"]}'
 
 evolution:
 evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
