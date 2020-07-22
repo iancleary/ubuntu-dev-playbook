@@ -384,6 +384,10 @@ gtk3-icon-browser:
 hyper:
 hyper: ## Install Hyper (A terminal built on web technologies)
 	@$(ANSIBLE) --tags="hyper"
+	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/']"
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ name 'hyper'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ command '/usr/local/bin/hyper'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ binding '<Super>t'
 
 nordvpn:
 nordvpn: ## Install Peek (GIF Screen Recorder) using a PPA and apt
