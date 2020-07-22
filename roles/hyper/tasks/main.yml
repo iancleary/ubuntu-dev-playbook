@@ -30,3 +30,9 @@
     deb: >-
       {{ hyper_url }}/{{ hyper_version }}/hyper_{{ hyper_version }}_amd64.deb
   when: "'hyper' not in ansible_facts.packages or hyper_version not in hyper_installed_version"
+
+- name: Install hyper extensions
+  command: hyper i "{{ item }}"
+  with_items: "{{ hyper_extensions }}"
+
+# Note: Install doesn't enable in .hyper.js
