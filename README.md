@@ -130,6 +130,7 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 ### Terminal
 
 * [antibody](https://getantibody.github.io/) shell plugin manager (concurrent and compiled)
+* [Hyper Terminal](https://hyper.is)
 * `zsh`
 
 ### Screenshots and GIFs

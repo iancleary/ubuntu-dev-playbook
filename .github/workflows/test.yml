@@ -55,6 +55,8 @@ jobs:
         run: make setup_inventory_and_group_vars
       - name: ZSH Antibody
         run: make zsh
+      - name: Hyper
+        run: make hyper
       - name: Yarn
         run: make yarn
       - name: Update Github Actions Path

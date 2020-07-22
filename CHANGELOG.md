@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [yadm](yadm.io) dotfile manager
 - [pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) VSCode Extension
 - [Okular KDE Document Viewer](https://flathub.org/apps/details/org.kde.okular)
+- [Hyper Terminal](https://hyper.is)
+
+https://github.com/vercel/hyper/releases/download/3.0.2/hyper_3.0.2_amd64.deb
 
 ### Changed
 

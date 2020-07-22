@@ -4,6 +4,7 @@
   roles:
     - {role: iancleary.zsh_antibody, tags: ['zsh']}
     - {role: yadm, tags: ['yadm']}
+    - {role: hyper, tags: ['hyper']}
     - {role: docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}

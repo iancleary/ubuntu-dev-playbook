@@ -1,0 +1,32 @@
+---
+- name: Gather the apt package facts
+  package_facts:
+    manager: auto
+  no_log: "true"
+
+- name: Check whether a package called hyper is installed
+  debug:
+    msg: "{{ ansible_facts.packages['hyper'] | length }} versions of hyper are installed!"
+  when: "'hyper' in ansible_facts.packages"
+
+# - name: Print the package facts
+#   debug:
+#     var: ansible_facts.packages['flameshot']
+#   when: "'flameshot' in ansible_facts.packages"
+
+- name: Set the version, assuming first package
+  set_fact:
+    hyper_installed_version: "{{ ansible_facts.packages['hyper'][0]['version'] }}"
+  when: "'hyper' in ansible_facts.packages"
+
+- name: Print the version, assuming first package
+  debug:
+    var: hyper_installed_version
+  when: "'hyper' in ansible_facts.packages"
+
+- name: Install hyper deb from github
+  become: true
+  apt:
+    deb: >-
+      {{ hyper_url }}/{{ hyper_version }}/hyper_{{ hyper_version }}_amd64.deb
+  when: "'hyper' not in ansible_facts.packages or hyper_version not in hyper_installed_version"

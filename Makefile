@@ -381,6 +381,10 @@ gtk3-icon-browser:
 	# Installs in gnome-preferences role
 	@gtk3-icon-browser &
 
+hyper:
+hyper: ## Install Hyper (A terminal built on web technologies)
+	@$(ANSIBLE) --tags="hyper"
+
 nordvpn:
 nordvpn: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 	@$(ANSIBLE) --tags="nordvpn"
