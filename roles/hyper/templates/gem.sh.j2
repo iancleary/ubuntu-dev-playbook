@@ -1,0 +1,18 @@
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+### Colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+# ls command lists public directory and files
+# Adding -h --group-directories-first to show directories first
+# Adding -1 (the number 1) to list items in newlines to make it more readable
+alias ls='colorls -h --group-directories-first'
+
+# l command lists all directories and files (public and hidden)
+alias l='colorls --group-directories-first --almost-all'
+
+# ll command lists all directories and files (publich and hidden) with detailed
+# information about them (access rights, last modification date and time, ...)
+alias ll='colorls --group-directories-first --almost-all --long'

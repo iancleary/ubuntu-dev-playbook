@@ -11,8 +11,8 @@
 
 # - name: Print the package facts
 #   debug:
-#     var: ansible_facts.packages['flameshot']
-#   when: "'flameshot' in ansible_facts.packages"
+#     var: ansible_facts.packages['hyper']
+#   when: "'hyper' in ansible_facts.packages"
 
 - name: Set the version, assuming first package
   set_fact:
@@ -31,8 +31,31 @@
       {{ hyper_url }}/{{ hyper_version }}/hyper_{{ hyper_version }}_amd64.deb
   when: "'hyper' not in ansible_facts.packages or hyper_version not in hyper_installed_version"
 
+- name: Register currently installed hyper extensions
+  shell: hyper list
+  register: installed_hyper_extensions
+  changed_when: "false"
+
+- name: Debug currently installed hyper extensions
+  debug:
+    var: installed_hyper_extensions.stdout_lines
+
 - name: Install hyper extensions
   command: hyper i "{{ item }}"
   with_items: "{{ hyper_extensions }}"
+  when: "item not in installed_hyper_extensions.stdout_lines"
 
-# Note: Install doesn't enable in .hyper.js
+- name: Enable in .hyper.js template
+  become: true
+  template:
+    src: .hyper.js.j2
+    dest: ~/.hyper.js
+    mode: "0644"
+
+## Decided not to do these, but didn't want to delete the code
+
+# - name: Install Colorls Gem
+#   include_tasks: install_colorls.yml
+
+# - name: Download FiraCode
+#   include_tasks: download_font.yml
