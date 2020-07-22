@@ -46,7 +46,6 @@
   when: "item not in installed_hyper_extensions.stdout_lines"
 
 - name: Enable in .hyper.js template
-  become: true
   template:
     src: .hyper.js.j2
     dest: ~/.hyper.js
