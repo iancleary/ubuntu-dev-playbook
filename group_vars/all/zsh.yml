@@ -18,7 +18,7 @@ antibody_bundles:
   - name: zsh
   # Syntax highlighting bundle.
   - name: zsh-syntax-highlighting
-    repo:
+    git:
       user: zsh-users
       repo: zsh-syntax-highlighting
       version: 0.7.1
@@ -30,7 +30,7 @@ antibody_bundles:
   #     version: v0.6.4
   - name: powerlevel10k
     skip_zshrc_plugin:
-    repo:
+    git:
       user: romkatv
       repo: powerlevel10k
       version: v1.12.0
