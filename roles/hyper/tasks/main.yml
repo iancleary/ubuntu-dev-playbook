@@ -48,11 +48,12 @@
   when: "item not in installed_hyper_extensions.stdout_lines"
   ignore_errors: yes # GitHub CI issue, don't currently care, works locally
 
-- name: Enable in .hyper.js template
-  template:
-    src: .hyper.js.j2
-    dest: ~/.hyper.js
-    mode: "0644"
+# Managed with yadm in https://github.com/iancleary/dotfiles
+# - name: Enable in .hyper.js template
+#   template:
+#     src: .hyper.js.j2
+#     dest: ~/.hyper.js
+#     mode: "0644"
 
 ## Decided not to do these, but didn't want to delete the code
 
