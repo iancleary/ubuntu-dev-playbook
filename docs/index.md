@@ -128,7 +128,8 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 
 * [antibody](https://getantibody.github.io/) shell plugin manager (concurrent and compiled)
 * [Hyper Terminal](https://hyper.is), with "pane:splitHorizontal": "ctrl+shift+f", // changed from "ctrl+shift+e" because [vercel/hyper #3660](https://github.com/vercel/hyper/issues/3660)
-* `zsh`
+* `zsh` and `oh-my-zsh`
+* [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k)
 
 ### Screenshots and GIFs
 
