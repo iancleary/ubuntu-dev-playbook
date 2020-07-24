@@ -217,7 +217,7 @@ jobs:
       - name: Libreoffice
         run: make libreoffice
 
-  gnome-preferences-and-flameshot:
+  gnome-preferences-hyper-flameshot:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -255,3 +255,5 @@ jobs:
           make gnome-preferences
       - name: Jetbrains Mono
         run: make jetbrains-mono
+      - name: Hyper
+        run: make hyper

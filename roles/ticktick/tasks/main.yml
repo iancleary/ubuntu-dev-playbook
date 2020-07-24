@@ -13,7 +13,7 @@
   copy:
     src: "{{ role_path }}/files/ticktick.png"
     dest: /tmp/nativefier/ticktick.png
-    mode: 0644
+    mode: "0644"
 
 - name: TickTick - create app with Nativefier
   command:
@@ -60,4 +60,4 @@
   template:
     src: ticktick.desktop.j2
     dest: ~/.local/share/applications/ticktick.desktop
-    mode: 0644
+    mode: "0644"

@@ -19,10 +19,18 @@ antibody_bundles:
   # Syntax highlighting bundle.
   - name: zsh-syntax-highlighting
     repo:
-      url: zsh-users/zsh-syntax-highlighting
+      user: zsh-users
+      repo: zsh-syntax-highlighting
       version: 0.7.1
   # # Autosuggestions
   # - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
   #   repo:
-  #     url: zsh-users/zsh-autosuggestions
+  #     user: zsh-users
+  #     repo: zsh-autosuggestions
   #     version: v0.6.4
+  - name: powerlevel10k
+    skip_zshrc_plugin:
+    repo:
+      user: romkatv
+      repo: powerlevel10k
+      version: v1.12.0

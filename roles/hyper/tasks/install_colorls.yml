@@ -1,0 +1,39 @@
+---
+- name: Install Ruby
+  become: true
+  apt:
+    name: ruby-full
+
+- name: Install Gem
+  gem:
+    name: colorls
+    state: present
+
+- name: Create folder
+  file:
+    name: ~/.config/colorls
+    state: directory
+
+# - name: Register path
+#   command: gem which colorls
+#   register: hyper_colorls_path
+#   changed_when: false
+
+# - name: Debug path
+#   debug:
+#     var: hyper_colorls_path.stdout
+
+# - name: Register dirname
+#   command: dirname "{{ hyper_colorls_path.stdout }}"
+#   register: hyper_colorls_dirname
+#   changed_when: false
+
+# - name: Debug dirname
+#   debug:
+#     var: hyper_colorls_dirname.stdout
+
+- name: copy dark_colors.yml file
+  template:
+    src: dark_colors.yaml.j2
+    dest: ~/.config/colorls/dark_colors.yaml
+    mode: "0644"

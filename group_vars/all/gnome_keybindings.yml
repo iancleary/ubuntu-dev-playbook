@@ -34,7 +34,7 @@ gnome_keybindings:
     value: "['<Super>w','<Alt>F4']"
     # Launch Terminal (added '<Super>t')
   - key: "/org/gnome/settings-daemon/plugins/media-keys/terminal"
-    value: "['<Super>t']"
+    value: "['<Ctrl><Alt>t']"
     # Lock Screen
   - key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver"
     value: "['<Super>l']"
