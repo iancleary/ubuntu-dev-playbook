@@ -56,6 +56,9 @@ ifeq "$(HOSTNAME)" "$(RUNNER)"
 	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
 endif
 
+# Custome GNOME keybindings
+CUSTOM_KEYBINDING_BASE = /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings
+
 # - to suppress if it doesn't exist
 -include make.env
 
@@ -335,8 +338,13 @@ flameshot:
 flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Keybindings
 	@$(ANSIBLE) --tags="flameshot"
 
-flameshot-keybindings: ## Install Flameshot and Update gnome keybindings
-flameshot-keybindings:
+gsettings-keybindings:
+gsettings-keybindings:  ## Sets GNOME custom keybindings
+
+	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['$(CUSTOM_KEYBINDING_BASE)/flameshot/','$(CUSTOM_KEYBINDING_BASE)/hyper/']"
+
+flameshot-keybindings: ## Flameshot custon GNOME keybindings
+flameshot-keybindings: gsettings-keybindings
 	# For whatever reason, I bricked my GNOME session trying this with ansible
 	# so for now, I'm just going to chain this to the new machine script
 	# and leave it as a make target
@@ -345,7 +353,6 @@ flameshot-keybindings:
 	# source: https://askubuntu.com/a/1116076
 
 	gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
-	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/']"
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ name 'flameshot'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/usr/bin/flameshot gui'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
@@ -381,10 +388,9 @@ gtk3-icon-browser:
 	# Installs in gnome-preferences role
 	@gtk3-icon-browser &
 
-hyper:
 hyper: ## Install Hyper (A terminal built on web technologies)
+hyper: gsettings-keybindings
 	@$(ANSIBLE) --tags="hyper"
-	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/']"
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ name 'hyper'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ command '/usr/local/bin/hyper'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ binding '<Super>t'
