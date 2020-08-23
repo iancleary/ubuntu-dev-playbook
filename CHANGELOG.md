@@ -3,9 +3,11 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
+
+## [2020.1.0]
 
 ### Added
 
@@ -23,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reorganized software documentation section into alphabetical categories
 - Bumped `gh` to `v0.11.0`
 - Fixed bug where gsetting custom entries list didn't contain hyper and flameshot
+- Changed to [CalVer Version Scheme](https://calver.org/) YYYY.MINOR.MICRO
+- Deprecating Ubuntu 18.04 LTS
 
 ### Removed
 
@@ -273,7 +277,8 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/ansible-desktop/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/iancleary/ansible-desktop/compare/v2020.1.0...HEAD
+[2020.1.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v2020.1.0
 [0.11.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.11.0
 [0.10.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.10.0
 [0.9.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.9.0
