@@ -124,6 +124,8 @@ jobs:
         run: make wifi-analyzer
       - name: Pulse Audio
         run: make pulseaudio
+      - name: App Image Launcher
+        run: make app-image
 
   common-snaps:
     runs-on: ${{ matrix.os }}
