@@ -26,16 +26,16 @@ keyboard shortcuts, core software, etc.).
 
 ## Supported Ubuntu LTS Versions
 
-* Ubuntu 18.04
-* Ubuntu 20.04
+I will support the LTS versions I use. There are no plans to support non-LTS versions.
 
-> There are no plans to support or test non-LTS versions.
->
-> Software support is LTS version dependent.
+| LTS | Last Supported Branch/Tag  |
+|:-------------|:-------------:|
+|  Ubuntu 20.04 | [main](https://github.com/iancleary/ansible-desktop)|
+|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ansible-desktop/releases/tag/v2020.1.0)|
 
 ## Ansible Galaxy Roles
 
---------------------------
+There is broader LTS and Distribution support in the following roles:
 
 | Role | Description |
 |:-------------|:-------------:|
@@ -71,8 +71,6 @@ but below is a list of what the repo helps install.
 * `docker-compose`,
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `nodejs`,
-* `python3.6`,
-* `python3.7`,
 * `python3.8`,
 * `yarn`
 
