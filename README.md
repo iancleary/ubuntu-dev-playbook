@@ -26,7 +26,7 @@ keyboard shortcuts, core software, etc.).
 
 ## Calendar Versioning
 
-This project adheres to [Calendar Versioning](https://calver.org/).
+This project adheres to [Calendar Versioning](https://calver.org/), YYYY.MINOR.MICRO.
 
 ## Supported Ubuntu LTS Versions
 
