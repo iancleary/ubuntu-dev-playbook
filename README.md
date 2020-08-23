@@ -58,6 +58,10 @@ but below is a list of what the repo helps install.
 * `Flatpak`,
 * `Snap`,
 
+### AppImageLauncher
+
+* [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), see the [Integrate any AppImage into the Ubuntu Desktop](https://dev.to/strotgen/integrate-tinkerwell-or-any-appimage-into-the-ubuntu-desktop-le9) article.
+
 ### Backups
 
 * `Timeshift` <https://github.com/teejee2008/timeshift>,

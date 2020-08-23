@@ -33,3 +33,4 @@
     - {role: evolution-remove-apt, tags: ['evolution-remove-apt']}
     - {role: libreoffice-remove-apt, tags: ['libreoffice-remove-apt']}
     - {role: wifi-analyzer, tags: ['wifi-analyzer']}
+    - {role: app-image, tags: ['app-image']}

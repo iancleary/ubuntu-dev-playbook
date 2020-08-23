@@ -353,4 +353,9 @@ wifi-analyzer: ## Installs LinSSID Wifi Analyzer
 	# Attribution: podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121
 	@$(ANSIBLE) --tags="wifi-analyzer"
 
+app-image:
+app-image: ## Install App Image Launcher
+	@$(ANSIBLE) --tags="app-image"
+
+
 .DEFAULT_GOAL := help
