@@ -1,0 +1,20 @@
+---
+- name: Add appimagelauncher-team repositories
+  become: true
+  apt_repository:
+    repo: "ppa:appimagelauncher-team/stable"
+    state: present
+  register: node_repo
+
+- name: Update apt cache if repo was added.
+  become: true
+  apt:
+    update_cache: yes
+  when: node_repo.changed
+  tags: ['skip_ansible_lint']
+
+- name: Ensure appimagelauncher is installed.
+  become: true
+  apt:
+    name: "appimagelauncher"
+    state: present

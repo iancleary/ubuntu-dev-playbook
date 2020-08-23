@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [ubuntu-20.04]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [ubuntu-20.04]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -69,38 +69,7 @@ jobs:
       - name: TickTick
         run: make ticktick
 
-  python-1804:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-18.04]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: before_install
-        run: |
-          make bootstrap-before-install
-      - name: before_script
-        run: |
-          make bootstrap-before-script
-      - name: install
-        run: |
-          make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
-      - name: Python 3.6
-        run: |
-          make python-three-six-install
-          make python-three-six-supporting
-      - name: Python 3.7
-        run: |
-          make python-three-seven-install
-          make python-three-seven-supporting
-      - name: Python 3.8
-        run: |
-          make python-three-eight-install
-          make python-three-eight-supporting
-  python-2004:
+  python:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -123,11 +92,12 @@ jobs:
         run: |
           make python-three-eight-install
           make python-three-eight-supporting
+
   common-apt-deb-packages:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [ubuntu-20.04]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -154,12 +124,14 @@ jobs:
         run: make wifi-analyzer
       - name: Pulse Audio
         run: make pulseaudio
+      - name: App Image Launcher
+        run: make app-image
 
   common-snaps:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [ubuntu-20.04]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -189,7 +161,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [ubuntu-20.04]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -221,7 +193,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [ubuntu-20.04]
     steps:
       - name: Checkout
         uses: actions/checkout@v2

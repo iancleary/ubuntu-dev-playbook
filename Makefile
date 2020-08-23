@@ -118,12 +118,6 @@ non-ansible: ## Runs all non-ansible make targets for fresh install (all target)
 	# No user input required
 	make flameshot-keybindings
 
-	# Dropping these as Ubuntu 20.04 defaults to Python3.8
-	# make python-three-six-install
-	# make python-three-six-supporting
-	# make python-three-seven-install
-	# make python-three-seven-supporting
-
 	# Ubuntu 20.04 defaults
 	make python-three-eight-install
 	make python-three-eight-supporting
@@ -166,98 +160,6 @@ nautilus-mounts: ## Setup for CIFS Network Mounts, with Nautilus Scripts
 pulseaudio:
 pulseaudio: ## Install pulseaudio GUI
 	@$(ANSIBLE) --tags="pulseaudio"
-
-# python:
-# python: ## Install Python 3.6 and 3.7, with extras
-# 	@$(ANSIBLE) --tags="python"
-
-python-three-six-install: ## Install python3.6 using apt (main install)
-python-three-six-install:
-
-	sudo apt-get update
-
-	# Start by updating the packages list and installing the prerequisites:
-	sudo apt install software-properties-common
-
-	# install python3.6
-	sudo apt update
-	sudo apt install -y python3.6
-
-	# python3 pip
-	sudo apt install -y python3-pip
-
-python-three-six-supporting: ## Install useful packages
-python-three-six-supporting:
-
-	# upgrade pip
-	python3.6 -m pip install --user --upgrade pip
-	-python3.6 -m pip install --upgrade keyrings.alt --user
-	-python3.6 -m pip install --user --upgrade setuptools
-
-	# python3 pytest
-	sudo apt install -y python3-pytest
-
-	# At this point, Python 3.6 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.6 --version
-	python3.6 -m pip --version
-	python3.6 -m pytest --version
-
-	python3.6 -m pip install --user twine
-	python3.6 -m pip install --user wheel
-	python3.6 -m pip install --user flit
-	python3.6 -m pip install --user cookiecutter
-	python3.6 -m pip install --user pipenv
-	python3.6 -m pip install --user pre-commit
-
-python-three-seven-install: ## Install python3.7 using apt (main install)
-python-three-seven-install:
-
-	sudo apt-get update
-
-	# Start by updating the packages list and installing the prerequisites:
-	sudo apt install software-properties-common
-
-	# Next, add the deadsnakes PPA to your sources list:
-	# sudo add-apt-repository ppa:deadsnakes/ppa # not for 19.04
-	# when prompted, press Enter to continue
-
-	# Once the repository is enabled, install Python 3.7 with: (added libpython3.7-dev for pip installs)
-	# - httptools wasn't installing correctly until adding it
-	# - see: https://github.com/huge-success/sanic/issues/1503#issuecomment-469031275
-	sudo apt update
-	sudo apt install -y python3.7 libpython3.7-dev
-
-	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.7 --version
-
-python-three-seven-supporting: ## Install useful packages
-python-three-seven-supporting:
-
-	# python3 pip
-	sudo apt install -y python3-pip
-
-	# upgrade pip
-	python3.7 -m pip install --user --upgrade pip
-	-python3.7 -m pip install --upgrade keyrings.alt --user
-	-python3.7 -m pip install --user --upgrade setuptools
-
-	# python3 pytest
-	sudo apt install -y python3-pytest
-
-	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.7 --version
-	python3.7 -m pip --version
-	python3.7 -m pytest --version
-
-	python3.7 -m pip install --user twine
-	python3.7 -m pip install --user wheel
-	python3.7 -m pip install --user flit
-	python3.7 -m pip install --user cookiecutter
-	python3.7 -m pip install --user pipenv
-	python3.7 -m pip install --user pre-commit
 
 python-three-eight-install: ## Install python3.8 using apt (main install)
 python-three-eight-install:
@@ -450,5 +352,10 @@ wifi-analyzer:
 wifi-analyzer: ## Installs LinSSID Wifi Analyzer
 	# Attribution: podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121
 	@$(ANSIBLE) --tags="wifi-analyzer"
+
+app-image:
+app-image: ## Install App Image Launcher
+	@$(ANSIBLE) --tags="app-image"
+
 
 .DEFAULT_GOAL := help
