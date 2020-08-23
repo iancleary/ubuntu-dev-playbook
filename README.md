@@ -24,6 +24,10 @@ keyboard shortcuts, core software, etc.).
 * I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
 * I finally took the plunge and decided to use Ansible for my configuration. ✔️
 
+## Calendar Versioning
+
+This project adheres to [Calendar Versioning](https://calver.org/).
+
 ## Supported Ubuntu LTS Versions
 
 I will support the LTS versions I use. There are no plans to support non-LTS versions.
