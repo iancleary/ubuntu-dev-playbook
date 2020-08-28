@@ -126,6 +126,10 @@ jobs:
         run: make pulseaudio
       - name: App Image Launcher
         run: make app-image
+      - name: Application Launcher
+        run: make ulauncher
+      - name: Caffeine
+        run: make caffeine
 
   common-snaps:
     runs-on: ${{ matrix.os }}

@@ -8,8 +8,10 @@
     - {role: docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
-    - {role: iancleary.jetbrains_mono, tags: ['jetbrains-mono']} # installs font
-    - {role: jetbrains_mono, tags: ['jetbrains-mono']} # sets gnome defaults
+    # installs font
+    - {role: iancleary.jetbrains_mono, tags: ['jetbrains-mono']}
+    # sets gnome defaults
+    - {role: jetbrains_mono, tags: ['jetbrains-mono']}
     - {role: ticktick, tags: ['ticktick']}
     - {role: pulseaudio, tags: ['pulseaudio']}
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}
@@ -34,3 +36,5 @@
     - {role: libreoffice-remove-apt, tags: ['libreoffice-remove-apt']}
     - {role: wifi-analyzer, tags: ['wifi-analyzer']}
     - {role: app-image, tags: ['app-image']}
+    - {role: ulauncher, tags: ['ulauncher']}
+    - {role: caffeine, tags: ['caffeine']}

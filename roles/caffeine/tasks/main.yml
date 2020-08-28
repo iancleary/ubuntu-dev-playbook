@@ -2,7 +2,7 @@
 - name: Install PPA
   become: true
   apt_repository:
-    repo: ppa:teejee2008/timeshift
+    repo: ppa:caffeine-developers/ppa
     state: present
 
 - name: Install apt package

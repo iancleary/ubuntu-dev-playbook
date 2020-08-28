@@ -60,6 +60,10 @@ but below is a list of what the software installs.
 
 * [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), see the [Integrate any AppImage into the Ubuntu Desktop](https://dev.to/strotgen/integrate-tinkerwell-or-any-appimage-into-the-ubuntu-desktop-le9) article.
 
+### Application Launcher
+
+* [ULauncher](https://github.com/ULauncher/ULauncher), A ctrl + spacebar productivity bar, Ulauncher is inspired by Alfred for macOS and similar semantic search tools that followed in its wake.
+
 ### Backups
 
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
@@ -154,6 +158,7 @@ for beautiful images of my code - right inside my terminal,
 
 ### Utilities
 
+* [Caffeine](https://launchpad.net/caffeine),
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Nordvpn`,
 
@@ -170,7 +175,7 @@ for beautiful images of my code - right inside my terminal,
 
 The [Makefile](https://github.com/iancleary/ansible-desktop/blob/main/Makefile)  is the entry point.
 
-### Common Utilty Scripts
+### Common Utility Scripts
 
 The [scripts](https://github.com/iancleary/ansible-desktop/tree/main/scripts) folder contains common setup between local scripts and Travis-CI.
 
