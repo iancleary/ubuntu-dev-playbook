@@ -40,7 +40,7 @@ USER_STRING = '{"users": [{"username": "$(shell whoami)", "skip_zshrc": true}]}'
 
 # Main Ansible Playbook Command (prompts for password)
 INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
-ANSIBLE_PLAYBOOK = ansible-playbook personal_computer.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e $(USER_STRING)
+ANSIBLE_PLAYBOOK = ansible-playbook desktop.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e $(USER_STRING)
 
 ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
@@ -356,6 +356,10 @@ wifi-analyzer: ## Installs LinSSID Wifi Analyzer
 app-image:
 app-image: ## Install App Image Launcher
 	@$(ANSIBLE) --tags="app-image"
+
+ulauncher:
+ulauncher: ## Install ULauncher App Launcher (CTRL+spacebar)
+	@$(ANSIBLE) --tags="ulauncher"
 
 
 .DEFAULT_GOAL := help
