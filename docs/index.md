@@ -170,7 +170,7 @@ for beautiful images of my code - right inside my terminal,
 
 The [Makefile](https://github.com/iancleary/ansible-desktop/blob/main/Makefile)  is the entry point.
 
-### Common Utilty Scripts
+### Common Utility Scripts
 
 The [scripts](https://github.com/iancleary/ansible-desktop/tree/main/scripts) folder contains common setup between local scripts and Travis-CI.
 
