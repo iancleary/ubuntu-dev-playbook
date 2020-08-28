@@ -37,3 +37,4 @@
     - {role: wifi-analyzer, tags: ['wifi-analyzer']}
     - {role: app-image, tags: ['app-image']}
     - {role: ulauncher, tags: ['ulauncher']}
+    - {role: caffeine, tags: ['caffeine']}

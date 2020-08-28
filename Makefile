@@ -361,5 +361,9 @@ ulauncher:
 ulauncher: ## Install ULauncher App Launcher (CTRL+spacebar)
 	@$(ANSIBLE) --tags="ulauncher"
 
+caffeine:
+caffeine: ## Install caffeine (screen stay awake toggle, plus indicator)
+	@$(ANSIBLE) --tags="caffeine"
+
 
 .DEFAULT_GOAL := help

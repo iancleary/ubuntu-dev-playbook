@@ -160,6 +160,7 @@ for beautiful images of my code - right inside my terminal,
 
 ### Utilities
 
+* [Caffeine](https://launchpad.net/caffeine),
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Nordvpn`,
 
