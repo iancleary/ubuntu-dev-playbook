@@ -13,6 +13,10 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - [ULauncher](https://github.com/ULauncher/ULauncher) ([#179](https://github.com/iancleary/ansible-desktop/issues/179))
 - [Caffeine](https://launchpad.net/caffeine) ([#178](https://github.com/iancleary/ansible-desktop/issues/178))
 
+### Changed
+
+- Fixed regression on timeshift package name
+
 ### Removed
 
 - Ubuntu 18.04 testing
