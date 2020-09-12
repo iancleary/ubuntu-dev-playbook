@@ -8,6 +8,6 @@
 - name: Install apt package
   become: true
   apt:
-    name: "caffeine"
+    name: "timeshift"
     state: present
     update_cache: "yes"
