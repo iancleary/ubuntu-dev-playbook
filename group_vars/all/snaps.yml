@@ -6,6 +6,7 @@ snaps_chat:
     classic: "yes"
 snaps_common:
   - name: "snap-store"
+  - name: "flameshot"
   - name: "breaktimer"
   - name: "drawio"
   # https://github.com/jgraph/drawio-desktop/issues/138,
