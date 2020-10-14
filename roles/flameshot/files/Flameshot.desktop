@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=flameshot
-Icon=flameshot
-Exec=flameshot
-Terminal=false
-Type=Application
-X-GNOME-Autostart-enabled=true

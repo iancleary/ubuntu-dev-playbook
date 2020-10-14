@@ -238,7 +238,7 @@ timeshift: ## Install Timeshift (Backup Utility) using a PPA and apt
 
 flameshot:
 flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Keybindings
-	@$(ANSIBLE) --tags="flameshot"
+	@$(ANSIBLE) --tags="common-snaps" -e '{"snaps_common": [{"name": "flameshot"}]}'
 
 gsettings-keybindings:
 gsettings-keybindings:  ## Sets GNOME custom keybindings
@@ -256,7 +256,7 @@ flameshot-keybindings: gsettings-keybindings
 
 	gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ name 'flameshot'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/usr/bin/flameshot gui'
+	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/snap/bin/flameshot gui'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
 
 github-cli:
