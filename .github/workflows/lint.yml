@@ -1,0 +1,36 @@
+---
+name: Lint
+
+on: push
+
+env:
+  hostname: runner
+
+jobs:
+  lint:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 12.16.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.16.1
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+          npm install -g markdownlint-cli
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: Setup Inventory and Group Vars for Hostname
+        run: make setup_inventory_and_group_vars
+      - name: lint
+        run: |
+          make lint
