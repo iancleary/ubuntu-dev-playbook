@@ -163,6 +163,7 @@ for beautiful images of my code - right inside my terminal,
 * [Caffeine](https://launchpad.net/caffeine),
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Nordvpn`,
+* [PDFSlicer](https://github.com/junrrein/pdfslicer)
 
 ### Web Browsers
 
@@ -173,7 +174,7 @@ for beautiful images of my code - right inside my terminal,
 
 ## Documentation
 
-Detailed documentation is hosted by Netlify at <https://ansible-desktop.iancleary.me>.
+Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.me>.
 
 ### Existing Machine
 
