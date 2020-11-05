@@ -161,6 +161,7 @@ for beautiful images of my code - right inside my terminal,
 * [Caffeine](https://launchpad.net/caffeine),
 * [Breaktimer](https://snapcraft.io/breaktimer),
 * `Nordvpn`,
+* [PDFSlicer](https://github.com/junrrein/pdfslicer)
 
 ### Web Browsers
 

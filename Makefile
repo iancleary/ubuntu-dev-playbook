@@ -232,6 +232,10 @@ peek:
 peek: ## Install Peek (GIF Screen Recorder) using a Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.uploadedlobster.peek"]}'
 
+pdf-slicer:
+pdf-slicer: ## Install PDFSlicer (split and combine PDFs) using a Flatpak
+	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.github.junrrein.PDFSlicer"]}'
+
 timeshift:
 timeshift: ## Install Timeshift (Backup Utility) using a PPA and apt
 	@$(ANSIBLE) --tags="timeshift"

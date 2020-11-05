@@ -6,3 +6,4 @@ flatpak_applications:
   - "com.valvesoftware.Steam"
   - "org.kde.okular"
   - "org.libreoffice.LibreOffice"
+  - "com.github.junrrein.PDFSlicer"

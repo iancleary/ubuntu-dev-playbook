@@ -192,6 +192,8 @@ jobs:
         run: make evolution
       - name: Libreoffice
         run: make libreoffice
+      - name: PDFSlicer
+        run: make pdf-slicer
 
   gnome-preferences-hyper-flameshot:
     runs-on: ${{ matrix.os }}
