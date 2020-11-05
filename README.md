@@ -1,7 +1,7 @@
 # ansible-desktop
 
 [![Test](https://github.com/iancleary/ansible-desktop/workflows/Test/badge.svg)](https://github.com/iancleary/ansible-desktop/actions)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0a90303b-4694-4407-964b-0caa5a68827c/deploy-status)](https://app.netlify.com/sites/iancleary-ansible-desktop/deploys)
+[![Lint](https://github.com/iancleary/ansible-desktop/workflows/Lint/badge.svg)](https://github.com/iancleary/ansible-desktop/actions)
 
 ## Ansible Playbook to configure my laptops and desktops
 
