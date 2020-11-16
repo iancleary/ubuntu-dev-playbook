@@ -18,7 +18,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - Fixed regression on timeshift package name
 - Flameshot moved from deb to snap, per ([#183](https://github.com/iancleary/ansible-desktop/issues/183))
-- Bumped `gh` CLI to version 1.2.0
+- Bumped `gh` CLI to version 1.2.1
 - Separated Test and Lint GitHub Actions workflows
 
 ### Removed
