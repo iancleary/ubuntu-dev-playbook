@@ -1,5 +1,5 @@
 ---
-nodejs_version: "12.x"
+nodejs_version: "14.x"
 nodejs_yarn_global_packages:
   - name: "@vue/cli"
   - name: "@gridsome/cli"
