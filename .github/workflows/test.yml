@@ -31,7 +31,7 @@ jobs:
       - name: Yarn
         run: make yarn
       - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.yarn/bin"
+        run: echo "/home/runner/.yarn/bin" >> $GITHUB_PATH
       - name: Check Versions
         run: |
           vue --version
