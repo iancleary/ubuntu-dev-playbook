@@ -8,10 +8,7 @@ env:
 
 jobs:
   zsh-nodejs-yarn:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,7 +28,7 @@ jobs:
       - name: Yarn
         run: make yarn
       - name: Update Github Actions Path
-        run: echo "::add-path::/home/runner/.yarn/bin"
+        run: echo "/home/runner/.yarn/bin" >> $GITHUB_PATH
       - name: Check Versions
         run: |
           vue --version
@@ -43,10 +40,7 @@ jobs:
         run: make ticktick
 
   python:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -67,10 +61,7 @@ jobs:
           make python-three-eight-supporting
 
   common-apt-deb-packages:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -105,10 +96,7 @@ jobs:
         run: make caffeine
 
   common-snaps:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -135,10 +123,7 @@ jobs:
         run: make web-browsers
 
   flatpak:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -169,10 +154,7 @@ jobs:
         run: make pdf-slicer
 
   gnome-preferences-hyper-flameshot:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
