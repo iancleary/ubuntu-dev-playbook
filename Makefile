@@ -36,7 +36,7 @@ else
 endif
 
 # Format is from https://github.com/iancleary/ansible-role-zsh_antibody
-USER_STRING = '{"users": [{"username": "$(shell whoami)", "skip_zshrc": true}]}'
+USER_STRING = '{"users": [{"username": "$(shell whoami)", "skip_zshrc": true}], "ansible_user": "$(shell whoami)"}'
 
 # Main Ansible Playbook Command (prompts for password)
 INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
