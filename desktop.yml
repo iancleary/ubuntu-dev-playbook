@@ -8,10 +8,6 @@
     - {role: docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
-    # installs font
-    - {role: iancleary.jetbrains_mono, tags: ['jetbrains-mono']}
-    # sets gnome defaults
-    - {role: jetbrains_mono, tags: ['jetbrains-mono']}
     - {role: ticktick, tags: ['ticktick']}
     - {role: pulseaudio, tags: ['pulseaudio']}
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}

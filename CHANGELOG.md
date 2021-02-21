@@ -29,6 +29,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - Ubuntu 18.04 testing
 - Python 3.6 & 3.7 installation
+- Jetbrains mono installation
 
 ## [2020.1.0]
 
