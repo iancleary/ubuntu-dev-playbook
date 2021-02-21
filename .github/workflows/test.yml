@@ -78,10 +78,11 @@ jobs:
         run: make setup_inventory_and_group_vars
       - name: Timeshift
         run: make timeshift
-      - name: Github CLI
-        run: |
-          make github-cli
-          gh --version
+      # Fails when installed; non-idempotent
+      # - name: Github CLI
+      #   run: |
+      #     make github-cli
+      #     gh --version
       - name: Stacer
         run: make stacer
       - name: Wifi Analyzer
