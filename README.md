@@ -43,7 +43,7 @@ There is broader LTS and Distribution support in the following roles:
 
 | Role | Description |
 |:-------------|:-------------:|
-|  [iancleary.jetbrains_mono](https://github.com/iancleary/ansible-role-jetbrains_mono) | installs [Jetbrains-Mono](https://www.jetbrains.com/lp/mono/) font|
+|  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose|
 |  [iancleary.zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), and the [antibody](https://getantibody.github.io/) plugin manager|
 
 ## Core Software
@@ -174,12 +174,12 @@ for beautiful images of my code - right inside my terminal,
 
 ## Documentation
 
-Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.me>.
+Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.vercel.app/>.
 
 ### Existing Machine
 
 For a walk through of my process on existing machine, please visit
-<https://ansible-desktop.iancleary.me/makefile>.
+<https://ansible-desktop.iancleary.vercel.app//makefile>.
 
 --------------------------
 
