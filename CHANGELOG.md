@@ -22,6 +22,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Bumped `gh` CLI to version 1.4.0
 - Separated Test and Lint GitHub Actions workflows
 - USER_STRING in Makefile to include `ansible_user` for `docker` role
+- Updated documentation domain name
 
 
 ### Removed

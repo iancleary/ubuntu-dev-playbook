@@ -174,7 +174,7 @@ for beautiful images of my code - right inside my terminal,
 
 ## Documentation
 
-Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.me>.
+Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.vercel.app/>.
 
 ### Existing Machine
 
