@@ -179,7 +179,7 @@ Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary
 ### Existing Machine
 
 For a walk through of my process on existing machine, please visit
-<https://ansible-desktop.iancleary.me/makefile>.
+<https://ansible-desktop.iancleary.vercel.app//makefile>.
 
 --------------------------
 
