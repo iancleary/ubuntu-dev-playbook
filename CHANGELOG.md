@@ -23,6 +23,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Separated Test and Lint GitHub Actions workflows
 - USER_STRING in Makefile to include `ansible_user` for `docker` role
 - Updated documentation domain name
+- moved to iancleary.docker ansible role
 
 
 ### Removed

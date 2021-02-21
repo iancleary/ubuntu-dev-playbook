@@ -43,6 +43,7 @@ There is broader LTS and Distribution support in the following roles:
 
 | Role | Description |
 |:-------------|:-------------:|
+|  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose|
 |  [iancleary.zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), and the [antibody](https://getantibody.github.io/) plugin manager|
 
 ## Core Software
