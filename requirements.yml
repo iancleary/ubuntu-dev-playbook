@@ -1,4 +1,4 @@
 ---
 # Default is from Ansible Galaxy
 - src: iancleary.docker
-# - src: iancleary.zsh
+- src: iancleary.zsh
