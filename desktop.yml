@@ -2,7 +2,7 @@
 - hosts: localhost
   connection: local
   roles:
-    - {role: iancleary.zsh_antibody, tags: ['zsh']}
+    - {role: zsh, tags: ['zsh']}
     - {role: yadm, tags: ['yadm']}
     - {role: hyper, tags: ['hyper']}
     - {role: iancleary.docker, tags: ['docker']}

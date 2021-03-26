@@ -1,0 +1,17 @@
+---
+- name: set-fact user list to write .zshrc
+  set_fact:
+    zshrc_users: "{{ users | selectattr('skip_zshrc', 'undefined') | list }}"
+
+- name: write .zshrc_aliases
+  become: "yes"
+  become_user: '{{ user.username }}'
+  template:
+    src: zshrc_aliases.j2
+    dest: '~{{ user.username }}/.zshrc_aliases'
+    backup: "yes"
+    mode: 'u=rw,go=r'
+  with_items: "{{ zshrc_users }}"
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'
