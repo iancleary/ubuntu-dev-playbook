@@ -199,6 +199,7 @@ python-three-eight-supporting:
 	python3.8 -m pip --version
 	python3.8 -m pytest --version
 
+	python3.8 -m pip install --user testresources
 	python3.8 -m pip install --user twine
 	python3.8 -m pip install --user wheel
 	python3.8 -m pip install --user flit
