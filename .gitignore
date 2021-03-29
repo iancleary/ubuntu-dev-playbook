@@ -132,6 +132,9 @@ yarn-error.log*
 # unknown
 .DS_Store
 
+# VS Code
+.vscode
+
 # Private inventory file
 .inventory
 
