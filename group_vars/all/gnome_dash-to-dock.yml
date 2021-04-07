@@ -18,7 +18,7 @@ gnome_dash_to_dock_preferences:
     value: "true"
   # Dock Fixed
   - key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
-    value: "false"
+    value: "'false'"
   # Dock Position BOTTOM
   - key: "/org/gnome/shell/extensions/dash-to-dock/dock-position"
     value: "'BOTTOM'"
@@ -39,7 +39,7 @@ gnome_dash_to_dock_preferences:
     value: "'ALL_WINDOWS'"
   # Intellihide Status
   - key: "/org/gnome/shell/extensions/dash-to-dock/intellihide"
-    value: "'ALL_WINDOWS'"
+    value: "'false'"
   # Isolate Workspaces
   - key: "/org/gnome/shell/extensions/dash-to-dock/isolate-workspaces"
     value: "true"

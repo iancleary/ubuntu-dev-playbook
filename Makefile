@@ -98,7 +98,7 @@ check: ## Checks personal-computer.yml playbook
 	@$(ANSIBLE) --check
 
 init: ## Initializes any machine (Host or VM)
-init: bootstrap bootstrap-check
+init: 
 	@$(ANSIBLE) --tags="init"
 
 install: DARGS?=
@@ -268,7 +268,7 @@ github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 
 gnome:
 gnome: ## Set up my GNOME desktop like I like
-	@$(ANSIBLE) --tags="gnome-dash-to-dock"
+	@$(ANSIBLE) --tags="gnome"
 
 hyper: ## Install Hyper (A terminal built on web technologies)
 hyper: gsettings-keybindings

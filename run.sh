@@ -33,6 +33,10 @@ cd $GIT_REPO || exit
 ## ------------------------
 ## Run Make Targets
 
+# Bootstrap machine setup
+make bootstrap
+make bootstrap-check
+
 # Initalize any machine (VM or Host)
 make init
 
