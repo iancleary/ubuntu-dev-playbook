@@ -9,6 +9,10 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Removed
+
+- Stale Makefile Code (TravisCI, )
+
 ## [21.04.0]
 
 ### Added
