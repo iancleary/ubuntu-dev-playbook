@@ -21,6 +21,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: Setup Inventory and Group Vars for Hostname
+        run: make setup_inventory_and_group_vars
       - name: init
         run: |
           make init
