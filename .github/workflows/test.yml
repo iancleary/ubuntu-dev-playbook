@@ -25,14 +25,11 @@ jobs:
         run: make setup_inventory_and_group_vars
       - name: init
         run: |
-          make init
+          make init-github-runner
       - name: Update Github Actions Path
         run: echo "/home/runner/.yarn/bin" >> $GITHUB_PATH
       - name: Check Versions
         run: |
-          zsh --version
-          docker --version
-          docker-compose --version
           npm --version
           yarn --version
           vue --version

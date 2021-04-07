@@ -46,12 +46,13 @@ ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
 # GitHub Actions Ansible Playbook Command (doesn't prompt for password)
 RUNNER = runner
+INSTALL_ANSIBLE_ROLES_RUNNER = ansible-galaxy install -r requirements-runner.yml
 ifeq "$(HOSTNAME)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES_RUNNER) && $(ANSIBLE_PLAYBOOK)
 endif
 
 ifeq "$(shell whoami)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES_RUNNER) && $(ANSIBLE_PLAYBOOK)
 endif
 
 # Custome GNOME keybindings
@@ -104,6 +105,12 @@ check: ## Checks personal-computer.yml playbook
 init: ## Initializes any machine (Host or VM)
 init: 
 	@$(ANSIBLE) --tags="init"
+
+
+init-github-runner: ## Initializes any machine (Host or VM)
+init-github-runner: 
+	# test coverage is in the ansible roles themselves
+	@$(ANSIBLE) --tags="init" --skip-tags="zsh,docker"
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
