@@ -8,7 +8,6 @@
     - {role: iancleary.docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
-    - {role: ticktick, tags: ['ticktick']}
     - {role: pulseaudio, tags: ['pulseaudio']}
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}
     - {role: common-snaps, tags: ['common-snaps']}

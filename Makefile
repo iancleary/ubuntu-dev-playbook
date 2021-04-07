@@ -335,10 +335,6 @@ yarn: ## Installs Yarn (and Nodejs)
 	# This role takes care of $$PATH
 	@$(ANSIBLE) --tags="yarn"
 
-ticktick:
-ticktick: ## Installs TickTick using yarn global Nativefier
-	@$(ANSIBLE) --tags="ticktick"
-
 wifi-analyzer:
 wifi-analyzer: ## Installs LinSSID Wifi Analyzer
 	# Attribution: podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121
