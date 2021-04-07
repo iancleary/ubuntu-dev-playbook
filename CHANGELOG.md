@@ -12,6 +12,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Removed
 
 - Unused Makefile Code (TravisCI, ProtonMail Bridge, TickTick)
+- LibreOffice and Evolution Flatpak installations
 - Removed Jetbrains mono (I switched to powerlevel10k's recommended fonts)
 
 ## [21.04.0]

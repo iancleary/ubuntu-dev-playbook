@@ -316,19 +316,11 @@ okular:
 okular: ## Install Okular, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["org.kde.okular"]}'
 
-evolution:
-evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
-	@$(ANSIBLE) --tags="flatpak,evolution-remove-apt" -e '{"flatpak_applications": ["org.gnome.Evolution"]}'
-
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
 	chmod +x ~/Downloads/tresorit_installer.run
 	$(echo $0) ~/Downloads/tresorit_installer.run
-
-libreoffice:
-libreoffice: ## Install LibreOffice Office Suite, using Flatpak
-	@$(ANSIBLE) --tags="flatpak,libreoffice-remove-apt" -e '{"flatpak_applications": ["org.libreoffice.LibreOffice"]}'
 
 yarn:
 yarn: ## Installs Yarn (and Nodejs)

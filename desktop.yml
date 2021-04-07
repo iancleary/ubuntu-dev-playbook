@@ -26,8 +26,6 @@
     - {role: stacer, tags: ['stacer']}
     - {role: flatpak, tags: ['flatpak']}
     # Installed Evolution and LibreOffice with Flatpak
-    - {role: evolution-remove-apt, tags: ['evolution-remove-apt']}
-    - {role: libreoffice-remove-apt, tags: ['libreoffice-remove-apt']}
     - {role: wifi-analyzer, tags: ['wifi-analyzer']}
     - {role: app-image, tags: ['app-image']}
     - {role: ulauncher, tags: ['ulauncher']}
