@@ -320,10 +320,6 @@ evolution:
 evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
 	@$(ANSIBLE) --tags="flatpak,evolution-remove-apt" -e '{"flatpak_applications": ["org.gnome.Evolution"]}'
 
-protonmail-bridge:
-protonmail-bridge: ## Install Protonmail Bridge Deb from their website
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["ch.protonmail.protonmail-bridge"]}'
-
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
