@@ -266,21 +266,9 @@ github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 # gnome-boxes: ## Install GNOME Boxes, using Flatpak
 # 	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
 
-gnome-dash-to-dock:
-gnome-dash-to-dock: ## Set my GNOME Dash to Dock Preferences
+gnome:
+gnome: ## Set up my GNOME desktop like I like
 	@$(ANSIBLE) --tags="gnome-dash-to-dock"
-
-gnome-extensions:
-gnome-extensions: ## Install GNOME Extensions
-	@$(ANSIBLE) --tags="gnome-extensions"
-
-gnome-keybindings:
-gnome-keybindings: ## Set my GNOME Keybindings Preferences
-	@$(ANSIBLE) --tags="gnome-keybindings"
-
-gnome-preferences:
-gnome-preferences: ## Set my general GNOME shell Preferences
-	@$(ANSIBLE) --tags="gnome-preferences"
 
 hyper: ## Install Hyper (A terminal built on web technologies)
 hyper: gsettings-keybindings

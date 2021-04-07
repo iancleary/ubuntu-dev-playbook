@@ -162,10 +162,6 @@ jobs:
       - name: Flameshot keybindings
         run: make flameshot-keybindings
       - name: GNOME Preferences
-        run: |
-          make gnome-extensions
-          make gnome-dash-to-dock
-          make gnome-keybindings
-          make gnome-preferences
+        run: make gnome
       - name: Hyper
         run: make hyper
