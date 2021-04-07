@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+<img src="https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg">
+
 ## [Unreleased]
+
+## [21.04.0]
 
 ### Added
 
@@ -24,6 +28,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - USER_STRING in Makefile to include `ansible_user` for `docker` role
 - Updated documentation domain name
 - moved to iancleary.docker ansible role
+- changed to YY.0M.MICRO calendar versioning
 
 
 ### Removed
@@ -302,7 +307,8 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/ansible-desktop/compare/v2020.1.0...HEAD
+[Unreleased]: https://github.com/iancleary/ansible-desktop/compare/v21.04.0...HEAD
+[21.04.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v21.04.0
 [2020.1.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v2020.1.0
 [0.11.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.11.0
 [0.10.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.10.0
