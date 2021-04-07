@@ -278,13 +278,6 @@ gnome-preferences:
 gnome-preferences: ## Set my general GNOME shell Preferences
 	@$(ANSIBLE) --tags="gnome-preferences"
 
-gtk3-icon-browser: ## Launch the GTK Icon Browser
-gtk3-icon-browser:
-	# https://askubuntu.com/questions/695796/view-list-of-all-available-unique-icons-with-their-names-and-thumbnail/695958
-	# sudo apt-get install -y gtk-3-examples
-	# Installs in gnome-preferences role
-	@gtk3-icon-browser &
-
 hyper: ## Install Hyper (A terminal built on web technologies)
 hyper: gsettings-keybindings
 	@$(ANSIBLE) --tags="hyper"

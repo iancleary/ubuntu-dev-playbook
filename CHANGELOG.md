@@ -12,6 +12,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Changed
 
 - `github-cli` role now defaults to latest github release using [community.general.github_release](https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html)
+- refactored playbook to use tagged plays
 
 ### Removed
 
