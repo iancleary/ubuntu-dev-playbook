@@ -2,6 +2,7 @@
 
 [![Test](https://github.com/iancleary/ansible-desktop/workflows/Test/badge.svg)](https://github.com/iancleary/ansible-desktop/actions)
 [![Lint](https://github.com/iancleary/ansible-desktop/workflows/Lint/badge.svg)](https://github.com/iancleary/ansible-desktop/actions)
+[![Calendar Versioning](https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg)](https://calver.org)
 
 ## Ansible Playbook to configure my laptops and desktops
 
@@ -26,7 +27,9 @@ keyboard shortcuts, core software, etc.).
 
 ## Calendar Versioning
 
-This project adheres to [Calendar Versioning](https://calver.org/), YYYY.MINOR.MICRO.
+This project adheres to [Calendar Versioning](https://calver.org/), YY.0M.MICRO.  This is similar to Ubuntu.
+
+> Note that I've iterated to this and it wasn't always calver.
 
 ## Supported Ubuntu LTS Versions
 
