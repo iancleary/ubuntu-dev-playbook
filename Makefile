@@ -97,6 +97,10 @@ check: DARGS?=
 check: ## Checks personal-computer.yml playbook
 	@$(ANSIBLE) --check
 
+init: ## Initializes any machine (Host or VM)
+init: bootstrap bootstrap-check
+	@$(ANSIBLE) --tags="init"
+
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
 	@$(ANSIBLE) --skip-tags="ticktick, nautilus-mounts"
