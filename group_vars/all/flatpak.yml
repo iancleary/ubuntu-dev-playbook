@@ -1,9 +1,9 @@
 ---
 flatpak_applications:
-  - "com.giuspen.cherrytree"
+  #- "com.giuspen.cherrytree"
   - "com.uploadedlobster.peek"
   # - "com.github.alainm23.planner" # not used
-  - "com.valvesoftware.Steam"
+  # - "com.valvesoftware.Steam"
   - "org.kde.okular"
-  - "org.libreoffice.LibreOffice"
+  #- "org.libreoffice.LibreOffice"
   - "com.github.junrrein.PDFSlicer"

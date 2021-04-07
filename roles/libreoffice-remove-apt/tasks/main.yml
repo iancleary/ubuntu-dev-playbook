@@ -1,8 +1,0 @@
----
-- name: LibreOffice - remove apt packages
-  become: true
-  apt:
-    name: "libreoffice*"
-    state: absent
-    purge: "yes"
-    autoremove: "yes"

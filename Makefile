@@ -44,16 +44,15 @@ ANSIBLE_PLAYBOOK = ansible-playbook desktop.yml -v -i $(INVENTORY) -l $(HOSTNAME
 
 ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
-# Travis CI Ansible Playbook Command (doesn't prompt for password)
-TRAVIS = travis
-ifeq "$(HOSTNAME)" "$(TRAVIS)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
-endif
-
 # GitHub Actions Ansible Playbook Command (doesn't prompt for password)
 RUNNER = runner
+INSTALL_ANSIBLE_ROLES_RUNNER = ansible-galaxy install -r requirements-runner.yml
 ifeq "$(HOSTNAME)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES_RUNNER) && $(ANSIBLE_PLAYBOOK)
+endif
+
+ifeq "$(shell whoami)" "$(RUNNER)"
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES_RUNNER) && $(ANSIBLE_PLAYBOOK)
 endif
 
 # Custome GNOME keybindings
@@ -103,6 +102,16 @@ check: DARGS?=
 check: ## Checks personal-computer.yml playbook
 	@$(ANSIBLE) --check
 
+init: ## Initializes any machine (Host or VM)
+init: 
+	@$(ANSIBLE) --tags="init"
+
+
+init-github-runner: ## Initializes any machine (Host or VM)
+init-github-runner: 
+	# test coverage is in the ansible roles themselves
+	@$(ANSIBLE) --tags="init" --skip-tags="zsh,docker"
+
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
 	@$(ANSIBLE) --skip-tags="ticktick, nautilus-mounts"
@@ -148,10 +157,6 @@ yadm: ## Install yadm dotfile manager
 docker:
 docker: ## Install Docker and Docker-Compose
 	@$(ANSIBLE) --tags="docker"
-
-jetbrains-mono:
-jetbrains-mono: ## Install JetBrains Mono font
-	@$(ANSIBLE) --tags="jetbrains-mono"
 
 nautilus-mounts:
 nautilus-mounts: ## Setup for CIFS Network Mounts, with Nautilus Scripts
@@ -272,28 +277,9 @@ github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 # gnome-boxes: ## Install GNOME Boxes, using Flatpak
 # 	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
 
-gnome-dash-to-dock:
-gnome-dash-to-dock: ## Set my GNOME Dash to Dock Preferences
-	@$(ANSIBLE) --tags="gnome-dash-to-dock"
-
-gnome-extensions:
-gnome-extensions: ## Install GNOME Extensions
-	@$(ANSIBLE) --tags="gnome-extensions"
-
-gnome-keybindings:
-gnome-keybindings: ## Set my GNOME Keybindings Preferences
-	@$(ANSIBLE) --tags="gnome-keybindings"
-
-gnome-preferences:
-gnome-preferences: ## Set my general GNOME shell Preferences
-	@$(ANSIBLE) --tags="gnome-preferences"
-
-gtk3-icon-browser: ## Launch the GTK Icon Browser
-gtk3-icon-browser:
-	# https://askubuntu.com/questions/695796/view-list-of-all-available-unique-icons-with-their-names-and-thumbnail/695958
-	# sudo apt-get install -y gtk-3-examples
-	# Installs in gnome-preferences role
-	@gtk3-icon-browser &
+gnome:
+gnome: ## Set up my GNOME desktop like I like
+	@$(ANSIBLE) --tags="gnome"
 
 hyper: ## Install Hyper (A terminal built on web technologies)
 hyper: gsettings-keybindings
@@ -318,21 +304,9 @@ cherrytree:
 cherrytree: ## Install Cherrytree, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.giuspen.cherrytree"]}'
 
-steam:
-steam: ## Install Steam, using Flatpak
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.valvesoftware.Steam"]}'
-
 okular:
 okular: ## Install Okular, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["org.kde.okular"]}'
-
-evolution:
-evolution: ## Install Evolution Email/Calendar/Tasks Client, using Flatpak
-	@$(ANSIBLE) --tags="flatpak,evolution-remove-apt" -e '{"flatpak_applications": ["org.gnome.Evolution"]}'
-
-protonmail-bridge:
-protonmail-bridge: ## Install Protonmail Bridge Deb from their website
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["ch.protonmail.protonmail-bridge"]}'
 
 tresorit: ## Install Tresorit
 tresorit:
@@ -340,18 +314,10 @@ tresorit:
 	chmod +x ~/Downloads/tresorit_installer.run
 	$(echo $0) ~/Downloads/tresorit_installer.run
 
-libreoffice:
-libreoffice: ## Install LibreOffice Office Suite, using Flatpak
-	@$(ANSIBLE) --tags="flatpak,libreoffice-remove-apt" -e '{"flatpak_applications": ["org.libreoffice.LibreOffice"]}'
-
 yarn:
 yarn: ## Installs Yarn (and Nodejs)
 	# This role takes care of $$PATH
 	@$(ANSIBLE) --tags="yarn"
-
-ticktick:
-ticktick: ## Installs TickTick using yarn global Nativefier
-	@$(ANSIBLE) --tags="ticktick"
 
 wifi-analyzer:
 wifi-analyzer: ## Installs LinSSID Wifi Analyzer

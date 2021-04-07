@@ -33,14 +33,12 @@ cd $GIT_REPO || exit
 ## ------------------------
 ## Run Make Targets
 
-# Initial Bootstrap to Setup Machine
+# Bootstrap machine setup
 make bootstrap
-
-# Check Path
 make bootstrap-check
 
-# Install Everything
-make install
+# Initalize any machine (VM or Host)
+make init
 
 # Upgrade System After Fresh Install
 sudo apt update
@@ -49,10 +47,3 @@ sudo apt -y autoremove
 
 # Install non-ansible (no user input required)
 make non-ansible
-
-# Needs to run last as requires user input
-make tresorit
-
-# Restart to start using machine
-# Prompt?
-# sudo reboot

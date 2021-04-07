@@ -1,6 +1,21 @@
 ---
-- name: Install Github CLI deb from github
+- name: Get latest release of a public repository
+  community.general.github_release:
+    user: cli
+    repo: cli
+    action: latest_release
+  register: gh_latest
+
+- name: Install Github CLI deb from github (Specific Version)
   become: true
   apt:
     deb: >-
       https://github.com/cli/cli/releases/download/v{{gh_version}}/gh_{{gh_version}}_linux_amd64.deb
+  when: gh_version is defined
+
+- name: Install Github CLI deb from github (Latest Version)
+  become: true
+  apt:
+    deb: >-
+      https://github.com/cli/cli/releases/download/{{gh_latest.tag}}/gh_{{gh_latest.tag | replace('v','')}}_linux_amd64.deb
+  when: gh_version is undefined

@@ -1,35 +1,65 @@
 ---
-- hosts: localhost
+- name: Initialize Machine (either Host or VM)
+  hosts: localhost
   connection: local
+  tags:
+    - init
   roles:
     - {role: iancleary.zsh, tags: ['zsh']}
-    - {role: yadm, tags: ['yadm']}
-    - {role: hyper, tags: ['hyper']}
     - {role: iancleary.docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
-    - {role: ticktick, tags: ['ticktick']}
+    - {role: github-cli, tags: ['github-cli']}
+    - {role: app-image, tags: ['app-image']}
+    - {role: ulauncher, tags: ['ulauncher']}
+    - {role: authy, tags: ['authy']}
+
+- name: GNOME Customizations
+  hosts: localhost
+  connection: local
+  tags:
+    - gnome
+  roles:
+    - {role: gnome-dash-to-dock, tags: ['gnome-dash-to-dock']}
+    - {role: gnome-extensions, tags: ['gnome-extensions']}
+    - {role: gnome-keybindings, tags: ['gnome-keybindings']}
+    - {role: gnome-preferences, tags: ['gnome-preferences']}
+
+
+- name: Dotfiles
+  hosts: localhost
+  connection: local
+  tags:
+    - dotfiles
+  roles:
+    - {role: yadm, tags: ['yadm']}
+
+
+- name: Roles for Host OS (not Virtual Machine)
+  hosts: localhost
+  connection: local
+  tags:
+    - host
+  roles:
     - {role: pulseaudio, tags: ['pulseaudio']}
+    - {role: nordvpn, tags: ['nordvpn'],
+       when: "ansible_hostname in ['xps', 'desktop', 'runner']"
+    }
+    - {role: stacer, tags: ['stacer']}
+    # Installed Evolution and LibreOffice with Flatpak
+    - {role: wifi-analyzer, tags: ['wifi-analyzer']}
+    - {role: caffeine, tags: ['caffeine']}
+    - {role: timeshift, tags: ['timeshift']}
+
+- name: Remaining Roles
+  hosts: localhost
+  connection: local
+  tags:
+    - remainders
+  roles:
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}
     - {role: common-snaps, tags: ['common-snaps']}
     - {role: chat-clients, tags: ['chat-clients']}
     - {role: web-browsers, tags: ['web-browsers']}
     - {role: development-tools, tags: ['development-tools']}
-    - {role: timeshift, tags: ['timeshift']}
-    - {role: github-cli, tags: ['github-cli']}
-    - {role: gnome-dash-to-dock, tags: ['gnome-dash-to-dock']}
-    - {role: gnome-extensions, tags: ['gnome-extensions']}
-    - {role: gnome-keybindings, tags: ['gnome-keybindings']}
-    - {role: gnome-preferences, tags: ['gnome-preferences']}
-    - {role: nordvpn, tags: ['nordvpn'],
-       when: "ansible_hostname in ['xps', 'desktop', 'runner']"
-    }
-    - {role: stacer, tags: ['stacer']}
-    - {role: flatpak, tags: ['flatpak']}
-    # Installed Evolution and LibreOffice with Flatpak
-    - {role: evolution-remove-apt, tags: ['evolution-remove-apt']}
-    - {role: libreoffice-remove-apt, tags: ['libreoffice-remove-apt']}
-    - {role: wifi-analyzer, tags: ['wifi-analyzer']}
-    - {role: app-image, tags: ['app-image']}
-    - {role: ulauncher, tags: ['ulauncher']}
-    - {role: caffeine, tags: ['caffeine']}
+    - {role: hyper, tags: ['hyper']}

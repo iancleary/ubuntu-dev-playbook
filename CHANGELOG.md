@@ -9,6 +9,20 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- `github-cli` role now defaults to latest github release using [community.general.github_release](https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html)
+- refactored playbook to use tagged plays (need to refactor Makefile or use bash script)
+- Bumped docker-compose to `1.29.0`
+- Added dedicated `authy` role for beta snap (part of `make init` on every machine)
+- Allow github actions to not prompt for password when username or hostname matches runner
+### Removed
+
+- Unused Makefile Code (TravisCI, ProtonMail Bridge, TickTick)
+- LibreOffice and Evolution Flatpak installations
+- Removed Jetbrains mono (I switched to powerlevel10k's recommended fonts)
+- Removed Steam
+
 ## [21.04.0]
 
 ### Added
