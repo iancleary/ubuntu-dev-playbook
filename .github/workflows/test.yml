@@ -25,7 +25,6 @@ jobs:
           npm --version
           yarn --version
           vue --version
-          gridsome --version
           nativefier --version
           markdownlint --version
           carbon-now --version

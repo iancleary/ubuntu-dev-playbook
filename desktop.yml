@@ -6,7 +6,6 @@
     - init
   roles:
     - {role: iancleary.zsh, tags: ['zsh']}
-    - {role: hyper, tags: ['hyper']}
     - {role: iancleary.docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
@@ -63,3 +62,4 @@
     - {role: chat-clients, tags: ['chat-clients']}
     - {role: web-browsers, tags: ['web-browsers']}
     - {role: development-tools, tags: ['development-tools']}
+    - {role: hyper, tags: ['hyper']}
