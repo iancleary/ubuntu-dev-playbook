@@ -36,8 +36,6 @@ jobs:
           nativefier --version
           markdownlint --version
           carbon-now --version
-      - name: TickTick
-        run: make ticktick
 
   python:
     runs-on: ubuntu-20.04
@@ -145,12 +143,6 @@ jobs:
         run: make cherrytree
       - name: Peek
         run: make peek
-      - name: Steam
-        run: make steam
-      - name: Evolution
-        run: make evolution
-      - name: Libreoffice
-        run: make libreoffice
       - name: PDFSlicer
         run: make pdf-slicer
 
@@ -187,7 +179,5 @@ jobs:
           make gnome-dash-to-dock
           make gnome-keybindings
           make gnome-preferences
-      - name: Jetbrains Mono
-        run: make jetbrains-mono
       - name: Hyper
         run: make hyper
