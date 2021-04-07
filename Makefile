@@ -308,10 +308,6 @@ cherrytree:
 cherrytree: ## Install Cherrytree, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.giuspen.cherrytree"]}'
 
-steam:
-steam: ## Install Steam, using Flatpak
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.valvesoftware.Steam"]}'
-
 okular:
 okular: ## Install Okular, using Flatpak
 	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["org.kde.okular"]}'
