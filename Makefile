@@ -50,6 +50,10 @@ ifeq "$(HOSTNAME)" "$(RUNNER)"
 	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
 endif
 
+ifeq "$(shell whoami)" "$(RUNNER)"
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+endif
+
 # Custome GNOME keybindings
 CUSTOM_KEYBINDING_BASE = /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings
 
