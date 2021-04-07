@@ -13,7 +13,7 @@
     - {role: github-cli, tags: ['github-cli']}
     - {role: app-image, tags: ['app-image']}
     - {role: ulauncher, tags: ['ulauncher']}
-    # - {role: authy, tags: ['authy']}
+    - {role: authy, tags: ['authy']}
 
 - name: GNOME Customizations
   hosts: localhost

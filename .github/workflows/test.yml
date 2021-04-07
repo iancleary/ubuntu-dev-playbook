@@ -7,35 +7,29 @@ env:
   hostname: runner
 
 jobs:
-  zsh-nodejs-yarn:
+  init:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: before_install
+      - name: init
         run: |
-          make bootstrap-before-install
-      - name: before_script
-        run: |
-          make bootstrap-before-script
-      - name: install
-        run: |
-          make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
-      - name: ZSH Antibody
-        run: make zsh
-      - name: Yarn
-        run: make yarn
+          make init
       - name: Update Github Actions Path
         run: echo "/home/runner/.yarn/bin" >> $GITHUB_PATH
       - name: Check Versions
         run: |
+          zsh --version
+          docker --version
+          docker-compose --version
+          npm --version
+          yarn --version
           vue --version
           gridsome --version
           nativefier --version
           markdownlint --version
           carbon-now --version
+          gh --version
 
   python:
     runs-on: ubuntu-20.04
@@ -76,11 +70,6 @@ jobs:
         run: make setup_inventory_and_group_vars
       - name: Timeshift
         run: make timeshift
-      # Fails when installed; non-idempotent
-      # - name: Github CLI
-      #   run: |
-      #     make github-cli
-      #     gh --version
       - name: Stacer
         run: make stacer
       - name: Wifi Analyzer
