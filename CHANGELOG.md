@@ -12,6 +12,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Removed
 
 - Stale Makefile Code (TravisCI, )
+- Removed Jetbrains mono (I switched to powerlevel10k's recommended fonts)
 
 ## [21.04.0]
 

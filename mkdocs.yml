@@ -16,7 +16,6 @@ nav:
     - Configure for your Machine: 'host-specific-variables.md'
     - Shell Configuration Scripts: 'shell-configuration.md'
     - Dotfiles: 'dotfiles.md'
-    - Fonts: 'jetbrains-mono.md'
     - Ansible Playbook Command Examples: 'ansible-playbook-examples.md'
     - Ansible Syntax and Configuration: 'ansible-syntax-and-configuration.md'
     - Authors and Attribution: 'AUTHORS.md'

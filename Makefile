@@ -143,10 +143,6 @@ docker:
 docker: ## Install Docker and Docker-Compose
 	@$(ANSIBLE) --tags="docker"
 
-jetbrains-mono:
-jetbrains-mono: ## Install JetBrains Mono font
-	@$(ANSIBLE) --tags="jetbrains-mono"
-
 nautilus-mounts:
 nautilus-mounts: ## Setup for CIFS Network Mounts, with Nautilus Scripts
 	@$(ANSIBLE) --tags="nautilus-mounts"
