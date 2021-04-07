@@ -12,6 +12,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
       - name: init
         run: |
           make init
