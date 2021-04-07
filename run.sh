@@ -51,7 +51,7 @@ sudo apt -y autoremove
 make non-ansible
 
 # Needs to run last as requires user input
-make tresorit
+# make tresorit
 
 # Restart to start using machine
 # Prompt?
