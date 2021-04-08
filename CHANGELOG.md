@@ -12,6 +12,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Added
 
 - Terraform
+- Install latest release of ulauncher
 
 ### Changed
 

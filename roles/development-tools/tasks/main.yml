@@ -12,17 +12,3 @@
     channel: "{{ item.channel | default('stable')}}"
     classic: "{{ item.classic | default('no')}}"
   with_items: "{{ snaps_development }}"
-
-- name: Register currently installed code extensions
-  shell: /snap/bin/code --list-extensions
-  register: installed_code_extensions
-  changed_when: "false"
-
-- name: Debug currently installed code extensions
-  debug:
-    var: installed_code_extensions.stdout_lines
-
-- name: Code Extensions
-  shell: /snap/bin/code --install-extension "{{ item }}"
-  with_items: "{{ code_extensions }}"
-  when: "item not in installed_code_extensions.stdout_lines"
