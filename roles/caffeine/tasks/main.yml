@@ -1,7 +1,7 @@
 ---
 - name: Install PPA
   become: true
-  ansible.builtin.apt_repository::
+  ansible.builtin.apt_repository:
     repo: ppa:caffeine-developers/ppa
     state: present
 

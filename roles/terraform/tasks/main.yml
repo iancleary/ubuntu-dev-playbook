@@ -6,13 +6,14 @@
     state: present
 
 - name: Install PPA
-  ansible.builtin.apt_repository::
-    repo: ppa:caffeine-developers/ppa
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb https://apt.releases.hashicorp.com
     state: present
 
 - name: Install apt package
   become: true
   apt:
-    name: "caffeine"
+    name: "terraform"
     state: present
     update_cache: "yes"
