@@ -1,6 +1,6 @@
 ---
 collections:
-- community.general
+  - community.general
 
 # Don't test what is already tested
 # roles:
