@@ -28,6 +28,7 @@
   become: true
   shell:
     cmd: ". /etc/profile"
+  changed_when: false
 
 - name: Yarn - Ensure Yarn global packages are installed.
   yarn:
