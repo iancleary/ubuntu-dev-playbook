@@ -19,8 +19,6 @@ snaps_common:
   - name: "hey-mail"
 snaps_development:
   - name: "postman"
-  - name: "code"
-    classic: "yes"
   # - "codium" # Code without telemetry
   - name: "sublime-text"
     classic: "yes"

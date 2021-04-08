@@ -1,7 +1,11 @@
 ---
+code_executable: "/snap/bin/code"
 code_extensions:
-  ## Ansible
-  - vscoss.vscode-ansible
+  ## Ansible, Docker-Compose, etc.
+  - redhat.vscode-yaml
+
+  ## Jupyter
+  - ms-toolsai.jupyter
 
   ## Docker and Remote Development
   - ms-azuretools.vscode-docker
@@ -53,6 +57,3 @@ code_extensions:
   - dbaeumer.vscode-eslint
   - pranaygp.vscode-css-peek
   - sdras.vue-vscode-snippets
-
-  ## YAML
-  - redhat.vscode-yaml  # doesn't allow hostname in .travis.yml
