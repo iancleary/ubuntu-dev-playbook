@@ -113,7 +113,6 @@ jobs:
       - name: Development Tools
         run: |
           make development-tools
-          code --version
       - name: Web Browsers
         run: make web-browsers
 
