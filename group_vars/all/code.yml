@@ -7,6 +7,9 @@ code_extensions:
   ## Jupyter
   - ms-toolsai.jupyter
 
+  ## Terraform
+  - hashicorp.terraform
+
   ## Docker and Remote Development
   - ms-azuretools.vscode-docker
   - ms-vscode-remote.remote-containers

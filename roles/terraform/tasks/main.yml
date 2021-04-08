@@ -1,6 +1,11 @@
 ---
-- name: Install PPA
+- name: Install GPG key
   become: true
+  ansible.builtin.apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Install PPA
   ansible.builtin.apt_repository::
     repo: ppa:caffeine-developers/ppa
     state: present

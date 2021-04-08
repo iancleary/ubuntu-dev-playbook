@@ -7,7 +7,7 @@
 
 - name: Yarn - Setup Stable Repository
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository::
     repo: "deb https://dl.yarnpkg.com/debian/ stable main"
   register: yarn_repo
 

@@ -146,7 +146,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Moved role vars/ to defaults/ when group_vars make sense
 - Changed `gnome-extensions` to have dock on bottom, and multi-monitor dock turned off
 - `inventory` now uses the `localhost` and `{hostname}` groups.
-- Removed unneeded apt_repository task for Docker on Ubuntu 20.04
+- Removed unneeded ansible.builtin.apt_repository: task for Docker on Ubuntu 20.04
 - Bumped gh CLI version to 0.7.0
 - Moved peek role after Flatpak to ensure dependencies are met
 - GNOME Themes role on performed on Ubuntu 18.04 due to PPA availability at 20.04 launch
