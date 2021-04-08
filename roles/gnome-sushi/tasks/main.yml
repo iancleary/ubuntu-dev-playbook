@@ -1,0 +1,15 @@
+---
+- name: Enable universe repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - "deb http://us.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release | lower }} universe"
+    - "deb http://us.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release | lower }}-updates universe"
+    - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release | lower }}-security universe"
+
+- name: Install apt package
+  become: true
+  apt:
+    name: "gnome-sushi"
+    state: present

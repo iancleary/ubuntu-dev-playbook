@@ -14,6 +14,7 @@
     - {role: github-cli, tags: ['github-cli']}
     - {role: app-image, tags: ['app-image']}
     - {role: profile-sync-daemon, tags: ['profile-sync-daemon']}
+    - {role: gnome-sushi, tags: ['gnome-sushi']}
     - {role: ulauncher, tags: ['ulauncher']}
     - {role: authy, tags: ['authy']}
 

@@ -14,6 +14,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Terraform
 - Install latest release of ulauncher
 - [profile-sync-daemon](https://github.com/graysky2/profile-sync-daemon) via <https://linuxunplugged.com/379>
+- [GNOME Sushi](https://gitlab.gnome.org/GNOME/sushi)
 
 ### Changed
 
