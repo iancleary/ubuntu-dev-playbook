@@ -35,8 +35,8 @@ else
     INVENTORY = "inventory"
 endif
 
-# Format is from https://github.com/iancleary/ansible-role-zsh_antibody
-VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)"}'
+# "users" format is from https://github.com/iancleary/ansible-role-zsh
+VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)
 PLAYBOOK=desktop.yml
