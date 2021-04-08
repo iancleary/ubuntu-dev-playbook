@@ -8,7 +8,7 @@
 - name: Install PPA
   become: true
   ansible.builtin.apt_repository:
-    repo: deb https://apt.releases.hashicorp.com
+    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release | lower }} main"
     state: present
 
 - name: Install apt package
