@@ -17,7 +17,7 @@
 
 - name: Nodejs - Add NodeSource repositories for Node.js.
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "{{ item }}"
     state: present
   loop:
@@ -31,7 +31,8 @@
 
 - name: Nodejs - Update apt cache if repo was added.
   become: true
-  apt: update_cache=yes
+  apt:
+    update_cache: "yes"
   when: node_repo.changed
   tags: ['skip_ansible_lint']
 

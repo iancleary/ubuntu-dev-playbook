@@ -29,6 +29,6 @@ ansible-playbook personal_computer.yml \
 --check
 ```
 
-> Note: Any check against a role that has an `apt_repository` task
+> Note: Any check against a role that has an `ansible.builtin.apt_repository:` task
 > (that has not been installed yet) will fail to
 > find the corresponding package in the subsequent `apt` task.

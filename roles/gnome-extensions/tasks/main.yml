@@ -1,7 +1,7 @@
 ---
 - name: GNOME - Enable universe repository 18.04
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "{{ item }}"
   loop:
     - "deb http://us.archive.ubuntu.com/ubuntu/ bionic universe"
@@ -11,7 +11,7 @@
 
 - name: GNOME - Enable universe repository 20.04
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "{{ item }}"
   loop:
     - "deb http://us.archive.ubuntu.com/ubuntu/ focal universe"

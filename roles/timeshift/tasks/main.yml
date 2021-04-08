@@ -1,7 +1,7 @@
 ---
 - name: Install PPA
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:teejee2008/timeshift
     state: present
 

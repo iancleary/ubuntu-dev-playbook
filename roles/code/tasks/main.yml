@@ -1,0 +1,42 @@
+---
+- name: Install snapd apt dependency
+  become: true
+  apt:
+    name: "snapd"
+    state: present
+
+- name: Install VS Code
+  become: true
+  snap:
+    name: "code"
+    channel: "stable"
+    classic: "yes"
+  when: code_executable == "/snap/bin/code"
+
+- name: Install VS Codium
+  become: true
+  snap:
+    name: "codium"
+    channel: "stable"
+    classic: "yes"
+  when: code_executable == "/snap/bin/codium"
+
+- name: Register currently installed code extensions
+  shell: "{{ code_executable }} --list-extensions"
+  register: installed_code_extensions
+  changed_when: "false"
+
+- name: Debug currently installed code extensions
+  debug:
+    var: installed_code_extensions.stdout_lines
+
+- name: Code Extensions
+  shell: "{{ code_executable }} --install-extension {{ item }}"
+  with_items: "{{ code_extensions }}"
+  when: "item not in installed_code_extensions.stdout_lines"
+
+- name: Debug Code Extensions Installed but not in variables
+  debug:
+    var: "{{ item }}"
+  with_items: "{{ installed_code_extensions.stdout_lines }}"
+  when: "item not in code_extensions"

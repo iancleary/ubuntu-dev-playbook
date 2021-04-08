@@ -9,6 +9,11 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Terraform
+- Install latest release of ulauncher
+
 ### Changed
 
 - `github-cli` role now defaults to latest github release using [community.general.github_release](https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html)
@@ -16,6 +21,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Bumped docker-compose to `1.29.0`
 - Added dedicated `authy` role for beta snap (part of `make init` on every machine)
 - Allow github actions to not prompt for password when username or hostname matches runner
+
 ### Removed
 
 - Unused Makefile Code (TravisCI, ProtonMail Bridge, TickTick)
@@ -146,7 +152,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Moved role vars/ to defaults/ when group_vars make sense
 - Changed `gnome-extensions` to have dock on bottom, and multi-monitor dock turned off
 - `inventory` now uses the `localhost` and `{hostname}` groups.
-- Removed unneeded apt_repository task for Docker on Ubuntu 20.04
+- Removed unneeded ansible.builtin.apt_repository: task for Docker on Ubuntu 20.04
 - Bumped gh CLI version to 0.7.0
 - Moved peek role after Flatpak to ensure dependencies are met
 - GNOME Themes role on performed on Ubuntu 18.04 due to PPA availability at 20.04 launch

@@ -35,14 +35,15 @@ else
     INVENTORY = "inventory"
 endif
 
-# Format is from https://github.com/iancleary/ansible-role-zsh_antibody
-USER_STRING = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)"}'
+# "users" format is from https://github.com/iancleary/ansible-role-zsh
+VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)
+PLAYBOOK=desktop.yml
 INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
-ANSIBLE_PLAYBOOK = ansible-playbook desktop.yml -v -i $(INVENTORY) -l $(HOSTNAME) -e $(USER_STRING)
+ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -i $(INVENTORY) -l $(HOSTNAME) -e $(VARIABLES)
 
-ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --ask-become-pass
+ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
 # GitHub Actions Ansible Playbook Command (doesn't prompt for password)
 RUNNER = runner
@@ -90,7 +91,11 @@ bootstrap-before-script:
 	# The top of the Makefile takes care of this in the initial session
 	bash scripts/before_script_path_fix.sh
 
-bootstrap: setup_inventory_and_group_vars bootstrap-before-install bootstrap-install bootstrap-before-script
+requirements:
+requirements:  ## Install ansible requirements
+	@$(INSTALL_ANSIBLE_ROLES)
+
+bootstrap: setup_inventory_and_group_vars bootstrap-before-install bootstrap-install bootstrap-before-script requirements
 bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:
@@ -103,12 +108,15 @@ check: ## Checks personal-computer.yml playbook
 	@$(ANSIBLE) --check
 
 init: ## Initializes any machine (Host or VM)
-init: 
+init:
 	@$(ANSIBLE) --tags="init"
 
+code: ## Code and Terraform
+code:
+	@$(ANSIBLE) --tags="code"
 
 init-github-runner: ## Initializes any machine (Host or VM)
-init-github-runner: 
+init-github-runner:
 	# test coverage is in the ansible roles themselves
 	@$(ANSIBLE) --tags="init" --skip-tags="zsh,docker"
 

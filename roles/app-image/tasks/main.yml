@@ -1,7 +1,7 @@
 ---
 - name: Add appimagelauncher-team repositories
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "ppa:appimagelauncher-team/stable"
     state: present
   register: node_repo
