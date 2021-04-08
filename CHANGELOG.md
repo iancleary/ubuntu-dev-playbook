@@ -9,6 +9,10 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Terraform
+
 ### Changed
 
 - `github-cli` role now defaults to latest github release using [community.general.github_release](https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html)
@@ -16,6 +20,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Bumped docker-compose to `1.29.0`
 - Added dedicated `authy` role for beta snap (part of `make init` on every machine)
 - Allow github actions to not prompt for password when username or hostname matches runner
+
 ### Removed
 
 - Unused Makefile Code (TravisCI, ProtonMail Bridge, TickTick)
