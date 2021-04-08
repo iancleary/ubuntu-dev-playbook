@@ -54,6 +54,11 @@ There is broader LTS and Distribution support in the following roles:
 This isn't exactly the list of Ansible roles,
 but below is a list of what the software installs.
 
+--------------------------
+
+This isn't exactly the list of Ansible roles,
+but below is a list of what the repo helps install.
+
 ### Application Base
 
 * `Flatpak`,
@@ -65,112 +70,7 @@ but below is a list of what the software installs.
 
 ### Application Launcher
 
-* [ULauncher](https://github.com/ULauncher/ULauncher), A ctrl + spacebar productivity bar, Ulauncher is inspired by Alfred for macOS and similar semantic search tools that followed in its wake.
-
-### Backups
-
-* `Timeshift` <https://github.com/teejee2008/timeshift>,
-
-### Chat Clients
-
-* `Signal Desktop`,
-* `Slack`,
-* `Telegram`,
-
-### Development Tooling
-
-* `ansible`,
-* `docker`,
-* `docker-compose`,
-* `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
-* `nodejs`,
-* `python3.8`,
-* `yarn`
-
-### Dotfiles
-
-* [yadm](https://yadm.io/docs/getting_started) dotfile manager
-
-### Email
-
-* HEY Mail, by Basecamp, [hey-main snap](https://snapcraft.io/hey-mail)
-
-### File Storage
-
-* `Tresorit`,
-
-### Games
-
-* `Steam`,
-
-### GNOME Configuration
-
-The GNOME Ansible roles configure my GNOME personal preferences.
-
-* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/blob/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/blob/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/blob/main/roles/gnome-preferences/tasks/main.yml)
-
-### Integrated Development Environments (IDE)
-
-* [VSCode](https://code.visualstudio.com/),
-
-> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)!
-
-* [Postman](https://www.postman.com/) for API testing,
-
-* [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
-
-### Music
-
-* `Spotify`,
-
-### Notes
-
-* `cherrytree`,
-* `Standard Notes`,
-
-### System Info
-
-* `Stacer` <https://github.com/oguzhaninan/Stacer>,
-
-### Tasks
-
-* `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
-
-### Terminal
-
-* [Hyper Terminal](https://hyper.is), with "pane:splitHorizontal": "ctrl+shift+f", // changed from "ctrl+shift+e" because [vercel/hyper #3660](https://github.com/vercel/hyper/issues/3660)
-* `zsh` and `oh-my-zsh`
-* [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k)
-
-### Screenshots and GIFs
-
-* [carbon-cli](https://github.com/mixn/carbon-now-cli)
-for beautiful images of my code - right inside my terminal,
-* [Flameshot](https://flameshot.js.org/#/),
-
-> Flameshot keybinding to the Print Screen key using `gsettings`
-
-* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
-
-### Text Editors
-
-* `Sublime Text`,
-
-### Utilities
-
-* [Caffeine](https://launchpad.net/caffeine),
-* [Breaktimer](https://snapcraft.io/breaktimer),
-* `Nordvpn`,
-* [PDFSlicer](https://github.com/junrrein/pdfslicer)
-
-### Web Browsers
-
-* `Chromium`,
-* `Firefox`,
-
---------------------------
+* [ULauncher](https://github.com/ULauncher/ULauncher), A ctrl + spacebar productivity bar, Ulauncher is inspired by Alfred for macOS and similar semantic search to
 
 ## Getting Started with this repo
 

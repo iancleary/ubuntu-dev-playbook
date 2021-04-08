@@ -88,6 +88,12 @@ but below is a list of what the repo helps install.
 * `nodejs`,
 * `python3.8`,
 * `yarn`
+* `terraform`
+* [VSCode](https://code.visualstudio.com/),
+
+> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)! Set "code_executable" to "/snap/bin/codium".
+
+* [Postman](https://www.postman.com/) for API testing,
 
 ### Dotfiles
 
@@ -113,16 +119,6 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 * Keybindings: [gnome-keybindings](roles/gnome-keybindings/tasks/main.yml)
 * Preferences: [gnome-preferences](roles/gnome-preferences/tasks/main.yml)
 
-### Integrated Development Environments (IDE)
-
-* [VSCode](https://code.visualstudio.com/),
-
-> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)!
-
-* [Postman](https://www.postman.com/) for API testing,
-
-* [kite AI Autocompletion and Docs for Python](https://kite.com/), runs locally
-
 ### Music
 
 * `Spotify`,
@@ -136,15 +132,11 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 
 * `Stacer` <https://github.com/oguzhaninan/Stacer>,
 
-### Tasks
-
-* `TickTick` using [nativefier](https://github.com/jiahaog/nativefier/),
-
 ### Terminal
 
 * [Hyper Terminal](https://hyper.is), with "pane:splitHorizontal": "ctrl+shift+f", // changed from "ctrl+shift+e" because [vercel/hyper #3660](https://github.com/vercel/hyper/issues/3660)
 * `zsh` and `oh-my-zsh`
-* [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k)
+* [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k), *install fonts manually*!
 
 ### Screenshots and GIFs
 
