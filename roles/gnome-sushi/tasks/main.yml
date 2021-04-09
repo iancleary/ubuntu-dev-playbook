@@ -8,13 +8,8 @@
     - "deb http://us.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release | lower }}-updates universe"
     - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release | lower }}-security universe"
 
-- name: GNOME - apt packages
+- name: Install apt package
   become: true
   apt:
-    name: "{{ item }}"
+    name: "gnome-sushi"
     state: present
-  loop:
-    - gnome-tweak-tool
-    - chrome-gnome-shell
-    - gnome-shell-extensions
-    - gtk-3-examples
