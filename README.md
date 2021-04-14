@@ -89,6 +89,7 @@ but below is a list of what the repo helps install.
 * `python3.8`,
 * `yarn`
 * `terraform`
+* `linode` CLI
 * [VSCode](https://code.visualstudio.com/),
 
 > If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)! Set "code_executable" to "/snap/bin/codium".
@@ -115,9 +116,9 @@ but below is a list of what the repo helps install.
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
-* Extensions: [gnome-extensions](roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](roles/gnome-preferences/tasks/main.yml)
+* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-preferences/tasks/main.yml)
 
 ### Music
 

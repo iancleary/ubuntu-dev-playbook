@@ -219,6 +219,7 @@ python-three-eight-supporting:
 	python3.8 -m pip install --user cookiecutter
 	python3.8 -m pip install --user pipenv
 	python3.8 -m pip install --user pre-commit
+	python3.8 -m pip install --user linode_api4
 	# https://python-poetry.org/docs/
 	python3.8 -m pip install --user poetry
 	sudo apt-get install -y python3-venv
