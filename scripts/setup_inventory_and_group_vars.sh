@@ -16,5 +16,5 @@ PRIVATE_INVENTORY_FILE=".inventory"
 # If file doesn't exist, prevents appending to existing file
 if [ ! -f "$PRIVATE_INVENTORY_FILE" ]; then
     # -e tells echo to interpret backslash escapes
-    echo -e "[$(hostname)]\n127.0.0.1" > $PRIVATE_INVENTORY_FILE
+    echo -e "[$(hostname)]\n127.0.0.1 ansible_connection=local" > $PRIVATE_INVENTORY_FILE
 fi
