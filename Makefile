@@ -111,6 +111,11 @@ init: ## Initializes any machine (Host or VM)
 init:
 	@$(ANSIBLE) --tags="init"
 
+hyper-v: ## Configures Hyper-V Resolution
+hyper-v:
+	@$(ANSIBLE) --tags="hyper-v"
+
+
 code: ## Code and Terraform
 code:
 	@$(ANSIBLE) --tags="code"

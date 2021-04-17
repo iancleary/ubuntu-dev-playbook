@@ -39,6 +39,14 @@
     - {role: yadm, tags: ['yadm']}
 
 
+- name: Roles for Hyper-V
+  hosts: localhost
+  connection: local
+  tags:
+    - hyper-v
+  roles:
+    - {role: hyper-v, tags: ['hyper-v']}
+
 - name: Roles for Host OS (not Virtual Machine)
   hosts: localhost
   connection: local
