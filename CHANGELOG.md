@@ -26,6 +26,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Bumped docker-compose to `1.29.0`
 - Added dedicated `authy` role for beta snap (part of `make init` on every machine)
 - Allow github actions to not prompt for password when username or hostname matches runner
+- Changed to MIT License
 
 ### Removed
 
