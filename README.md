@@ -169,12 +169,12 @@ for beautiful images of my code - right inside my terminal,
 
 ## Documentation
 
-Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.vercel.app/>.
+Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.me/>.
 
 ### Existing Machine
 
 For a walk through of my process on existing machine, please visit
-<https://ansible-desktop.iancleary.vercel.app//makefile>.
+<https://ansible-desktop.iancleary.me/makefile>.
 
 --------------------------
 
