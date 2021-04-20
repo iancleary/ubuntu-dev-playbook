@@ -9,6 +9,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+## [21.04.1]
 ### Added
 
 - Terraform
@@ -331,7 +332,8 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/ansible-desktop/compare/v21.04.0...HEAD
+[Unreleased]: https://github.com/iancleary/ansible-desktop/compare/v21.04.1...HEAD
+[21.04.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v21.04.1
 [21.04.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v21.04.0
 [2020.1.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v2020.1.0
 [0.11.0]: https://github.com/iancleary/ansible-desktop/releases/tag/v0.11.0
