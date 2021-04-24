@@ -9,6 +9,10 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Yadm dotfiles repo and branch vars, per [#215](https://github.com/iancleary/ansible-desktop/issues/215)
+
 ## [21.04.1]
 ### Added
 
