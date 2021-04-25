@@ -39,7 +39,7 @@ endif
 VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)
-PLAYBOOK=desktop.yml
+PLAYBOOK=playbook.yml
 INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
 ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -i $(INVENTORY) -l $(HOSTNAME) -e $(VARIABLES)
 
