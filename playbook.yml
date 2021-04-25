@@ -5,8 +5,8 @@
   tags:
     - init
   roles:
-    - {role: iancleary.zsh, tags: ['zsh']}
-    - {role: iancleary.docker, tags: ['docker']}
+    - {role: zsh, tags: ['zsh']}
+    - {role: docker, tags: ['docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['nodejs', 'yarn']}
     - {role: code, tags: ['code']}

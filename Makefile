@@ -39,7 +39,7 @@ endif
 VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)
-PLAYBOOK=desktop.yml
+PLAYBOOK=playbook.yml
 INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
 ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -i $(INVENTORY) -l $(HOSTNAME) -e $(VARIABLES)
 
@@ -47,13 +47,12 @@ ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
 # GitHub Actions Ansible Playbook Command (doesn't prompt for password)
 RUNNER = runner
-INSTALL_ANSIBLE_ROLES_RUNNER = ansible-galaxy install -r requirements-runner.yml
 ifeq "$(HOSTNAME)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES_RUNNER) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
 endif
 
 ifeq "$(shell whoami)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES_RUNNER) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
 endif
 
 # Custome GNOME keybindings
