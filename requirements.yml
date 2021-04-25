@@ -2,8 +2,7 @@
 collections:
   - community.general
 
-# Don't test what is already tested
-# roles:
-# # Default is from Ansible Galaxy
-#  - src: iancleary.docker
-#  - src: iancleary.zsh
+roles:
+# Default is from Ansible Galaxy
+ - src: iancleary.docker
+ - src: iancleary.zsh
