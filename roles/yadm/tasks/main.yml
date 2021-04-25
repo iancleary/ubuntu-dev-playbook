@@ -10,5 +10,5 @@
   register: stat_result
 
 - name: Clone and bootstrap
-  command: yadm clone -b main https://github.com/iancleary/dotfiles --bootstrap
+  command: yadm clone -b {{ yadm_dotfiles_branch }} {{ yadm_dotfiles_repo }} --bootstrap
   when: not stat_result.stat.exists
