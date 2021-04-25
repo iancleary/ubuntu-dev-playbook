@@ -1,8 +1,3 @@
 ---
 collections:
   - community.general
-
-roles:
-# Default is from Ansible Galaxy
- - src: iancleary.docker
- - src: iancleary.zsh
