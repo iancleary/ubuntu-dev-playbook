@@ -17,7 +17,7 @@ cd ~ || exit
 mkdir -p $FOLDER
 cd $FOLDER || exit
 if [ ! -d "$GIT_REPO" ] ; then
-    git clone -b $GIT_BRANCH $URL $GIT_REPO
+    git clone --recurse-submodules -j8 -b $GIT_BRANCH $URL $GIT_REPO
 else
     echo "Didn't clone repo since folder exists"
 fi

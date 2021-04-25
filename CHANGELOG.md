@@ -13,6 +13,10 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - Yadm dotfiles repo and branch vars, per [#215](https://github.com/iancleary/ansible-desktop/issues/215)
 
+### Changed
+
+- `docker` and `zsh` roles are now included via git submodules, per [#217](https://github.com/iancleary/ansible-desktop/issues/217)
+
 ## [21.04.1]
 ### Added
 
