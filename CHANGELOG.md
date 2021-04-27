@@ -12,6 +12,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Added
 
 - Yadm dotfiles repo and branch vars, per [#215](https://github.com/iancleary/ansible-desktop/issues/215)
+- MesloLGS NF Font Installation, per [#219](https://github.com/iancleary/ansible-desktop/issues/219)
 
 ### Changed
 

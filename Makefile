@@ -162,6 +162,10 @@ zsh:
 zsh: ## Install zsh and oh-my-zsh
 	@$(ANSIBLE) --tags="zsh"
 
+fonts:
+fonts: ## Install Fonts for Powerlevel10k
+	@$(ANSIBLE) --tags="fonts"
+
 yadm:
 yadm: ## Install yadm dotfile manager
 	@$(ANSIBLE) --tags="yadm"
