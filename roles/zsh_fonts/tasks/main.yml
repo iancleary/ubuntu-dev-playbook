@@ -1,0 +1,89 @@
+---
+- name: install fontconfig
+  become: true
+  apt:
+    name: fontconfig
+    state: present
+
+- name: Create font directory
+  file:
+    path: "~/.local/share/fonts"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: directory
+
+- name: Set font cache update fact
+  ansible.builtin.set_fact:
+    update_font_cache: false
+
+- name: Check if Regular File Exists
+  ansible.builtin.stat:
+    path: "~/.local/share/fonts/{{ meslolgs_regular | replace('%20',' ') }}"
+  register: regular_font
+
+- name: Download Regular Font "~/.local/share/fonts"
+  ansible.builtin.get_url:
+    url: "{{ meslolgs_base_url }}{{ meslolgs_regular }}"
+    dest: "~/.local/share/fonts/{{ meslolgs_regular | replace('%20',' ') }}"
+    mode: "400"
+  when: not regular_font.stat.exists
+
+- name: Update font cache fact
+  ansible.builtin.set_fact:
+    update_font_cache: true
+  when: not regular_font.stat.exists
+
+- name: Check if Bold File Exists
+  ansible.builtin.stat:
+    path: "~/.local/share/fonts/{{ meslolgs_bold | replace('%20',' ') }}"
+  register: bold_font
+
+- name: Download Bold Font "~/.local/share/fonts"
+  ansible.builtin.get_url:
+    url: "{{ meslolgs_base_url }}{{ meslolgs_bold }}"
+    dest: "~/.local/share/fonts/{{ meslolgs_bold | replace('%20',' ') }}"
+    mode: "400"
+  when: not bold_font.stat.exists
+
+- name: Update font cache fact
+  ansible.builtin.set_fact:
+    update_font_cache: true
+  when: not bold_font.stat.exists
+
+- name: Check if Italic File Exists
+  ansible.builtin.stat:
+    path: "~/.local/share/fonts/{{ meslolgs_italic | replace('%20',' ') }}"
+  register: italic_font
+
+- name: Download Italic Font "~/.local/share/fonts"
+  ansible.builtin.get_url:
+    url: "{{ meslolgs_base_url }}{{ meslolgs_italic }}"
+    dest: "~/.local/share/fonts/{{ meslolgs_italic | replace('%20',' ') }}"
+    mode: "400"
+  when: not italic_font.stat.exists
+
+- name: Update font cache fact
+  ansible.builtin.set_fact:
+    update_font_cache: true
+  when: not italic_font.stat.exists
+
+- name: Check if Bold Italic File Exists
+  ansible.builtin.stat:
+    path: "~/.local/share/fonts/{{ meslolgs_bold_italic | replace('%20',' ') }}"
+  register: bold_italic_font
+
+- name: Download Bold Italic Font "~/.local/share/fonts"
+  ansible.builtin.get_url:
+    url: "{{ meslolgs_base_url }}{{ meslolgs_bold_italic }}"
+    dest: "~/.local/share/fonts/{{ meslolgs_bold_italic | replace('%20',' ') }}"
+    mode: "400"
+  when: not bold_italic_font.stat.exists
+
+- name: Update font cache fact
+  ansible.builtin.set_fact:
+    update_font_cache: true
+  when: not bold_italic_font.stat.exists
+
+- name: Rebuild font cache
+  ansible.builtin.command: "fc-cache -f -v"
+  when: update_font_cache

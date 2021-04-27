@@ -48,11 +48,11 @@ ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
 # GitHub Actions Ansible Playbook Command (doesn't prompt for password)
 RUNNER = runner
 ifeq "$(HOSTNAME)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
 endif
 
 ifeq "$(shell whoami)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
 endif
 
 # Custome GNOME keybindings
@@ -161,6 +161,10 @@ docs-live: ## create live docs
 zsh:
 zsh: ## Install zsh and oh-my-zsh
 	@$(ANSIBLE) --tags="zsh"
+
+fonts:
+fonts: ## Install Fonts for Powerlevel10k
+	@$(ANSIBLE) --tags="fonts"
 
 yadm:
 yadm: ## Install yadm dotfile manager
