@@ -48,11 +48,11 @@ ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
 # GitHub Actions Ansible Playbook Command (doesn't prompt for password)
 RUNNER = runner
 ifeq "$(HOSTNAME)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
 endif
 
 ifeq "$(shell whoami)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK)
+	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
 endif
 
 # Custome GNOME keybindings
