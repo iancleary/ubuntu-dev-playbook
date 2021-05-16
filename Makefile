@@ -110,6 +110,10 @@ init: ## Initializes any machine (Host or VM)
 init:
 	@$(ANSIBLE) --tags="init"
 
+host: ## Adds extras for a host OS (bare metal)
+host:
+	@$(ANSIBLE) --tags="host"
+
 hyper-v: ## Configures Hyper-V Resolution
 hyper-v:
 	@$(ANSIBLE) --tags="hyper-v"
