@@ -13,6 +13,7 @@
     - {role: code, tags: ['code']}
     - {role: terraform, tags: ['terraform']}
     - {role: github-cli, tags: ['github-cli']}
+    - {role: flatpak, tags: ['flatpak']}
     - {role: app-image, tags: ['app-image']}
     - {role: profile-sync-daemon, tags: ['profile-sync-daemon']}
     - {role: gnome-sushi, tags: ['gnome-sushi']}
