@@ -13,6 +13,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - Yadm dotfiles repo and branch vars, per [#215](https://github.com/iancleary/ansible-desktop/issues/215)
 - MesloLGS NF Font Installation, per [#219](https://github.com/iancleary/ansible-desktop/issues/219)
+- Bumped `docker-compose` to [1.29.2](https://github.com/docker/compose/releases/tag/1.29.2)
 
 ### Changed
 
