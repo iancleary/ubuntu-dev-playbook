@@ -20,6 +20,11 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - `docker` and `zsh` roles are now included via git submodules, per [#217](https://github.com/iancleary/ansible-desktop/issues/217)
 
+### Removed
+
+- `hey-mail` snap per [#222](https://github.com/iancleary/ansible-desktop/issues/222)
+
+
 ## [21.04.1]
 ### Added
 
