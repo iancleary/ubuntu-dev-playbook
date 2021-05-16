@@ -15,3 +15,10 @@
     name: flathub
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install Flatpak Applications
+  become: true
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ flatpak_applications }}"
