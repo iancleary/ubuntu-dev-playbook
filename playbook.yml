@@ -63,7 +63,7 @@
   roles:
     - {role: pulseaudio, tags: ['pulseaudio']}
     - {role: nordvpn, tags: ['nordvpn'],
-       when: "ansible_hostname in ['xps', 'xps-ubuntu', 'desktop', 'runner']"
+       when: "ansible_hostname in ['xps', 'xps-ubuntu', 'pop-os', 'desktop', 'runner']"
     }
     - {role: stacer, tags: ['stacer']}
     # Installed Evolution and LibreOffice with Flatpak
