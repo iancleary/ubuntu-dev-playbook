@@ -11,9 +11,9 @@
       tags: ['always']
 
   roles:
-    - {role: zsh, tags: ['init', 'zsh']}
+    - {role: iancleary.zsh, tags: ['init', 'zsh']}
     - {role: zsh_fonts, tags: ['init', 'fonts']}
-    - {role: docker, tags: ['init', 'docker']}
+    - {role: iancleary.docker, tags: ['init', 'docker']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['init', 'nodejs', 'yarn']}
     - {role: code, tags: ['init', 'code']}
