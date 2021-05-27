@@ -67,6 +67,14 @@ docker_compose_version: 1.29.2
 #   - mount: "folder"
 #     unc_path: "\\\\server\\folder\\"  # escaped slashes
 
+flatpak_applications:
+  #- "com.giuspen.cherrytree"
+  - "com.uploadedlobster.peek"
+  # - "com.github.alainm23.planner" # not used
+  # - "com.valvesoftware.Steam"
+  - "org.kde.okular"
+  #- "org.libreoffice.LibreOffice"
+  - "com.github.junrrein.PDFSlicer"
 
 # Dash to Dock Settings
 gnome_dash_to_dock_preferences:
