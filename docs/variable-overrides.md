@@ -1,4 +1,4 @@
-## Overriding Defaults
+# Overriding Defaults
 
 Not everyone's development environment and preferred software configuration is the same.
 
@@ -16,7 +16,7 @@ You can override any of the defaults configured in `default.config.yml` by creat
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
-### Order of precedence for variables
+## Order of precedence for variables
 
 * Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
 * The version controlled [default.config.yml](https://github.com/iancleary/ansible-desktop/tree/main/default.config.yml) file.
