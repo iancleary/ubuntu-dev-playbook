@@ -13,7 +13,7 @@ edit_uri: 'blob/main'
 nav:
     - Introduction: 'index.md'
     - Start with the Makefile: 'makefile.md'
-    - Configure for your Machine: 'host-specific-variables.md'
+    - Configure for your Machine: 'variable-overrides.md'
     - Shell Configuration Scripts: 'shell-configuration.md'
     - Dotfiles: 'dotfiles.md'
     - Ansible Playbook Command Examples: 'ansible-playbook-examples.md'

@@ -1,82 +1,50 @@
 ---
-- name: Initialize Machine (either Host or VM)
-  hosts: localhost
-  connection: local
-  tags:
-    - init
+- hosts: all
+  # connection: local
+  vars_files:
+    - default.config.yml
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+
   roles:
-    - {role: zsh, tags: ['zsh']}
-    - {role: zsh_fonts, tags: ['fonts']}
-    - {role: docker, tags: ['docker']}
+    - {role: zsh, tags: ['init', 'zsh']}
+    - {role: zsh_fonts, tags: ['init', 'fonts']}
+    - {role: docker, tags: ['init', 'docker']}
     # - {role: python, tags: ['python']}
-    - {role: yarn, tags: ['nodejs', 'yarn']}
-    - {role: code, tags: ['code']}
-    - {role: terraform, tags: ['terraform']}
-    - {role: github-cli, tags: ['github-cli']}
-    - {role: flatpak, tags: ['flatpak']}
-    - {role: app-image, tags: ['app-image']}
-    - {role: profile-sync-daemon, tags: ['profile-sync-daemon']}
-    - {role: gnome-sushi, tags: ['gnome-sushi']}
-    - {role: ulauncher, tags: ['ulauncher']}
-    - {role: authy, tags: ['authy']}
+    - {role: yarn, tags: ['init', 'nodejs', 'yarn']}
+    - {role: code, tags: ['init', 'code']}
+    - {role: terraform, tags: ['init', 'terraform']}
+    - {role: github-cli, tags: ['init', 'github-cli']}
+    - {role: flatpak, tags: ['init', 'flatpak']}
+    - {role: app-image, tags: ['init', 'app-image']}
+    - {role: profile-sync-daemon, tags: ['init', 'profile-sync-daemon']}
+    - {role: gnome-sushi, tags: ['init', 'gnome-sushi']}
+    - {role: ulauncher, tags: ['init', 'ulauncher']}
+    - {role: authy, tags: ['init', 'authy']}
 
-- name: Install Fonts
-  hosts: localhost
-  connection: local
-  tags:
-    - fonts
-  roles:
     - {role: zsh_fonts, tags: ['fonts']}
 
-- name: Dotfiles
-  hosts: localhost
-  connection: local
-  tags:
-    - dotfiles
-  roles:
-    - {role: yadm, tags: ['yadm']}
+    - {role: yadm, tags: ['dotfiles,yadm']}
 
-- name: GNOME Customizations
-  hosts: localhost
-  connection: local
-  tags:
-    - gnome
-  roles:
-    - {role: gnome-dash-to-dock, tags: ['gnome-dash-to-dock']}
-    - {role: gnome-extensions, tags: ['gnome-extensions']}
-    - {role: gnome-keybindings, tags: ['gnome-keybindings']}
-    - {role: gnome-preferences, tags: ['gnome-preferences']}
+    - {role: gnome-dash-to-dock, tags: ['gnome', 'gnome-dash-to-dock']}
+    - {role: gnome-extensions, tags: ['gnome', 'gnome-extensions']}
+    - {role: gnome-keybindings, tags: ['gnome', 'gnome-keybindings']}
+    - {role: gnome-preferences, tags: ['gnome', 'gnome-preferences']}
 
-- name: Roles for Hyper-V
-  hosts: localhost
-  connection: local
-  tags:
-    - hyper-v
-  roles:
     - {role: hyper-v, tags: ['hyper-v']}
 
-- name: Roles for Host OS (not Virtual Machine)
-  hosts: localhost
-  connection: local
-  tags:
-    - host
-  roles:
-    - {role: pulseaudio, tags: ['pulseaudio']}
-    - {role: nordvpn, tags: ['nordvpn'],
-       when: "ansible_hostname in ['xps', 'xps-ubuntu', 'pop-os', 'desktop', 'runner']"
-    }
-    - {role: stacer, tags: ['stacer']}
+    - {role: pulseaudio, tags: ['host', 'pulseaudio']}
+    - {role: nordvpn, tags: ['host', 'nordvpn']}
+    - {role: stacer, tags: ['host', 'stacer']}
     # Installed Evolution and LibreOffice with Flatpak
-    - {role: wifi-analyzer, tags: ['wifi-analyzer']}
-    - {role: caffeine, tags: ['caffeine']}
-    - {role: timeshift, tags: ['timeshift']}
+    - {role: wifi-analyzer, tags: ['host', 'wifi-analyzer']}
+    - {role: caffeine, tags: ['host', 'caffeine']}
+    - {role: timeshift, tags: ['host', 'timeshift']}
 
-- name: Remaining Roles
-  hosts: localhost
-  connection: local
-  tags:
-    - remainders
-  roles:
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}
     - {role: common-snaps, tags: ['common-snaps']}
     - {role: chat-clients, tags: ['chat-clients']}

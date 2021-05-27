@@ -27,21 +27,13 @@ else
 export PATH := $(LOCAL_BIN):$(PATH); @echo $(PATH)
 endif
 
-# Allows user to specify private hostname in ".inventory file"
-PRIVATE_INVENTORY = ".inventory"
-ifeq ($(shell test -e $(PRIVATE_INVENTORY) && echo -n yes),yes)
-	INVENTORY=$(PRIVATE_INVENTORY)
-else
-    INVENTORY = "inventory"
-endif
-
 # "users" format is from https://github.com/iancleary/ansible-role-zsh
 VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)
 PLAYBOOK=playbook.yml
 INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
-ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -i $(INVENTORY) -l $(HOSTNAME) -e $(VARIABLES)
+ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -e $(VARIABLES)
 
 ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
@@ -69,11 +61,6 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
-setup_inventory_and_group_vars:
-setup_inventory_and_group_vars:
-	# Ensure chosen hostname is present in group_vars and .inventory folder
-	bash scripts/setup_inventory_and_group_vars.sh
-
 bootstrap-before-install:
 bootstrap-before-install:
 	# Apt Dependencies (removes apt ansible)
@@ -94,7 +81,7 @@ requirements:
 requirements:  ## Install ansible requirements
 	@$(INSTALL_ANSIBLE_ROLES)
 
-bootstrap: setup_inventory_and_group_vars bootstrap-before-install bootstrap-install bootstrap-before-script requirements
+bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script requirements
 bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:

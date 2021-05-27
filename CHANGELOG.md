@@ -23,7 +23,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Removed
 
 - `hey-mail` snap per [#222](https://github.com/iancleary/ansible-desktop/issues/222)
-
+- `setup_inventory_and_group_vars` script and `.inventory` in favor of `all` hosts and single `default.config.yml` file.
 
 ## [21.04.1]
 ### Added

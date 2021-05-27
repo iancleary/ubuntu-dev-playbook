@@ -200,30 +200,30 @@ Voila! 🎉🎉🎉
 
 --------------------------
 
-### Customization
+## Overriding Defaults
 
-If you want to edit the variables, hit `CTRL + C` at `ansible`'s "BECOME PASSWORD" prompt.
+Not everyone's development environment and preferred software configuration is the same.
 
-The script created two extra files that ensure that the `ansible-playbook` will on your host name.
+You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
 
-> Note: Both files are intentionally not version controlled.
-> This allows hostname specific group_vars relative to the playbook.
+```yaml
+    nodejs_version: "14.x"
+    nodejs_yarn_global_packages:
+      - name: "@vue/cli"
+      - name: "nativefier"
+      - name: "markdownlint-cli"
+      - name: "carbon-now-cli"
 
-* a private `.inventory` file
-
-```bash
-#.inventory
-[$(hostname)]
-127.0.0.1
 ```
 
-* a group_vars file
+Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
-```yml
-# group_vars/$(hostname)/all.yml
----
-# You can copy and modify variables over from group_vars/all/*.yml
-```
+### Order of precedence for variables
+
+* Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
+* The version controlled [default.config.yml](https://github.com/iancleary/ansible-desktop/tree/main/default.config.yml) file.
+
+> This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 
 Then run `make all`
 
