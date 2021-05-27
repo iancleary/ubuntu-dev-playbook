@@ -9,7 +9,7 @@ sudo apt install -y git make
 ## Setup Repo Locally
 FOLDER=personal
 GIT_USER=iancleary
-GIT_REPO=ansible-desktop
+GIT_REPO=linux-dev-playbook
 GIT_BRANCH=main
 URL=https://github.com/$GIT_USER/$GIT_REPO.git
 

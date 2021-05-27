@@ -1,7 +1,7 @@
-# ansible-desktop
+# linux-dev-playbook
 
-[![Test](https://github.com/iancleary/ansible-desktop/workflows/Test/badge.svg)](https://github.com/iancleary/ansible-desktop/actions)
-[![Lint](https://github.com/iancleary/ansible-desktop/workflows/Lint/badge.svg)](https://github.com/iancleary/ansible-desktop/actions)
+[![Test](https://github.com/iancleary/linux-dev-playbook/workflows/Test/badge.svg)](https://github.com/iancleary/linux-dev-playbook/actions)
+[![Lint](https://github.com/iancleary/linux-dev-playbook/workflows/Lint/badge.svg)](https://github.com/iancleary/linux-dev-playbook/actions)
 [![Calendar Versioning](https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg)](https://calver.org)
 
 ## Ansible Playbook to configure my laptops and desktops
@@ -37,8 +37,8 @@ I will support the LTS versions I use. There are no plans to support non-LTS ver
 
 | LTS | Last Supported Branch/Tag  |
 |:-------------|:-------------:|
-|  Ubuntu 20.04 | [main](https://github.com/iancleary/ansible-desktop)|
-|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ansible-desktop/releases/tag/v2020.1.0)|
+|  Ubuntu 20.04 | [main](https://github.com/iancleary/linux-dev-playbook)|
+|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/linux-dev-playbook/releases/tag/v2020.1.0)|
 
 ## Ansible Galaxy Roles
 
@@ -116,9 +116,9 @@ but below is a list of what the repo helps install.
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
-* Extensions: [gnome-extensions](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/ansible-desktop/tree/main/roles/gnome-preferences/tasks/main.yml)
+* Extensions: [gnome-extensions](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
 
 ### Music
 
@@ -169,12 +169,12 @@ for beautiful images of my code - right inside my terminal,
 
 ## Documentation
 
-Detailed documentation is hosted by Vercel at <https://ansible-desktop.iancleary.me/>.
+Detailed documentation is hosted by Vercel at <https://linux-dev-playbook.iancleary.me/>.
 
 ### Existing Machine
 
 For a walk through of my process on existing machine, please visit
-<https://ansible-desktop.iancleary.me/makefile>.
+<https://linux-dev-playbook.iancleary.me/makefile>.
 
 --------------------------
 
@@ -188,7 +188,7 @@ to set up my computer:
 
 ```bash
 wget -qO- \
-https://github.com/iancleary/ansible-desktop/raw/main/run.sh | \
+https://github.com/iancleary/linux-dev-playbook/raw/main/run.sh | \
 bash
 ```
 
@@ -221,7 +221,7 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 ### Order of precedence for variables
 
 * Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [default.config.yml](https://github.com/iancleary/ansible-desktop/tree/main/default.config.yml) file.
+* The version controlled [default.config.yml](https://github.com/iancleary/linux-dev-playbook/tree/main/default.config.yml) file.
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 

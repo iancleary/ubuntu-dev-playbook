@@ -21,11 +21,11 @@ Let's go through each.
 ### Make bootstrap
 
 This installs several packages with `apt` and
-python packages per the [requirements-ansible.txt](https://github.com/iancleary/ansible-desktop/blob/main/requirements-ansible.txt) file.
+python packages per the [requirements-ansible.txt](https://github.com/iancleary/linux-dev-playbook/blob/main/requirements-ansible.txt) file.
 
 > This includes Ansible, using Python3.
 
-This also moves the [home-local-bin.sh](https://github.com/iancleary/ansible-desktop/blob/main/home-local-bin.sh)
+This also moves the [home-local-bin.sh](https://github.com/iancleary/linux-dev-playbook/blob/main/home-local-bin.sh)
 file to the `/etc/profile.d/` folder as described above.
 
 > The `yarn` roles does a similar operation,

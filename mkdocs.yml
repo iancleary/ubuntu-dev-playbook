@@ -1,13 +1,13 @@
 ---
-site_name: ansible-desktop
+site_name: linux-dev-playbook
 site_description: Ansible Configuration of Ubuntu LTS Desktops!
-site_url: https://ansible-desktop.iancleary.me
+site_url: https://linux-dev-playbook.iancleary.me
 
 theme:
     name: 'material'
 
-repo_name: iancleary/ansible-desktop
-repo_url: https://github.com/iancleary/ansible-desktop
+repo_name: iancleary/linux-dev-playbook
+repo_url: https://github.com/iancleary/linux-dev-playbook
 edit_uri: 'blob/main'
 
 nav:

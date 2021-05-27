@@ -19,7 +19,7 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 ## Order of precedence for variables
 
 * Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [default.config.yml](https://github.com/iancleary/ansible-desktop/tree/main/default.config.yml) file.
+* The version controlled [default.config.yml](https://github.com/iancleary/linux-dev-playbook/tree/main/default.config.yml) file.
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 

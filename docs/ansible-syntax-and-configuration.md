@@ -36,7 +36,7 @@ Passwords for enable mode
 
 ## Python Interpreter
 
-[ansible.cfg](https://github.com/iancleary/ansible-desktop/blob/main/ansible.cfg)
+[ansible.cfg](https://github.com/iancleary/linux-dev-playbook/blob/main/ansible.cfg)
 
 ```ini
 [defaults]
