@@ -21,8 +21,6 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
       - name: init
         run: |
           make init-github-runner
@@ -54,8 +52,6 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
       - name: Python 3.8
         run: |
           make python-three-eight-install
@@ -75,8 +71,6 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
       - name: Timeshift
         run: make timeshift
       - name: Stacer
@@ -106,8 +100,6 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
       - name: Common Snaps
         run: make common-snaps
       - name: Chat Clients
@@ -132,8 +124,6 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
       - name: flatpak
         run: make flatpak
       - name: CherryTree
@@ -160,8 +150,6 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Setup Inventory and Group Vars for Hostname
-        run: make setup_inventory_and_group_vars
       - name: Flameshot
         run: make flameshot
       - name: Flameshot (check idempotence)
