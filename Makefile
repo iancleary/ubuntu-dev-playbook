@@ -118,12 +118,11 @@ code:
 init-github-runner: ## Initializes any machine (Host or VM)
 init-github-runner:
 	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="init" --skip-tags="zsh,docker"
+	@$(ANSIBLE) --tags="init" --skip-tags="skip-ci"
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
-	@$(ANSIBLE) --skip-tags="ticktick, nautilus-mounts"
-	# ticktick doesn't work on fresh install for some reason
+	@$(ANSIBLE) --skip-tags="nautilus-mounts"
 	# no planned test coverage to nautilus-mounts as it deals with file mounts
 
 all: ## Does most eveything with Ansible and Make targets
