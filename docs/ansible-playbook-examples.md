@@ -12,7 +12,7 @@ If you want to run a check first or run select tags, you can use:
 ## Only certain tags
 
 ```bash
-ansible-playbook personal_computer.yml \
+ansible-playbook playbook.yml \
 -i inventory \
 --ask-become-pass \
 -e '{"users": [{"username": "$(shell whoami)"}]}' \
@@ -22,7 +22,7 @@ ansible-playbook personal_computer.yml \
 ## Check
 
 ```bash
-ansible-playbook personal_computer.yml \
+ansible-playbook playbook.yml \
 -i inventory \
 --ask-become-pass \
 -e '{"users": [{"username": "$(shell whoami)"}]}' \
