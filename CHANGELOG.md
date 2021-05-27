@@ -20,6 +20,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - `docker` and `zsh` roles are now included via git submodules, per [#217](https://github.com/iancleary/linux-dev-playbook/issues/217)
 - renamed repo from `ansible-desktop` to `linux-dev-playbook`
+- Fixed git submodule workflow, per [#221](https://github.com/iancleary/linux-dev-playbook/issues/221)
 
 ### Removed
 

@@ -93,6 +93,11 @@ check: DARGS?=
 check: ## Checks personal-computer.yml playbook
 	@$(ANSIBLE) --check
 
+submodule:
+submodule: ## Use GitHub SSH key to setup git submodules
+	git submodule init
+	git submodule update
+
 init: ## Initializes any machine (Host or VM)
 init:
 	@$(ANSIBLE) --tags="init"
