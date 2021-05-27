@@ -1,4 +1,0 @@
----
-# nautilus_mounts:
-#   - mount: "folder"
-#     unc_path: "\\\\server\\folder\\"  # escaped slashes
