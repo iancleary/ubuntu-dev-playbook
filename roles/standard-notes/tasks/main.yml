@@ -1,0 +1,19 @@
+---
+- name: Install snapd apt dependency
+  become: true
+  apt:
+    name: "snapd"
+    state: present
+
+- name: Install Snap
+  become: true
+  snap:
+    name: "standard-notes"
+    channel: "stable'"
+    classic: "no"
+
+- name: Setup Password Manager Service Plug
+  become: "yes"
+  become_method: sudo
+  changed_when: false
+  shell: 'snap connect standard-notes:password-manager-service'

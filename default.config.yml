@@ -257,7 +257,6 @@ snaps_common:
   # snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
   - name: "spotify"
   - name: "ncspot"
-  - name: "standard-notes"
   - name: "authy"
     channel: "beta"
 snaps_development:

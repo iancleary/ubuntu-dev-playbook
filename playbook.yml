@@ -46,6 +46,7 @@
     - {role: timeshift, tags: ['host', 'timeshift']}
 
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}
+    - {role: standard-notes, tags: ['common-snaps']}
     - {role: common-snaps, tags: ['common-snaps']}
     - {role: chat-clients, tags: ['chat-clients']}
     - {role: web-browsers, tags: ['web-browsers']}
