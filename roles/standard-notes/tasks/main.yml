@@ -9,7 +9,7 @@
   become: true
   snap:
     name: "standard-notes"
-    channel: "stable'"
+    channel: "stable"
     classic: "no"
 
 - name: Setup Password Manager Service Plug
