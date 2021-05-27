@@ -13,10 +13,17 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - Yadm dotfiles repo and branch vars, per [#215](https://github.com/iancleary/ansible-desktop/issues/215)
 - MesloLGS NF Font Installation, per [#219](https://github.com/iancleary/ansible-desktop/issues/219)
+- Bumped `docker-compose` to [1.29.2](https://github.com/docker/compose/releases/tag/1.29.2)
+- Added Flatpak role [back](https://github.com/iancleary/ansible-desktop/blob/v21.04.0/roles/flatpak/tasks/main.yml)
 
 ### Changed
 
 - `docker` and `zsh` roles are now included via git submodules, per [#217](https://github.com/iancleary/ansible-desktop/issues/217)
+
+### Removed
+
+- `hey-mail` snap per [#222](https://github.com/iancleary/ansible-desktop/issues/222)
+
 
 ## [21.04.1]
 ### Added

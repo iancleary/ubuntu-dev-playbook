@@ -2,11 +2,8 @@
 - name: install flatpak packages
   become: true
   apt:
-    name: "{{ item }}"
+    name: "flatpak"
     state: present
-  loop:
-    - flatpak
-    - gnome-software-plugin-flatpak
 
 - name: install flatpak remote
   become: true

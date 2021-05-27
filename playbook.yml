@@ -13,6 +13,7 @@
     - {role: code, tags: ['code']}
     - {role: terraform, tags: ['terraform']}
     - {role: github-cli, tags: ['github-cli']}
+    - {role: flatpak, tags: ['flatpak']}
     - {role: app-image, tags: ['app-image']}
     - {role: profile-sync-daemon, tags: ['profile-sync-daemon']}
     - {role: gnome-sushi, tags: ['gnome-sushi']}
@@ -62,7 +63,7 @@
   roles:
     - {role: pulseaudio, tags: ['pulseaudio']}
     - {role: nordvpn, tags: ['nordvpn'],
-       when: "ansible_hostname in ['xps', 'desktop', 'runner']"
+       when: "ansible_hostname in ['xps', 'xps-ubuntu', 'pop-os', 'desktop', 'runner']"
     }
     - {role: stacer, tags: ['stacer']}
     # Installed Evolution and LibreOffice with Flatpak

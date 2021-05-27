@@ -61,7 +61,7 @@ code_extensions:
   - pranaygp.vscode-css-peek
   - sdras.vue-vscode-snippets
 
-docker_compose_version: 1.29.0
+docker_compose_version: 1.29.2
 
 # nautilus_mounts:
 #   - mount: "folder"
@@ -252,7 +252,6 @@ snaps_common:
   - name: "standard-notes"
   - name: "authy"
     channel: "beta"
-  - name: "hey-mail"
 snaps_development:
   - name: "postman"
   # - "codium" # Code without telemetry
