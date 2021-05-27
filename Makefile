@@ -118,7 +118,7 @@ code:
 init-github-runner: ## Initializes any machine (Host or VM)
 init-github-runner:
 	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="init" --skip-tags="zsh,docker"
+	@$(ANSIBLE) --tags="init" --skip-tags="skip-ci"
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
