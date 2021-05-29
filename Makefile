@@ -118,7 +118,7 @@ desktop:
 desktop-github-runner:
 desktop-github-runner:
 	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="desktop" --skip-tags="skip-ci"
+	@$(ANSIBLE) --tags="desktop" --skip-tags="skip-ci,terminal"
 
 gnome-desktop: ## Adds extras for a host OS (bare metal)
 gnome-desktop:
