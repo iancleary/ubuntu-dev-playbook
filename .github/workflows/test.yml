@@ -34,7 +34,6 @@ jobs:
           markdownlint --version
           carbon-now --version
           gh --version
-          code --version
           terraform --version
 
   python:
