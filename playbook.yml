@@ -11,14 +11,23 @@
       tags: ['always']
 
   roles:
+    # Terminal
     - {role: iancleary.zsh, tags: ['init', 'zsh', 'skip-ci']}
     - {role: zsh_fonts, tags: ['init', 'fonts']}
     - {role: iancleary.docker, tags: ['init', 'docker', 'skip-ci']}
     # - {role: python, tags: ['python']}
     - {role: yarn, tags: ['init', 'nodejs', 'yarn']}
-    - {role: code, tags: ['init', 'code']}
     - {role: terraform, tags: ['init', 'terraform']}
     - {role: github-cli, tags: ['init', 'github-cli']}
+
+    # Dotfiles
+    - {role: yadm, tags: ['dotfiles', 'yadm']}
+
+    # Virtual Machine
+    - {role: hyper-v, tags: ['hyper-v']}
+
+    # Desktop
+    - {role: code, tags: ['init', 'code']}
     - {role: flatpak, tags: ['init', 'flatpak']}
     - {role: app-image, tags: ['init', 'app-image']}
     - {role: profile-sync-daemon, tags: ['init', 'profile-sync-daemon']}
@@ -26,18 +35,16 @@
     - {role: ulauncher, tags: ['init', 'ulauncher']}
     - {role: authy, tags: ['init', 'authy']}
 
-    - {role: zsh_fonts, tags: ['fonts']}
-
-    - {role: yadm, tags: ['dotfiles', 'yadm']}
-
+    # GNOME Desktop
     - {role: gnome-dash-to-dock, tags: ['gnome', 'gnome-dash-to-dock']}
     - {role: gnome-extensions, tags: ['gnome', 'gnome-extensions']}
     - {role: gnome-keybindings, tags: ['gnome', 'gnome-keybindings']}
     - {role: gnome-preferences, tags: ['gnome', 'gnome-preferences']}
 
-    - {role: hyper-v, tags: ['hyper-v']}
-
+    # Ubuntu 20.04 (Not Fedora -> Pipewire)
     - {role: pulseaudio, tags: ['host', 'pulseaudio']}
+    
+    # Desktop, Supporting
     - {role: nordvpn, tags: ['host', 'nordvpn']}
     - {role: stacer, tags: ['host', 'stacer']}
     # Installed Evolution and LibreOffice with Flatpak
@@ -45,6 +52,7 @@
     - {role: caffeine, tags: ['host', 'caffeine']}
     - {role: timeshift, tags: ['host', 'timeshift']}
 
+    # Miscellaneous
     - {role: nautilus-mounts, tags: ['nautilus-mounts']}
     - {role: standard-notes, tags: ['common-snaps']}
     - {role: common-snaps, tags: ['common-snaps']}
