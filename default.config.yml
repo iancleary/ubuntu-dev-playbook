@@ -239,7 +239,7 @@ gnome_preferences:
 nodejs_version: "14.x"
 nodejs_yarn_global_packages:
   - name: "@vue/cli"
-  - name: "nativefier"
+  # - name: "nativefier"
   - name: "markdownlint-cli"
   - name: "carbon-now-cli"
 

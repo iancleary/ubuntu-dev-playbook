@@ -7,7 +7,7 @@ env:
   hostname: runner
 
 jobs:
-  init:
+  terminal:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -21,9 +21,9 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: init
+      - name: terminal
         run: |
-          make init-github-runner
+          make terminal-github-runner
       - name: Update Github Actions Path
         run: echo "/home/runner/.yarn/bin" >> $GITHUB_PATH
       - name: Check Versions
@@ -31,7 +31,6 @@ jobs:
           npm --version
           yarn --version
           vue --version
-          nativefier --version
           markdownlint --version
           carbon-now --version
           gh --version
@@ -86,7 +85,32 @@ jobs:
       - name: Caffeine
         run: make caffeine
 
-  common-snaps:
+  # Don't test snap installs right now
+  # common-snaps:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: before_install
+  #       run: |
+  #         make bootstrap-before-install
+  #     - name: before_script
+  #       run: |
+  #         make bootstrap-before-script
+  #     - name: install
+  #       run: |
+  #         make bootstrap-install
+  #     - name: Common Snaps
+  #       run: make common-snaps
+  #     - name: Chat Clients
+  #       run: make chat-clients
+  #     - name: Development Tools
+  #       run: |
+  #         make development-tools
+  #     - name: Web Browsers
+  #       run: make web-browsers
+
+  desktop:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -100,40 +124,10 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
-      - name: Common Snaps
-        run: make common-snaps
-      - name: Chat Clients
-        run: make chat-clients
-      - name: Development Tools
-        run: |
-          make development-tools
-      - name: Web Browsers
-        run: make web-browsers
+      - name: desktop
+        run: make desktop-github-runner
 
-  flatpak:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: before_install
-        run: |
-          make bootstrap-before-install
-      - name: before_script
-        run: |
-          make bootstrap-before-script
-      - name: install
-        run: |
-          make bootstrap-install
-      - name: flatpak
-        run: make flatpak
-      - name: CherryTree
-        run: make cherrytree
-      - name: Peek
-        run: make peek
-      - name: PDFSlicer
-        run: make pdf-slicer
-
-  gnome-preferences-hyper-flameshot:
+  gnome-desktop:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -159,6 +153,4 @@ jobs:
       - name: Flameshot keybindings
         run: make flameshot-keybindings
       - name: GNOME Preferences
-        run: make gnome
-      - name: Hyper
-        run: make hyper
+        run: make gnome-desktop-github-runner
