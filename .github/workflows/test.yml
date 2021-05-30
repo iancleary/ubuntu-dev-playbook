@@ -24,6 +24,10 @@ jobs:
       - name: terminal
         run: |
           make terminal-github-runner
+      - name: Python 3.8
+        run: |
+          make python-three-eight-install
+          make python-three-eight-supporting
       - name: Update Github Actions Path
         run: echo "/home/runner/.yarn/bin" >> $GITHUB_PATH
       - name: Check Versions
@@ -35,54 +39,6 @@ jobs:
           carbon-now --version
           gh --version
           terraform --version
-
-  python:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: before_install
-        run: |
-          make bootstrap-before-install
-      - name: before_script
-        run: |
-          make bootstrap-before-script
-      - name: install
-        run: |
-          make bootstrap-install
-      - name: Python 3.8
-        run: |
-          make python-three-eight-install
-          make python-three-eight-supporting
-
-  common-apt-deb-packages:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: before_install
-        run: |
-          make bootstrap-before-install
-      - name: before_script
-        run: |
-          make bootstrap-before-script
-      - name: install
-        run: |
-          make bootstrap-install
-      - name: Timeshift
-        run: make timeshift
-      - name: Stacer
-        run: make stacer
-      - name: Wifi Analyzer
-        run: make wifi-analyzer
-      - name: Pulse Audio
-        run: make pulseaudio
-      - name: App Image Launcher
-        run: make app-image
-      - name: Application Launcher
-        run: make ulauncher
-      - name: Caffeine
-        run: make caffeine
 
   # Don't test snap installs right now
   # common-snaps:
