@@ -98,27 +98,36 @@ submodule: ## Use GitHub SSH key to setup git submodules
 	git submodule init
 	git submodule update
 
-init: ## Initializes any machine (Host or VM)
-init:
-	@$(ANSIBLE) --tags="init"
+terminal: ## Initializes any machine (Host or VM)
+terminal:
+	@$(ANSIBLE) --tags="terminal"
 
-host: ## Adds extras for a host OS (bare metal)
-host:
-	@$(ANSIBLE) --tags="host"
+terminal-github-runner:
+terminal-github-runner:
+	# test coverage is in the ansible roles themselves
+	@$(ANSIBLE) --tags="terminal" --skip-tags="skip-ci"
 
 hyper-v: ## Configures Hyper-V Resolution
 hyper-v:
 	@$(ANSIBLE) --tags="hyper-v"
 
+desktop: ## Adds extras for a host OS (bare metal)
+desktop:
+	@$(ANSIBLE) --tags="desktop"
 
-code: ## Code and Terraform
-code:
-	@$(ANSIBLE) --tags="code"
-
-init-github-runner: ## Initializes any machine (Host or VM)
-init-github-runner:
+desktop-github-runner:
+desktop-github-runner:
 	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="init" --skip-tags="skip-ci"
+	@$(ANSIBLE) --tags="desktop" --skip-tags="skip-ci,terminal"
+
+gnome-desktop: ## Adds extras for a host OS (bare metal)
+gnome-desktop:
+	@$(ANSIBLE) --tags="gnome-desktop"
+
+gnome-desktop-github-runner:
+gnome-desktop-github-runner:
+	# test coverage is in the ansible roles themselves
+	@$(ANSIBLE) --tags="gnome-desktop" --skip-tags="skip-ci"
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
@@ -142,16 +151,20 @@ lint:  ## Lint the repo
 lint:
 	bash scripts/lint.sh
 
-docs-develop:
-docs-develop: ## setup pipenv to develop docs
-	pipenv
-	pipenv run python3 -m pip install -r requirements.txt
-	pipenv shell
-	# make docs-live
+# docs-develop:
+# docs-develop: ## setup pipenv to develop docs
+# 	pipenv
+# 	pipenv run python3 -m pip install -r requirements.txt
+# 	pipenv shell
+# 	# make docs-live
 
-docs-live:
-docs-live: ## create live docs
-	bash scripts/docs-live.sh
+# docs-live:
+# docs-live: ## create live docs
+# 	bash scripts/docs-live.sh
+
+code: ## Code and Terraform
+code:
+	@$(ANSIBLE) --tags="code"
 
 zsh:
 zsh: ## Install zsh and oh-my-zsh

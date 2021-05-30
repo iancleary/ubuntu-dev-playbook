@@ -22,6 +22,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - renamed repo from `ansible-desktop` to `linux-dev-playbook`
 - Fixed git submodule workflow, per [#221](https://github.com/iancleary/linux-dev-playbook/issues/221)
 - Moved standard-notes to its own role, per [#224](https://github.com/iancleary/linux-dev-playbook/issues/224)
+- Reorganized playbook, makefile, and CI around [#232](https://github.com/iancleary/linux-dev-playbook/issues/232)
 
 ### Removed
 
