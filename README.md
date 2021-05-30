@@ -25,8 +25,6 @@ keyboard shortcuts, core software, etc.).
 * I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
 * I finally took the plunge and decided to use Ansible for my configuration. ✔️
 
-
-
 ## Supported Ubuntu LTS Versions
 
 I will support the LTS versions I use. There are no plans to support non-LTS versions.
@@ -44,7 +42,6 @@ There is broader LTS and Distribution support in the following roles:
 |:-------------|:-------------:|
 |  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose|
 |  [iancleary.zsh](https://github.com/iancleary/ansible-role-zsh) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, and adds `~/.zshrc_aliases`|
-
 
 ## Use Cases
 
@@ -85,7 +82,7 @@ I've aligned ansible tags/roles around my common use cases:
 
 This [role](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
 
-## Desktop 
+## Desktop
 
 ### Integrated Develeopment Environment
 
@@ -165,7 +162,6 @@ The GNOME Ansible roles configure my GNOME personal preferences.
 * Extensions: [gnome-extensions](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
 * Keybindings: [gnome-keybindings](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
 * Preferences: [gnome-preferences](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
-
 
 --------------------------
 
@@ -259,7 +255,6 @@ Linting is performed on common file types:
   * This is drives the `psutil` Python3 requirement
 * [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
   * This drives the ansible >=2.8.0 requirement
-
 
 --------------------------
 
