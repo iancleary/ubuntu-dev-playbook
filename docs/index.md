@@ -25,11 +25,7 @@ keyboard shortcuts, core software, etc.).
 * I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
 * I finally took the plunge and decided to use Ansible for my configuration. ✔️
 
-## Calendar Versioning
 
-This project adheres to [Calendar Versioning](https://calver.org/), YY.0M.MICRO.  This is similar to Ubuntu.
-
-> Note that I've iterated to this and it wasn't always calver.
 
 ## Supported Ubuntu LTS Versions
 
@@ -47,12 +43,56 @@ There is broader LTS and Distribution support in the following roles:
 | Role | Description |
 |:-------------|:-------------:|
 |  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose|
-|  [iancleary.zsh](https://github.com/iancleary/ansible-role-zsh) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, and addes `~/.zshrc_aliases`|
+|  [iancleary.zsh](https://github.com/iancleary/ansible-role-zsh) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, and adds `~/.zshrc_aliases`|
 
-## Core Software
 
-This isn't exactly the list of Ansible roles,
-but below is a list of what the repo helps install.
+## Use Cases
+
+--------------------------
+
+I've aligned ansible tags/roles around my common use cases:
+
+* [Terminal/WSL](#Terminal/WSL)
+* [Dotfiles](#Dotfiles)
+* [Hyper-V](#Hyper-V)
+* [Desktop](#Desktop)
+* [GNOME Desktop](#GNOME-Desktop)
+
+## Terminal/WSL
+
+### Shell
+
+* `zsh` and `oh-my-zsh`
+* [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k), *installs fonts automatically*!
+
+### Development Tooling
+
+* `ansible`,
+* `docker`,
+* `docker-compose`,
+* `nodejs`, `yarn`
+* `python3.8`,
+* `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
+* `yarn`
+* `terraform`
+* `linode` CLI
+
+## Dotfiles
+
+* [iancleary/dotfiles](https://github.com/iancleary/dotfiles) managed with the [yadm](https://yadm.io/docs/getting_started) dotfile manager
+
+## Hyper-V
+
+This [role](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
+
+## Desktop 
+
+### Integrated Develeopment Environment
+
+* [VSCode](https://code.visualstudio.com/),
+* VS Code Extensions
+
+> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)! Set "code_executable" to "/snap/bin/codium".
 
 ### Application Base
 
@@ -70,72 +110,6 @@ but below is a list of what the repo helps install.
 ### Backups
 
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
-
-### Chat Clients
-
-* `Signal Desktop`,
-* `Slack`,
-* `Telegram`,
-
-### Development Tooling
-
-* `ansible`,
-* `docker`,
-* `docker-compose`,
-* `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
-* `nodejs`,
-* `python3.8`,
-* `yarn`
-* `terraform`
-* `linode` CLI
-* [VSCode](https://code.visualstudio.com/),
-
-> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)! Set "code_executable" to "/snap/bin/codium".
-
-* [Postman](https://www.postman.com/) for API testing,
-
-### Dotfiles
-
-* [yadm](https://yadm.io/docs/getting_started) dotfile manager
-
-### Email
-
-* TBD
-
-### File Storage
-
-* `Tresorit`,
-
-### Games
-
-* `Steam`,
-
-### GNOME Configuration
-
-The GNOME Ansible roles configure my GNOME personal preferences.
-
-* Extensions: [gnome-extensions](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
-
-### Music
-
-* `Spotify`,
-
-### Notes
-
-* `cherrytree`,
-* `Standard Notes`,
-
-### System Info
-
-* `Stacer` <https://github.com/oguzhaninan/Stacer>,
-
-### Terminal
-
-* [Hyper Terminal](https://hyper.is), with "pane:splitHorizontal": "ctrl+shift+f", // changed from "ctrl+shift+e" because [vercel/hyper #3660](https://github.com/vercel/hyper/issues/3660)
-* `zsh` and `oh-my-zsh`
-* [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k), *installs fonts automatically*!
 
 ### Screenshots and GIFs
 
@@ -163,34 +137,46 @@ for beautiful images of my code - right inside my terminal,
 * `Chromium`,
 * `Firefox`,
 
-## Getting Started with this repo
+### Music
 
-### Makefile
+* `Spotify`,
 
-The [Makefile](https://github.com/iancleary/linux-dev-playbook/blob/main/Makefile)  is the entry point.
+### Notes
 
-### Common Utility Scripts
+* `cherrytree`,
+* `Standard Notes`,
 
-The [scripts](https://github.com/iancleary/linux-dev-playbook/tree/main/scripts) folder contains common setup between local scripts and Travis-CI.
+### System Info
 
-### Testing
+* `Stacer` <https://github.com/oguzhaninan/Stacer>,
 
-Continuous Integration Testing is done with the
-[.github/workflows/test.yml](https://github.com/iancleary/linux-dev-playbook/blob/main/.github/workflows/test.yml) file.
+### Email
 
-Multiple jobs test independent portions of the installation.
+* TBD
 
-> While testing the playbook in order would be ideal,
-> the preference here is to have the Continuous Integration
-> finish faster.
+### File Storage
 
-### Linting
+* `Tresorit`,
 
-Linting is performed on common file types:
+## GNOME Desktop
 
-* YAML files with [yamllint](https://yamllint.readthedocs.io/)
-* Bash files with [shellcheck](https://www.shellcheck.net/)
-* Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+The GNOME Ansible roles configure my GNOME personal preferences.
+
+* Extensions: [gnome-extensions](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
+
+
+--------------------------
+
+## Documentation
+
+Detailed documentation is hosted by Vercel at <https://linux-dev-playbook.iancleary.me/>.
+
+### Existing Machine
+
+For a walk through of my process on existing machine, please visit
+<https://linux-dev-playbook.iancleary.me/makefile>.
 
 --------------------------
 
@@ -213,6 +199,8 @@ for the bash script and then once later for
 `ansible`'s "BECOME PASSWORD" prompt.
 
 Voila! 🎉🎉🎉
+
+--------------------------
 
 ## Overriding Defaults
 
@@ -245,6 +233,24 @@ Voila (with your edits)! 🚀🚀🚀
 
 --------------------------
 
+## Changes
+
+See [CHANGELOG](CHANGELOG.md) for history.
+
+## Calendar Versioning
+
+This project adheres to [Calendar Versioning](https://calver.org/), YY.0M.MICRO.  This is similar to Ubuntu.
+
+> Note that I've iterated to this and it wasn't always calver.
+
+## Linting
+
+Linting is performed on common file types:
+
+* YAML files with [yamllint](https://yamllint.readthedocs.io/)
+* Bash files with [shellcheck](https://www.shellcheck.net/)
+* Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+
 ## Requirements_ansible.txt
 
  Notable Ansible Modules Used with regards to dependencies
@@ -254,16 +260,11 @@ Voila (with your edits)! 🚀🚀🚀
 * [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
   * This drives the ansible >=2.8.0 requirement
 
---------------------------
-
-## Changes
-
-See [CHANGELOG](https://github.com/iancleary/linux-dev-playbook/blob/main/CHANGELOG.md) for history.
 
 --------------------------
 
 ## Authors
 
-I benefited from the source work of others, see [AUTHORS.md](AUTHORS.md).
+I benefited from the source work of others, see [AUTHORS.md](docs/AUTHORS.md).
 
 > My choice to open source my work here is to share back with you.
