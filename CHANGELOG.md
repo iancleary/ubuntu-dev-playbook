@@ -28,8 +28,10 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - `hey-mail` snap per [#222](https://github.com/iancleary/linux-dev-playbook/issues/222)
 - `setup_inventory_and_group_vars` script and `.inventory` in favor of `all` hosts and single `default.config.yml` file.
+- library/json_mod ansible module, which was only used in the deprecated ticktick nativefier app [#235](https://github.com/iancleary/linux-dev-playbook/issues/235)
 
 ## [21.04.1]
+
 ### Added
 
 - Terraform
