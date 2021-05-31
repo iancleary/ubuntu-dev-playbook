@@ -15,6 +15,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - MesloLGS NF Font Installation, per [#219](https://github.com/iancleary/linux-dev-playbook/issues/219)
 - Bumped `docker-compose` to [1.29.2](https://github.com/docker/compose/releases/tag/1.29.2)
 - Added Flatpak role [back](https://github.com/iancleary/linux-dev-playbook/blob/v21.04.0/roles/flatpak/tasks/main.yml)
+- Initial support for Fedora: `nodejs`
 
 ### Changed
 
@@ -23,6 +24,8 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Fixed git submodule workflow, per [#221](https://github.com/iancleary/linux-dev-playbook/issues/221)
 - Moved standard-notes to its own role, per [#224](https://github.com/iancleary/linux-dev-playbook/issues/224)
 - Reorganized playbook, makefile, and CI around [#232](https://github.com/iancleary/linux-dev-playbook/issues/232)
+- `yarn` role renamed to `nodejs`
+- `yarn` installation changed to [npm global package](https://classic.yarnpkg.com/en/docs/install/#install-via-npm), as recommended
 
 ### Removed
 

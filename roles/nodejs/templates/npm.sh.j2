@@ -6,11 +6,9 @@ addToPATH() {
   esac
 }
 
-addToPATH "{{ yarn_config_prefix }}/bin"
+addToPATH "{{ npm_config_prefix }}/bin"
 
 addToPATH "$HOME/.yarn/bin"
-
-export YARN_CONFIG_PREFIX={{ yarn_config_prefix }}
 
 addToNODE_PATH() {
   case ":$NODE_PATH:" in
@@ -19,4 +17,4 @@ addToNODE_PATH() {
   esac
 }
 
-addToNODE_PATH "{{ yarn_config_prefix }}/lib/node_modules"
+addToNODE_PATH "{{ npm_config_prefix }}/lib/node_modules"
