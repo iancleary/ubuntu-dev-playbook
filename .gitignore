@@ -148,3 +148,6 @@ group_vars/*
 # (run.sh creates a group_vars/hostname/ folder for your hostname)
 # This allows more than just me to use this repo
 # note that group_vars/all/*.yml is version controlled
+
+# Overrides of default.config.yml
+config.yml
