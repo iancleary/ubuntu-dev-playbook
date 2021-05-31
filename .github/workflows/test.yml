@@ -29,14 +29,13 @@ jobs:
           make python-three-eight-install
           make python-three-eight-supporting
       - name: Update Github Actions Path
-        run: echo "/home/runner/.yarn/bin" >> $GITHUB_PATH
+        run: echo "/usr/local/lib/npm/bin" >> $GITHUB_PATH
       - name: Check Versions
         run: |
           npm --version
           yarn --version
           vue --version
           markdownlint --version
-          carbon-now --version
           gh --version
           terraform --version
 
