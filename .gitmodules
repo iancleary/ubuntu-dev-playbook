@@ -4,3 +4,9 @@
 [submodule "roles/zsh"]
 	path = roles/zsh
 	url = git@github.com:iancleary/ansible-role-zsh.git
+[submodule "roles/yadm"]
+	path = roles/yadm
+	url = git@github.com:iancleary/ansible-role-yadm
+[submodule "roles/github_cli"]
+	path = roles/github_cli
+	url = git@github.com:iancleary/ansible-role-github_cli
