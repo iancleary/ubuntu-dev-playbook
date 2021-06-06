@@ -39,9 +39,11 @@ I will support the LTS versions I use. There are no plans to support non-LTS ver
 There is broader LTS and Distribution support in the following roles:
 
 | Role | Description |
-|:-------------|:-------------:|
-|  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose|
+|:-------------|:-------------|
+|  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose |
 |  [iancleary.zsh](https://github.com/iancleary/ansible-role-zsh) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, and adds `~/.zshrc_aliases`|
+|  [iancleary.github_cli](https://github.com/iancleary/ansible-role-github_cli) | Installs the [GitHub CLI](https://github.com/cli/cli). |
+|  [iancleary.yadm](https://github.com/iancleary/ansible-role-yadm) | Installs the [yadm dotfile manager](https://yadm.io/) |
 
 ## Use Cases
 
