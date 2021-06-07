@@ -9,7 +9,7 @@
   set_fact:
     nodejs_install_user: "{{ ansible_user | default(lookup('env', 'USER')) }}"
   when: nodejs_install_user is not defined
-  
+
 - name: Create npm global directory
   become: true
   file:
@@ -44,5 +44,3 @@
     NPM_CONFIG_UNSAFE_PERM: "{{ npm_config_unsafe_perm }}"
   loop: "{{ nodejs_npm_global_packages }}"
   tags: ['skip_ansible_lint']
-
-
