@@ -248,7 +248,7 @@ addToPATH "$HOME/.local/bin"
 
 ### Make install
 
-This runs the `personal_computer.yml` Ansible playbook.
+This runs the `playbook.yml` Ansible playbook.
 
 The following two commands yield the same bash command:
 
@@ -257,7 +257,7 @@ make install
 ```
 
 ```bash
-ansible-playbook personal_computer.yml \
+ansible-playbook playbook.yml \
 -i inventory \
 --ask-become-pass \
 -e '{"users": [{"username": "$(shell whoami)"}]}'
