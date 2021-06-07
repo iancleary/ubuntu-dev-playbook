@@ -265,7 +265,7 @@ ansible-playbook playbook.yml \
 
 > Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
 
-The "-e" is for extra variable and is from my Ansible Galaxy role [iancleary/ansible-role-zsh_antibody#example-playbook](https://github.com/iancleary/ansible-role-zsh_antibody#example-playbook)
+The "-e" is for extra variable and is from my Ansible Galaxy role [iancleary/ansible-role-zsh_antibody#example-playbook](https://github.com/iancleary/ansible-role-zsh#example-playbook)
 
 ### Make non-ansible
 
@@ -321,7 +321,7 @@ You can override any of the defaults configured in `default.config.yml` by creat
 
 ```yaml
     nodejs_version: "14.x"
-    nodejs_yarn_global_packages:
+    nodejs_npm_global_packages:
       - name: "@vue/cli"
       - name: "nativefier"
       - name: "markdownlint-cli"
@@ -344,7 +344,7 @@ For example, a `config.yml` could contain:
 
 ```yaml
 ---
-nodejs_yarn_global_packages:
+nodejs_npm_global_packages:
   - name: "@vue/cli"
   - name: "@gridsome/cli"
 ```
@@ -355,7 +355,7 @@ For example, a `default.config.yml` could contain:
 
 ```yaml
 ---
-nodejs_yarn_global_packages:
+nodejs_npm_global_packages:
   - name: "@vue/cli"
 ```
 
