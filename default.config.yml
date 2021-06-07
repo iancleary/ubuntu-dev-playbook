@@ -237,11 +237,10 @@ gnome_preferences:
     value: "false"
 
 nodejs_version: "14.x"
-nodejs_yarn_global_packages:
+nodejs_npm_global_packages:
+  - name: "yarn"
   - name: "@vue/cli"
-  # - name: "nativefier"
   - name: "markdownlint-cli"
-  - name: "carbon-now-cli"
 
 snaps_chat:
   - name: "signal-desktop"

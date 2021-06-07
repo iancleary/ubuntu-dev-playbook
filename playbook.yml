@@ -19,12 +19,12 @@
     - {role: zsh_fonts, tags: ['terminal', 'desktop', 'fonts']}
     - {role: iancleary.docker, tags: ['terminal', 'desktop', 'docker', 'skip-ci']}
     # - {role: python, tags: ['python']}
-    - {role: yarn, tags: ['terminal', 'desktop', 'nodejs', 'yarn']}
+    - {role: nodejs, tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn']}
     - {role: terraform, tags: ['terminal', 'desktop', 'terraform']}
-    - {role: github-cli, tags: ['terminal', 'desktop', 'github-cli']}
+    - {role: iancleary.github_cli, tags: ['terminal', 'desktop', 'github-cli']}
 
     # Dotfiles
-    - {role: yadm, tags: ['dotfiles', 'yadm']}
+    - {role: iancleary.yadm, tags: ['dotfiles', 'yadm']}
 
     # Virtual Machine
     - {role: hyper-v, tags: ['vm', 'hyper-v', 'skip-ci']}

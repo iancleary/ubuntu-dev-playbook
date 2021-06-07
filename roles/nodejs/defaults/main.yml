@@ -3,10 +3,15 @@
 # Version numbers from Nodesource: https://github.com/nodesource/distributions
 nodejs_version: "14.x"
 
-yarn_config_prefix: "/usr/local/lib/yarn"
+# The directory for global installations.
+npm_config_prefix: "/usr/local/lib/npm"
+
+# Set to true to suppress the UID/GID switching when running package scripts. If
+# set explicitly to false, then installing as a non-root user will fail.
+npm_config_unsafe_perm: "false"
 
 # Define a list of global packages to be installed with NPM.
-# nodejs_yarn_global_packages: []
+# nodejs_npm_global_packages: []
 #  # Install a specific version of a package.
 #  - name: jslint
 #    version: 0.9.3
@@ -15,8 +20,7 @@ yarn_config_prefix: "/usr/local/lib/yarn"
 #  # This shorthand syntax also works (same as previous example).
 #  - node-sass
 
-nodejs_yarn_global_packages:
+nodejs_npm_global_packages:
+  - name: "yarn"
   - name: "@vue/cli"
-  - name: "nativefier"
   - name: "markdownlint-cli"
-  - name: "carbon-now-cli"

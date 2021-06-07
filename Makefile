@@ -339,10 +339,10 @@ tresorit:
 	chmod +x ~/Downloads/tresorit_installer.run
 	$(echo $0) ~/Downloads/tresorit_installer.run
 
-yarn:
-yarn: ## Installs Yarn (and Nodejs)
+nodejs:
+nodejs: ## Installs Nodejs, NPM, and Yarn
 	# This role takes care of $$PATH
-	@$(ANSIBLE) --tags="yarn"
+	@$(ANSIBLE) --tags="nodejs"
 
 wifi-analyzer:
 wifi-analyzer: ## Installs LinSSID Wifi Analyzer

@@ -1,7 +1,7 @@
-# linux-dev-playbook
+# ubuntu-dev-playbook
 
-[![Test](https://github.com/iancleary/linux-dev-playbook/workflows/Test/badge.svg)](https://github.com/iancleary/linux-dev-playbook/actions)
-[![Lint](https://github.com/iancleary/linux-dev-playbook/workflows/Lint/badge.svg)](https://github.com/iancleary/linux-dev-playbook/actions)
+[![Test](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Test/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
+[![Lint](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Lint/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
 [![Calendar Versioning](https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg)](https://calver.org)
 
 ## Ansible Playbook to configure my laptops and desktops
@@ -31,17 +31,19 @@ I will support the LTS versions I use. There are no plans to support non-LTS ver
 
 | LTS | Last Supported Branch/Tag  |
 |:-------------|:-------------:|
-|  Ubuntu 20.04 | [main](https://github.com/iancleary/linux-dev-playbook)|
-|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/linux-dev-playbook/releases/tag/v2020.1.0)|
+|  Ubuntu 20.04 | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
+|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
 
 ## Ansible Galaxy Roles
 
 There is broader LTS and Distribution support in the following roles:
 
 | Role | Description |
-|:-------------|:-------------:|
-|  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose|
+|:-------------|:-------------|
+|  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs Docker and Docker-compose |
 |  [iancleary.zsh](https://github.com/iancleary/ansible-role-zsh) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, and adds `~/.zshrc_aliases`|
+|  [iancleary.github_cli](https://github.com/iancleary/ansible-role-github_cli) | Installs the [GitHub CLI](https://github.com/cli/cli). |
+|  [iancleary.yadm](https://github.com/iancleary/ansible-role-yadm) | Installs the [yadm dotfile manager](https://yadm.io/) |
 
 ## Use Cases
 
@@ -78,9 +80,27 @@ I've aligned ansible tags/roles around my common use cases:
 
 * [iancleary/dotfiles](https://github.com/iancleary/dotfiles) managed with the [yadm](https://yadm.io/docs/getting_started) dotfile manager
 
+> Check out their [Getting Started Documentation](https://yadm.io/docs/getting_started)
+
+The ansible role [iancleary.yadm](https://github.com/iancleary/ansible-role-yadm) does more or less the following:
+
+```bash
+yadm clone -b main https://github.com/iancleary/dotfiles --bootstrap
+```
+
+This clones my dotfiles repo via HTTPS using yadm's [bootstrap](https://yadm.io/docs/bootstrap) standard command.
+
+My Bootstrap script is [iancleary/dotfiles/blob/main/.config/yadm/bootstrap](https://github.com/iancleary/dotfiles/blob/main/.config/yadm/bootstrap). It's purpose is to:
+
+* loads my dotfiles (including SSH keys)
+* decrypt the private key (prompts for password),
+* add the key to ssh-agent,
+* tests the connection,
+* and exit.
+
 ## Hyper-V
 
-This [role](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
+This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
 
 ## Desktop
 
@@ -159,20 +179,115 @@ for beautiful images of my code - right inside my terminal,
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
-* Extensions: [gnome-extensions](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
+* Extensions: [gnome-extensions](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
 
 --------------------------
 
-## Documentation
+## Existing Machine
 
-Detailed documentation is hosted by Vercel at <https://linux-dev-playbook.iancleary.me/>.
+On an existing machine, I run the following bash command,
+to ensure I am consistent with my playbook
 
-### Existing Machine
+## Make All
 
-For a walk through of my process on existing machine, please visit
-<https://linux-dev-playbook.iancleary.me/makefile>.
+```bash
+make all
+```
+
+This target runs four other targets in series:
+
+* `bootstrap`
+* `bootstrap-check`
+* `install`
+* `non-ansible`
+
+Let's go through each.
+
+### Make bootstrap
+
+This installs several packages with `apt` and
+python packages per the [requirements-ansible.txt](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/requirements-ansible.txt) file.
+
+> This includes Ansible, using Python3.
+
+This also moves the [home-local-bin.sh](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/home-local-bin.sh)
+file to the `/etc/profile.d/` folder as described above.
+
+> The `yarn` roles does a similar operation,
+> except with Ansible instead of bash.
+
+### Make bootstrap-check
+
+This is to confirm both the `ansible` and `psutil`
+Python3 packages are installed and on the `$PATH`.
+
+If the pip installation falls back to using the `--user` flag,
+packages will be located in the following directory under `$HOME`:
+
+> Goal: `export PATH="$HOME/.local/bin:$PATH"` without duplication!
+
+```bash
+#/etc/profile.d/home-local-bin.sh
+
+addToPATH() {
+  case ":$PATH:" in
+    *":$1:"*) :;; # already there
+    *) PATH="$1:$PATH";; # or PATH="$PATH:$1"
+  esac
+}
+
+# Important for python pip packages installed with --user
+addToPATH "$HOME/.local/bin"
+```
+
+> `make bootstrap` will set this up for you!
+
+*Source: [duplicate-entries-in-path-a-problem](https://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem)*
+
+### Make install
+
+This runs the `personal_computer.yml` Ansible playbook.
+
+The following two commands yield the same bash command:
+
+```bash
+make install
+```
+
+```bash
+ansible-playbook personal_computer.yml \
+-i inventory \
+--ask-become-pass \
+-e '{"users": [{"username": "$(shell whoami)"}]}'
+```
+
+> Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
+
+The "-e" is for extra variable and is from my Ansible Galaxy role [iancleary/ansible-role-zsh_antibody#example-playbook](https://github.com/iancleary/ansible-role-zsh_antibody#example-playbook)
+
+### Make non-ansible
+
+This the targets that I found easier to maintain with bash or Makefile scripts.
+
+```bash
+# configure Flameshot with gsettings to bind to PrtScr
+make flameshot-keybindings
+
+# Ubuntu 20.04 defaults
+make python-three-eight-install
+make python-three-eight-supporting
+
+...
+
+```
+
+### Naming Convention for Make Targets
+
+> `make check` and `make install` are two of the standard
+> [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html)
+> for this repo.
 
 --------------------------
 
@@ -186,7 +301,7 @@ to set up my computer:
 
 ```bash
 wget -qO- \
-https://github.com/iancleary/linux-dev-playbook/raw/main/run.sh | \
+https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run.sh | \
 bash
 ```
 
@@ -219,15 +334,59 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 ### Order of precedence for variables
 
 * Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [default.config.yml](https://github.com/iancleary/linux-dev-playbook/tree/main/default.config.yml) file.
+* The version controlled [default.config.yml](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/default.config.yml) file.
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
+
+## Example Using This Repo As Is
+
+For example, a `config.yml` could contain:
+
+```yaml
+---
+nodejs_yarn_global_packages:
+  - name: "@vue/cli"
+  - name: "@gridsome/cli"
+```
+
+## Example Forking This Repo
+
+For example, a `default.config.yml` could contain:
+
+```yaml
+---
+nodejs_yarn_global_packages:
+  - name: "@vue/cli"
+```
 
 Then run `make all`
 
 Voila (with your edits)! 🚀🚀🚀
 
 --------------------------
+
+## Quick Note on /etc/profile.d/
+
+Investigate this folder and your
+~/.bashrc, ~/.zshrc, etc. files
+will become simpler and more maintainable! 🚀
+
+> Let's stuff a few more lines of configuration into that file, it will be fine 😬😬😬😬.
+
+Tl;dr is that most shells source all files in that folder,
+similar to `source ~/.bashrc` on a fresh Ubuntu install.
+The main advantage for using the `/etc/profile.d/` folder
+is that it is modular and maintainable.
+
+Fast forward to your using that folder as it was intended.
+
+> A zen like calm washes over you now that there is
+> a single file per application and use case!
+
+Your messy filing cabinet of assorted patches is no more. 🔥
+
+> The `. /etc/profile` command is used to
+> manually source the `/etc/profile.d/ folder.
 
 ## Changes
 
@@ -263,3 +422,5 @@ Linting is performed on common file types:
 I benefited from the source work of others, see [AUTHORS.md](docs/AUTHORS.md).
 
 > My choice to open source my work here is to share back with you.
+
+If you wish to contribute, see [contributing.md](docs/contributing.md)
