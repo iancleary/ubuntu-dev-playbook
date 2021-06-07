@@ -1,7 +1,7 @@
-# linux-dev-playbook
+# ubuntu-dev-playbook
 
-[![Test](https://github.com/iancleary/linux-dev-playbook/workflows/Test/badge.svg)](https://github.com/iancleary/linux-dev-playbook/actions)
-[![Lint](https://github.com/iancleary/linux-dev-playbook/workflows/Lint/badge.svg)](https://github.com/iancleary/linux-dev-playbook/actions)
+[![Test](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Test/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
+[![Lint](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Lint/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
 [![Calendar Versioning](https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg)](https://calver.org)
 
 ## Ansible Playbook to configure my laptops and desktops
@@ -31,8 +31,8 @@ I will support the LTS versions I use. There are no plans to support non-LTS ver
 
 | LTS | Last Supported Branch/Tag  |
 |:-------------|:-------------:|
-|  Ubuntu 20.04 | [main](https://github.com/iancleary/linux-dev-playbook)|
-|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/linux-dev-playbook/releases/tag/v2020.1.0)|
+|  Ubuntu 20.04 | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
+|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
 
 ## Ansible Galaxy Roles
 
@@ -100,7 +100,7 @@ My Bootstrap script is [iancleary/dotfiles/blob/main/.config/yadm/bootstrap](htt
 
 ## Hyper-V
 
-This [role](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
+This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
 
 ## Desktop
 
@@ -179,9 +179,9 @@ for beautiful images of my code - right inside my terminal,
 
 The GNOME Ansible roles configure my GNOME personal preferences.
 
-* Extensions: [gnome-extensions](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/linux-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
+* Extensions: [gnome-extensions](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
+* Keybindings: [gnome-keybindings](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
+* Preferences: [gnome-preferences](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
 
 --------------------------
 
@@ -208,11 +208,11 @@ Let's go through each.
 ### Make bootstrap
 
 This installs several packages with `apt` and
-python packages per the [requirements-ansible.txt](https://github.com/iancleary/linux-dev-playbook/blob/main/requirements-ansible.txt) file.
+python packages per the [requirements-ansible.txt](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/requirements-ansible.txt) file.
 
 > This includes Ansible, using Python3.
 
-This also moves the [home-local-bin.sh](https://github.com/iancleary/linux-dev-playbook/blob/main/home-local-bin.sh)
+This also moves the [home-local-bin.sh](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/home-local-bin.sh)
 file to the `/etc/profile.d/` folder as described above.
 
 > The `yarn` roles does a similar operation,
@@ -301,7 +301,7 @@ to set up my computer:
 
 ```bash
 wget -qO- \
-https://github.com/iancleary/linux-dev-playbook/raw/main/run.sh | \
+https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run.sh | \
 bash
 ```
 
@@ -334,7 +334,7 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 ### Order of precedence for variables
 
 * Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [default.config.yml](https://github.com/iancleary/linux-dev-playbook/tree/main/default.config.yml) file.
+* The version controlled [default.config.yml](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/default.config.yml) file.
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 
