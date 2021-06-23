@@ -320,4 +320,4 @@ ohmyzsh_bundles:
     git:
       user: romkatv
       repo: powerlevel10k
-      version: v1.12.0
+      version: v1.15.0
