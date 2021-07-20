@@ -10,3 +10,6 @@
 [submodule "roles/github_cli"]
 	path = roles/github_cli
 	url = git@github.com:iancleary/ansible-role-github_cli
+[submodule "roles/nodejs"]
+	path = roles/nodejs
+	url = git@github.com:iancleary/ansible-role-nodejs
