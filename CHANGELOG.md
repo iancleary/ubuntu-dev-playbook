@@ -15,7 +15,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - MesloLGS NF Font Installation, per [#219](https://github.com/iancleary/ubuntu-dev-playbook/issues/219)
 - Bumped `docker-compose` to [1.29.2](https://github.com/docker/compose/releases/tag/1.29.2)
 - Added Flatpak role [back](https://github.com/iancleary/ubuntu-dev-playbook/blob/v21.04.0/roles/flatpak/tasks/main.yml)
-- Initial support for Fedora: `nodejs`
+- [iancleary.nodejs](https://github.com/iancleary/ansible-role-nodejs) Ansible role
 
 ### Changed
 

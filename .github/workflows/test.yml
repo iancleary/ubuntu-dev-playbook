@@ -34,8 +34,6 @@ jobs:
         run: |
           npm --version
           yarn --version
-          vue --version
-          markdownlint --version
           gh --version
           terraform --version
 

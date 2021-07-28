@@ -239,8 +239,6 @@ gnome_preferences:
 nodejs_version: "14.x"
 nodejs_npm_global_packages:
   - name: "yarn"
-  - name: "@vue/cli"
-  - name: "markdownlint-cli"
 
 snaps_chat:
   - name: "signal-desktop"

@@ -2,7 +2,8 @@
 collections:
   - community.general
 roles:
-  - iancleary.zsh
   - iancleary.docker
   - iancleary.github_cli
+  - iancleary.nodejs
   - iancleary.yadm
+  - iancleary.zsh
