@@ -61,6 +61,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
+
 bootstrap-before-install:
 bootstrap-before-install:
 	# Apt Dependencies (removes apt ansible)
@@ -95,8 +96,8 @@ check: ## Checks personal-computer.yml playbook
 
 submodule:
 submodule: ## Use GitHub SSH key to setup git submodules
-	git submodule init
-	git submodule update
+	git submodule update --init --recursive
+	git submodule foreach git pull origin main
 
 terminal: ## Initializes any machine (Host or VM)
 terminal:
