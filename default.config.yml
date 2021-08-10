@@ -68,29 +68,30 @@ docker_compose_version: 1.29.2
 #     unc_path: "\\\\server\\folder\\"  # escaped slashes
 
 flatpak_applications:
-  #- "com.giuspen.cherrytree"
-  - "com.uploadedlobster.peek"
-  # - "com.github.alainm23.planner" # not used
-  # - "com.valvesoftware.Steam"
-  - "org.kde.okular"
-  #- "org.libreoffice.LibreOffice"
+  - "com.giuspen.cherrytree" # Hierarchical Note Taking
+  - "com.uploadedlobster.peek" # Simple screen recorder with an easy to use interface
   - "com.github.junrrein.PDFSlicer"
+  - "com.spotify.Client" # Music
+  - "com.rafaelmardojai.Blanket" # Background Sounds
+  - "com.github.tchx84.Flatseal" # Manage Flatpak permissions
+  - "org.gabmus.whatip" # Info on your IP
+  # - "com.github.alainm23.planner" # Never worry about forgetting things again (Todoist sync too)
+  #- "org.libreoffice.LibreOffice"
+
 
 nodejs_version: "14.x"
 nodejs_npm_global_packages:
   - name: "yarn"
 
 snaps:
-  - name: "authy"
-    channel: "beta"
-  - name: "flameshot"
-  - name: "telegram-desktop"
+  - name: "authy" # 2-Factor Authentication
+  - name: "beekeeper-studio" # An open source SQL editor and database management app
+  - name: "flameshot" # Powerful yet simple to use screenshot software
   - name: "slack"
     classic: "yes"
-snaps_web_browsers:
   - name: "chromium"
   # - name: "firefox" # Using deb until gnome-extensions installations work with firefox snap
-snaps_web_browsers_plugs:
+snaps_plugs:
   - plug: "home"
     app: "chromium"
 
