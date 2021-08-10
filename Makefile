@@ -245,7 +245,7 @@ python-three-eight-supporting:
 	-sudo apt install python-is-python3
 
 snapd:
-snapd: ## Install Common Snaps
+snapd: ## Install Snaps
 	@$(ANSIBLE) --tags="snapd"
 
 
@@ -263,7 +263,7 @@ timeshift: ## Install Timeshift (Backup Utility) using a PPA and apt
 
 flameshot:
 flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Keybindings
-	@$(ANSIBLE) --tags="common-snaps" -e '{"snaps_common": [{"name": "flameshot"}]}'
+	@$(ANSIBLE) --tags="snapd" -e '{"snaps": [{"name": "flameshot"}]}'
 
 gsettings-keybindings:
 gsettings-keybindings:  ## Sets GNOME custom keybindings
