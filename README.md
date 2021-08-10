@@ -142,7 +142,7 @@ for beautiful images of my code - right inside my terminal,
 * [Caffeine](https://launchpad.net/caffeine),
 * `Nordvpn`,
 * [PDFSlicer](https://github.com/junrrein/pdfslicer)
-* Blanket: Background founds
+* Blanket: Background sounds
 * Flatseal: Manage flatpak permissions
 * WhatIP: Info on your IP
 * Bitwarden:  A secure and free fassword manager for all of your devices
