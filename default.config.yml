@@ -80,26 +80,12 @@ nodejs_version: "14.x"
 nodejs_npm_global_packages:
   - name: "yarn"
 
-snaps_chat:
-  - name: "signal-desktop"
-  - name: "telegram-desktop"
-  - name: "slack"
-    classic: "yes"
-snaps_common:
-  - name: "snap-store"
-  - name: "flameshot"
-  - name: "breaktimer"
-  - name: "drawio"
-  # https://github.com/jgraph/drawio-desktop/issues/138,
-  # snap 12.6.5 > flatpak 12.4 (as of 2020-02-28)
-  - name: "spotify"
-  - name: "ncspot"
+snaps:
   - name: "authy"
     channel: "beta"
-snaps_development:
-  - name: "postman"
-  # - "codium" # Code without telemetry
-  - name: "sublime-text"
+  - name: "flameshot"
+  - name: "telegram-desktop"
+  - name: "slack"
     classic: "yes"
 snaps_web_browsers:
   - name: "chromium"
