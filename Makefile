@@ -121,15 +121,6 @@ desktop-github-runner:
 	# test coverage is in the ansible roles themselves
 	@$(ANSIBLE) --tags="desktop" --skip-tags="skip-ci,terminal"
 
-gnome-desktop: ## Adds extras for a host OS (bare metal)
-gnome-desktop:
-	@$(ANSIBLE) --tags="gnome-desktop"
-
-gnome-desktop-github-runner:
-gnome-desktop-github-runner:
-	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="gnome-desktop" --skip-tags="skip-ci"
-
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
 	@$(ANSIBLE) --skip-tags="nautilus-mounts"

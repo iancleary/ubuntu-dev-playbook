@@ -45,12 +45,6 @@
     # Ubuntu 20.04 (Not Fedora -> Pipewire)
     - {role: pulseaudio, tags: ['desktop', 'pulseaudio']}
 
-    # GNOME Desktop
-    - {role: gnome-dash-to-dock, tags: ['never', 'gnome-desktop', 'gnome-dash-to-dock']}
-    - {role: gnome-extensions, tags: ['never', 'gnome-desktop', 'gnome-extensions']}
-    - {role: gnome-keybindings, tags: ['never', 'gnome-desktop', 'gnome-keybindings']}
-    - {role: gnome-preferences, tags: ['never', 'gnome-desktop', 'gnome-preferences']}
-
     # Miscellaneous
     - {role: nautilus-mounts, tags: ['never', 'nautilus-mounts']}
     - {role: standard-notes, tags: ['never', 'common-snaps']}
