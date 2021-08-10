@@ -11,7 +11,7 @@
     name: "{{ item.name }}"
     channel: "{{ item.channel | default('stable')}}"
     classic: "{{ item.classic | default('no')}}"
-  with_items: "{{ snaps_common }}"
+  with_items: "{{ snaps }}"
 
 # https://github.com/ansible/ansible/issues/58403
 # - name: Web Browsers - Setup Snap Plugs
