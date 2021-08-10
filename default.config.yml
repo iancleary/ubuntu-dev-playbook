@@ -75,6 +75,7 @@ flatpak_applications:
   - "com.rafaelmardojai.Blanket" # Background Sounds
   - "com.github.tchx84.Flatseal" # Manage Flatpak permissions
   - "org.gabmus.whatip" # Info on your IP
+  - "com.bitwarden.desktop" # A secure and free password manager for all of your devices
   # - "com.github.alainm23.planner" # Never worry about forgetting things again (Todoist sync too)
   #- "org.libreoffice.LibreOffice"
 
