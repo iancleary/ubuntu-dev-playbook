@@ -103,7 +103,7 @@ This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyp
 
 ## Desktop
 
-### Integrated Develeopment Environment
+### Integrated Development Environment
 
 * [VSCode](https://code.visualstudio.com/),
 * VS Code Extensions
@@ -135,23 +135,17 @@ for beautiful images of my code - right inside my terminal,
 
 > Flameshot keybinding to the Print Screen key using `gsettings`
 
-* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
-
-### Text Editors
-
-* `Sublime Text`,
+* [Peek](https://github.com/phw/peek), a simple screen recorder with an easy to use interface
 
 ### Utilities
 
 * [Caffeine](https://launchpad.net/caffeine),
-* [Breaktimer](https://snapcraft.io/breaktimer),
 * `Nordvpn`,
 * [PDFSlicer](https://github.com/junrrein/pdfslicer)
-
-### Web Browsers
-
-* `Chromium`,
-* `Firefox`,
+* Blanket: Background founds
+* Flatseal: Manage flatpak permissions
+* WhatIP: Info on your IP
+* Bitwarden:  A secure and free fassword manager for all of your devices
 
 ### Music
 
@@ -166,13 +160,13 @@ for beautiful images of my code - right inside my terminal,
 
 * `Stacer` <https://github.com/oguzhaninan/Stacer>,
 
-### Email
+### Email, Contacts, Calendar
 
 * TBD
 
 ### File Storage
 
-* `Tresorit`,
+* `Tresorit`
 
 --------------------------
 
