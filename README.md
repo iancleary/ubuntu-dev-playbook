@@ -410,8 +410,8 @@ Linting is performed on common file types:
 
 ## Authors
 
-I benefited from the source work of others, see [AUTHORS.md](docs/AUTHORS.md).
+I benefited from the source work of others, see [AUTHORS.md](AUTHORS.md).
 
 > My choice to open source my work here is to share back with you.
 
-If you wish to contribute, see [contributing.md](docs/contributing.md)
+If you wish to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md)
