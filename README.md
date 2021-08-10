@@ -55,7 +55,6 @@ I've aligned ansible tags/roles around my common use cases:
 * [Dotfiles](#Dotfiles)
 * [Hyper-V](#Hyper-V)
 * [Desktop](#Desktop)
-* [GNOME Desktop](#GNOME-Desktop)
 
 ## Terminal/WSL
 
@@ -174,14 +173,6 @@ for beautiful images of my code - right inside my terminal,
 ### File Storage
 
 * `Tresorit`,
-
-## GNOME Desktop
-
-The GNOME Ansible roles configure my GNOME personal preferences.
-
-* Extensions: [gnome-extensions](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
 
 --------------------------
 

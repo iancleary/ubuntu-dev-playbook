@@ -299,21 +299,6 @@ github-cli:
 github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 	@$(ANSIBLE) --tags="github-cli"
 
-# gnome-boxes:
-# gnome-boxes: ## Install GNOME Boxes, using Flatpak
-# 	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
-
-gnome:
-gnome: ## Set up my GNOME desktop like I like
-	@$(ANSIBLE) --tags="gnome"
-
-hyper: ## Install Hyper (A terminal built on web technologies)
-hyper: gsettings-keybindings
-	@$(ANSIBLE) --tags="hyper"
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ name 'hyper'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ command '/usr/local/bin/hyper'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ binding '<Super>t'
-
 nordvpn:
 nordvpn: ## Install Peek (GIF Screen Recorder) using a PPA and apt
 	@$(ANSIBLE) --tags="nordvpn"
