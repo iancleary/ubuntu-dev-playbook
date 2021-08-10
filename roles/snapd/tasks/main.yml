@@ -7,7 +7,7 @@
 
 - name: Common Snaps
   become: true
-  snap:
+  community.general.snap:
     name: "{{ item.name }}"
     channel: "{{ item.channel | default('stable')}}"
     classic: "{{ item.classic | default('no')}}"
