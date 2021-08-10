@@ -401,8 +401,6 @@ Linting is performed on common file types:
 
  Notable Ansible Modules Used with regards to dependencies
 
-* [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
-  * This is drives the `psutil` Python3 requirement
 * [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
   * This drives the ansible >=2.8.0 requirement
 

@@ -88,7 +88,6 @@ bootstrap: ## Installs dependencies needed to run playbook
 bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
 	@ansible --version | grep "python version"
-	@python3 -m pip list | grep psutil
 
 check: DARGS?=
 check: ## Checks personal-computer.yml playbook
