@@ -244,21 +244,10 @@ python-three-eight-supporting:
 	# Ubuntu 20.04 https://wiki.ubuntu.com/FocalFossa/ReleaseNotes#Python3_by_default
 	-sudo apt install python-is-python3
 
-common-snaps:
-common-snaps: ## Install Common Snaps
-	@$(ANSIBLE) --tags="common-snaps"
+snapd:
+snapd: ## Install Common Snaps
+	@$(ANSIBLE) --tags="snapd"
 
-chat-clients:
-chat-clients: ## Install Chat Client Snaps
-	@$(ANSIBLE) --tags="chat-clients"
-
-development-tools:
-development-tools: ## Install VS Code, Postman, and Sublime Text Snaps
-	@$(ANSIBLE) --tags="development-tools"
-
-web-browsers:
-web-browsers: ## Installs web-browsers as snaps
-	@$(ANSIBLE) --tags="web-browsers"
 
 peek:
 peek: ## Install Peek (GIF Screen Recorder) using a Flatpak

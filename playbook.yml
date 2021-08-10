@@ -34,6 +34,7 @@
     - {role: profile-sync-daemon, tags: ['desktop', 'init', 'profile-sync-daemon']}
     - {role: code, tags: ['desktop', 'init', 'code']}
     - {role: flatpak, tags: ['desktop', 'init', 'flatpak', 'skip-ci']}
+    - {role: snapd, tags: ['desktop', 'init', 'snapd', 'skip-ci']}
     - {role: gnome-sushi, tags: ['desktop', 'init', 'gnome-sushi']}
     - {role: ulauncher, tags: ['desktop', 'init', 'ulauncher']}
     - {role: nordvpn, tags: ['desktop', 'nordvpn', 'skip-ci']}
