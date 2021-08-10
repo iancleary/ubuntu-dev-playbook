@@ -7,7 +7,7 @@
 
 - name: Install VS Code
   become: true
-  snap:
+  community.general.snap:
     name: "code"
     channel: "stable"
     classic: "yes"
@@ -15,7 +15,7 @@
 
 - name: Install VS Codium
   become: true
-  snap:
+  community.general.snap:
     name: "codium"
     channel: "stable"
     classic: "yes"

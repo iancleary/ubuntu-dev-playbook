@@ -37,31 +37,6 @@ jobs:
           gh --version
           terraform --version
 
-  # Don't test snap installs right now
-  # common-snaps:
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: before_install
-  #       run: |
-  #         make bootstrap-before-install
-  #     - name: before_script
-  #       run: |
-  #         make bootstrap-before-script
-  #     - name: install
-  #       run: |
-  #         make bootstrap-install
-  #     - name: Common Snaps
-  #       run: make common-snaps
-  #     - name: Chat Clients
-  #       run: make chat-clients
-  #     - name: Development Tools
-  #       run: |
-  #         make development-tools
-  #     - name: Web Browsers
-  #       run: make web-browsers
-
   desktop:
     runs-on: ubuntu-20.04
     steps:
@@ -78,31 +53,3 @@ jobs:
           make bootstrap-install
       - name: desktop
         run: make desktop-github-runner
-
-  gnome-desktop:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: before_install
-        run: |
-          make bootstrap-before-install
-          sudo apt install -y gnome-shell gnome-session gnome-terminal
-          sudo apt install -y dconf-gsettings-backend dconf-editor dconf-cli
-          sudo apt install -y gsettings-desktop-schemas
-      - name: before_script
-        run: |
-          make bootstrap-before-script
-      - name: install
-        run: |
-          make bootstrap-install
-      - name: Flameshot
-        run: make flameshot
-      - name: Flameshot (check idempotence)
-        run: make flameshot
-      - name: Flameshot version
-        run: flameshot --version
-      - name: Flameshot keybindings
-        run: make flameshot-keybindings
-      - name: GNOME Preferences
-        run: make gnome-desktop-github-runner

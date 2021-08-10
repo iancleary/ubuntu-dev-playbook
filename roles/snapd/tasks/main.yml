@@ -7,8 +7,16 @@
 
 - name: Common Snaps
   become: true
-  snap:
+  community.general.snap:
     name: "{{ item.name }}"
     channel: "{{ item.channel | default('stable')}}"
     classic: "{{ item.classic | default('no')}}"
   with_items: "{{ snaps_common }}"
+
+# https://github.com/ansible/ansible/issues/58403
+# - name: Web Browsers - Setup Snap Plugs
+#   become: "yes"
+#   become_method: sudo
+#   changed_when: false
+#   shell: 'snap connect {{ item.app }}:{{ item.plug }}'
+#   with_items: "{{ snaps_web_browsers_plugs }}"

@@ -7,7 +7,7 @@
 
 - name: Install Snap
   become: true
-  snap:
+  community.general.snap:
     name: "standard-notes"
     channel: "stable"
     classic: "no"

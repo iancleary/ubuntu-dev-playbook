@@ -88,7 +88,6 @@ bootstrap: ## Installs dependencies needed to run playbook
 bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
 	@ansible --version | grep "python version"
-	@python3 -m pip list | grep psutil
 
 check: DARGS?=
 check: ## Checks personal-computer.yml playbook
@@ -120,15 +119,6 @@ desktop-github-runner:
 desktop-github-runner:
 	# test coverage is in the ansible roles themselves
 	@$(ANSIBLE) --tags="desktop" --skip-tags="skip-ci,terminal"
-
-gnome-desktop: ## Adds extras for a host OS (bare metal)
-gnome-desktop:
-	@$(ANSIBLE) --tags="gnome-desktop"
-
-gnome-desktop-github-runner:
-gnome-desktop-github-runner:
-	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="gnome-desktop" --skip-tags="skip-ci"
 
 install: DARGS?=
 install: ## Installs everything via personal-computer.yml playbook
@@ -253,21 +243,10 @@ python-three-eight-supporting:
 	# Ubuntu 20.04 https://wiki.ubuntu.com/FocalFossa/ReleaseNotes#Python3_by_default
 	-sudo apt install python-is-python3
 
-common-snaps:
-common-snaps: ## Install Common Snaps
-	@$(ANSIBLE) --tags="common-snaps"
+snapd:
+snapd: ## Install Snaps
+	@$(ANSIBLE) --tags="snapd"
 
-chat-clients:
-chat-clients: ## Install Chat Client Snaps
-	@$(ANSIBLE) --tags="chat-clients"
-
-development-tools:
-development-tools: ## Install VS Code, Postman, and Sublime Text Snaps
-	@$(ANSIBLE) --tags="development-tools"
-
-web-browsers:
-web-browsers: ## Installs web-browsers as snaps
-	@$(ANSIBLE) --tags="web-browsers"
 
 peek:
 peek: ## Install Peek (GIF Screen Recorder) using a Flatpak
@@ -283,7 +262,7 @@ timeshift: ## Install Timeshift (Backup Utility) using a PPA and apt
 
 flameshot:
 flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Keybindings
-	@$(ANSIBLE) --tags="common-snaps" -e '{"snaps_common": [{"name": "flameshot"}]}'
+	@$(ANSIBLE) --tags="snapd" -e '{"snaps": [{"name": "flameshot"}]}'
 
 gsettings-keybindings:
 gsettings-keybindings:  ## Sets GNOME custom keybindings
@@ -307,21 +286,6 @@ flameshot-keybindings: gsettings-keybindings
 github-cli:
 github-cli: ## Install GitHub CLI deb, directly from GitHub Release
 	@$(ANSIBLE) --tags="github-cli"
-
-# gnome-boxes:
-# gnome-boxes: ## Install GNOME Boxes, using Flatpak
-# 	@$(ANSIBLE) --tags="flatpak,gnome-boxes"
-
-gnome:
-gnome: ## Set up my GNOME desktop like I like
-	@$(ANSIBLE) --tags="gnome"
-
-hyper: ## Install Hyper (A terminal built on web technologies)
-hyper: gsettings-keybindings
-	@$(ANSIBLE) --tags="hyper"
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ name 'hyper'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ command '/usr/local/bin/hyper'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/hyper/ binding '<Super>t'
 
 nordvpn:
 nordvpn: ## Install Peek (GIF Screen Recorder) using a PPA and apt

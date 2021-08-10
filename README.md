@@ -55,7 +55,6 @@ I've aligned ansible tags/roles around my common use cases:
 * [Dotfiles](#Dotfiles)
 * [Hyper-V](#Hyper-V)
 * [Desktop](#Desktop)
-* [GNOME Desktop](#GNOME-Desktop)
 
 ## Terminal/WSL
 
@@ -104,7 +103,7 @@ This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyp
 
 ## Desktop
 
-### Integrated Develeopment Environment
+### Integrated Development Environment
 
 * [VSCode](https://code.visualstudio.com/),
 * VS Code Extensions
@@ -136,23 +135,17 @@ for beautiful images of my code - right inside my terminal,
 
 > Flameshot keybinding to the Print Screen key using `gsettings`
 
-* [Peek](https://github.com/phw/peek) animated GIF screen recorder,
-
-### Text Editors
-
-* `Sublime Text`,
+* [Peek](https://github.com/phw/peek), a simple screen recorder with an easy to use interface
 
 ### Utilities
 
 * [Caffeine](https://launchpad.net/caffeine),
-* [Breaktimer](https://snapcraft.io/breaktimer),
 * `Nordvpn`,
 * [PDFSlicer](https://github.com/junrrein/pdfslicer)
-
-### Web Browsers
-
-* `Chromium`,
-* `Firefox`,
+* Blanket: Background founds
+* Flatseal: Manage flatpak permissions
+* WhatIP: Info on your IP
+* Bitwarden:  A secure and free fassword manager for all of your devices
 
 ### Music
 
@@ -167,21 +160,13 @@ for beautiful images of my code - right inside my terminal,
 
 * `Stacer` <https://github.com/oguzhaninan/Stacer>,
 
-### Email
+### Email, Contacts, Calendar
 
 * TBD
 
 ### File Storage
 
-* `Tresorit`,
-
-## GNOME Desktop
-
-The GNOME Ansible roles configure my GNOME personal preferences.
-
-* Extensions: [gnome-extensions](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-extensions/tasks/main.yml)
-* Keybindings: [gnome-keybindings](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-keybindings/tasks/main.yml)
-* Preferences: [gnome-preferences](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/gnome-preferences/tasks/main.yml)
+* `Tresorit`
 
 --------------------------
 
@@ -410,8 +395,6 @@ Linting is performed on common file types:
 
  Notable Ansible Modules Used with regards to dependencies
 
-* [dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
-  * This is drives the `psutil` Python3 requirement
 * [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
   * This drives the ansible >=2.8.0 requirement
 
@@ -419,8 +402,8 @@ Linting is performed on common file types:
 
 ## Authors
 
-I benefited from the source work of others, see [AUTHORS.md](docs/AUTHORS.md).
+I benefited from the source work of others, see [AUTHORS.md](AUTHORS.md).
 
 > My choice to open source my work here is to share back with you.
 
-If you wish to contribute, see [contributing.md](docs/contributing.md)
+If you wish to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md)

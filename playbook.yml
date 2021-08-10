@@ -30,13 +30,13 @@
     - {role: hyper-v, tags: ['vm', 'hyper-v', 'skip-ci']}
 
     # Desktop
-    - {role: code, tags: ['desktop', 'init', 'code']}
-    - {role: flatpak, tags: ['desktop', 'init', 'flatpak', 'skip-ci']}
     - {role: app-image, tags: ['desktop', 'init', 'app-image']}
     - {role: profile-sync-daemon, tags: ['desktop', 'init', 'profile-sync-daemon']}
+    - {role: code, tags: ['desktop', 'init', 'code']}
+    - {role: flatpak, tags: ['desktop', 'init', 'flatpak', 'skip-ci']}
+    - {role: snapd, tags: ['desktop', 'init', 'snapd', 'skip-ci']}
     - {role: gnome-sushi, tags: ['desktop', 'init', 'gnome-sushi']}
     - {role: ulauncher, tags: ['desktop', 'init', 'ulauncher']}
-    - {role: authy, tags: ['desktop', 'init', 'authy']}
     - {role: nordvpn, tags: ['desktop', 'nordvpn', 'skip-ci']}
     - {role: stacer, tags: ['desktop', 'stacer']}
     - {role: wifi-analyzer, tags: ['desktop', 'wifi-analyzer']}
@@ -45,17 +45,6 @@
     # Ubuntu 20.04 (Not Fedora -> Pipewire)
     - {role: pulseaudio, tags: ['desktop', 'pulseaudio']}
 
-    # GNOME Desktop
-    - {role: gnome-dash-to-dock, tags: ['never', 'gnome-desktop', 'gnome-dash-to-dock']}
-    - {role: gnome-extensions, tags: ['never', 'gnome-desktop', 'gnome-extensions']}
-    - {role: gnome-keybindings, tags: ['never', 'gnome-desktop', 'gnome-keybindings']}
-    - {role: gnome-preferences, tags: ['never', 'gnome-desktop', 'gnome-preferences']}
-
     # Miscellaneous
     - {role: nautilus-mounts, tags: ['never', 'nautilus-mounts']}
     - {role: standard-notes, tags: ['never', 'common-snaps']}
-    - {role: common-snaps, tags: ['never', 'common-snaps']}
-    - {role: chat-clients, tags: ['never', 'chat-clients']}
-    - {role: web-browsers, tags: ['never', 'web-browsers']}
-    - {role: development-tools, tags: ['never', 'development-tools']}
-    - {role: hyper, tags: ['never', 'hyper']}
