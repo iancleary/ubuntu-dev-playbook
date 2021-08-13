@@ -1,0 +1,20 @@
+---
+
+- name: Check if yadm exists
+  stat:
+    path: "/usr/local/bin/yadm"
+  register: yadm_stat_result
+
+- name: Download yadm file, if it doesn't already exist
+  get_url:
+    url: https://github.com/TheLocehiliosan/yadm/raw/master/yadm
+    dest: /usr/local/bin/yadm
+
+- name: Check if .config/yadm/repo.git/ exists
+  stat:
+    path: "~/.config/yadm/repo.git/"
+  register: yadm_config_stat_result
+
+- name: Clone and bootstrap
+  command: yadm clone -b {{ yadm_dotfiles_branch }} {{ yadm_dotfiles_repo }} --bootstrap
+  when: not stat_result.stat.exists and yadm_dotfiles_repo is defined and yadm_bootstrap == "true"
