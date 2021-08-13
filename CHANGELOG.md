@@ -16,6 +16,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Bumped `docker-compose` to [1.29.2](https://github.com/docker/compose/releases/tag/1.29.2)
 - Added Flatpak role [back](https://github.com/iancleary/ubuntu-dev-playbook/blob/v21.04.0/roles/flatpak/tasks/main.yml)
 - [iancleary.nodejs](https://github.com/iancleary/ansible-role-nodejs) Ansible role
+- elementary OS 6 support
 
 ### Changed
 
