@@ -31,7 +31,7 @@ I will support the LTS versions I use. There are no plans to support non-LTS ver
 
 | LTS | Last Supported Branch/Tag  |
 |:-------------|:-------------:|
-|  Ubuntu 20.04 | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
+|  Ubuntu 20.04 (including elementary OS 6) | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
 |  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
 
 ## Ansible Galaxy Roles
