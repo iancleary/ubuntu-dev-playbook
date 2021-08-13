@@ -5,5 +5,4 @@ roles:
   - iancleary.docker
   - iancleary.github_cli
   - iancleary.nodejs
-  - iancleary.yadm
   - iancleary.zsh

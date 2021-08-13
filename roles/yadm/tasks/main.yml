@@ -1,0 +1,25 @@
+---
+- name: Check if yadm exists (not used)
+  stat:
+    path: "/usr/local/bin/yadm"
+  register: yadm_stat_result
+
+- name: Download yadm file, upgrading to latest
+  become: true
+  get_url:
+    url: https://github.com/TheLocehiliosan/yadm/raw/master/yadm
+    dest: /usr/local/bin/yadm
+    mode: 0755
+
+- name: Check if .local/share/yadm/repo.git/ exists
+  stat:
+    path: "~/.local/share/yadm/repo.git/"
+  register: yadm_config_stat_result
+
+- name: Clone dotfile repo
+  command: yadm clone -b {{ yadm_dotfiles_branch }} {{ yadm_dotfiles_repo }}
+  when: not yadm_config_stat_result.stat.exists and yadm_dotfiles_repo is defined
+
+# - name: Optionally run yadm bootstrap
+#   command: yadm --bootstrap
+#   when: yadm_bootstrap == "true"

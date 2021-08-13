@@ -84,6 +84,10 @@ nodejs_version: "14.x"
 nodejs_npm_global_packages:
   - name: "yarn"
 
+# Set to true to suppress the UID/GID switching when running package scripts. If
+# set explicitly to false, then installing as a non-root user will fail.
+npm_config_unsafe_perm: "true"
+
 snaps:
   - name: "authy" # 2-Factor Authentication
   - name: "beekeeper-studio" # An open source SQL editor and database management app

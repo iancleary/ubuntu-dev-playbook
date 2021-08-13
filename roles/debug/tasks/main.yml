@@ -1,0 +1,26 @@
+---
+- name: Debug - display ansible_os_family
+  debug:
+    msg: "{{ ansible_os_family }}"
+
+- name: Debug - display ansible_distribution_release
+  debug:
+    msg: "{{ ansible_distribution_release }}"
+
+- name: Massage ansible_distribution_release for elementary OS 6
+  set_fact:
+    massaged_ansible_distribution_release: focal
+  when: ansible_distribution_release == "odin"
+
+- name: Massage ansible_distribution_release for elementary OS 6
+  set_fact:
+    massaged_ansible_distribution_release: "{{ ansible_distribution_release }}"
+  when: ansible_distribution_release != "odin"
+
+- name: Debug - display massaged_ansible_distribution_release
+  debug:
+    msg: "{{ massaged_ansible_distribution_release }}"
+
+- name: Debug - display ansible_user
+  debug:
+    msg: "{{ ansible_user }}"
