@@ -275,7 +275,7 @@ make python-three-eight-supporting
 
 --------------------------
 
-## New Machine Setup
+## New Machine Setup Scripts
 
 For a new machine, I run the following command
 to set up my computer:
@@ -283,17 +283,27 @@ to set up my computer:
 > Please make sure you adjust your hostname as Ansible keys off this variable.
 > I like to do this during the initial configuration of the machine.
 
-```bash
-wget -qO- \
-https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run.sh | \
-bash
-```
-
 This will prompt you for your `sudo` password
 for the bash script and then once later for
 `ansible`'s "BECOME PASSWORD" prompt.
 
 Voila! 🎉🎉🎉
+
+### New Terminal Setup
+
+```bash
+wget -qO- \
+https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run_terminal.sh | \
+bash
+```
+
+### New Desktop Setup
+
+```bash
+wget -qO- \
+https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run_desktop.sh | \
+bash
+```
 
 --------------------------
 

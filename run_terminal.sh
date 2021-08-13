@@ -39,12 +39,9 @@ make bootstrap
 make bootstrap-check
 
 # Initalize any machine (VM or Host)
-make init
+make terminal
 
 # Upgrade System After Fresh Install
 sudo apt update
 sudo apt -y full-upgrade
 sudo apt -y autoremove
-
-# Install non-ansible (no user input required)
-make non-ansible

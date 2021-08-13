@@ -30,13 +30,11 @@
     - {role: hyper-v, tags: ['vm', 'hyper-v', 'skip-ci']}
 
     # Desktop
-    - {role: app-image, tags: ['desktop', 'init', 'app-image']}
-    - {role: profile-sync-daemon, tags: ['desktop', 'init', 'profile-sync-daemon']}
-    - {role: code, tags: ['desktop', 'init', 'code']}
-    - {role: flatpak, tags: ['desktop', 'init', 'flatpak', 'skip-ci']}
-    - {role: snapd, tags: ['desktop', 'init', 'snapd', 'skip-ci']}
-    - {role: gnome-sushi, tags: ['desktop', 'init', 'gnome-sushi']}
-    - {role: ulauncher, tags: ['desktop', 'init', 'ulauncher']}
+    - {role: app-image, tags: ['desktop', 'app-image']}
+    - {role: profile-sync-daemon, tags: ['desktop', 'profile-sync-daemon']}
+    - {role: code, tags: ['desktop', 'code']}
+    - {role: flatpak, tags: ['desktop', 'flatpak', 'skip-ci']}
+    - {role: snapd, tags: ['desktop', 'snapd', 'skip-ci']}
     - {role: nordvpn, tags: ['desktop', 'nordvpn', 'skip-ci']}
     - {role: stacer, tags: ['desktop', 'stacer']}
     - {role: wifi-analyzer, tags: ['desktop', 'wifi-analyzer']}
@@ -44,6 +42,10 @@
     - {role: timeshift, tags: ['desktop', 'timeshift']}
     # Ubuntu 20.04 (Not Fedora -> Pipewire)
     - {role: pulseaudio, tags: ['desktop', 'pulseaudio']}
+
+    # Not desired on elementary OS 6 (dropped desktop tag)
+    - {role: gnome-sushi, tags: ['gnome-sushi']}
+    - {role: ulauncher, tags: ['ulauncher']}
 
     # Miscellaneous
     - {role: nautilus-mounts, tags: ['never', 'nautilus-mounts']}
