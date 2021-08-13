@@ -43,7 +43,6 @@ There may be broader LTS or distribution support in the following roles:
 |  [iancleary.docker](https://github.com/iancleary/ansible-role-docker) | Installs [Docker](https://docs.docker.com/get-started/) and [docker-compose](https://docs.docker.com/compose/). |
 |  [iancleary.github_cli](https://github.com/iancleary/ansible-role-github_cli) | Installs the [GitHub CLI](https://github.com/cli/cli). |
 |  [iancleary.nodejs](https://github.com/iancleary/ansible-role-nodejs) | Installs [nodejs](https://www.nodejs.org/) and the [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/) package managers. | 
-|  [iancleary.yadm](https://github.com/iancleary/ansible-role-yadm) | Installs the [yadm dotfile manager](https://yadm.io/).|
 |  [iancleary.zsh](https://github.com/iancleary/ansible-role-zsh) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, and adds `~/.zshrc_aliases`. |
 ## Use Cases
 
