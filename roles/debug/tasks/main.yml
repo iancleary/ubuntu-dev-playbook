@@ -20,3 +20,7 @@
 - name: Debug - display massaged_ansible_distribution_release
   debug:
     msg: "{{ massaged_ansible_distribution_release }}"
+
+- name: Debug - display ansible_user
+  debug:
+    msg: "{{ ansible_user }}"
