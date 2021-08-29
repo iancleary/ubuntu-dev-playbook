@@ -27,7 +27,7 @@ else
 export PATH := $(LOCAL_BIN):$(PATH); @echo $(PATH)
 endif
 
-# "users" format is from https://github.com/iancleary/ansible-role-zsh
+# "users" format is from https://github.com/icancclearynow/ansible-role-zsh
 VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)

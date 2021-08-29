@@ -3,17 +3,17 @@ ansible-role-yadm
 
 <p align="center">
 
-<a href="https://github.com/iancleary/ansible-role-yadm/actions?query=workflow%3Aci" target="_blank">
-    <img src="https://github.com/iancleary/ansible-role-yadm/workflows/CI/badge.svg" alt="CI workflow status">
+<a href="https://github.com/icancclearynow/ansible-role-yadm/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/icancclearynow/ansible-role-yadm/workflows/CI/badge.svg" alt="CI workflow status">
 </a>
 
-<a href="https://github.com/iancleary/ansible-role-yadm/actions?query=workflow%3Arelease" target="_blank">
-    <img src="https://github.com/iancleary/ansible-role-yadm/workflows/Release/badge.svg" alt="Release workflow status">
+<a href="https://github.com/icancclearynow/ansible-role-yadm/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/icancclearynow/ansible-role-yadm/workflows/Release/badge.svg" alt="Release workflow status">
 </a>
-<a href="https://galaxy.ansible.com/iancleary/yadm" target="_blank">
-    <img src="https://img.shields.io/badge/ansible--galaxy-iancleary.yadm-blue.svg" alt="Ansible Galaxy">
+<a href="https://galaxy.ansible.com/icancclearynow/yadm" target="_blank">
+    <img src="https://img.shields.io/badge/ansible--galaxy-icancclearynow.yadm-blue.svg" alt="Ansible Galaxy">
 </a>
-<a href="https://raw.githubusercontent.com/iancleary/ansible-role-yadm/main/LICENSE" target="_blank">
+<a href="https://raw.githubusercontent.com/icancclearynow/ansible-role-yadm/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
 </p>
@@ -42,7 +42,7 @@ Dotfiles repo to run `yadm clone`.
 
 
 ```yaml
-yadm_dotfiles_repo: "https://github.com/iancleary/dotfiles"
+yadm_dotfiles_repo: "https://github.com/icancclearynow/dotfiles"
 ```
 
 ------------
@@ -78,9 +78,9 @@ Including an example of how to use your role (for instance, with variables passe
 ```yaml
 - hosts: desktop
   roles:
-    - role: iancleary.yadm
+    - role: icancclearynow.yadm
       vars:
-        yadm_dotfiles_repo: "https://github.com/iancleary/dotfiles"
+        yadm_dotfiles_repo: "https://github.com/icancclearynow/dotfiles"
         yadm_dotfiles_branch: "main"
         yadm_bootstrap: "false"
 ```
@@ -93,6 +93,6 @@ License
 Author Information
 ------------------
 
-This role was created in 2021 by [Ian Cleary](https://iancleary.dev).
+This role was created in 2021 by [Ian Cleary](https://icancclearynow.dev).
 
 Inspiration for the structure of this repo came from [Jeff Geerling](https://github.com/geerlingguy/ansible-role-nginx).
