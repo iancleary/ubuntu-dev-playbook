@@ -70,7 +70,7 @@ I've aligned ansible tags/roles around my common use cases:
 
 > Check out their [Getting Started Documentation](https://yadm.io/docs/getting_started)
 
-The ansible role [icancclearynow.yadm](https://github.com/icancclearynow/ansible-role-yadm) does more or less the following:
+The ansible role [yadm](roles/yadm) does more or less the following:
 
 ```bash
 yadm clone -b main https://github.com/icancclearynow/dotfiles --bootstrap
