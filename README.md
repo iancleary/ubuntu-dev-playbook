@@ -34,16 +34,6 @@ I will support the LTS versions I use. There are no plans to support non-LTS ver
 |  Ubuntu 20.04 (including elementary OS 6) | [main](https://github.com/icancclearynow/ubuntu-dev-playbook)|
 |  Ubuntu 18.04 | [2020.1.0](https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
 
-## Ansible Galaxy Roles
-
-There may be broader LTS or distribution support in the following roles:
-
-| Role | Description |
-|:-------------|:-------------|
-|  [icancclearynow.docker](https://github.com/icancclearynow/ansible-role-docker) | Installs [Docker](https://docs.docker.com/get-started/) and [docker-compose](https://docs.docker.com/compose/). |
-|  [icancclearynow.github_cli](https://github.com/icancclearynow/ansible-role-github_cli) | Installs the [GitHub CLI](https://github.com/cli/cli). |
-|  [icancclearynow.nodejs](https://github.com/icancclearynow/ansible-role-nodejs) | Installs [nodejs](https://www.nodejs.org/) and the [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/) package managers. | 
-|  [icancclearynow.zsh](https://github.com/icancclearynow/ansible-role-zsh) | Installs [Zsh](https://www.zsh.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, and adds `~/.zshrc_aliases`. |
 ## Use Cases
 
 --------------------------

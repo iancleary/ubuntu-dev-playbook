@@ -28,6 +28,8 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Reorganized playbook, makefile, and CI around [#232](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/232)
 - `yarn` role renamed to `nodejs`
 - `yarn` installation changed to [npm global package](https://classic.yarnpkg.com/en/docs/install/#install-via-npm), as recommended
+- changed username from `iancleary` to `icancclearynow`
+- pulled submodules in local to repo, while [ansible/galaxy#2776](https://github.com/ansible/galaxy/issues/2776) is open
 
 ### Removed
 
