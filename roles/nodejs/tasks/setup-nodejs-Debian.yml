@@ -1,0 +1,53 @@
+---
+- name: Nodejs - Ensure dependencies are present.
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - gnupg2
+    state: present
+
+- name: Nodejs - Add Nodesource apt key.
+  ansible.builtin.apt_key:
+    url: >
+      https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280
+    id: "68576280"
+    state: present
+
+- name: Massage ansible_distribution_release for elementary OS 6
+  set_fact:
+    massaged_ansible_distribution_release: focal
+  when: ansible_distribution_release == "odin"
+  register: elementary_os
+
+- name: Debug elementary_os
+  debug:
+    msg: elementary_os
+
+- name: Bypass ansible_distribution_release for non elementary OS
+  set_fact:
+    massaged_ansible_distribution_release: "{{ ansible_distribution_release }}"
+  when: ansible_distribution_release != "odin"
+
+- name: Nodejs - Add NodeSource repositories for Node.js.
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+    state: present
+  loop:
+    - >-
+      deb https://deb.nodesource.com/node_{{ nodejs_version }}
+       {{ massaged_ansible_distribution_release }} main
+    - >-
+      deb-src https://deb.nodesource.com/node_{{ nodejs_version }}
+       {{ massaged_ansible_distribution_release }} main
+  register: node_repo
+
+- name: Nodejs - Update apt cache if repo was added.
+  ansible.builtin.apt:
+    update_cache: "yes"
+  when: node_repo.changed
+  tags: ['skip_ansible_lint']
+
+- name: Nodejs - Ensure Node.js is installed.
+  ansible.builtin.apt:
+    name: "nodejs={{ nodejs_version|regex_replace('x', '') }}*"
+    state: present

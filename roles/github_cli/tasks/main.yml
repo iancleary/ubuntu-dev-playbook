@@ -1,0 +1,12 @@
+---
+- name: Debug - display ansible_os_family
+  debug:
+    msg: "{{ ansible_os_family }}"
+
+- name: Debian or elementary OS install
+  include_tasks: debian.yml
+  when: ansible_os_family == 'Debian' or ansible_os_family == 'elementary OS'
+
+- name: Fedora or RedHat install
+  include_tasks: redhat.yml
+  when: ansible_os_family == 'RedHat'

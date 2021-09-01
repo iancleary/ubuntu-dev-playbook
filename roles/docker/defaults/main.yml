@@ -1,0 +1,6 @@
+---
+# Docker Compose options.
+docker_install_compose: true
+docker_compose_version: 1.29.2
+docker_compose_path: /usr/local/bin/docker-compose
+docker_users: []

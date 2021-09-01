@@ -1,0 +1,25 @@
+---
+- name: Get latest release of a public repository
+  community.general.github_release:
+    user: cli
+    repo: cli
+    action: latest_release
+  register: gh_latest
+
+- name: Install Github CLI rpm from github (Specific Version)
+  become: true
+  ansible.builtin.dnf:
+    name: >-
+      https://github.com/cli/cli/releases/download/v{{ gh_version }}/gh_{{ gh_version }}_linux_{{ gh_arch }}.rpm
+    state: present
+    disable_gpg_check: "yes"
+  when: gh_version is defined
+
+- name: Install Github CLI rpm from github (Latest Version)
+  become: true
+  ansible.builtin.dnf:
+    name: >-
+      https://github.com/cli/cli/releases/download/{{ gh_latest.tag }}/gh_{{ gh_latest.tag | replace('v','') }}_linux_{{ gh_arch }}.rpm
+    state: present
+    disable_gpg_check: "yes"
+  when: gh_version is undefined
