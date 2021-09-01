@@ -1,8 +1,0 @@
----
-collections:
-  - community.general
-roles:
-  - icancclearynow.docker
-  - icancclearynow.github_cli
-  - icancclearynow.nodejs
-  - icancclearynow.zsh
