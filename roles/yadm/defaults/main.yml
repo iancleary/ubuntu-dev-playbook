@@ -1,4 +1,4 @@
 ---
 yadm_dotfiles_branch: 'main'
-# yadm_dotfiles_repo: https://github.com/iancleary/dotfiles
+# yadm_dotfiles_repo: https://github.com/icancclearynow/dotfiles
 yadm_bootstrap: "false" # set to "true" to run yadm

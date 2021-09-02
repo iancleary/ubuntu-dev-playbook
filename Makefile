@@ -27,12 +27,11 @@ else
 export PATH := $(LOCAL_BIN):$(PATH); @echo $(PATH)
 endif
 
-# "users" format is from https://github.com/iancleary/ansible-role-zsh
+# "users" format is from https://github.com/icancclearynow/ansible-role-zsh
 VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)
 PLAYBOOK=playbook.yml
-INSTALL_ANSIBLE_ROLES = ansible-galaxy install -r requirements.yml
 ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -e $(VARIABLES)
 
 ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
@@ -40,11 +39,11 @@ ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
 # GitHub Actions Ansible Playbook Command (doesn't prompt for password)
 RUNNER = runner
 ifeq "$(HOSTNAME)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
+	ANSIBLE = $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
 endif
 
 ifeq "$(shell whoami)" "$(RUNNER)"
-	ANSIBLE = $(INSTALL_ANSIBLE_ROLES) && $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
+	ANSIBLE = $(ANSIBLE_PLAYBOOK) --skip-tags "fonts"
 endif
 
 # Custome GNOME keybindings
@@ -78,11 +77,7 @@ bootstrap-before-script:
 	# The top of the Makefile takes care of this in the initial session
 	bash scripts/before_script_path_fix.sh
 
-requirements:
-requirements:  ## Install ansible requirements
-	@$(INSTALL_ANSIBLE_ROLES)
-
-bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script requirements
+bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script
 bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:

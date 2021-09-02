@@ -31,7 +31,7 @@ Linting is performed on common file types:
 - Bash files with [shellcheck](https://www.shellcheck.net/)
 - Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
-The [Makefile](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/Makefile)  is the entry point.
+The [Makefile](https://github.com/icancclearynow/ubuntu-dev-playbook/blob/main/Makefile)  is the entry point.
 
 ```bash
 make lint
@@ -40,7 +40,7 @@ make lint
 #### Testing
 
 Continuous Integration Testing is done with the
-[.travis.yml](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/.travis.yml) file and [PyUp](https://pyup.io/).
+[.travis.yml](https://github.com/icancclearynow/ubuntu-dev-playbook/blob/main/.travis.yml) file and [PyUp](https://pyup.io/).
 
 Multiple jobs test independent portions of the installation.
 
@@ -120,7 +120,7 @@ further defined and clarified by project maintainers.
 ### Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at iancleary@pm.me. All
+reported by contacting the project team at icancclearynow@pm.me. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.

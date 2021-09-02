@@ -1,0 +1,67 @@
+---
+- name: Debug - collect zsh path location
+  command:
+    cmd: "which zsh"
+  changed_when: "false"
+  register: zsh_installation_path
+
+- name: Debug - display zsh path location
+  debug:
+    msg: "{{ zsh_installation_path.stdout }}"
+
+- name: set default shell (Default Method)
+  become: "yes"
+  user:
+    name: '{{ username }}'
+    shell: "{{ zsh_installation_path.stdout }}"
+  with_items: "{{ users | map(attribute='username') | list }}"
+  loop_control:
+    loop_var: username
+  when: "not zsh_custom_shell_command|bool"
+
+- name: set default shell (Non-Default Method)
+  become: "yes"
+  command:
+    cmd: "{{ zsh_default_shell_command }}"
+  when: "zsh_custom_shell_command|bool"
+
+- name: download zsh-plugins
+  include_tasks: configure/download-zsh-plugins.yml
+
+- name: set-fact user list to write .zshrc
+  set_fact:
+    zshrc_users: "{{ users | selectattr('skip_zshrc', 'undefined') | list }}"
+
+- name: Debug zshrc_users
+  debug:
+    var: zshrc_users
+
+- name: write .zshrc
+  become: "yes"
+  become_user: '{{ user.username }}'
+  template:
+    src: zshrc.j2
+    dest: '~{{ user.username }}/.zshrc'
+    backup: "yes"
+    mode: 'u=rw,go=r'
+  with_items: "{{ zshrc_users }}"
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=92132
+- name: Ensure /etc/profile.d/* files source correctly
+  become: "yes"
+  lineinfile:
+    path: /etc/zsh/zshrc
+    state: present
+    insertafter: 'EOF'
+    regexp: '^. /etc/profile'
+    line: . /etc/profile
+  ignore_errors: "yes"
+  # errors when user is not in /etc/passwd/
+  # privilege escalation related?
+
+- name: console setup for Debian family distributions
+  include_tasks: configure/debian-console-setup.yml
+  when: ansible_os_family == 'Debian'

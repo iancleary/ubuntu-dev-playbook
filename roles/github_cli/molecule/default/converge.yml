@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+
+  pre_tasks:
+    - name: Update apt cache. (Deb)
+      ansible.builtin.apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: Install github3.py test dependency
+      ansible.builtin.pip:
+        name: github3.py
+      changed_when: false
+
+  roles:
+    - role: icancclearynow.github_cli

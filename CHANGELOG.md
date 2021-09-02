@@ -11,29 +11,31 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### Added
 
-- Yadm dotfiles repo and branch vars, per [#215](https://github.com/iancleary/ubuntu-dev-playbook/issues/215)
-- MesloLGS NF Font Installation, per [#219](https://github.com/iancleary/ubuntu-dev-playbook/issues/219)
+- Yadm dotfiles repo and branch vars, per [#215](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/215)
+- MesloLGS NF Font Installation, per [#219](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/219)
 - Bumped `docker-compose` to [1.29.2](https://github.com/docker/compose/releases/tag/1.29.2)
-- Added Flatpak role [back](https://github.com/iancleary/ubuntu-dev-playbook/blob/v21.04.0/roles/flatpak/tasks/main.yml)
-- [iancleary.nodejs](https://github.com/iancleary/ansible-role-nodejs) Ansible role
+- Added Flatpak role [back](https://github.com/icancclearynow/ubuntu-dev-playbook/blob/v21.04.0/roles/flatpak/tasks/main.yml)
+- [icancclearynow.nodejs](https://github.com/icancclearynow/ansible-role-nodejs) Ansible role
 - elementary OS 6 support
 
 ### Changed
 
-- `docker` and `zsh` roles are now included via git submodules, per [#217](https://github.com/iancleary/ubuntu-dev-playbook/issues/217)
+- `docker` and `zsh` roles are now included via git submodules, per [#217](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/217)
 - renamed repo from `ansible-desktop` to `linux-dev-playbook`
 - renamed repo from `linux-dev-desktop` to `ubuntu-dev-playbook`
-- Fixed git submodule workflow, per [#221](https://github.com/iancleary/ubuntu-dev-playbook/issues/221)
-- Moved standard-notes to its own role, per [#224](https://github.com/iancleary/ubuntu-dev-playbook/issues/224)
-- Reorganized playbook, makefile, and CI around [#232](https://github.com/iancleary/ubuntu-dev-playbook/issues/232)
+- Fixed git submodule workflow, per [#221](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/221)
+- Moved standard-notes to its own role, per [#224](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/224)
+- Reorganized playbook, makefile, and CI around [#232](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/232)
 - `yarn` role renamed to `nodejs`
 - `yarn` installation changed to [npm global package](https://classic.yarnpkg.com/en/docs/install/#install-via-npm), as recommended
+- changed username from `iancleary` to `icancclearynow`
+- pulled submodules in local to repo, while [ansible/galaxy#2776](https://github.com/ansible/galaxy/issues/2776) is open
 
 ### Removed
 
-- `hey-mail` snap per [#222](https://github.com/iancleary/ubuntu-dev-playbook/issues/222)
+- `hey-mail` snap per [#222](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/222)
 - `setup_inventory_and_group_vars` script and `.inventory` in favor of `all` hosts and single `default.config.yml` file.
-- library/json_mod ansible module, which was only used in the deprecated ticktick nativefier app [#235](https://github.com/iancleary/ubuntu-dev-playbook/issues/235)
+- library/json_mod ansible module, which was only used in the deprecated ticktick nativefier app [#235](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/235)
 - GNOME Desktop customization
 - Merged snapd roles: chat-clients, development-tools, common snaps into `snapd`
 
@@ -46,7 +48,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Install latest release of ulauncher
 - [profile-sync-daemon](https://github.com/graysky2/profile-sync-daemon) via <https://linuxunplugged.com/379>
 - [GNOME Sushi](https://gitlab.gnome.org/GNOME/sushi)
-- Hyper-V resolution fix, per [#212](https://github.com/iancleary/ubuntu-dev-playbook/issues/212)
+- Hyper-V resolution fix, per [#212](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/212)
 
 ### Changed
 
@@ -68,21 +70,21 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### Added
 
-- [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), see the [Integrate any AppImage into the Ubuntu Desktop](https://dev.to/strotgen/integrate-tinkerwell-or-any-appimage-into-the-ubuntu-desktop-le9) article. ([#176](https://github.com/iancleary/ubuntu-dev-playbook/issues/176))
-- [ULauncher](https://github.com/ULauncher/ULauncher) ([#179](https://github.com/iancleary/ubuntu-dev-playbook/issues/179))
-- [Caffeine](https://launchpad.net/caffeine) ([#178](https://github.com/iancleary/ubuntu-dev-playbook/issues/178))
-- [PDFSlicer](https://github.com/junrrein/pdfslicer) ([#182](https://github.com/iancleary/ubuntu-dev-playbook/issues/182))
+- [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), see the [Integrate any AppImage into the Ubuntu Desktop](https://dev.to/strotgen/integrate-tinkerwell-or-any-appimage-into-the-ubuntu-desktop-le9) article. ([#176](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/176))
+- [ULauncher](https://github.com/ULauncher/ULauncher) ([#179](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/179))
+- [Caffeine](https://launchpad.net/caffeine) ([#178](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/178))
+- [PDFSlicer](https://github.com/junrrein/pdfslicer) ([#182](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/182))
 
 ### Changed
 
 - Fixed regression on timeshift package name
-- Flameshot moved from deb to snap, per ([#183](https://github.com/iancleary/ubuntu-dev-playbook/issues/183))
+- Flameshot moved from deb to snap, per ([#183](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/183))
 - Bumped `node` version to latest lts, 14.x
 - Bumped `gh` CLI to version 1.4.0
 - Separated Test and Lint GitHub Actions workflows
 - USER_STRING in Makefile to include `ansible_user` for `docker` role
 - Updated documentation domain name
-- moved to iancleary.docker ansible role
+- moved to icancclearynow.docker ansible role
 - changed to YY.0M.MICRO calendar versioning
 
 
@@ -105,8 +107,8 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### Changed
 
-- updated Makefile to have persistent PATH to resolve [#164](https://github.com/iancleary/ubuntu-dev-playbook/issues/164), thanks for the help [ieguiguren](https://github.com/ieguiguren).
-- Dropped `zsh-users/zsh-autosuggestions` plugin from [iancleary/ansible-role-zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody) role
+- updated Makefile to have persistent PATH to resolve [#164](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/164), thanks for the help [ieguiguren](https://github.com/ieguiguren).
+- Dropped `zsh-users/zsh-autosuggestions` plugin from [icancclearynow/ansible-role-zsh_antibody](https://github.com/icancclearynow/ansible-role-zsh_antibody) role
 - Reorganized software documentation section into alphabetical categories
 - Bumped `gh` to `v0.11.1`
 - Fixed bug where gsetting custom entries list didn't contain hyper and flameshot
@@ -123,8 +125,8 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### Added
 
-- Imported [iancleary.jetbrains_mono](https://galaxy.ansible.com/iancleary/jetbrains_mono) ansible role
-- Imported [iancleary.zsh_antibody](https://galaxy.ansible.com/iancleary/zsh_antibody) ansible role
+- Imported [icancclearynow.jetbrains_mono](https://galaxy.ansible.com/icancclearynow/jetbrains_mono) ansible role
+- Imported [icancclearynow.zsh_antibody](https://galaxy.ansible.com/icancclearynow/zsh_antibody) ansible role
 - [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin
 - [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-) plugin
 - [LinSSID wifi-analyzer](https://help.ncf.ca/WiFi_Analyzer_for_Linux), attribution: [Linux Unplugged #355](https://podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121)
@@ -149,16 +151,16 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### Added
 
-- `zsh_default_shell_command` and `zsh_custom_default_shell_command` per [#134](https://github.com/iancleary/ubuntu-dev-playbook/pull/134)
-- `python-is-python3` apt package for Python-poetry on Ubuntu 20.04 per [#135](https://github.com/iancleary/ubuntu-dev-playbook/issues/135)
-- `dconf` variables and loops per [#131](https://github.com/iancleary/ubuntu-dev-playbook/issues/131)
-- `antibody` shell plugin manager per [#132](https://github.com/iancleary/ubuntu-dev-playbook/issues/132)
+- `zsh_default_shell_command` and `zsh_custom_default_shell_command` per [#134](https://github.com/icancclearynow/ubuntu-dev-playbook/pull/134)
+- `python-is-python3` apt package for Python-poetry on Ubuntu 20.04 per [#135](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/135)
+- `dconf` variables and loops per [#131](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/131)
+- `antibody` shell plugin manager per [#132](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/132)
 
 ### Changed
 
 - `zsh_plugins` to drop `ansible` and `aws`; add `yarn`
-- Snap variables to include `channel`, `classic`, and `name` dictionary items per [#137](https://github.com/iancleary/ubuntu-dev-playbook/issues/137)
-- Moved group_vars from `group_vars/all.yml` to `group_vars/all/*.yml` per [#139](https://github.com/iancleary/ubuntu-dev-playbook/issues/139)
+- Snap variables to include `channel`, `classic`, and `name` dictionary items per [#137](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/137)
+- Moved group_vars from `group_vars/all.yml` to `group_vars/all/*.yml` per [#139](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/139)
 
 ### Removed
 
@@ -174,9 +176,9 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Kite AI Autocompletion and Docs for Python, via [kite.com](https://kite.com/)
 - Flameshot detection on installed package version
 - Docker support for Ubuntu 20.04
-- Code Extensions variables per [#83](https://github.com/iancleary/ubuntu-dev-playbook/issues/83)
+- Code Extensions variables per [#83](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/83)
 - Snaps variables
-- Added pre-commit python package per [#116](https://github.com/iancleary/ubuntu-dev-playbook/issues/116)
+- Added pre-commit python package per [#116](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/116)
 - Ansible VS Code Extension
 - Nautilus Mounts, Scripts to convert mounted paths to UNC paths
 - `group_vars/*/*` to `.gitignore` to allow any host to use a sub-folder privately
@@ -204,7 +206,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - `sudo reboot` from end of [run.sh](run.sh)
 - Moved `Poetry` to archive
 - Cherrytree role (apt installation)
-- Removed [Archive](https://github.com/iancleary/ubuntu-dev-playbook/blob/4ed8084cbcf95928239effc0f2cb74b7c47d4170/archive/not-used/) folder
+- Removed [Archive](https://github.com/icancclearynow/ubuntu-dev-playbook/blob/4ed8084cbcf95928239effc0f2cb74b7c47d4170/archive/not-used/) folder
 
 ## [0.8.0] - 2020-04-18
 
@@ -362,19 +364,19 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/ubuntu-dev-playbook/compare/v21.04.1...HEAD
-[21.04.1]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v21.04.1
-[21.04.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v21.04.0
-[2020.1.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0
-[0.11.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.11.0
-[0.10.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.10.0
-[0.9.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.9.0
-[0.8.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.8.0
-[0.7.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.7.0
-[0.6.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.6.0
-[0.5.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.5.0
-[0.4.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.4.0
-[0.3.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.3.0
-[0.2.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.2.0
-[0.1.1]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.1.1
-[0.1.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v0.1.0
+[Unreleased]: https://github.com/icancclearynow/ubuntu-dev-playbook/compare/v21.04.1...HEAD
+[21.04.1]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v21.04.1
+[21.04.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v21.04.0
+[2020.1.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v2020.1.0
+[0.11.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.11.0
+[0.10.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.10.0
+[0.9.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.9.0
+[0.8.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.8.0
+[0.7.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.7.0
+[0.6.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.6.0
+[0.5.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.5.0
+[0.4.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.4.0
+[0.3.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.3.0
+[0.2.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.2.0
+[0.1.1]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.1.1
+[0.1.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v0.1.0

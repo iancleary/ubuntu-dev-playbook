@@ -1,0 +1,9 @@
+---
+- name: Install ZSH and oh-my-zsh
+  import_tasks: install-oh-my-zsh.yml
+
+- name: Configure ZSH for each user
+  include_tasks: configure-zsh.yml
+
+- name: Setup Aliases
+  include_tasks: setup-aliases.yml

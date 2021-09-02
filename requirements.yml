@@ -1,8 +1,0 @@
----
-collections:
-  - community.general
-roles:
-  - iancleary.docker
-  - iancleary.github_cli
-  - iancleary.nodejs
-  - iancleary.zsh

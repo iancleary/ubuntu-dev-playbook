@@ -102,10 +102,10 @@ snaps_plugs:
 
 stacer_version: 1.1.0
 
-yadm_dotfiles_repo: "https://github.com/iancleary/dotfiles"
+yadm_dotfiles_repo: "https://github.com/icancclearynow/dotfiles"
 yadm_dotfiles_branch: "main"
 
-# https://github.com/iancleary/ansible-role-zsh
+# https://github.com/icancclearynow/ansible-role-zsh
 zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # useful when users are bound to external systems (i.e. active directory)

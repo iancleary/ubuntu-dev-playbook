@@ -15,13 +15,13 @@
     # 'never' is a special tag that is on run when that tag is specified
 
     # Terminal
-    - {role: iancleary.zsh, tags: ['terminal', 'desktop', 'zsh', 'skip-ci']}
+    - {role: zsh, tags: ['terminal', 'desktop', 'zsh']}
     - {role: zsh_fonts, tags: ['terminal', 'desktop', 'fonts']}
-    - {role: iancleary.docker, tags: ['terminal', 'desktop', 'docker', 'skip-ci'], become: true}
+    - {role: docker, tags: ['terminal', 'desktop', 'docker', 'skip-ci'], become: true}
     # - {role: python, tags: ['python']}
-    - {role: iancleary.nodejs, tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn'], become: true}
+    - {role: nodejs, tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn'], become: true}
     - {role: terraform, tags: ['terminal', 'desktop', 'terraform']}
-    - {role: iancleary.github_cli, tags: ['terminal', 'desktop', 'github-cli']}
+    - {role: github_cli, tags: ['terminal', 'desktop', 'github-cli']}
 
     # Dotfiles
     - {role: yadm, tags: ['dotfiles', 'yadm']}
