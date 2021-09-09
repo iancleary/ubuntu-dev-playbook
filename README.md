@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/icancclearynow/ubuntu-dev-playbook/workflows/Test/badge.svg)](https://github.com/icancclearynow/ubuntu-dev-playbook/actions)
 [![Lint](https://github.com/icancclearynow/ubuntu-dev-playbook/workflows/Lint/badge.svg)](https://github.com/icancclearynow/ubuntu-dev-playbook/actions)
-[![Calendar Versioning](https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg)](https://calver.org)
+[![Calendar Versioning](https://img.shields.io/badge/calver-YYYY.M.D-22bfda.svg)](https://calver.org)
 
 ## Ansible Playbook to configure my laptops and desktops
 

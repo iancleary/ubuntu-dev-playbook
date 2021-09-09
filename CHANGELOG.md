@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
-<img src="https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg">
+[![Calendar Versioning](https://img.shields.io/badge/calver-YYYY.M.D-22bfda.svg)](https://calver.org)
 
 ## [Unreleased]
 
