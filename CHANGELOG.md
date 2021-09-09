@@ -9,13 +9,14 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+## [2021.9.8]
+
 ### Added
 
 - Yadm dotfiles repo and branch vars, per [#215](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/215)
 - MesloLGS NF Font Installation, per [#219](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/219)
 - Bumped `docker-compose` to [1.29.2](https://github.com/docker/compose/releases/tag/1.29.2)
 - Added Flatpak role [back](https://github.com/icancclearynow/ubuntu-dev-playbook/blob/v21.04.0/roles/flatpak/tasks/main.yml)
-- [icancclearynow.nodejs](https://github.com/icancclearynow/ansible-role-nodejs) Ansible role
 - elementary OS 6 support
 
 ### Changed
@@ -30,6 +31,8 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - `yarn` installation changed to [npm global package](https://classic.yarnpkg.com/en/docs/install/#install-via-npm), as recommended
 - changed username from `iancleary` to `icancclearynow`
 - pulled submodules in local to repo, while [ansible/galaxy#2776](https://github.com/ansible/galaxy/issues/2776) is open
+- Changed to [CalVer Version Scheme](https://calver.org/) YYYY.0M.0D, per [#250](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/250)
+
 
 ### Removed
 
@@ -364,7 +367,8 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/icancclearynow/ubuntu-dev-playbook/compare/v21.04.1...HEAD
+[Unreleased]: https://github.com/icancclearynow/ubuntu-dev-playbook/compare/v2021.9.8...HEAD
+[2021.9.8]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v2021.9.8
 [21.04.1]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v21.04.1
 [21.04.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v21.04.0
 [2020.1.0]: https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v2020.1.0
