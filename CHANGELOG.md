@@ -9,6 +9,14 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- `colorls` gem per [#246](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/246)
+
+### Changed
+
+- Renamed `zsh_fonts` role to `fonts`, as its used by `zsh`'s `powerlevel10k` and `colorls`
+
 ## [2021.9.8]
 
 ### Added

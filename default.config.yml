@@ -113,8 +113,9 @@ zsh_custom_shell_command: "false"
 # zsh_default_shell_command: "/opt/pbis/bin/config LoginShellTemplate /usr/bin/zsh"
 zsh_aliases:
   # https://opensource.com/article/19/7/bash-aliases
-  - ls='ls -F'
-  - ll='ls -lh'
+  # - ls='ls -F'
+  # - ll='ls -lh'
+  - ls="colorls"
   - mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
   - hg='history|grep' # search bash history
   - left='ls -t -1' # most recently edited files

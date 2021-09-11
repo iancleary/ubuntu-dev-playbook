@@ -1,0 +1,17 @@
+---
+- name: Install apt package
+  ansible.builtin.apt:
+    name: "ruby-full"
+    state: present
+
+
+- name: Install colorls gem
+  community.general.gem:
+    name: colorls
+    state: latest
+
+- name: Add tab_completion for colorls.
+  ansible.builtin.template:
+    src: colorls.sh.j2
+    dest: /etc/profile.d/colorls.sh
+    mode: '0644'
