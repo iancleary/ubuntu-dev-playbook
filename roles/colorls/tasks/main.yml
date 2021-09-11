@@ -1,0 +1,13 @@
+---
+- name: Install apt package
+  become: true
+  ansible.builtin.apt:
+    name: "ruby-full"
+    state: present
+
+
+- name: Install colorls gem
+  become: true
+  community.general.gem:
+    name: colorls
+    state: latest

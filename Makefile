@@ -162,6 +162,10 @@ fonts:
 fonts: ## Install Fonts for Powerlevel10k
 	@$(ANSIBLE) --tags="fonts"
 
+colorls:
+colorls: ## Install colorls ruby gem
+	@$(ANSIBLE) --tags="colorls"
+
 yadm:
 yadm: ## Install yadm dotfile manager
 	@$(ANSIBLE) --tags="yadm"
