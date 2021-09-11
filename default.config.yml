@@ -119,6 +119,8 @@ zsh_aliases:
   - hg='history|grep' # search bash history
   - left='ls -t -1' # most recently edited files
   - cg='cd `git rev-parse --show-toplevel`' # go to git main level
+  - full-upgrade='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
+
 ohmyzsh_bundles:
   # Bundles from the default repo (robbyrussell's oh-my-zsh) only need a name
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
