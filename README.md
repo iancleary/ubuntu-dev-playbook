@@ -51,6 +51,7 @@ I've aligned ansible tags/roles around my common use cases:
 
 * `zsh` and `oh-my-zsh`
 * [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k), *installs fonts automatically*!
+* [colorls](https://github.com/athityakumar/colorls): A Ruby script that colorizes the ls output with color and icons.
 
 ### Development Tooling
 
