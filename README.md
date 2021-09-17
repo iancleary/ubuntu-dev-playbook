@@ -377,12 +377,6 @@ Your messy filing cabinet of assorted patches is no more. 🔥
 
 See [CHANGELOG](CHANGELOG.md) for history.
 
-## Calendar Versioning
-
-This project adheres to [Calendar Versioning](https://calver.org/), YY.0M.MICRO.  This is similar to Ubuntu.
-
-> Note that I've iterated to this and it wasn't always calver.
-
 ## Linting
 
 Linting is performed on common file types:
