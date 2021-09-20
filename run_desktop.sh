@@ -7,7 +7,7 @@ sudo apt install -y git make
 
 ## ------------------------
 ## Setup Repo Locally
-FOLDER=personal
+FOLDER=Personal
 GIT_USER=icancclearynow
 GIT_REPO=ubuntu-dev-playbook
 GIT_BRANCH=main
