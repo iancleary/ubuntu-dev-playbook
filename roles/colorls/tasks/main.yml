@@ -5,10 +5,19 @@
     state: present
 
 
-- name: Install colorls gem
+- name: Install colorls gem and its dependencies
   community.general.gem:
-    name: colorls
+    name: "{{ item }}"
     state: latest
+  loop:
+    - colorls
+    - addressable
+    - public_suffix
+    - clocale
+    - filesize
+    - manpages
+    - rainbow
+    - unicode-display_width
 
 - name: Add tab_completion for colorls.
   ansible.builtin.template:
