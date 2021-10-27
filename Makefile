@@ -138,8 +138,7 @@ debug:
 
 liquorix:  ## Install liquorix kernel (DONT DO IF ROOT PARTITION IS ZFS)
 liquorix:
-	sudo add-apt-repository ppa:damentz/liquorix && sudo apt-get update
-	sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+	@$(ANSIBLE) --tags="liquorix"
 
 code: ## Code
 code:
