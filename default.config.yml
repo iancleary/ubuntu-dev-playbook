@@ -1,11 +1,26 @@
 ---
 
+# used in URL of some deb packages on github
+host_arch: "amd64"
+
 configure_colorls: true
 configure_terraform: true
 configure_github_cli: true
 
-configure_code: true
-code_executable: "/snap/bin/code"
+configure_node: true
+nodejs_version: "14.x"
+# Set to true to suppress the UID/GID switching when running package scripts. If
+# set explicitly to false, then installing as a non-root user will fail.
+npm_config_unsafe_perm: true
+npm_global_packages:
+  - name: "yarn"
+  - name: "astro"
+  - name: "vercel"
+
+configure_docker: true
+docker_compose_version: 1.29.2
+
+configure_code_extensions: true
 code_extensions:
   ## Ansible, Docker-Compose, etc.
   - redhat.vscode-yaml
@@ -62,15 +77,12 @@ code_extensions:
   - pranaygp.vscode-css-peek
   - sdras.vue-vscode-snippets
 
-configure_docker: true
-docker_compose_version: 1.29.2
-
 # nautilus_mounts:
 #   - mount: "folder"
 #     unc_path: "\\\\server\\folder\\"  # escaped slashes
 
 configure_flatpak: true
-flatpak_applications:
+flatpaks:
   - "com.giuspen.cherrytree" # Hierarchical Note Taking
   - "com.uploadedlobster.peek" # Simple screen recorder with an easy to use interface
   - "com.github.junrrein.PDFSlicer"
@@ -87,15 +99,7 @@ flatpak_applications:
   - "us.zoom.Zoom"
 
 
-configure_node: true
-nodejs_version: "14.x"
-# Set to true to suppress the UID/GID switching when running package scripts. If
-# set explicitly to false, then installing as a non-root user will fail.
-npm_config_unsafe_perm: true
-npm_global_packages:
-  - name: "yarn"
-  - name: "astro"
-  - name: "vercel"
+
 
 configure_snaps: true
 snaps:
@@ -105,12 +109,14 @@ snaps:
   - name: "authy" # 2-Factor Authentication
   - name: "beekeeper-studio" # An open source SQL editor and database management app
   - name: "code"
+    classic: "yes"
   - name: "flameshot" # Powerful yet simple to use screenshot software
   - name: "slack"
     classic: "yes"
   - name: "chromium"
   - name: "standard-notes"
   # - name: "firefox" # Using deb until gnome-extensions installations work with firefox snap
+# you are responsible for making sure there is a matching snap
 snaps_plugs:
   - plug: "home"
     app: "chromium"
@@ -182,6 +188,7 @@ configure_universe_repository: true
 apt_packages:
 # - name: software-properties-common
 #   state: present
+  # Begin Terminal Packages
   # python development
   - name: software-properties-common
   - name: python3-setuptools
@@ -190,6 +197,14 @@ apt_packages:
   # linting
   - name: yamllint
   - name: shellcheck
+  # Begin Desktop Packages
+  # Audio Control
+  - name: pulseaudio
+  - name: pavucontrol
+  # Universe
+  - name: linssid
+  - name: gnome-sushi
+  - name: profile-sync-daemon
 
 pip_packages:
 # - name: mkdocs
@@ -208,3 +223,11 @@ gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
+
+
+configure_ulauncher: false
+# Configure specific ulauncher version - default latest
+# ulauncher_version: 5.7.5
+
+configure_timeshift: false
+configure_nordvpn: false

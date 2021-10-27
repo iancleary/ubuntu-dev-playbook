@@ -48,7 +48,6 @@
 
     # Desktop
     - {role: app-image, tags: ['desktop', 'app-image']}
-    - {role: profile-sync-daemon, tags: ['desktop', 'profile-sync-daemon']}
     - {role: code, tags: ['desktop', 'code']}
     - {role: flatpak, tags: ['desktop', 'flatpak', 'skip-ci']}
     - {role: snapd, tags: ['desktop', 'snapd', 'skip-ci']}
@@ -74,6 +73,19 @@
   tasks:
     - import_tasks: tasks/universe-repository.yml
       when: configure_universe_repository
-      tags: ['universe-repository']
+      tags: ['universe-repository', 'extra-packages']
+    # extra-packages should go after universe to ensure packages are found
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
+    - import_tasks: tasks/flatpak.yml
+      tags: ['flatpak']
+      when: configure_flatpak
+    - import_tasks: tasks/snap.yml
+      tags: ['snap']
+      when: configure_snap
+    - import_tasks: tasks/code-extensions.yml
+      tags: ['code-extensions']
+      when: configure_code_extensions
+    - import_tasks: tasks/ppa/appimagelauncher.yml
+      tags: ['appimagelauncher']
+      when: configure_code_extensions
