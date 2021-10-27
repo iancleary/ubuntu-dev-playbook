@@ -1,0 +1,19 @@
+---
+- name: Massage ansible_distribution_release for elementary OS 6
+  set_fact:
+    massaged_ansible_distribution_release: focal
+  when: ansible_distribution_release == "odin"
+
+- name: Bypass ansible_distribution_release for non elementary OS
+  set_fact:
+    massaged_ansible_distribution_release: "{{ ansible_distribution_release }}"
+  when: ansible_distribution_release != "odin"
+
+- name: Enable universe repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - "deb http://us.archive.ubuntu.com/ubuntu/ {{ massaged_ansible_distribution_release | lower }} universe"
+    - "deb http://us.archive.ubuntu.com/ubuntu/ {{ massaged_ansible_distribution_release | lower }}-updates universe"
+    - "deb http://security.ubuntu.com/ubuntu {{ massaged_ansible_distribution_release | lower }}-security universe"

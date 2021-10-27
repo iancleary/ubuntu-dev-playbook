@@ -15,14 +15,30 @@
     # 'never' is a special tag that is on run when that tag is specified
 
     # Terminal
-    - {role: fonts, tags: ['terminal', 'desktop', 'fonts']}
-    - {role: zsh, tags: ['terminal', 'desktop', 'zsh']}
-    - {role: colorls, tags: ['terminal', 'desktop', 'colorls'], become: true}
-    - {role: docker, tags: ['terminal', 'desktop', 'docker', 'skip-ci'], become: true}
+    - role: fonts
+      when: configure_zsh
+      tags: ['terminal', 'desktop', 'fonts']
+    - role: zsh
+      when: configure_zsh
+      tags: ['terminal', 'desktop', 'zsh']
+    - role: colorls
+      when: configure_colorls
+      tags: ['terminal', 'desktop', 'colorls']
+      become: true
+    - role: docker
+      when: configure_docker
+      tags: ['terminal', 'desktop', 'docker', 'skip-ci']
+      become: true
     # - {role: python, tags: ['python']}
-    - {role: nodejs, tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn'], become: true}
-    - {role: terraform, tags: ['terminal', 'desktop', 'terraform']}
-    - {role: github_cli, tags: ['terminal', 'desktop', 'github-cli']}
+    - role: nodejs
+      tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn']
+      become: true
+    - role: terraform
+      when: configure_terraform
+      tags: ['terminal', 'desktop', 'terraform']
+    - role: github_cli
+      when: configure_github_cli
+      tags: ['terminal', 'desktop', 'github-cli']
 
     # Dotfiles
     - {role: yadm, tags: ['dotfiles', 'yadm']}
@@ -36,6 +52,7 @@
     - {role: code, tags: ['desktop', 'code']}
     - {role: flatpak, tags: ['desktop', 'flatpak', 'skip-ci']}
     - {role: snapd, tags: ['desktop', 'snapd', 'skip-ci']}
+
     - {role: nordvpn, tags: ['desktop', 'nordvpn', 'skip-ci']}
     - {role: stacer, tags: ['desktop', 'stacer']}
     - {role: wifi-analyzer, tags: ['desktop', 'wifi-analyzer']}
@@ -50,7 +67,13 @@
 
     # Miscellaneous
     - {role: nautilus-mounts, tags: ['never', 'nautilus-mounts']}
-    - {role: standard-notes, tags: ['never', 'common-snaps']}
 
     # Debug
     - {role: debug, tags: ['debug']}
+
+  tasks:
+    - import_tasks: tasks/universe-repository.yml
+      when: configure_universe_repository
+      tags: ['universe-repository']
+    - import_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']

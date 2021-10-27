@@ -1,4 +1,10 @@
 ---
+
+configure_colorls: true
+configure_terraform: true
+configure_github_cli: true
+
+configure_code: true
 code_executable: "/snap/bin/code"
 code_extensions:
   ## Ansible, Docker-Compose, etc.
@@ -55,12 +61,14 @@ code_extensions:
   - pranaygp.vscode-css-peek
   - sdras.vue-vscode-snippets
 
+configure_docker: true
 docker_compose_version: 1.29.2
 
 # nautilus_mounts:
 #   - mount: "folder"
 #     unc_path: "\\\\server\\folder\\"  # escaped slashes
 
+configure_flatpak: true
 flatpak_applications:
   - "com.giuspen.cherrytree" # Hierarchical Note Taking
   - "com.uploadedlobster.peek" # Simple screen recorder with an easy to use interface
@@ -71,35 +79,53 @@ flatpak_applications:
   - "org.gabmus.whatip" # Info on your IP
   - "com.bitwarden.desktop" # A secure and free password manager for all of your devices
   # - "com.github.alainm23.planner" # Never worry about forgetting things again (Todoist sync too)
-  #- "org.libreoffice.LibreOffice"
+  - "org.gnome.Evolution"
+  - "org.libreoffice.LibreOffice"
+  - "org.mozilla.firefox"
+  - "org.videolan.VLC"
+  - "us.zoom.Zoom"
 
 
+configure_node: true
 nodejs_version: "14.x"
-nodejs_npm_global_packages:
-  - name: "yarn"
-
 # Set to true to suppress the UID/GID switching when running package scripts. If
 # set explicitly to false, then installing as a non-root user will fail.
-npm_config_unsafe_perm: "true"
+npm_config_unsafe_perm: true
+npm_global_packages:
+  - name: "yarn"
+  - name: "astro"
+  - name: "vercel"
 
+configure_snaps: true
 snaps:
+  # - name: "authy"
+  #   classic: no
+  #   channel: "stable"
   - name: "authy" # 2-Factor Authentication
   - name: "beekeeper-studio" # An open source SQL editor and database management app
+  - name: "code"
   - name: "flameshot" # Powerful yet simple to use screenshot software
   - name: "slack"
     classic: "yes"
   - name: "chromium"
+  - name: "standard-notes"
   # - name: "firefox" # Using deb until gnome-extensions installations work with firefox snap
 snaps_plugs:
   - plug: "home"
     app: "chromium"
+  - plug: "password-manager-service"
+    app: "standard-notes"
 
+# Set to 'true' to configure Stacer.
+configure_stacer: false
 stacer_version: 1.1.0
 
+# Set to 'true' to configure yadm.
+configure_dotfiles: false
 yadm_dotfiles_repo: "https://github.com/icancclearynow/dotfiles"
 yadm_dotfiles_branch: "main"
 
-# https://github.com/icancclearynow/ansible-role-zsh
+configure_zsh: true
 zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # useful when users are bound to external systems (i.e. active directory)
@@ -115,7 +141,6 @@ zsh_aliases:
   - left='ls -t -1' # most recently edited files
   - cg='cd `git rev-parse --show-toplevel`' # go to git main level
   - full-upgrade='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
-
 ohmyzsh_bundles:
   # Bundles from the default repo (robbyrussell's oh-my-zsh) only need a name
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
@@ -148,3 +173,37 @@ ohmyzsh_bundles:
       user: romkatv
       repo: powerlevel10k
       version: v1.15.0
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through apt.
+configure_universe_repository: true
+apt_packages:
+# - name: software-properties-common
+#   state: present
+  # python development
+  - name: software-properties-common
+  - name: python3-setuptools
+  - name: python3-apt
+  - name: python3-pip
+  # linting
+  - name: yamllint
+  - name: shellcheck
+
+pip_packages:
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+  - name: pip
+    state: latest
+  - name: keyrings.alt
+  - name: testresources
+  - name: setuptools
+    state: latest
+  - name: wheel
+  - name: linode_api4
+
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A

@@ -38,11 +38,11 @@
   changed_when: false
   ansible.builtin.command:
     cmd: "ls {{ npm_config_prefix }}/lib/node_modules"
-  register: installed_nodejs_npm_global_packages
+  register: installed_npm_global_packages
 
 - name: Debug (list currently installed NPM global packages)
   ansible.builtin.debug:
-    msg: "{{ installed_nodejs_npm_global_packages.stdout_lines }}"
+    msg: "{{ installed_npm_global_packages.stdout_lines }}"
 
 - name: Install NPM global packages
   community.general.npm:
@@ -54,6 +54,6 @@
     NPM_CONFIG_PREFIX: "{{ npm_config_prefix }}"
     NODE_PATH: "{{ npm_config_prefix }}/lib/node_modules"
     NPM_CONFIG_UNSAFE_PERM: "{{ npm_config_unsafe_perm }}"
-  loop: "{{ nodejs_npm_global_packages }}"
-  when: item.name not in installed_nodejs_npm_global_packages.stdout_lines
+  loop: "{{ npm_global_packages }}"
+  when: item.name not in installed_npm_global_packages.stdout_lines
   tags: ['skip_ansible_lint']
