@@ -29,6 +29,7 @@ code_extensions:
   - vscode-icons-team.vscode-icons
   - riccardoNovaglia.missinglineendoffile
   - shardulm94.trailing-spaces
+  - oderwat.indent-rainbow
   # - Shan.code-settings-sync
 
   ## Git Utilities
