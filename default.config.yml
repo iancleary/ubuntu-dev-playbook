@@ -96,6 +96,13 @@ code_extensions:
   - pranaygp.vscode-css-peek
   - sdras.vue-vscode-snippets
 
+  ## HTML
+  - formulahendry.auto-close-tag
+  - anteprimorac.html-end-tag-labels
+  - vincaslt.highlight-matching-tag
+  - formulahendry.auto-rename-tag
+  - devonray.snippet
+
 # nautilus_mounts:
 #   - mount: "folder"
 #     unc_path: "\\\\server\\folder\\"  # escaped slashes
