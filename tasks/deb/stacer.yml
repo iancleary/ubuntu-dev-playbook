@@ -1,0 +1,21 @@
+---
+- name: Get latest release of a public repository
+  community.general.github_release:
+    user: oguzhaninan
+    repo: Stacer
+    action: latest_release
+  register: stacer_latest
+
+- name: Install Stacer deb from github (Specific Version)
+  become: true
+  ansible.builtin.apt:
+    deb: >-
+      https://github.com/oguzhaninan/Stacer/releases/download/v{{ stacer_version }}/stacer_{{ stacer_version }}_{{ host_arch }}.deb
+  when: stacer_version is defined
+
+- name: Install Stacer deb from github (Latest Version)
+  become: true
+  ansible.builtin.apt:
+    deb: >-
+      https://github.com/oguzhaninan/Stacer/releases/download/{{ stacer_latest.tag }}/stacer_{{ stacer_latest.tag | replace('v','') }}_{{ host_arch }}.deb
+  when: stacer_version is undefined

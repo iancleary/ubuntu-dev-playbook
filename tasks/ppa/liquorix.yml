@@ -1,0 +1,22 @@
+---
+- name: Add liquorix repositories
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "ppa:damentz/liquorix"
+    state: present
+  register: liquorix_repo
+
+- name: Update apt cache if repo was added.
+  become: true
+  apt:
+    update_cache: true
+  when: liquorix_repo.changed
+  tags: ['skip_ansible_lint']
+
+- name: Ensure liquorix is installed.
+  become: true
+  apt:
+    name:
+      - linux-image-liquorix-amd64
+      - linux-headers-liquorix-amd64
+    state: present

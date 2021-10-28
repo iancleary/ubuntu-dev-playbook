@@ -9,9 +9,9 @@ zsh_aliases:
   - ls='ls -F'
   - ll='ls -lh'
   - mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
-  - hg='history|grep' # search bash history, I swapped the letters for github-cli compatibility
-  - left='ls -t -1' # most recently edited files
-  - cg='cd `git rev-parse --show-toplevel`' # go to git main level
+  - hg='history|grep'  # search bash history, I swapped the letters for github-cli compatibility
+  - left='ls -t -1'  # most recently edited files
+  - cg='cd `git rev-parse --show-toplevel`'  # go to git main level
 ohmyzsh_bundles:
   # Bundles from the default repo (robbyrussell's oh-my-zsh) only need a name
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
@@ -32,12 +32,12 @@ ohmyzsh_bundles:
       user: zsh-users
       repo: zsh-syntax-highlighting
       version: 0.7.1
-  # # Autosuggestions
-  # - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
-  #   repo:
-  #     user: zsh-users
-  #     repo: zsh-autosuggestions
-  #     version: v0.6.4
+  # Autosuggestions
+  - name: zsh-autosuggestions
+    repo:
+      user: zsh-users
+      repo: zsh-autosuggestions
+      version: v0.6.4
   - name: powerlevel10k
     skip_zshrc_plugin:
     git:

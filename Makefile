@@ -59,7 +59,7 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-
+.DEFAULT_GOAL := help
 
 bootstrap-before-install:
 bootstrap-before-install:
@@ -88,27 +88,10 @@ check: DARGS?=
 check: ## Checks personal-computer.yml playbook
 	@$(ANSIBLE) --check
 
-submodule:
-submodule: ## Use GitHub SSH key to setup git submodules
-	git submodule update --init --recursive
-	git submodule foreach git pull origin main
-
-terminal: ## Initializes any machine (Host or VM)
-terminal:
-	@$(ANSIBLE) --tags="terminal"
-
 terminal-github-runner:
 terminal-github-runner:
 	# test coverage is in the ansible roles themselves
 	@$(ANSIBLE) --tags="terminal" --skip-tags="skip-ci"
-
-hyper-v: ## Configures Hyper-V Resolution
-hyper-v:
-	@$(ANSIBLE) --tags="hyper-v"
-
-desktop: ## Adds extras for a host OS (bare metal)
-desktop:
-	@$(ANSIBLE) --tags="desktop"
 
 desktop-github-runner:
 desktop-github-runner:
@@ -129,132 +112,9 @@ non-ansible: ## Runs all non-ansible make targets for fresh install (all target)
 	# No user input required
 	make flameshot-keybindings
 
-	# Ubuntu 20.04 defaults
-	make python-three-eight-install
-	make python-three-eight-supporting
-
 lint:  ## Lint the repo
 lint:
 	bash scripts/lint.sh
-
-debug: ## Debug Ansible Vars
-debug:
-	@$(ANSIBLE) --tags="debug"
-
-liquorix:  ## Install liquorix kernel (DONT DO IF ROOT PARTITION IS ZFS)
-liquorix:
-	sudo add-apt-repository ppa:damentz/liquorix && sudo apt-get update
-	sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
-
-code: ## Code
-code:
-	@$(ANSIBLE) --tags="code"
-
-terraform: ## Terraform
-terraform:
-	@$(ANSIBLE) --tags="terraform"
-
-zsh:
-zsh: ## Install zsh and oh-my-zsh
-	@$(ANSIBLE) --tags="zsh"
-
-fonts:
-fonts: ## Install Fonts for Powerlevel10k
-	@$(ANSIBLE) --tags="fonts"
-
-colorls:
-colorls: ## Install colorls ruby gem
-	@$(ANSIBLE) --tags="colorls"
-
-yadm:
-yadm: ## Install yadm dotfile manager
-	@$(ANSIBLE) --tags="yadm"
-
-docker:
-docker: ## Install Docker and Docker-Compose
-	@$(ANSIBLE) --tags="docker"
-
-nautilus-mounts:
-nautilus-mounts: ## Setup for CIFS Network Mounts, with Nautilus Scripts
-	@$(ANSIBLE) --tags="nautilus-mounts"
-
-pulseaudio:
-pulseaudio: ## Install pulseaudio GUI
-	@$(ANSIBLE) --tags="pulseaudio"
-
-python-three-eight-install: ## Install python3.8 using apt (main install)
-python-three-eight-install:
-
-	sudo apt-get update
-
-	# Start by updating the packages list and installing the prerequisites:
-	sudo apt install software-properties-common
-
-	# Once the repository is enabled, install Python 3.8 with: (added libpython3.8-dev for pip installs)
-	# - httptools wasn't installing correctly until adding it
-	# - see: https://github.com/huge-success/sanic/issues/1503#issuecomment-469031275
-	sudo apt update
-	sudo apt install -y python3.8 libpython3.8-dev
-
-	# At this point, Python 3.8 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.8 --version
-
-python-three-eight-supporting: ## Install useful packages
-python-three-eight-supporting:
-
-	# python3 pip
-	sudo apt install -y python3-pip
-
-	# upgrade pip
-	python3.8 -m pip install --user --upgrade pip
-	-python3.8 -m pip install --upgrade keyrings.alt --user
-	-python3.8 -m pip install --user --upgrade setuptools
-
-	# python3 pytest
-	sudo apt install -y python3-pytest
-
-	# At this point, Python 3.7 is installed on your Ubuntu system and ready to be used.
-	# You can verify it by typing:
-	python3.8 --version
-	python3.8 -m pip --version
-	python3.8 -m pytest --version
-
-	python3.8 -m pip install --user testresources
-	python3.8 -m pip install --user twine
-	python3.8 -m pip install --user wheel
-	python3.8 -m pip install --user flit
-	python3.8 -m pip install --user cookiecutter
-	python3.8 -m pip install --user pipenv
-	python3.8 -m pip install --user pre-commit
-	python3.8 -m pip install --user linode_api4
-	# https://python-poetry.org/docs/
-	python3.8 -m pip install --user poetry
-	sudo apt-get install -y python3-venv
-	# https://github.com/python-poetry/poetry/issues/721#issuecomment-623399861
-	# Ubuntu 20.04 https://wiki.ubuntu.com/FocalFossa/ReleaseNotes#Python3_by_default
-	-sudo apt install python-is-python3
-
-snapd:
-snapd: ## Install Snaps
-	@$(ANSIBLE) --tags="snapd"
-
-
-peek:
-peek: ## Install Peek (GIF Screen Recorder) using a Flatpak
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.uploadedlobster.peek"]}'
-
-pdf-slicer:
-pdf-slicer: ## Install PDFSlicer (split and combine PDFs) using a Flatpak
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.github.junrrein.PDFSlicer"]}'
-
-timeshift:
-timeshift: ## Install Timeshift (Backup Utility) using a PPA and apt
-	@$(ANSIBLE) --tags="timeshift"
-
-flameshot:
-flameshot: ## Install Flameshot 0.6.0 Screenshot Tool and Create Custom GNOME Keybindings
-	@$(ANSIBLE) --tags="snapd" -e '{"snaps": [{"name": "flameshot"}]}'
 
 gsettings-keybindings:
 gsettings-keybindings:  ## Sets GNOME custom keybindings
@@ -275,57 +135,136 @@ flameshot-keybindings: gsettings-keybindings
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/snap/bin/flameshot gui'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
 
-github-cli:
-github-cli: ## Install GitHub CLI deb, directly from GitHub Release
-	@$(ANSIBLE) --tags="github-cli"
-
-nordvpn:
-nordvpn: ## Install Peek (GIF Screen Recorder) using a PPA and apt
-	@$(ANSIBLE) --tags="nordvpn"
-
-stacer:
-stacer: ## Install Stacer (Material System Utility)
-	@$(ANSIBLE) --tags="stacer"
-
-flatpak:
-flatpak: ## Install Peek (GIF Screen Recorder) using a PPA and apt
-	@$(ANSIBLE) --tags="flatpak"
-
-cherrytree:
-cherrytree: ## Install Cherrytree, using Flatpak
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["com.giuspen.cherrytree"]}'
-
-okular:
-okular: ## Install Okular, using Flatpak
-	@$(ANSIBLE) --tags="flatpak" -e '{"flatpak_applications": ["org.kde.okular"]}'
-
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
 	chmod +x ~/Downloads/tresorit_installer.run
 	$(echo $0) ~/Downloads/tresorit_installer.run
 
-nodejs:
-nodejs: ## Installs Nodejs, NPM, and Yarn
-	# This role takes care of $$PATH
-	@$(ANSIBLE) --tags="nodejs"
+######################## Below is autogenerated  ##########################
+# Run ./makefile_targets_from_ansible_tags.py, copy Makefile.template below
+###########################################################################
 
-wifi-analyzer:
-wifi-analyzer: ## Installs LinSSID Wifi Analyzer
-	# Attribution: podcasts.apple.com/us/podcast/linux-unplugged/id687598126?i=1000475937121
-	@$(ANSIBLE) --tags="wifi-analyzer"
+airpods-pro-bluetooth-fix:
+airpods-pro-bluetooth-fix: ## Runs the airpods-pro-bluetooth-fix ansible role
+	@$(ANSIBLE) --tags="airpods-pro-bluetooth-fix"
 
-app-image:
-app-image: ## Install App Image Launcher
-	@$(ANSIBLE) --tags="app-image"
-
-ulauncher:
-ulauncher: ## Install ULauncher App Launcher (CTRL+spacebar)
-	@$(ANSIBLE) --tags="ulauncher"
+appimagelauncher:
+appimagelauncher: ## Runs the appimagelauncher ansible role
+	@$(ANSIBLE) --tags="appimagelauncher"
 
 caffeine:
-caffeine: ## Install caffeine (screen stay awake toggle, plus indicator)
+caffeine: ## Runs the caffeine ansible role
 	@$(ANSIBLE) --tags="caffeine"
 
+code-extensions:
+code-extensions: ## Runs the code-extensions ansible role
+	@$(ANSIBLE) --tags="code-extensions"
 
-.DEFAULT_GOAL := help
+colorls:
+colorls: ## Runs the colorls ansible role
+	@$(ANSIBLE) --tags="colorls"
+
+debug:
+debug: ## Runs the debug ansible role
+	@$(ANSIBLE) --tags="debug"
+
+desktop:
+desktop: ## Runs the desktop ansible role
+	@$(ANSIBLE) --tags="desktop"
+
+docker:
+docker: ## Runs the docker ansible role
+	@$(ANSIBLE) --tags="docker"
+
+dotfiles:
+dotfiles: ## Runs the dotfiles ansible role
+	@$(ANSIBLE) --tags="dotfiles"
+
+extra-packages:
+extra-packages: ## Runs the extra-packages ansible role
+	@$(ANSIBLE) --tags="extra-packages"
+
+flatpak:
+flatpak: ## Runs the flatpak ansible role
+	@$(ANSIBLE) --tags="flatpak"
+
+fonts:
+fonts: ## Runs the fonts ansible role
+	@$(ANSIBLE) --tags="fonts"
+
+github-cli:
+github-cli: ## Runs the github-cli ansible role
+	@$(ANSIBLE) --tags="github-cli"
+
+hyper-v:
+hyper-v: ## Runs the hyper-v ansible role
+	@$(ANSIBLE) --tags="hyper-v"
+
+liquorix:
+liquorix: ## Runs the liquorix ansible role
+	@$(ANSIBLE) --tags="liquorix"
+
+nautilus-mounts:
+nautilus-mounts: ## Runs the nautilus-mounts ansible role
+	@$(ANSIBLE) --tags="nautilus-mounts"
+
+nodejs:
+nodejs: ## Runs the nodejs ansible role
+	@$(ANSIBLE) --tags="nodejs"
+
+nordvpn:
+nordvpn: ## Runs the nordvpn ansible role
+	@$(ANSIBLE) --tags="nordvpn"
+
+npm:
+npm: ## Runs the npm ansible role
+	@$(ANSIBLE) --tags="npm"
+
+snap:
+snap: ## Runs the snap ansible role
+	@$(ANSIBLE) --tags="snap"
+
+stacer:
+stacer: ## Runs the stacer ansible role
+	@$(ANSIBLE) --tags="stacer"
+
+terminal:
+terminal: ## Runs the terminal ansible role
+	@$(ANSIBLE) --tags="terminal"
+
+terraform:
+terraform: ## Runs the terraform ansible role
+	@$(ANSIBLE) --tags="terraform"
+
+timeshift:
+timeshift: ## Runs the timeshift ansible role
+	@$(ANSIBLE) --tags="timeshift"
+
+ulauncher:
+ulauncher: ## Runs the ulauncher ansible role
+	@$(ANSIBLE) --tags="ulauncher"
+
+universe-repository:
+universe-repository: ## Runs the universe-repository ansible role
+	@$(ANSIBLE) --tags="universe-repository"
+
+vm:
+vm: ## Runs the vm ansible role
+	@$(ANSIBLE) --tags="vm"
+
+wifi-powersave-mode:
+wifi-powersave-mode: ## Runs the wifi-powersave-mode ansible role
+	@$(ANSIBLE) --tags="wifi-powersave-mode"
+
+yadm:
+yadm: ## Runs the yadm ansible role
+	@$(ANSIBLE) --tags="yadm"
+
+yarn:
+yarn: ## Runs the yarn ansible role
+	@$(ANSIBLE) --tags="yarn"
+
+zsh:
+zsh: ## Runs the zsh ansible role
+	@$(ANSIBLE) --tags="zsh"

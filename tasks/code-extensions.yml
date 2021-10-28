@@ -1,25 +1,13 @@
 ---
-- name: Install snapd apt dependency
-  become: true
-  apt:
-    name: "snapd"
-    state: present
+- name: Debug - collect code path location
+  command:
+    cmd: "which code"
+  changed_when: "false"
+  register: code_installation_path
 
-- name: Install VS Code
-  become: true
-  community.general.snap:
-    name: "code"
-    channel: "stable"
-    classic: "yes"
-  when: code_executable == "/snap/bin/code"
-
-- name: Install VS Codium
-  become: true
-  community.general.snap:
-    name: "codium"
-    channel: "stable"
-    classic: "yes"
-  when: code_executable == "/snap/bin/codium"
+- name: Set code executable
+  set_fact:
+    code_executable: code_installation_path.stdout
 
 - name: Register currently installed code extensions
   shell: "{{ code_executable }} --list-extensions"

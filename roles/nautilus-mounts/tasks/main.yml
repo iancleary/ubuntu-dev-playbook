@@ -27,4 +27,4 @@
     src: copy-unc-path-to-clipboard.sh.j2
     dest: '~{{ ansible_user }}/.local/share/nautilus/scripts/copy-unc-path-to-clipboard.sh'
     backup: "yes"
-    mode: 'u=rwx,go=r' # needs to be executable to show up in right click menu
+    mode: 'u=rwx,go=r'  # needs to be executable to show up in right click menu

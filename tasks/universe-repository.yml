@@ -17,9 +17,3 @@
     - "deb http://us.archive.ubuntu.com/ubuntu/ {{ massaged_ansible_distribution_release | lower }} universe"
     - "deb http://us.archive.ubuntu.com/ubuntu/ {{ massaged_ansible_distribution_release | lower }}-updates universe"
     - "deb http://security.ubuntu.com/ubuntu {{ massaged_ansible_distribution_release | lower }}-security universe"
-
-- name: Install apt package
-  become: true
-  apt:
-    name: "profile-sync-daemon"
-    state: present

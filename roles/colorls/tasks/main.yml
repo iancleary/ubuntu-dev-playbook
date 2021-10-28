@@ -9,7 +9,7 @@
   community.general.gem:
     name: "{{ item }}"
     state: latest
-    user_install : "no"
+    user_install: "no"
   loop:
     - colorls
     - addressable

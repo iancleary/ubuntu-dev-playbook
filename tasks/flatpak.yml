@@ -17,4 +17,4 @@
   flatpak:
     name: "{{ item }}"
     state: present
-  with_items: "{{ flatpak_applications }}"
+  with_items: "{{ flatpaks }}"

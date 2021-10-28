@@ -12,11 +12,16 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Added
 
 - `colorls` gem per [#246](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/246)
+- Python script to auto-generate Makefile targets from playbook.yml
+- Configure variables to enable/disable roles/tasks per [#254](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/254)
+- Airpods Pro bluetooth controller fixes per [#252](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/252)
+- Wifi Powersave Configuration per [#242](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/242)
+- VS Code extensions for HTML per [#239](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/239) and [#253](https://github.com/icancclearynow/ubuntu-dev-playbook/issues/253)
 
 ### Changed
 
 - Renamed `zsh_fonts` role to `fonts`, as its used by `zsh`'s `powerlevel10k` and `colorls`
-
+- Reorganized roles, tasks, default.config.yml per [#255](https://github.com/icancclearynow/ubuntu-dev-playbook/pull/255)
 
 ## [2021.9.8]
 
