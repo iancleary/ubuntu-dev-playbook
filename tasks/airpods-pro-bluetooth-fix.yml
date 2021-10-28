@@ -1,0 +1,14 @@
+---
+- name: Set Bluetooth Controller Mode
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/bluetooth/main.conf
+    regexp: '^ControllerMode = dual'
+    line: 'ControllerMode = bredr'
+  register: bluetooth_conf_file
+
+- name: Restart Bluetooth Service, if needed
+  become: true
+  ansible.builtin.command: /etc/init.d/bluetooth restart
+  when: bluetooth_conf_file.changed
+  tags: ['skip_ansible_lint']

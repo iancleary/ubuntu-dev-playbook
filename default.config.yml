@@ -23,6 +23,8 @@ configure_ulauncher: false
 # Configure specific ulauncher version - default latest
 # ulauncher_version: 5.7.5
 
+configure_airpods_pro_bluetooth_fix: true
+
 configure_hyper_v: false
 configure_nautilus_mounts: false
 
@@ -213,6 +215,10 @@ apt_packages:
   - name: python3-setuptools
   - name: python3-apt
   - name: python3-pip
+  - name: python3-venv
+  - name: python3-pytest
+  - name: libpython3.8-dev
+  - name: python-is-python3
   # linting
   - name: yamllint
   - name: shellcheck
@@ -237,6 +243,9 @@ pip_packages:
     state: latest
   - name: wheel
   - name: linode_api4
+  - name: pyyaml
+  - name: poetry
+  - name: pre-commit
 
 gem_packages: []
 # - name: bundler

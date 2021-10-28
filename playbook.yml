@@ -29,7 +29,6 @@
       when: configure_docker
       tags: ['terminal', 'desktop', 'docker', 'skip-ci']
       become: true
-    # - {role: python, tags: ['python']}
     - role: nodejs
       tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn']
       become: true
@@ -53,7 +52,8 @@
       when: configure_nautilus_mounts
 
     # Debug
-    - {role: debug, tags: ['debug']}
+    - role: debug
+      tags: ['debug']
 
   tasks:
     - import_tasks: tasks/universe-repository.yml
@@ -71,6 +71,9 @@
     - import_tasks: tasks/code-extensions.yml
       tags: ['code-extensions']
       when: configure_code_extensions
+    - import_tasks: tasks/airpods-pro-bluetooth-fix.yml
+      tags: ['airpods-pro-bluetooth-fix']
+      when: configure_airpods_pro_bluetooth_fix
     - import_tasks: tasks/deb/nordvpn.yml
       tags: ['nordvpn']
       when: configure_nordvpn

@@ -1,5 +1,6 @@
 ---
 - name: Install global apt packages
+  become: true
   apt:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
@@ -14,6 +15,7 @@
   loop: "{{ pip_packages }}"
 
 - name: Install global Ruby gems.
+  become: true
   gem:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"

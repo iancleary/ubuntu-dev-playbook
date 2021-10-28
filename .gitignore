@@ -151,3 +151,6 @@ group_vars/*
 
 # Overrides of default.config.yml
 config.yml
+
+# Spec Driven Templates
+Makefile.template
