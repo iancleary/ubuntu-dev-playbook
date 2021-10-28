@@ -27,7 +27,6 @@ jobs:
       - name: extra-packages
         run: |
           make extra-packages
-          make python-three-eight-supporting
       - name: Update Github Actions Path
         run: echo "/usr/local/lib/npm/bin" >> $GITHUB_PATH
       - name: Check Versions

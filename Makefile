@@ -59,7 +59,7 @@ help:
 # adds anything that has a double # comment to the phony help list
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ".:*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-
+.DEFAULT_GOAL := help
 
 bootstrap-before-install:
 bootstrap-before-install:
@@ -295,5 +295,3 @@ yarn: ## Runs the yarn ansible role
 zsh:
 zsh: ## Runs the zsh ansible role
 	@$(ANSIBLE) --tags="zsh"
-
-.DEFAULT_GOAL := help
