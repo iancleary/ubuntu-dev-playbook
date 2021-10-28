@@ -24,9 +24,9 @@ jobs:
       - name: terminal
         run: |
           make terminal-github-runner
-      - name: Python 3.8
+      - name: extra-packages
         run: |
-          make python-three-eight-install
+          make extra-packages
           make python-three-eight-supporting
       - name: Update Github Actions Path
         run: echo "/usr/local/lib/npm/bin" >> $GITHUB_PATH
