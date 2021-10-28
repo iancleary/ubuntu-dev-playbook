@@ -9,7 +9,7 @@
 - name: Update apt cache if repo was added.
   become: true
   apt:
-    update_cache: yes
+    update_cache: true
   when: appimagelauncher_repo.changed
   tags: ['skip_ansible_lint']
 

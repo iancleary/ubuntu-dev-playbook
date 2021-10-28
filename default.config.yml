@@ -1,4 +1,4 @@
-
+---
 # used in URL of some deb packages on github
 host_arch: "amd64"
 
@@ -111,16 +111,15 @@ code_extensions:
 
 configure_flatpak: true
 flatpaks:
-  - "com.giuspen.cherrytree" # Hierarchical Note Taking
-  - "com.uploadedlobster.peek" # Simple screen recorder with an easy to use interface
+  - "com.giuspen.cherrytree"  # Hierarchical Note Taking
+  - "com.uploadedlobster.peek"  # Simple screen recorder with an easy to use interface
   - "com.github.junrrein.PDFSlicer"
-  - "org.kde.okular" # Document Viewer
-  - "com.spotify.Client" # Music
-  - "com.rafaelmardojai.Blanket" # Background Sounds
-  - "com.github.tchx84.Flatseal" # Manage Flatpak permissions
-  - "org.gabmus.whatip" # Info on your IP
-  - "com.bitwarden.desktop" # A secure and free password manager for all of your devices
-  # - "com.github.alainm23.planner" # Never worry about forgetting things again (Todoist sync too)
+  - "org.kde.okular"  # Document Viewer
+  - "com.spotify.Client"  # Music
+  - "com.rafaelmardojai.Blanket"  # Background Sounds
+  - "com.github.tchx84.Flatseal"  # Manage Flatpak permissions
+  - "org.gabmus.whatip"  # Info on your IP
+  - "com.bitwarden.desktop"  # A secure and free password manager for all of your devices
   - "org.gnome.Evolution"
   - "org.libreoffice.LibreOffice"
   - "org.mozilla.firefox"
@@ -132,16 +131,16 @@ snaps:
   # - name: "authy"
   #   classic: no
   #   channel: "stable"
-  - name: "authy" # 2-Factor Authentication
-  - name: "beekeeper-studio" # An open source SQL editor and database management app
+  - name: "authy"  # 2-Factor Authentication
+  - name: "beekeeper-studio"  # An open source SQL editor and database management app
   - name: "code"
     classic: "yes"
-  - name: "flameshot" # Powerful yet simple to use screenshot software
+  - name: "flameshot"  # Powerful yet simple to use screenshot software
   - name: "slack"
     classic: "yes"
   - name: "chromium"
   - name: "standard-notes"
-  # - name: "firefox" # Using deb until gnome-extensions installations work with firefox snap
+
 # you are responsible for making sure there is a matching snap
 snaps_plugs:
   - plug: "home"
@@ -166,9 +165,9 @@ zsh_aliases:
   # - ll='ls -lh'
   - ls="colorls"
   - mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
-  - hg='history|grep' # search bash history
-  - left='ls -t -1' # most recently edited files
-  - cg='cd `git rev-parse --show-toplevel`' # go to git main level
+  - hg='history|grep'  # search bash history
+  - left='ls -t -1'  # most recently edited files
+  - cg='cd `git rev-parse --show-toplevel`'  # go to git main level
   - full-upgrade='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
 ohmyzsh_bundles:
   # Bundles from the default repo (robbyrussell's oh-my-zsh) only need a name
@@ -208,8 +207,8 @@ ohmyzsh_bundles:
 # installed, eg. through apt.
 configure_universe_repository: true
 apt_packages:
-# - name: software-properties-common
-#   state: present
+  # - name: software-properties-common
+  #   state: present (default)
   # Begin Terminal Packages
   # python development
   - name: software-properties-common
@@ -233,9 +232,9 @@ apt_packages:
   - name: profile-sync-daemon
 
 pip_packages:
-# - name: mkdocs
-#   state: present # present/absent/latest, default: present
-#   version: "0.16.3" # default: N/A
+  # - name: mkdocs
+  #   state: present # present/absent/latest, default: present
+  #   version: "0.16.3" # default: N/A
   - name: pip
     state: latest
   - name: keyrings.alt

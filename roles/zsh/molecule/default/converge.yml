@@ -33,7 +33,7 @@
               repo: zsh-syntax-highlighting
               version: 0.7.1
           # Autosuggestions
-          - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
+          - name: zsh-autosuggestions
             repo:
               user: zsh-users
               repo: zsh-autosuggestions
@@ -46,11 +46,11 @@
               version: v1.12.0
 
     - name: create test users
-      become: yes
+      become: true
       user:
         name: '{{ item }}'
         home: '/home/{{ item }}'
-        createhome: yes
+        createhome: true
       loop:
         - test_usr1
         - test_usr2
