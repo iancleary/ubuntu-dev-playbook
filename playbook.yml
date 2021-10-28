@@ -74,6 +74,9 @@
     - import_tasks: tasks/airpods-pro-bluetooth-fix.yml
       tags: ['airpods-pro-bluetooth-fix']
       when: configure_airpods_pro_bluetooth_fix
+    - import_tasks: tasks/wifi-powersave-mode.yml
+      tags: ['wifi-powersave-mode']
+      when: configure_wifi_powersave_mode
     - import_tasks: tasks/deb/nordvpn.yml
       tags: ['nordvpn']
       when: configure_nordvpn

@@ -25,6 +25,18 @@ configure_ulauncher: false
 
 configure_airpods_pro_bluetooth_fix: true
 
+configure_wifi_powersave_mode: true
+wifi_powersave_mode: '2'  # disable powersave
+# https://twitter.com/dominucco/status/1410181146940411905?s=20
+# According to https://gist.github.com/jcberthon/ea8cfe278998968ba7c5a95344bc8b55
+# From the source code: wifi.powersave can have the following value:
+#
+#    NM_SETTING_WIRELESS_POWERSAVE_DEFAULT (0): use the default value
+#    NM_SETTING_WIRELESS_POWERSAVE_IGNORE (1): don't touch existing setting
+#    NM_SETTING_WIRELESS_POWERSAVE_DISABLE (2): disable powersave
+#    NM_SETTING_WIRELESS_POWERSAVE_ENABLE (3): enable powersave
+
+
 configure_hyper_v: false
 configure_nautilus_mounts: false
 

@@ -46,6 +46,6 @@ if __name__ == '__main__':
     # Intialization parses tags
     makefile_tag_templator = MakefileTagTemplator()
     # write out Makefile.template
-    makefile_tag_templator.create_template()
+    makefile_tag_templator.create_makefile_template()
     # go open file and copy paste below static Makefile content
     # leaving

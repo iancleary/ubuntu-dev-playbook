@@ -253,6 +253,10 @@ vm:
 vm: ## Runs the vm ansible role
 	@$(ANSIBLE) --tags="vm"
 
+wifi-powersave-mode:
+wifi-powersave-mode: ## Runs the wifi-powersave-mode ansible role
+	@$(ANSIBLE) --tags="wifi-powersave-mode"
+
 yadm:
 yadm: ## Runs the yadm ansible role
 	@$(ANSIBLE) --tags="yadm"

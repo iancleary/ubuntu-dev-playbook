@@ -1,0 +1,14 @@
+---
+- name: Set Wifi Power Save Mode
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+    regexp: '^wifi.powersave'
+    line: 'wifi.powersave = {{ wifi_powersave_mode }}'
+  register: wifi_powersave_conf_file
+
+- name: Restart NetworkManager Service, if needed
+  become: true
+  ansible.builtin.command: systemctl restart NetworkManager.service
+  when: wifi_powersave_conf_file.changed
+  tags: ['skip_ansible_lint']
