@@ -117,6 +117,9 @@ code_extensions:
   - formulahendry.auto-rename-tag
   - devonray.snippet
 
+  ## Astro.build
+  - astro-build.astro-vscode
+
 # nautilus_mounts:
 #   - mount: "folder"
 #     unc_path: "\\\\server\\folder\\"  # escaped slashes
