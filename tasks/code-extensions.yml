@@ -5,9 +5,17 @@
   changed_when: "false"
   register: code_installation_path
 
+- name: Debug code path
+  debug:
+    var: code_installation_path.stdout
+
 - name: Set code executable
   set_fact:
-    code_executable: code_installation_path.stdout
+    code_executable: "{{ code_installation_path.stdout }}"
+
+- name: Debug code path
+  debug:
+    var: code_executable
 
 - name: Register currently installed code extensions
   shell: "{{ code_executable }} --list-extensions"

@@ -1,11 +1,11 @@
 ---
-- name: Snaps - Install snapd apt dependency
+- name: Install snapd apt dependency
   become: true
   apt:
     name: "snapd"
     state: present
 
-- name: Common Snaps
+- name: Install Snaps
   become: true
   community.general.snap:
     name: "{{ item.name }}"

@@ -8,9 +8,9 @@ configure_github_cli: true
 
 # Debs from PPAs
 configure_appimagelauncher: true
-configure_caffeine: true
+configure_caffeine: false
 configure_terraform: true
-configure_timeshift: true
+configure_timeshift: false
 # liquorix doesn't have zfs in kernel as of 2021-10-27
 # i.e. don't set this to true if you are on zfs
 configure_liquorix: false
@@ -138,7 +138,7 @@ flatpaks:
   - "org.videolan.VLC"
   - "us.zoom.Zoom"
 
-configure_snaps: true
+configure_snap: true
 snaps:
   # - name: "authy"
   #   classic: no
@@ -154,7 +154,7 @@ snaps:
   - name: "standard-notes"
 
 # you are responsible for making sure there is a matching snap
-snaps_plugs:
+snap_plugs:
   - plug: "home"
     app: "chromium"
   - plug: "password-manager-service"
@@ -229,7 +229,7 @@ apt_packages:
   - name: python3-pip
   - name: python3-venv
   - name: python3-pytest
-  - name: libpython3.8-dev
+  - name: libpython3.9-dev
   - name: python-is-python3
   # linting
   - name: yamllint
