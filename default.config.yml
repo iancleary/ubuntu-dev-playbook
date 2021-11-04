@@ -140,6 +140,7 @@ flatpaks:
   - "org.mozilla.firefox"
   - "org.videolan.VLC"
   - "us.zoom.Zoom"
+  - "nl.hjdskes.gcolor3"  # Color Picker
 
 configure_snap: true
 snaps:
