@@ -47,7 +47,6 @@ nodejs_version: "14.x"
 npm_config_unsafe_perm: true
 npm_global_packages:
   - name: "yarn"
-  - name: "astro"
   - name: "vercel"
 
 configure_docker: true
