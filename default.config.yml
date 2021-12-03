@@ -99,6 +99,7 @@ code_extensions:
 
   ## Themes
   - sdras.night-owl
+  - akamud.vscode-theme-onedark
 
   ## Travis-CI
   # - felixrieseberg.vsc-travis-ci-status # has issues with status resolution
