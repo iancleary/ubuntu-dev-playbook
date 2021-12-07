@@ -1,7 +1,7 @@
 # ubuntu-dev-playbook
 
-[![Test](https://github.com/icancclearynow/ubuntu-dev-playbook/workflows/Test/badge.svg)](https://github.com/icancclearynow/ubuntu-dev-playbook/actions)
-[![Lint](https://github.com/icancclearynow/ubuntu-dev-playbook/workflows/Lint/badge.svg)](https://github.com/icancclearynow/ubuntu-dev-playbook/actions)
+[![Test](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Test/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
+[![Lint](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Lint/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
 [![Calendar Versioning](https://img.shields.io/badge/calver-YYYY.M.D-22bfda.svg)](https://calver.org)
 
 ## Ansible Playbook to configure my laptops and desktops
@@ -31,8 +31,8 @@ I will support the LTS versions I use. There are no plans to support non-LTS ver
 
 | LTS | Last Supported Branch/Tag  |
 |:-------------|:-------------:|
-|  Ubuntu 20.04 (including elementary OS 6) | [main](https://github.com/icancclearynow/ubuntu-dev-playbook)|
-|  Ubuntu 18.04 | [2020.1.0](https://github.com/icancclearynow/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
+|  Ubuntu 20.04 (including elementary OS 6) | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
+|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
 
 ## Use Cases
 
@@ -67,19 +67,19 @@ I've aligned ansible tags/roles around my common use cases:
 
 ## Dotfiles
 
-* [icancclearynow/dotfiles](https://github.com/icancclearynow/dotfiles) managed with the [yadm](https://yadm.io/docs/getting_started) dotfile manager
+* [iancleary/dotfiles](https://github.com/iancleary/dotfiles) managed with the [yadm](https://yadm.io/docs/getting_started) dotfile manager
 
 > Check out their [Getting Started Documentation](https://yadm.io/docs/getting_started)
 
 The ansible role [yadm](roles/yadm) does more or less the following:
 
 ```bash
-yadm clone -b main https://github.com/icancclearynow/dotfiles --bootstrap
+yadm clone -b main https://github.com/iancleary/dotfiles --bootstrap
 ```
 
 This clones my dotfiles repo via HTTPS using yadm's [bootstrap](https://yadm.io/docs/bootstrap) standard command.
 
-My Bootstrap script is [icancclearynow/dotfiles/blob/main/.config/yadm/bootstrap](https://github.com/icancclearynow/dotfiles/blob/main/.config/yadm/bootstrap). It's purpose is to:
+My Bootstrap script is [iancleary/dotfiles/blob/main/.config/yadm/bootstrap](https://github.com/iancleary/dotfiles/blob/main/.config/yadm/bootstrap). It's purpose is to:
 
 * loads my dotfiles (including SSH keys)
 * decrypt the private key (prompts for password),
@@ -89,7 +89,7 @@ My Bootstrap script is [icancclearynow/dotfiles/blob/main/.config/yadm/bootstrap
 
 ## Hyper-V
 
-This [role](https://github.com/icancclearynow/ubuntu-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
+This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
 
 ## Desktop
 
@@ -183,11 +183,11 @@ Let's go through each.
 ### Make bootstrap
 
 This installs several packages with `apt` and
-python packages per the [requirements-ansible.txt](https://github.com/icancclearynow/ubuntu-dev-playbook/blob/main/requirements-ansible.txt) file.
+python packages per the [requirements-ansible.txt](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/requirements-ansible.txt) file.
 
 > This includes Ansible, using Python3.
 
-This also moves the [home-local-bin.sh](https://github.com/icancclearynow/ubuntu-dev-playbook/blob/main/home-local-bin.sh)
+This also moves the [home-local-bin.sh](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/home-local-bin.sh)
 file to the `/etc/profile.d/` folder as described above.
 
 > The `yarn` roles does a similar operation,
@@ -240,7 +240,7 @@ ansible-playbook playbook.yml \
 
 > Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
 
-The "-e" is for extra variable and is from my Ansible Galaxy role [icancclearynow/ansible-role-zsh_antibody#example-playbook](https://github.com/icancclearynow/ansible-role-zsh#example-playbook)
+The "-e" is for extra variable and is from my Ansible Galaxy role [iancleary/ansible-role-zsh#example-playbook](https://github.com/iancleary/ansible-role-zsh#example-playbook)
 
 ### Make non-ansible
 
@@ -284,7 +284,7 @@ Voila! 🎉🎉🎉
 
 ```bash
 wget -qO- \
-https://github.com/icancclearynow/ubuntu-dev-playbook/raw/main/run_terminal.sh | \
+https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run_terminal.sh | \
 bash
 ```
 
@@ -292,7 +292,7 @@ bash
 
 ```bash
 wget -qO- \
-https://github.com/icancclearynow/ubuntu-dev-playbook/raw/main/run_desktop.sh | \
+https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run_desktop.sh | \
 bash
 ```
 
@@ -319,7 +319,7 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 ### Order of precedence for variables
 
 * Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [default.config.yml](https://github.com/icancclearynow/ubuntu-dev-playbook/tree/main/default.config.yml) file.
+* The version controlled [default.config.yml](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/default.config.yml) file.
 
 > This allows hostnames to remain private outside of version control, for say secret operations 🕵️
 
