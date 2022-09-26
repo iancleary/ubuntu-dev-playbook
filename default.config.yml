@@ -231,7 +231,7 @@ apt_packages:
   - name: python3-pip
   - name: python3-venv
   - name: python3-pytest
-  - name: libpython3.9-dev
+  - name: libpython3.10-dev # Ubuntu 22.04 supports python3.10+
   - name: python-is-python3
   # linting
   - name: yamllint
