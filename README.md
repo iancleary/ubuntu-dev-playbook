@@ -29,9 +29,12 @@ keyboard shortcuts, core software, etc.).
 
 I will support the LTS versions I use. There are no plans to support non-LTS versions.
 
+> [GitHub Actions: Ubuntu 22.04 is now generally available on GitHub-hosted runners](https://github.blog/changelog/2022-08-09-github-actions-ubuntu-22-04-is-now-generally-available-on-github-hosted-runners/)
+
 | LTS | Last Supported Branch/Tag  |
 |:-------------|:-------------:|
-|  Ubuntu 20.04 (including elementary OS 6) | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
+|  Ubuntu 22.04 | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
+|  Ubuntu 20.04 (including elementary OS 6) | [2022.9.25](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2022.9.25)|
 |  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
 
 ## Use Cases

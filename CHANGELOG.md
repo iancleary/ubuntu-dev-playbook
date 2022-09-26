@@ -9,6 +9,15 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Switched docker role to ansible-galaxy role: `iancleary.docker`
+- Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_pages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
+
+### Removed
+
+- Test coverage for Ubuntu 20.04 as Ubuntu 20.04.1 is generally available (and available on [GitHub Actions: Ubuntu 22.04 is now generally available on GitHub-hosted runners](https://github.blog/changelog/2022-08-09-github-actions-ubuntu-22-04-is-now-generally-available-on-github-hosted-runners/)).
+
 ## [2022.9.25]
 
 ### Added

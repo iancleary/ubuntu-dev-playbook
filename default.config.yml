@@ -145,9 +145,6 @@ flatpaks:
 
 configure_snap: true
 snaps:
-  # - name: "authy"
-  #   classic: no
-  #   channel: "stable"
   - name: "authy"  # 2-Factor Authentication
   - name: "beekeeper-studio"  # An open source SQL editor and database management app
   - name: "code"
@@ -234,11 +231,13 @@ apt_packages:
   - name: python3-pip
   - name: python3-venv
   - name: python3-pytest
-  - name: libpython3.9-dev
+  - name: libpython3.10-dev # Ubuntu 22.04 supports python3.10+
   - name: python-is-python3
   # linting
   - name: yamllint
   - name: shellcheck
+
+apt_desktop_packages:
   # Begin Desktop Packages
   # Audio Control
   - name: pulseaudio

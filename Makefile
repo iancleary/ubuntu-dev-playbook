@@ -77,7 +77,11 @@ bootstrap-before-script:
 	# The top of the Makefile takes care of this in the initial session
 	bash scripts/before_script_path_fix.sh
 
-bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script
+galaxy-requirements:
+galaxy-requirements:
+	ansible-galaxy install -r requirements.yml
+
+bootstrap: bootstrap-before-install bootstrap-install bootstrap-before-script galaxy-requirements
 bootstrap: ## Installs dependencies needed to run playbook
 
 bootstrap-check:
@@ -180,6 +184,10 @@ docker: ## Runs the docker ansible role
 dotfiles:
 dotfiles: ## Runs the dotfiles ansible role
 	@$(ANSIBLE) --tags="dotfiles"
+
+extra-desktop-packages:
+extra-desktop-packages: ## Runs the extra-desktop-packages ansible role
+	@$(ANSIBLE) --tags="extra-desktop-packages"
 
 extra-packages:
 extra-packages: ## Runs the extra-packages ansible role
