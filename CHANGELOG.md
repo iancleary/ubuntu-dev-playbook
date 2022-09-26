@@ -9,6 +9,8 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+## [2022.9.25]
+
 ### Added
 
 - `colorls` gem per [#246](https://github.com/iancleary/ubuntu-dev-playbook/issues/246)
@@ -382,7 +384,8 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/ubuntu-dev-playbook/compare/v2021.9.8...HEAD
+[Unreleased]: https://github.com/iancleary/ubuntu-dev-playbook/compare/v2022.9.25...HEAD
+[2022.9.25]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2022.9.25
 [2021.9.8]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2021.9.8
 [21.04.1]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v21.04.1
 [21.04.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v21.04.0
