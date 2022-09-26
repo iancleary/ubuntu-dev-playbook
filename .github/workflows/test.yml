@@ -59,5 +59,8 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: install galaxy roles
+        run: |
+          make galaxy-requirements
       - name: desktop
         run: make desktop-github-runner
