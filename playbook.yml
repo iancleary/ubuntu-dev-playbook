@@ -25,7 +25,7 @@
       when: configure_colorls
       tags: ['terminal', 'desktop', 'colorls']
       become: true
-    - role: docker
+    - role: iancleary.docker
       when: configure_docker
       tags: ['terminal', 'desktop', 'docker', 'skip-ci']
       become: true
