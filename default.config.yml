@@ -141,6 +141,7 @@ flatpaks:
   - "org.videolan.VLC"
   - "us.zoom.Zoom"
   - "nl.hjdskes.gcolor3"  # Color Picker
+  - "re.sonny.Junction"
 
 configure_snap: true
 snaps:
