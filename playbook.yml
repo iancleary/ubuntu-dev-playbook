@@ -34,7 +34,7 @@
       become: true
     - role: github_cli
       when: configure_github_cli
-      tags: ['terminal', 'desktop', 'github-cli']
+      tags: ['terminal', 'desktop', 'github-cli', 'skip-ci']
 
     # Dotfiles
     - role: yadm

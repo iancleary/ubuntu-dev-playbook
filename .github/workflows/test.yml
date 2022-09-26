@@ -33,10 +33,13 @@ jobs:
         run: |
           npm --version
           yarn --version
-          gh --version
           terraform --version
-          docker --version
-          docker-compose --version
+       - name: skip
+         run: echo "skipping docker, docker-compose, and gh for now"
+          # gh --version https://github.com/sigmavirus24/github3.py/issues/1105
+          # docker --version
+          # docker-compose --version
+          
 
   desktop:
     runs-on: ubuntu-20.04
