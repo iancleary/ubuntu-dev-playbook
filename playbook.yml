@@ -58,10 +58,12 @@
   tasks:
     - import_tasks: tasks/universe-repository.yml
       when: configure_universe_repository
-      tags: ['universe-repository', 'extra-packages']
+      tags: ['universe-repository', 'extra-packages', 'extra-desktop-packages']
     # extra-packages should go after universe to ensure packages are found
     - import_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages']
+      tags: ['extra-packages', 'extra-desktop-packages']
+    - import_tasks: tasks/extra-desktop-packages.yml
+      tags: ['extra-desktop-packages']
     - import_tasks: tasks/flatpak.yml
       tags: ['flatpak']
       when: configure_flatpak

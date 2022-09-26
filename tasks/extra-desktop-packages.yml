@@ -1,0 +1,25 @@
+---
+- name: Install global apt packages
+  become: true
+  apt:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ apt_packages }}"
+
+- name: Install global Pip packages.
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ pip_packages }}"
+
+- name: Install global Ruby gems.
+  become: true
+  gem:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    user_install: false
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ gem_packages }}"

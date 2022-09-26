@@ -185,6 +185,10 @@ dotfiles:
 dotfiles: ## Runs the dotfiles ansible role
 	@$(ANSIBLE) --tags="dotfiles"
 
+extra-desktop-packages:
+extra-desktop-packages: ## Runs the extra-desktop-packages ansible role
+	@$(ANSIBLE) --tags="extra-desktop-packages"
+
 extra-packages:
 extra-packages: ## Runs the extra-packages ansible role
 	@$(ANSIBLE) --tags="extra-packages"
