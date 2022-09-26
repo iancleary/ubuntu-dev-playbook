@@ -14,10 +14,11 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Switched docker role to ansible-galaxy role: `iancleary.docker`
 - Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_pages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
 
-
 ### Removed
 
 - Test coverage for Ubuntu 20.04 as Ubuntu 20.04.1 is generally available (and available on [GitHub Actions: Ubuntu 22.04 is now generally available on GitHub-hosted runners](https://github.blog/changelog/2022-08-09-github-actions-ubuntu-22-04-is-now-generally-available-on-github-hosted-runners/)).
+
+## [2022.9.25]
 
 ### Added
 
@@ -392,7 +393,8 @@ to test `make flameshot-keybindings`
 - Install `ansible`, `Visual Studio Code`, `docker`, `docker-compose`, `nodejs`, `postman`, `python3.7`, `Signal Desktop`, `Telegram`, `Snap`, `Spotify`, `Sublime Text`, `Tresorit`, `yarn`, and `zsh`
 - Configure GNOME keybindings and personal preferences
 
-[Unreleased]: https://github.com/iancleary/ubuntu-dev-playbook/compare/v2021.9.8...HEAD
+[Unreleased]: https://github.com/iancleary/ubuntu-dev-playbook/compare/v2022.9.25...HEAD
+[2022.9.25]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2022.9.25
 [2021.9.8]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2021.9.8
 [21.04.1]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v21.04.1
 [21.04.0]: https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v21.04.0
