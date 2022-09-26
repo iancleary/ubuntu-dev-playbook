@@ -21,6 +21,9 @@ jobs:
       - name: install
         run: |
           make bootstrap-install
+      - name: install galaxy roles
+        run: |
+          make galaxy-requirements
       - name: terminal
         run: |
           make terminal-github-runner
