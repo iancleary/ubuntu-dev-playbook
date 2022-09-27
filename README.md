@@ -132,6 +132,7 @@ for beautiful images of my code - right inside my terminal,
 
 ### Utilities
 
+* [Tailscale (A secure network that just works)](https://tailscale.com/download/linux)
 * [Caffeine](https://launchpad.net/caffeine),
 * `Nordvpn`,
 * [PDFSlicer](https://github.com/junrrein/pdfslicer)
