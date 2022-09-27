@@ -5,6 +5,7 @@ host_arch: "amd64"
 # Terminal
 configure_colorls: true
 configure_github_cli: true
+configure_tailscale: true
 
 # Debs from PPAs
 configure_appimagelauncher: true

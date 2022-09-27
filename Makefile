@@ -237,6 +237,10 @@ stacer:
 stacer: ## Runs the stacer ansible role
 	@$(ANSIBLE) --tags="stacer"
 
+tailscale:
+tailscale: ## Runs the tailscale ansible role
+	@$(ANSIBLE) --tags="tailscale"
+
 terminal:
 terminal: ## Runs the terminal ansible role
 	@$(ANSIBLE) --tags="terminal"

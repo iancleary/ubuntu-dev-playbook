@@ -9,6 +9,10 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- `iancleary.tailscale` ansible-galaxy role to the `terminal` and `desktop` installations.
+
 ### Changed
 
 - Switched docker role to ansible-galaxy role: `iancleary.docker`

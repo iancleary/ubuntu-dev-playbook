@@ -35,6 +35,10 @@
     - role: github_cli
       when: configure_github_cli
       tags: ['terminal', 'desktop', 'github-cli', 'skip-ci']
+    - role: iancleary.tailscale
+      become: true
+      when: configure_tailscale
+      tags: ['terminal', 'desktop', 'tailscale', 'skip-ci']
 
     # Dotfiles
     - role: yadm
