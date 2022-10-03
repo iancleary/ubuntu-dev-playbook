@@ -1,20 +1,47 @@
 ---
-- name: Add appimagelauncher-team repositories
-  become: true
-  ansible.builtin.apt_repository:
-    repo: "ppa:appimagelauncher-team/stable"
+- name: Add appimagelauncher apt key.
+  ansible.builtin.apt_key:
+    url: >
+      https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xacd802f535b6f55d365285574af9b16f75ef2fca
+    id: "75ef2fca"
+    keyring: /etc/apt/trusted.gpg.d/appimagelauncher.gpg
     state: present
+
+- name: Massage ansible_distribution_release for elementary OS 6
+  set_fact:
+    massaged_ansible_distribution_release: focal
+  when: ansible_distribution_release == "odin"
+  register: elementary_os
+
+- name: Debug elementary_os
+  debug:
+    msg: elementary_os
+
+- name: Bypass ansible_distribution_release for non elementary OS
+  set_fact:
+    massaged_ansible_distribution_release: "{{ ansible_distribution_release }}"
+  when: ansible_distribution_release != "odin"
+
+- name: Add appimagelauncher repositories.
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+    state: present
+  loop:
+    - >-
+      deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/appimagelauncher.gpg] https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu
+        {{ massaged_ansible_distribution_release }} main
+    - >-
+      deb-src [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/appimagelauncher.gpg] https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu
+        {{ massaged_ansible_distribution_release }} main
   register: appimagelauncher_repo
 
 - name: Update apt cache if repo was added.
-  become: true
-  apt:
-    update_cache: true
+  ansible.builtin.apt:
+    update_cache: "yes"
   when: appimagelauncher_repo.changed
   tags: ['skip_ansible_lint']
 
 - name: Ensure appimagelauncher is installed.
-  become: true
   apt:
     name: "appimagelauncher"
     state: present

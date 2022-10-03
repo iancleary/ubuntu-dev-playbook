@@ -94,6 +94,7 @@
       when: configure_ulauncher
     - import_tasks: tasks/ppa/appimagelauncher.yml
       tags: ['appimagelauncher']
+      become: true
       when: configure_appimagelauncher
     - import_tasks: tasks/ppa/caffeine.yml
       tags: ['caffeine']
