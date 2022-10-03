@@ -36,10 +36,10 @@
   loop:
     - >-
       deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/node{{ nodejs_version|regex_replace('.x', '') }}.gpg] https://deb.nodesource.com/node_{{ nodejs_version }}
-       {{ massaged_ansible_distribution_release }} main
+        {{ massaged_ansible_distribution_release }} main
     - >-
       deb-src [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/node{{ nodejs_version|regex_replace('.x', '') }}.gpg] https://deb.nodesource.com/node_{{ nodejs_version }}
-       {{ massaged_ansible_distribution_release }} main
+        {{ massaged_ansible_distribution_release }} main
   register: node_repo
 
 - name: Nodejs - Update apt cache if repo was added.
