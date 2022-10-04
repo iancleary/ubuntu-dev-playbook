@@ -13,6 +13,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 - `iancleary.tailscale` ansible-galaxy role to the `terminal` and `desktop` installations.
 - `nextcloud` AppImage task
+- `flatpak` plugin support for Gnome Software
 
 ### Changed
 
