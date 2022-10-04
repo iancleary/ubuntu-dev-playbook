@@ -16,11 +16,12 @@ configure_timeshift: false
 # i.e. don't set this to true if you are on zfs
 configure_liquorix: false
 
-# Debs from URL/GitHub
+# Debs/AppImages from URL/GitHub
 # Set to 'true' to configure Stacer.
 configure_nordvpn: false
 configure_stacer: false
 configure_ulauncher: false
+configure_nextcloud: true
 # Configure specific ulauncher version - default latest
 # ulauncher_version: 5.7.5
 

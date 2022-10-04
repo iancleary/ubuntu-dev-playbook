@@ -217,6 +217,10 @@ nautilus-mounts:
 nautilus-mounts: ## Runs the nautilus-mounts ansible role
 	@$(ANSIBLE) --tags="nautilus-mounts"
 
+nextcloud:
+nextcloud: ## Runs the nextcloud ansible role
+	@$(ANSIBLE) --tags="nextcloud"
+
 nodejs:
 nodejs: ## Runs the nodejs ansible role
 	@$(ANSIBLE) --tags="nodejs"
