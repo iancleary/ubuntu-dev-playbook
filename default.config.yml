@@ -79,6 +79,7 @@ code_extensions:
   - riccardoNovaglia.missinglineendoffile
   - shardulm94.trailing-spaces
   - oderwat.indent-rainbow
+  - ms-vscode.makefile-tools
   # - Shan.code-settings-sync
 
   ## Git Utilities
