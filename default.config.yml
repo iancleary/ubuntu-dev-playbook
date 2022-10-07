@@ -146,6 +146,7 @@ flatpaks:
   - "us.zoom.Zoom"
   - "nl.hjdskes.gcolor3"  # Color Picker
   - "re.sonny.Junction"
+  - "com.mattjakeman.ExtensionManager"
 
 configure_snap: true
 snaps:
