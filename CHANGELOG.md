@@ -15,6 +15,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - `nextcloud` AppImage task
 - `flatpak` plugin support for Gnome Software
 - `com.mattjakeman.ExtensionManager` Flatpak
+- [guake](https://guake.readthedocs.io/), a powerful drop-down terminal, accessible by a simple hotkey.
 
 ### Changed
 

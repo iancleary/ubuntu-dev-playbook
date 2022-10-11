@@ -244,6 +244,8 @@ apt_packages:
 
 apt_desktop_packages:
   # Begin Desktop Packages
+  # Guake Drop Down Terminal
+  - name: guake
   # Audio Control
   - name: pulseaudio
   - name: pavucontrol
