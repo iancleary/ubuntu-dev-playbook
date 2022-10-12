@@ -21,7 +21,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Changed
 
 - Switched docker role to ansible-galaxy role: `iancleary.docker`
-- Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_pages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
+- Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_packages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
 
 ### Removed
 
