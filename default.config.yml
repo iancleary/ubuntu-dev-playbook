@@ -253,6 +253,9 @@ apt_desktop_packages:
   - name: linssid
   - name: gnome-sushi
   - name: profile-sync-daemon
+  - name: gnome-tweaks
+  - name: dconf-editor
+  - name: input-remapper
 
 pip_packages:
   # - name: mkdocs

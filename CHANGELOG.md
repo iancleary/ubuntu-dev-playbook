@@ -16,6 +16,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - `flatpak` plugin support for Gnome Software
 - `com.mattjakeman.ExtensionManager` Flatpak
 - [guake](https://guake.readthedocs.io/), a powerful drop-down terminal, accessible by a simple hotkey.
+- 'input-remapper', 'dconf-editor', and 'gnome-tweaks' apt desktop packages per [#273](https://github.com/iancleary/ubuntu-dev-playbook/issues/273)
 
 ### Changed
 
