@@ -241,6 +241,8 @@ apt_packages:
   # linting
   - name: yamllint
   - name: shellcheck
+  # better apt CLI
+  - name: nala
 
 apt_desktop_packages:
   # Begin Desktop Packages
@@ -256,6 +258,8 @@ apt_desktop_packages:
   - name: gnome-tweaks
   - name: dconf-editor
   - name: input-remapper
+  # better apt CLI
+  - name: nala
 
 pip_packages:
   # - name: mkdocs
