@@ -16,11 +16,12 @@ configure_timeshift: false
 # i.e. don't set this to true if you are on zfs
 configure_liquorix: false
 
-# Debs from URL/GitHub
+# Debs/AppImages from URL/GitHub
 # Set to 'true' to configure Stacer.
 configure_nordvpn: false
 configure_stacer: false
 configure_ulauncher: false
+configure_nextcloud: true
 # Configure specific ulauncher version - default latest
 # ulauncher_version: 5.7.5
 
@@ -78,6 +79,7 @@ code_extensions:
   - riccardoNovaglia.missinglineendoffile
   - shardulm94.trailing-spaces
   - oderwat.indent-rainbow
+  - ms-vscode.makefile-tools
   # - Shan.code-settings-sync
 
   ## Git Utilities
@@ -126,8 +128,9 @@ code_extensions:
 #     unc_path: "\\\\server\\folder\\"  # escaped slashes
 
 configure_flatpak: true
+configure_flatpak_gnome_software: true # gnome software plugin, can turn off to avoid duplicate stores (snap-store and gnome-software)
 flatpaks:
-  - "com.giuspen.cherrytree"  # Hierarchical Note Taking
+  # - "net.giuspen.cherrytree"  # Hierarchical Note Taking
   - "com.uploadedlobster.peek"  # Simple screen recorder with an easy to use interface
   - "com.github.junrrein.PDFSlicer"
   - "org.kde.okular"  # Document Viewer
@@ -135,7 +138,7 @@ flatpaks:
   - "com.rafaelmardojai.Blanket"  # Background Sounds
   - "com.github.tchx84.Flatseal"  # Manage Flatpak permissions
   - "org.gabmus.whatip"  # Info on your IP
-  - "com.bitwarden.desktop"  # A secure and free password manager for all of your devices
+  # - "com.bitwarden.desktop"  # A secure and free password manager for all of your devices
   - "org.gnome.Evolution"
   - "org.libreoffice.LibreOffice"
   - "org.mozilla.firefox"
@@ -143,6 +146,7 @@ flatpaks:
   - "us.zoom.Zoom"
   - "nl.hjdskes.gcolor3"  # Color Picker
   - "re.sonny.Junction"
+  - "com.mattjakeman.ExtensionManager"
 
 configure_snap: true
 snaps:
@@ -238,9 +242,13 @@ apt_packages:
   # linting
   - name: yamllint
   - name: shellcheck
+  # better apt CLI
+  - name: nala
 
 apt_desktop_packages:
   # Begin Desktop Packages
+  # Guake Drop Down Terminal
+  - name: guake
   # Audio Control
   - name: pulseaudio
   - name: pavucontrol
@@ -248,6 +256,11 @@ apt_desktop_packages:
   - name: linssid
   - name: gnome-sushi
   - name: profile-sync-daemon
+  - name: gnome-tweaks
+  - name: dconf-editor
+  - name: input-remapper
+  # better apt CLI
+  - name: nala
 
 pip_packages:
   # - name: mkdocs

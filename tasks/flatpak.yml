@@ -2,8 +2,17 @@
 - name: install flatpak packages
   become: true
   apt:
+    name:
+      - "gnome-software"
+      - "gnome-software-plugin-flatpak"
+    state: present
+
+- name: install flatpak packages
+  become: true
+  apt:
     name: "flatpak"
     state: present
+  when: configure_flatpak_gnome_software
 
 - name: install flatpak remote
   become: true

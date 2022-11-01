@@ -77,6 +77,9 @@
     - import_tasks: tasks/code-extensions.yml
       tags: ['code-extensions']
       when: configure_code_extensions
+    - import_tasks: tasks/nextcloud.yml
+      tags: ['nextcloud']
+      when: configure_nextcloud
     - import_tasks: tasks/airpods-pro-bluetooth-fix.yml
       tags: ['airpods-pro-bluetooth-fix']
       when: configure_airpods_pro_bluetooth_fix
@@ -94,6 +97,7 @@
       when: configure_ulauncher
     - import_tasks: tasks/ppa/appimagelauncher.yml
       tags: ['appimagelauncher']
+      become: true
       when: configure_appimagelauncher
     - import_tasks: tasks/ppa/caffeine.yml
       tags: ['caffeine']

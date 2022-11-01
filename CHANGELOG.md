@@ -12,11 +12,17 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 ### Added
 
 - `iancleary.tailscale` ansible-galaxy role to the `terminal` and `desktop` installations.
+- `nextcloud` AppImage task
+- `flatpak` plugin support for Gnome Software
+- `com.mattjakeman.ExtensionManager` Flatpak
+- [guake](https://guake.readthedocs.io/), a powerful drop-down terminal, accessible by a simple hotkey.
+- 'input-remapper', 'dconf-editor', and 'gnome-tweaks' apt desktop packages per [#273](https://github.com/iancleary/ubuntu-dev-playbook/issues/273)
+- [nala](https://gitlab.com/volian/nala), pretty formatting and parallel downloads for `apt`.
 
 ### Changed
 
 - Switched docker role to ansible-galaxy role: `iancleary.docker`
-- Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_pages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
+- Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_packages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
 
 ### Removed
 
