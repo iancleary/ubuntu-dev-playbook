@@ -43,7 +43,7 @@ jobs:
           # gh --version https://github.com/sigmavirus24/github3.py/issues/1105
           # docker --version
           # docker-compose --version
-          
+
 
   desktop:
     runs-on: ubuntu-22.04
