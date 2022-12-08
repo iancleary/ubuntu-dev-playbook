@@ -75,7 +75,7 @@
       tags: ['desktop', 'snap', 'skip-ci']
       when: configure_snap
     - import_tasks: tasks/code-extensions.yml
-      tags: ['desktop', 'code-extensions']
+      tags: ['desktop', 'code-extensions', 'skip-ci']
       when: configure_code_extensions
     - import_tasks: tasks/airpods-pro-bluetooth-fix.yml
       tags: ['desktop', 'airpods-pro-bluetooth-fix', 'skip-ci']
