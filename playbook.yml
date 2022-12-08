@@ -69,19 +69,19 @@
     - import_tasks: tasks/extra-desktop-packages.yml
       tags: ['desktop', 'extra-desktop-packages']
     - import_tasks: tasks/flatpak.yml
-      tags: ['desktop', 'flatpak']
+      tags: ['desktop', 'flatpak', 'skip-ci']
       when: configure_flatpak
     - import_tasks: tasks/snap.yml
-      tags: ['desktop', 'snap']
+      tags: ['desktop', 'snap', 'skip-ci']
       when: configure_snap
     - import_tasks: tasks/code-extensions.yml
       tags: ['desktop', 'code-extensions']
       when: configure_code_extensions
     - import_tasks: tasks/airpods-pro-bluetooth-fix.yml
-      tags: ['desktop', 'airpods-pro-bluetooth-fix']
+      tags: ['desktop', 'airpods-pro-bluetooth-fix', 'skip-ci']
       when: configure_airpods_pro_bluetooth_fix
     - import_tasks: tasks/wifi-powersave-mode.yml
-      tags: ['desktop', 'wifi-powersave-mode']
+      tags: ['desktop', 'wifi-powersave-mode', 'skip-ci']
       when: configure_wifi_powersave_mode
     - import_tasks: tasks/deb/nordvpn.yml
       tags: ['desktop', 'nordvpn']
