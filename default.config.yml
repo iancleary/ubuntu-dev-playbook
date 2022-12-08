@@ -256,7 +256,6 @@ apt_desktop_packages:
   - name: gnome-sushi
   - name: profile-sync-daemon
   - name: gnome-tweaks
-  - name: dconf-editor
   - name: input-remapper
   # better apt CLI
   - name: nala

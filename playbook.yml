@@ -62,43 +62,43 @@
   tasks:
     - import_tasks: tasks/universe-repository.yml
       when: configure_universe_repository
-      tags: ['universe-repository', 'extra-packages', 'extra-desktop-packages']
+      tags: ['desktop', 'universe-repository', 'extra-packages', 'extra-desktop-packages']
     # extra-packages should go after universe to ensure packages are found
     - import_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages', 'extra-desktop-packages']
+      tags: ['desktop', 'extra-packages', 'extra-desktop-packages']
     - import_tasks: tasks/extra-desktop-packages.yml
-      tags: ['extra-desktop-packages']
+      tags: ['desktop', 'extra-desktop-packages']
     - import_tasks: tasks/flatpak.yml
-      tags: ['flatpak']
+      tags: ['desktop', 'flatpak']
       when: configure_flatpak
     - import_tasks: tasks/snap.yml
-      tags: ['snap']
+      tags: ['desktop', 'snap']
       when: configure_snap
     - import_tasks: tasks/code-extensions.yml
-      tags: ['code-extensions']
+      tags: ['desktop', 'code-extensions']
       when: configure_code_extensions
-    - import_tasks: tasks/nextcloud.yml
-      tags: ['nextcloud']
-      when: configure_nextcloud
     - import_tasks: tasks/airpods-pro-bluetooth-fix.yml
-      tags: ['airpods-pro-bluetooth-fix']
+      tags: ['desktop', 'airpods-pro-bluetooth-fix']
       when: configure_airpods_pro_bluetooth_fix
     - import_tasks: tasks/wifi-powersave-mode.yml
-      tags: ['wifi-powersave-mode']
+      tags: ['desktop', 'wifi-powersave-mode']
       when: configure_wifi_powersave_mode
     - import_tasks: tasks/deb/nordvpn.yml
-      tags: ['nordvpn']
+      tags: ['desktop', 'nordvpn']
       when: configure_nordvpn
     - import_tasks: tasks/deb/stacer.yml
-      tags: ['stacer']
+      tags: ['desktop', 'stacer']
       when: configure_stacer
     - import_tasks: tasks/deb/ulauncher.yml
-      tags: ['ulauncher']
+      tags: ['desktop', 'ulauncher']
       when: configure_ulauncher
     - import_tasks: tasks/ppa/appimagelauncher.yml
-      tags: ['appimagelauncher']
+      tags: ['desktop', 'appimagelauncher']
       become: true
       when: configure_appimagelauncher
+    - import_tasks: tasks/nextcloud.yml
+      tags: ['desktop', 'nextcloud']
+      when: configure_nextcloud
     - import_tasks: tasks/ppa/caffeine.yml
       tags: ['caffeine']
       when: configure_caffeine
@@ -106,7 +106,7 @@
       tags: ['liquorix']
       when: configure_liquorix
     - import_tasks: tasks/ppa/terraform.yml
-      tags: ['terraform']
+      tags: ['desktop', 'terminal', 'terraform']
       when: configure_terraform
     - import_tasks: tasks/ppa/timeshift.yml
       tags: ['timeshift']

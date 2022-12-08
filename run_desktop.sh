@@ -39,4 +39,4 @@ make bootstrap
 make bootstrap-check
 
 # Initalize any machine (VM or Host)
-make terminal
+make desktop
