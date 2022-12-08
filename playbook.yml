@@ -65,9 +65,9 @@
       tags: ['desktop', 'universe-repository', 'extra-packages', 'extra-desktop-packages']
     # extra-packages should go after universe to ensure packages are found
     - import_tasks: tasks/extra-packages.yml
-      tags: ['desktop', 'extra-packages', 'extra-desktop-packages']
+      tags: ['desktop', 'extra-packages', 'extra-desktop-packages', 'skip-ci']
     - import_tasks: tasks/extra-desktop-packages.yml
-      tags: ['desktop', 'extra-desktop-packages']
+      tags: ['desktop', 'extra-desktop-packages', 'skip-ci']
     - import_tasks: tasks/flatpak.yml
       tags: ['desktop', 'flatpak', 'skip-ci']
       when: configure_flatpak
