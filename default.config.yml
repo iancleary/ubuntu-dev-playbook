@@ -138,8 +138,6 @@ flatpaks:
   - "com.rafaelmardojai.Blanket"  # Background Sounds
   - "com.github.tchx84.Flatseal"  # Manage Flatpak permissions
   - "org.gabmus.whatip"  # Info on your IP
-  # - "com.bitwarden.desktop"  # A secure and free password manager for all of your devices
-  - "org.gnome.Evolution"
   - "org.libreoffice.LibreOffice"
   - "org.mozilla.firefox"
   - "org.videolan.VLC"
@@ -147,6 +145,7 @@ flatpaks:
   - "nl.hjdskes.gcolor3"  # Color Picker
   - "re.sonny.Junction"
   - "com.mattjakeman.ExtensionManager"
+  - "ca.desrt.dconf-editor"
 
 configure_snap: true
 snaps:
