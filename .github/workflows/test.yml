@@ -64,6 +64,3 @@ jobs:
           make galaxy-requirements
       - name: desktop
         run: make desktop-github-runner
-      - name: extra-desktop-packages
-        run: |
-          make extra-desktop-packages
