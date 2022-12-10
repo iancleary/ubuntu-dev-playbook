@@ -271,10 +271,26 @@ pip_packages:
   - name: setuptools
     state: latest
   - name: wheel
-  - name: linode_api4
   - name: pyyaml
+  - name: pipx
+  - name: pdm
+    state: absent
   - name: poetry
+    state: absent
   - name: pre-commit
+    state: absent
+  - name: ruff
+    state: absent
+
+pipx_packages:
+  - name: pdm
+    state: latest
+  - name: poetry
+    state: latest
+  - name: pre-commit
+    state: latest
+  - name: ruff
+    state: latest
 
 gem_packages: []
 # - name: bundler
