@@ -279,6 +279,8 @@ pip_packages:
     state: absent
   - name: pre-commit
     state: absent
+  - name: ruff
+    state: absent
 
 pipx_packages:
   - name: pdm
@@ -286,6 +288,8 @@ pipx_packages:
   - name: poetry
     state: latest
   - name: pre-commit
+    state: latest
+  - name: ruff
     state: latest
 
 gem_packages: []
