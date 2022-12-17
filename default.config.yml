@@ -146,6 +146,7 @@ flatpaks:
   - "re.sonny.Junction"
   - "com.mattjakeman.ExtensionManager"
   - "ca.desrt.dconf-editor"
+  - "io.podman_desktop.PodmanDesktop"
 
 configure_snap: true
 snaps:
