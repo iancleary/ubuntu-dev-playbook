@@ -146,6 +146,7 @@ flatpaks:
   - "re.sonny.Junction"
   - "com.mattjakeman.ExtensionManager"
   - "ca.desrt.dconf-editor"
+  - "io.podman_desktop.PodmanDesktop"
 
 configure_snap: true
 snaps:
@@ -238,6 +239,8 @@ apt_packages:
   - name: python3-pytest
   - name: libpython3.10-dev # Ubuntu 22.04 supports python3.10+
   - name: python-is-python3
+  # Podman
+  - name: podman
   # linting
   - name: yamllint
   - name: shellcheck
@@ -290,6 +293,8 @@ pipx_packages:
   - name: pre-commit
     state: latest
   - name: ruff
+    state: latest
+  - name: podman-compose
     state: latest
 
 gem_packages: []
