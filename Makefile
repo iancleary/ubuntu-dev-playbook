@@ -139,6 +139,21 @@ flameshot-keybindings: gsettings-keybindings
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/snap/bin/flameshot gui'
 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
 
+just:  ## Install just command runner
+just:
+	curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
+	echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $$(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+	sudo apt update
+	sudo apt install just
+
+rust-sd:
+rust-sd:
+	sudo apt install build-essential
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	source $$HOME/.cargo/env
+	cargo install sd
+	sd --version
+
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
