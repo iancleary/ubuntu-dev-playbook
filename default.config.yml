@@ -43,7 +43,7 @@ configure_hyper_v: false
 configure_nautilus_mounts: false
 
 configure_node: true
-nodejs_version: "14.x"
+nodejs_version: "18.x"
 # Set to true to suppress the UID/GID switching when running package scripts. If
 # set explicitly to false, then installing as a non-root user will fail.
 npm_config_unsafe_perm: true
