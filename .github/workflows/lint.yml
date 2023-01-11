@@ -19,7 +19,6 @@ jobs:
       - name: before_install
         run: |
           make bootstrap-before-install
-          npm install -g markdownlint-cli
       - name: before_script
         run: |
           make bootstrap-before-script
