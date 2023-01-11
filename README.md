@@ -61,8 +61,8 @@ I've aligned ansible tags/roles around my common use cases:
 * `ansible`,
 * `docker`,
 * `docker-compose`,
-* `nodejs`, `yarn`
-* `python3.8`,
+* `nodejs`, `npm`, and `yarn`
+* `python3`,
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `yarn`
 * `terraform`
@@ -108,6 +108,8 @@ This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyp
 * `Flatpak`,
 * `Snap`,
 
+> various applications are installed with both packages managers.
+
 ### AppImageLauncher
 
 * [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), see the [Integrate any AppImage into the Ubuntu Desktop](https://dev.to/strotgen/integrate-tinkerwell-or-any-appimage-into-the-ubuntu-desktop-le9) article.
@@ -122,8 +124,6 @@ This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyp
 
 ### Screenshots and GIFs
 
-* [carbon-cli](https://github.com/mixn/carbon-now-cli)
-for beautiful images of my code - right inside my terminal,
 * [Flameshot](https://flameshot.js.org/#/),
 
 > Flameshot keybinding to the Print Screen key using `gsettings`
@@ -147,7 +147,6 @@ for beautiful images of my code - right inside my terminal,
 
 ### Notes
 
-* `cherrytree`,
 * `Standard Notes`,
 
 ### System Info
