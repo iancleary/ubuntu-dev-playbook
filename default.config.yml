@@ -236,8 +236,11 @@ apt_packages:
   - name: python3-pip
   - name: python3-venv
   - name: python3.10-venv
+  - name: python3.11
+  - name: python3.11-venv
   - name: python3-pytest
   - name: libpython3.10-dev # Ubuntu 22.04 supports python3.10+
+  - name: libpython3.11-dev
   - name: python-is-python3
   # Podman
   - name: podman
