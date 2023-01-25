@@ -62,7 +62,7 @@ I've aligned ansible tags/roles around my common use cases:
 * `docker`,
 * `docker-compose`,
 * `nodejs`, `npm`, and `yarn`
-* `python3`, `python3.10`, `python3.11`
+* `python3`, `python3.10`
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `yarn`
 * `terraform`
