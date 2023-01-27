@@ -14,21 +14,6 @@
     keyring: /etc/apt/trusted.gpg.d/node{{ nodejs_version|regex_replace('.x', '') }}.gpg
     state: present
 
-- name: Massage ansible_distribution_release for elementary OS 6
-  set_fact:
-    massaged_ansible_distribution_release: focal
-  when: ansible_distribution_release == "odin"
-  register: elementary_os
-
-- name: Debug elementary_os
-  debug:
-    msg: elementary_os
-
-- name: Bypass ansible_distribution_release for non elementary OS
-  set_fact:
-    massaged_ansible_distribution_release: "{{ ansible_distribution_release }}"
-  when: ansible_distribution_release != "odin"
-
 - name: Nodejs - Add NodeSource repositories for Node.js.
   ansible.builtin.apt_repository:
     repo: "{{ item }}"
@@ -36,10 +21,10 @@
   loop:
     - >-
       deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/node{{ nodejs_version|regex_replace('.x', '') }}.gpg] https://deb.nodesource.com/node_{{ nodejs_version }}
-        {{ massaged_ansible_distribution_release }} main
+        {{ ansible_distribution_release }} main
     - >-
       deb-src [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/node{{ nodejs_version|regex_replace('.x', '') }}.gpg] https://deb.nodesource.com/node_{{ nodejs_version }}
-        {{ massaged_ansible_distribution_release }} main
+        {{ ansible_distribution_release }} main
   register: node_repo
 
 - name: Nodejs - Update apt cache if repo was added.

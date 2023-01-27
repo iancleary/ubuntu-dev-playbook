@@ -9,6 +9,22 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+    - name: Massage ansible_distribution_release for elementary OS 6.x
+      set_fact:
+        ansible_distribution_release: focal
+      when: ansible_distribution_release in ["odin", "jolnir"]
+      register: elementary_os
+      tags: ['always']
+    - name: Massage ansible_distribution_release for elementary OS 7.x
+      set_fact:
+        ansible_distribution_release: jammy
+      when: ansible_distribution_release in ["horus"]
+      register: elementary_os
+      tags: ['always']
+    - name: Debug ansible_distribution_release
+      debug:
+        msg: "{{ ansible_distribution_release }}"
+      tags: ['always']
 
   roles:
     # 'skip-ci' allows me to not test that role

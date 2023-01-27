@@ -18,11 +18,13 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - [guake](https://guake.readthedocs.io/), a powerful drop-down terminal, accessible by a simple hotkey.
 - 'input-remapper', 'dconf-editor', and 'gnome-tweaks' apt desktop packages per [#273](https://github.com/iancleary/ubuntu-dev-playbook/issues/273)
 - [nala](https://gitlab.com/volian/nala), pretty formatting and parallel downloads for `apt`.
+- Elementary os 6.1 and 7 support (`ansible_distribution_release`)
 
 ### Changed
 
 - Switched docker role to ansible-galaxy role: `iancleary.docker`
 - Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_packages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
+- Bring elementary os support (`ansible_distribution_release`) into single file.
 
 ### Removed
 
