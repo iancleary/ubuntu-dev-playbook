@@ -45,7 +45,7 @@
       when: configure_docker
       tags: ['terminal', 'desktop', 'docker', 'skip-ci']
       become: true
-    - role: nodejs
+    - role: geerlingguy.nodejs
       tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn']
       become: true
     - role: github_cli

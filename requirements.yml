@@ -2,3 +2,5 @@
 # Install a role from the Ansible Galaxy
 - src: iancleary.docker
 - src: iancleary.tailscale
+- src: geerlingguy.nodejs
+
