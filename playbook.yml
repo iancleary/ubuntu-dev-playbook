@@ -46,7 +46,7 @@
       tags: ['terminal', 'desktop', 'docker', 'skip-ci']
       become: true
     - role: geerlingguy.nodejs
-      tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn']
+      tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn', 'skip-ci']
       become: true
     - role: github_cli
       when: configure_github_cli

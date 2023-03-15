@@ -25,6 +25,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Switched docker role to ansible-galaxy role: `iancleary.docker`
 - Separated `apt_packages` variable into `apt_packages` (terminal) and `apt_desktop_packages` for (desktop), with tags to assume a desktop install wants both variable lists installed.
 - Bring elementary os support (`ansible_distribution_release`) into single file.
+- Swap out `roles/nodejs` for `geerlingguy.nodejs`
 
 ### Removed
 
