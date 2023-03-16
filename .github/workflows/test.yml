@@ -30,12 +30,8 @@ jobs:
       - name: extra-packages
         run: |
           make extra-packages
-      - name: Update Github Actions Path
-        run: echo "/usr/local/lib/npm/bin" >> $GITHUB_PATH
       - name: Check Versions
         run: |
-          npm --version
-          yarn --version
           terraform --version
       - name: skip
         run: |
