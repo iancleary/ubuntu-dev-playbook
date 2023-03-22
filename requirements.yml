@@ -3,4 +3,6 @@
 - src: iancleary.docker
 - src: iancleary.tailscale
 - src: geerlingguy.nodejs
-
+- src: iancleary.gh
+- src: iancleary.meslolgs
+- src: iancleary.terminal
