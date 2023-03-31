@@ -120,39 +120,13 @@ lint:  ## Lint the repo
 lint:
 	bash scripts/lint.sh
 
-gsettings-keybindings:
-gsettings-keybindings:  ## Sets GNOME custom keybindings
-
-	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['$(CUSTOM_KEYBINDING_BASE)/flameshot/','$(CUSTOM_KEYBINDING_BASE)/hyper/']"
-
-flameshot-keybindings: ## Flameshot custon GNOME keybindings
-flameshot-keybindings: gsettings-keybindings
-	# For whatever reason, I bricked my GNOME session trying this with ansible
-	# so for now, I'm just going to chain this to the new machine script
-	# and leave it as a make target
-
-	# Update gnome keybindings
-	# source: https://askubuntu.com/a/1116076
-
-	gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ name 'flameshot'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ command '/snap/bin/flameshot gui'
-	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot/ binding 'Print'
-
-just:  ## Install just command runner
-just:
-	curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
-	echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $$(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
-	sudo apt update
-	sudo apt install just
-
-rust-sd:
-rust-sd:
+rust: ## Install rust
+rust:
 	sudo apt install build-essential
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	source $$HOME/.cargo/env
+	cargo install just
 	cargo install sd
-	sd --version
 
 tresorit: ## Install Tresorit
 tresorit:
