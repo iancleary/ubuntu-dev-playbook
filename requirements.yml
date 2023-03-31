@@ -1,8 +1,16 @@
 ---
 # Install a role from the Ansible Galaxy
 - src: iancleary.docker
+  version: "v5.0.0"
 - src: iancleary.tailscale
+  version: "v0.1.0"
 - src: geerlingguy.nodejs
+  version: "6.1.1"
 - src: iancleary.gh
+  version: "v0.1.0"
 - src: iancleary.meslolgs
-- src: iancleary.terminal
+  version: "v0.1.0"
+- src: iancleary.colorls
+  version: "v0.1.0"
+- src: iancleary.ohmyzsh
+  version: "v0.2.0"

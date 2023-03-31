@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: desktop
   # connection: local
   vars_files:
     - default.config.yml
@@ -26,94 +26,45 @@
         msg: "{{ ansible_distribution_release }}"
       tags: ['always']
 
-  roles:
-    # 'skip-ci' allows me to not test that role
-    # 'never' is a special tag that is on run when that tag is specified
-
-    # Terminal
-    - role: fonts
-      when: configure_zsh
-      tags: ['terminal', 'desktop', 'fonts']
-    - role: zsh
-      when: configure_zsh
-      tags: ['terminal', 'desktop', 'zsh']
-    - role: colorls
-      when: configure_colorls
-      tags: ['terminal', 'desktop', 'colorls']
-      become: true
-    - role: iancleary.docker
-      when: configure_docker
-      tags: ['terminal', 'desktop', 'docker', 'skip-ci']
-      become: true
-    - role: geerlingguy.nodejs
-      tags: ['terminal', 'desktop', 'nodejs', 'npm', 'yarn', 'skip-ci']
-      become: true
-    - role: github_cli
-      when: configure_github_cli
-      tags: ['terminal', 'desktop', 'github-cli', 'skip-ci']
-    - role: iancleary.tailscale
-      become: true
-      when: configure_tailscale
-      tags: ['terminal', 'desktop', 'tailscale', 'skip-ci']
-
-    # Dotfiles
-    - role: yadm
-      tags: ['dotfiles', 'yadm']
-      when: configure_dotfiles
-
-    # Hyper-V Virtual Machine
-    - role: hyper-v
-      tags: ['vm', 'hyper-v', 'skip-ci']
-      when: configure_hyper_v
-
-    # Miscellaneous
-    - role: nautilus-mounts
-      tags: ['never', 'nautilus-mounts']
-      when: configure_nautilus_mounts
-
-    # Debug
-    - role: debug
-      tags: ['debug']
-
   tasks:
     - import_tasks: tasks/universe-repository.yml
       when: configure_universe_repository
-      tags: ['desktop', 'universe-repository', 'extra-packages', 'extra-desktop-packages']
+      tags: ['universe-repository', 'extra-packages', 'extra-desktop-packages']
     # extra-packages should go after universe to ensure packages are found
     - import_tasks: tasks/extra-packages.yml
-      tags: ['desktop', 'extra-packages', 'extra-desktop-packages', 'skip-ci']
+      tags: ['extra-packages', 'extra-desktop-packages', 'skip-ci']
     - import_tasks: tasks/extra-desktop-packages.yml
-      tags: ['desktop', 'extra-desktop-packages', 'skip-ci']
+      tags: ['extra-desktop-packages', 'skip-ci']
     - import_tasks: tasks/flatpak.yml
-      tags: ['desktop', 'flatpak', 'skip-ci']
+      tags: ['flatpak', 'skip-ci']
       when: configure_flatpak
     - import_tasks: tasks/snap.yml
-      tags: ['desktop', 'snap', 'skip-ci']
+      tags: ['snap', 'skip-ci']
       when: configure_snap
     - import_tasks: tasks/code-extensions.yml
-      tags: ['desktop', 'code-extensions', 'skip-ci']
+      tags: ['code-extensions', 'skip-ci']
       when: configure_code_extensions
     - import_tasks: tasks/airpods-pro-bluetooth-fix.yml
-      tags: ['desktop', 'airpods-pro-bluetooth-fix', 'skip-ci']
+      tags: ['airpods-pro-bluetooth-fix', 'skip-ci']
       when: configure_airpods_pro_bluetooth_fix
     - import_tasks: tasks/wifi-powersave-mode.yml
-      tags: ['desktop', 'wifi-powersave-mode', 'skip-ci']
+      tags: ['wifi-powersave-mode', 'skip-ci']
       when: configure_wifi_powersave_mode
     - import_tasks: tasks/deb/nordvpn.yml
-      tags: ['desktop', 'nordvpn']
+      tags: ['nordvpn']
       when: configure_nordvpn
     - import_tasks: tasks/deb/stacer.yml
-      tags: ['desktop', 'stacer']
+      tags: ['stacer']
       when: configure_stacer
     - import_tasks: tasks/deb/ulauncher.yml
-      tags: ['desktop', 'ulauncher']
+      tags: ['ulauncher']
       when: configure_ulauncher
     - import_tasks: tasks/ppa/appimagelauncher.yml
-      tags: ['desktop', 'appimagelauncher']
+      tags: ['appimagelauncher']
       become: true
       when: configure_appimagelauncher
     - import_tasks: tasks/nextcloud.yml
-      tags: ['desktop', 'nextcloud']
+      tags: ['nextcloud']
       when: configure_nextcloud
     - import_tasks: tasks/ppa/caffeine.yml
       tags: ['caffeine']
@@ -122,7 +73,7 @@
       tags: ['liquorix']
       when: configure_liquorix
     - import_tasks: tasks/ppa/terraform.yml
-      tags: ['desktop', 'terminal', 'terraform']
+      tags: ['terraform']
       when: configure_terraform
     - import_tasks: tasks/ppa/timeshift.yml
       tags: ['timeshift']

@@ -1,0 +1,35 @@
+---
+- hosts: terminal
+  # connection: local
+  vars_files:
+    - default.config.yml
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+
+  roles:
+    # 'skip-ci' allows me to not test that role
+    # 'never' is a special tag that is on run when that tag is specified
+
+    # Terminal
+    - role: iancleary.meslolgs
+    - role: iancleary.colorls
+      become: true
+    - role: iancleary.ohmyzsh
+    - role: iancleary.docker
+      become: true
+    - role: geerlingguy.nodejs
+      become: true
+    - role: iancleary.gh
+      when: configure_github_cli
+    - role: iancleary.tailscale
+      become: true
+
+
+  tasks:
+    - import_tasks: tasks/universe-repository.yml
+    # extra-packages should go after universe to ensure packages are found
+    - import_tasks: tasks/extra-packages.yml
