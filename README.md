@@ -16,7 +16,8 @@ This playbook installs and configures most of the software I use on my Ubuntu In
 
   2. Clone or download this repository to your local drive.
   3. Run `ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
-  4. Run `ansible-playbook plabook.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
+  4. Run `ansible-playbook plabook_terminal.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
+  5. (if desired) Run `ansible-playbook plabook_desktop.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
 
 > Note: If some Homebrew commands fail, you might need logout and log back in again.
 ### Running a specific set of tagged tasks
@@ -129,13 +130,13 @@ You can see my full from-scratch setup document here: [full-ubuntu-setup.md](ful
 
 ## Testing the Playbook
 
-While I often setup new machines while I experiment Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! This project is [continuously tested on GitHub Actions' macOS infrastructure](https://github.com/geerlingguy/mac-dev-playbook/actions?query=workflow%3ACI).
+While I often setup new machines while I experiment Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! This project is [continuously tested on GitHub Actions' Ubuntu infrastructure](https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3ACI).
 
 ## Virtual Machines
 
 You can also run Ubuntu inside a VM, for at least some of the required testing (App Store apps and some proprietary software might not install properly). I currently recommend:
 
-  - [VirtualBox](https://mac.getutm.app)
+  - [VirtualBox](https://virtualbox.org)
   - [Easy SSH Setup for VirtualBox](https://dev.to/developertharun/easy-way-to-ssh-into-virtualbox-machine-any-os-just-x-steps-5d9i), this can scale to different VMs by changing which host port you forward each VM to, and changing the ssh config on the host accordingly.
 
 ## Windows
@@ -147,7 +148,6 @@ Hyper-V is also possible for Virtualization, but I've had difficulties with stat
 > Note: If you go the Hyper-V route, there is also a [hyper-v](roles/hyper-v/) role that helps set the resolution, such that the Hyper-V window on the host will be scaled to the correct resolution.  In general, Hyper-V will be faster than VirtualBox, due to what layer of hypervisor each are.
 
 If your machine is fast enough, I recommend the [VirtualBox and port forwarding route](#virtual-machines).
-
 
 
 ## Author
@@ -201,16 +201,13 @@ I've aligned ansible tags/roles around my common use cases:
 * [Hyper-V](#Hyper-V)
 * [Desktop](#Desktop)
 
-## Terminal/WSL
+## Terminal
 
 ### Shell
 
 * `zsh` and `oh-my-zsh`
 * [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k), *installs fonts automatically*!
 * [colorls](https://github.com/athityakumar/colorls): A Ruby script that colorizes the ls output with color and icons.
-
-### Development Tooling
-
 * `ansible`,
 * `docker`,
 * `docker-compose`,
@@ -219,99 +216,34 @@ I've aligned ansible tags/roles around my common use cases:
 * `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
 * `yarn`
 * `terraform`
-* `linode` CLI
-
-## Dotfiles
-
-* [iancleary/dotfiles](https://github.com/iancleary/dotfiles) managed with the [yadm](https://yadm.io/docs/getting_started) dotfile manager
-
-> Check out their [Getting Started Documentation](https://yadm.io/docs/getting_started)
-
-The ansible role [yadm](roles/yadm) does more or less the following:
-
-```bash
-yadm clone -b main https://github.com/iancleary/dotfiles --bootstrap
-```
-
-This clones my dotfiles repo via HTTPS using yadm's [bootstrap](https://yadm.io/docs/bootstrap) standard command.
-
-My Bootstrap script is [iancleary/dotfiles/blob/main/.config/yadm/bootstrap](https://github.com/iancleary/dotfiles/blob/main/.config/yadm/bootstrap). It's purpose is to:
-
-* loads my dotfiles (including SSH keys)
-* decrypt the private key (prompts for password),
-* add the key to ssh-agent,
-* tests the connection,
-* and exit.
-
-## Hyper-V
-
-This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
 
 ## Desktop
-
-### Integrated Development Environment
 
 * [VSCode](https://code.visualstudio.com/),
 * VS Code Extensions
 
 > If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)! Set "code_executable" to "/snap/bin/codium".
 
-### Application Base
-
 * `Flatpak`,
 * `Snap`,
 
 > various applications are installed with both packages managers.
 
-### AppImageLauncher
-
 * [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), see the [Integrate any AppImage into the Ubuntu Desktop](https://dev.to/strotgen/integrate-tinkerwell-or-any-appimage-into-the-ubuntu-desktop-le9) article.
-
-### Application Launcher
-
 * [ULauncher](https://github.com/ULauncher/ULauncher), A ctrl + spacebar productivity bar, Ulauncher is inspired by Alfred for macOS and similar semantic search tools that followed in its wake.
-
-### Backups
-
 * `Timeshift` <https://github.com/teejee2008/timeshift>,
-
-### Screenshots and GIFs
-
 * [Flameshot](https://flameshot.js.org/#/),
-
-> Flameshot keybinding to the Print Screen key using `gsettings`
-
 * [Peek](https://github.com/phw/peek), a simple screen recorder with an easy to use interface
-
-### Utilities
 
 * [Tailscale (A secure network that just works)](https://tailscale.com/download/linux)
 * [Caffeine](https://launchpad.net/caffeine),
-* `Nordvpn`,
 * [PDFSlicer](https://github.com/junrrein/pdfslicer)
 * Blanket: Background sounds
 * Flatseal: Manage flatpak permissions
 * WhatIP: Info on your IP
-* Bitwarden:  A secure and free fassword manager for all of your devices
-
-### Music
-
 * `Spotify`,
-
-### Notes
-
 * `Standard Notes`,
-
-### System Info
-
 * `Stacer` <https://github.com/oguzhaninan/Stacer>,
-
-### Email, Contacts, Calendar
-
-* TBD
-
-### File Storage
-
 * `Tresorit`
 
 --------------------------
@@ -377,49 +309,6 @@ addToPATH "$HOME/.local/bin"
 
 *Source: [duplicate-entries-in-path-a-problem](https://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem)*
 
-### Make install
-
-This runs the `playbook.yml` Ansible playbook.
-
-The following two commands yield the same bash command:
-
-```bash
-make install
-```
-
-```bash
-ansible-playbook playbook.yml \
--i inventory \
---ask-become-pass \
--e '{"users": [{"username": "$(shell whoami)"}]}'
-```
-
-> Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
-
-The "-e" is for extra variable and is from my Ansible Galaxy role [iancleary/ansible-role-zsh#example-playbook](https://github.com/iancleary/ansible-role-zsh#example-playbook)
-
-### Make non-ansible
-
-This the targets that I found easier to maintain with bash or Makefile scripts.
-
-```bash
-# configure Flameshot with gsettings to bind to PrtScr
-make flameshot-keybindings
-
-# Ubuntu 20.04 defaults
-make python-three-eight-install
-make python-three-eight-supporting
-
-...
-
-```
-
-### Naming Convention for Make Targets
-
-> `make check` and `make install` are two of the standard
-> [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html)
-> for this repo.
-
 --------------------------
 
 ## New Machine Setup Scripts
@@ -458,10 +347,10 @@ bash
 
 Not everyone's development environment and preferred software configuration is the same.
 
-You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
+You can override any of the defaults configured in [group_vars](group_vars) by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
 
 ```yaml
-    nodejs_version: "14.x"
+    nodejs_version: "18.x"
     nodejs_npm_global_packages:
       - name: "@vue/cli"
       - name: "nativefier"
@@ -472,81 +361,27 @@ You can override any of the defaults configured in `default.config.yml` by creat
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
-### Order of precedence for variables
-
-* Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [default.config.yml](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/default.config.yml) file.
-
-> This allows hostnames to remain private outside of version control, for say secret operations 🕵️
-
-## Example Using This Repo As Is
-
-For example, a `config.yml` could contain:
-
-```yaml
----
-nodejs_npm_global_packages:
-  - name: "@vue/cli"
-  - name: "@gridsome/cli"
-```
-
-## Example Forking This Repo
-
-For example, a `default.config.yml` could contain:
-
-```yaml
----
-nodejs_npm_global_packages:
-  - name: "@vue/cli"
-```
 
 Then run `make all`
 
 Voila (with your edits)! 🚀🚀🚀
 
+### Order of precedence for variables
+
+* Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
+* The version controlled [group_vars](group_vars) files.
+
+> This allows hostnames to remain private outside of version control, for say secret operations 🕵️
+
 --------------------------
-
-## Quick Note on /etc/profile.d/
-
-Investigate this folder and your
-~/.bashrc, ~/.zshrc, etc. files
-will become simpler and more maintainable! 🚀
-
-> Let's stuff a few more lines of configuration into that file, it will be fine 😬😬😬😬.
-
-Tl;dr is that most shells source all files in that folder,
-similar to `source ~/.bashrc` on a fresh Ubuntu install.
-The main advantage for using the `/etc/profile.d/` folder
-is that it is modular and maintainable.
-
-Fast forward to your using that folder as it was intended.
-
-> A zen like calm washes over you now that there is
-> a single file per application and use case!
-
-Your messy filing cabinet of assorted patches is no more. 🔥
-
-> The `. /etc/profile` command is used to
-> manually source the `/etc/profile.d/ folder.
-
-## Changes
-
-See [CHANGELOG](CHANGELOG.md) for history.
 
 ## Linting
 
 Linting is performed on common file types:
 
-* YAML files with [yamllint](https://yamllint.readthedocs.io/)
+* YAML files with [yamllint](https://yamllint.readthedocs.io/) and [ansible-lint](https://ansible-lint.readthedocs.io/)
 * Bash files with [shellcheck](https://www.shellcheck.net/)
 * Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
-
-## Requirements_ansible.txt
-
- Notable Ansible Modules Used with regards to dependencies
-
-* [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
-  * This drives the ansible >=2.8.0 requirement
 
 --------------------------
 
