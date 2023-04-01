@@ -31,7 +31,8 @@ endif
 VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(shell whoami)", "docker_users": ["$(shell whoami)"]}'
 
 # Main Ansible Playbook Command (prompts for password)
-PLAYBOOK=playbook.yml
+PLAYBOOK_TERMINAL=playbook_terminal.yml
+PLAYBOOK_DESKTOP=playbook_desktop.yml
 ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -e $(VARIABLES)
 
 ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass

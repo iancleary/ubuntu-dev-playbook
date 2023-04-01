@@ -17,18 +17,24 @@
 
     # Terminal
     - role: iancleary.meslolgs
+      tags: ['fonts', 'meslolgs', 'skip-ci']
     - role: iancleary.colorls
       become: true
+      tags: ['colorls', 'skip-ci']
     - role: iancleary.ohmyzsh
+      tags: ['ohmyzsh', 'zsh', 'skip-ci']
     - role: iancleary.docker
       become: true
+      tags: ['docker', 'skip-ci']
     - role: geerlingguy.nodejs
       become: true
+      tags: ['nodejs', 'skip-ci']
     - role: iancleary.gh
+      tags: ['gh', 'github-cli', 'skip-ci']
       when: configure_github_cli
     - role: iancleary.tailscale
+      tags: ['tailscale', 'skip-ci']
       become: true
-
 
   tasks:
     - name: Setup apt universe repository
