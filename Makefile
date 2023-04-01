@@ -33,7 +33,8 @@ VARIABLES = '{"users": [{"username": "$(shell whoami)"}], "ansible_user": "$(she
 # Main Ansible Playbook Command (prompts for password)
 PLAYBOOK_TERMINAL=playbook_terminal.yml
 PLAYBOOK_DESKTOP=playbook_desktop.yml
-ANSIBLE_PLAYBOOK = ansible-playbook $(PLAYBOOK) -v -e $(VARIABLES)
+ANSIBLE_PLAYBOOK_TERMINAL = ansible-playbook $(PLAYBOOK_TERMINAL) -v -e $(VARIABLES)
+ANSIBLE_PLAYBOOK_DESKTOP = ansible-playbook $(PLAYBOOK_TERMINAL) -v -e $(VARIABLES)
 
 ANSIBLE = $(ANSIBLE_PLAYBOOK) --ask-become-pass
 
@@ -96,17 +97,21 @@ check: ## Checks personal-computer.yml playbook
 terminal-github-runner:
 terminal-github-runner:
 	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="terminal" --skip-tags="skip-ci"
+	@$(ANSIBLE_PLAYBOOK_TERMINAL) --skip-tags="skip-ci"
 
 desktop-github-runner:
 desktop-github-runner:
 	# test coverage is in the ansible roles themselves
-	@$(ANSIBLE) --tags="desktop" --skip-tags="skip-ci,terminal"
+	@$(ANSIBLE_PLAYBOOK_DESKTOP) --skip-tags="skip-ci"
 
-install: DARGS?=
-install: ## Installs everything via personal-computer.yml playbook
-	@$(ANSIBLE) --skip-tags="nautilus-mounts"
-	# no planned test coverage to nautilus-mounts as it deals with file mounts
+terminal: DARGS?=
+terminal: ## Installs everything from terminal playbook
+	@$(ANSIBLE_PLAYBOOK_TERMINAL)
+
+desktop: DARGS?=
+desktop: ## Installs everything from terminal playbook
+	@$(ANSIBLE_PLAYBOOK_DESKTOP)
+
 
 all: ## Does most eveything with Ansible and Make targets
 all: bootstrap bootstrap-check install non-ansible
