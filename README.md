@@ -140,11 +140,11 @@ You can also run Ubuntu inside a VM, for at least some of the required testing (
 
 ## Windows
 
-For Windows hosts, I've had issues with WSL while using certain VPNs (say Cisco AnyConnect).  While there are likely guides on how to get WSLs DNS issues resolved under WSL2, that is not the focus of this repo.  The playbook will generally work on WSL though.  
+For Windows hosts, I've had issues with WSL while using certain VPNs (say Cisco AnyConnect).  While there are likely guides on how to get WSLs DNS issues resolved under WSL2, that is not the focus of this repo.  The playbook will generally work on WSL though.
 
-Hyper-V is also possible for Virtualization, but I've had difficulties with static IP Configuration, see [local-ssh-config](https://github.com/iancleary/local-ssh-config).  
+Hyper-V is also possible for Virtualization, but I've had difficulties with static IP Configuration, see [local-ssh-config](https://github.com/iancleary/local-ssh-config).
 
-> Note: If you go the Hyper-V route, there is also a [hyper-v](roles/hyper-v/) role that helps set the resolution, such that the Hyper-V window on the host will be scaled to the correct resolution.  In general, Hyper-V will be faster than VirtualBox, due to what layer of hypervisor each are.  
+> Note: If you go the Hyper-V route, there is also a [hyper-v](roles/hyper-v/) role that helps set the resolution, such that the Hyper-V window on the host will be scaled to the correct resolution.  In general, Hyper-V will be faster than VirtualBox, due to what layer of hypervisor each are.
 
 If your machine is fast enough, I recommend the [VirtualBox and port forwarding route](#virtual-machines).
 

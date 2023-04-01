@@ -17,4 +17,3 @@ snap_plugs:
     plug: "home"
   - app: "standard-notes"
     plug: "password-manager-service"
-    
