@@ -1,5 +1,4 @@
 ---
-
 - name: Install GPG key
   become: true
   ansible.builtin.apt_key:
@@ -14,7 +13,7 @@
 
 - name: Install apt package
   become: true
-  apt:
+  ansible.builtin.apt:
     name: "terraform"
     state: present
     update_cache: "yes"

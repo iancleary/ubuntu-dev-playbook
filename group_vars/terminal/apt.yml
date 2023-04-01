@@ -1,3 +1,4 @@
+---
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through apt.
@@ -14,7 +15,7 @@ apt_packages:
   - name: python3-venv
   - name: python3.10-venv
   - name: python3-pytest
-  - name: libpython3.10-dev # Ubuntu 22.04 supports python3.10+
+  - name: libpython3.10-dev  # Ubuntu 22.04 supports python3.10+
   - name: python-is-python3
   # Podman
   - name: podman

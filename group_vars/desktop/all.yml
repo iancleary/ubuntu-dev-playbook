@@ -1,3 +1,4 @@
+---
 # Debs from PPAs
 configure_appimagelauncher: true
 configure_caffeine: false

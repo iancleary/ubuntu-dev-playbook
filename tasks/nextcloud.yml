@@ -7,20 +7,21 @@
   register: nextcloud_latest
 
 - name: Creates the Application where the binary will be stored
-  file:
+  ansible.builtin.file:
     name: ~/Applications
+    mode: 0755
     state: directory
 
 - name: Install Nextcloud AppImage from github (Specific Version)
-  get_url:
-    url: "https://github.com/nextcloud/desktop/releases/download/{{ nextcloud_version }}/Nextcloud-{{ nextcloud_version | replace('v','') }}-x86_64.AppImage"
+  ansible.builtin.get_url:
+    url: "https://github.com/nextcloud/desktop/releases/download/{{ nextcloud_version }}/Nextcloud-{{ nextcloud_version | replace('v', '') }}-x86_64.AppImage"
     dest: ~/Applications/Nextcloud.AppImage
     mode: 0755
   when: nextcloud_version is defined
 
 - name: Install Nextcloud AppImage from github (Latest Version)
-  get_url:
-    url: "https://github.com/nextcloud/desktop/releases/download/{{ nextcloud_latest.tag }}/Nextcloud-{{ nextcloud_latest.tag | replace('v','') }}-x86_64.AppImage"
+  ansible.builtin.get_url:
+    url: "https://github.com/nextcloud/desktop/releases/download/{{ nextcloud_latest.tag }}/Nextcloud-{{ nextcloud_latest.tag | replace('v', '') }}-x86_64.AppImage"
     dest: ~/Applications/Nextcloud.AppImage
     mode: 0755
   when: nextcloud_version is undefined

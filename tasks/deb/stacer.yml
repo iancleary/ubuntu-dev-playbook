@@ -17,5 +17,5 @@
   become: true
   ansible.builtin.apt:
     deb: >-
-      https://github.com/oguzhaninan/Stacer/releases/download/{{ stacer_latest.tag }}/stacer_{{ stacer_latest.tag | replace('v','') }}_{{ host_arch }}.deb
+      https://github.com/oguzhaninan/Stacer/releases/download/{{ stacer_latest.tag }}/stacer_{{ stacer_latest.tag | replace('v', '') }}_{{ host_arch }}.deb
   when: stacer_version is undefined

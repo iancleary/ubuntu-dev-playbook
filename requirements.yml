@@ -1,16 +1,21 @@
 ---
-# Install a role from the Ansible Galaxy
-- src: iancleary.docker
-  version: "v5.0.0"
-- src: iancleary.tailscale
-  version: "v0.1.0"
-- src: geerlingguy.nodejs
-  version: "6.1.1"
-- src: iancleary.gh
-  version: "v0.1.0"
-- src: iancleary.meslolgs
-  version: "v0.1.0"
-- src: iancleary.colorls
-  version: "v0.1.0"
-- src: iancleary.ohmyzsh
-  version: "v0.2.0"
+roles:
+  # Install a role from the Ansible Galaxy
+  - name: iancleary.docker
+    version: "v5.0.0"
+  - name: iancleary.tailscale
+    version: "v0.1.0"
+  - name: geerlingguy.nodejs
+    version: "6.1.1"
+  - name: iancleary.gh
+    version: "v0.1.0"
+  - name: iancleary.meslolgs
+    version: "v0.1.0"
+  - name: iancleary.colorls
+    version: "v0.1.0"
+  - name: iancleary.ohmyzsh
+    version: "v0.2.0"
+collections:
+  # Install collections from Ansible Galaxy
+  - name: community.general
+    version: 6.4.0
