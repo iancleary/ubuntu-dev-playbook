@@ -15,6 +15,7 @@ jobs:
       - name: Setup Linters
         run: |
           python3 -m pip install pre-commit
+          python3 -m pip install ansible-lint
           pre-commit install
       - name: lint
         run: |
