@@ -124,7 +124,7 @@ non-ansible: ## Runs all non-ansible make targets for fresh install (all target)
 
 lint:  ## Lint the repo
 lint:
-	bash scripts/lint.sh
+	pre-commit run --all-files
 
 rust: ## Install rust
 rust:
