@@ -1,10 +1,25 @@
-<img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
+<p align="center">
+
+<img src="./img/ubuntu_orange_hex.svg" width="250" height="156" alt="Ubuntu Dev Playbook Logo" />
+<img src="./img/plus.svg" width="30" height="130" alt="Ubuntu Dev Playbook Logo" />
+<img src="./img//Ansible-Wordmark-RGB-White.svg" width="250" height="130" alt="Mac Dev Playbook Logo" />
+
+</p>
 
 # Ubuntu Development Ansible Playbook
 
-[![CI][badge-gh-actions]][link-gh-actions]
+<p align="center">
 
-This playbook installs and configures most of the software I use on my Ubuntu Installations for web and software development. Some things are slightly difficult to automate, so I still have a few manual installation steps, but at least it's all documented here.
+<a href="https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3ACI" target="_blank">
+    <img src="https://github.com/iancleary/ubuntu-dev-playbook/workflows/CI/badge.svg" alt="CI workflow status">
+</a>
+<a href="https://raw.githubusercontent.com/iancleary/ubuntu-dev-playbook/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</a>
+</p>
+
+This playbook installs and configures most of the software I use on my Ubuntu Installations for web and software development.
+Some things are slightly difficult to automate, so I still have a few manual installation steps, but at least it's all documented here.
 
 ## Installation
 
@@ -203,9 +218,7 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 
 ### iancleary.meslolgs
 
-<p align="center">
-
-<a href="https://github.com/iancleary/ansible-role-meslolgs/actions?query=workflow%3Aci" target="_blank">
+<a href="https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-meslolgs/workflows/CI/badge.svg" alt="CI workflow status">
 </a>
 <a href="https://github.com/iancleary/ansible-role-meslolgs/actions?query=workflow%3Arelease" target="_blank">
@@ -214,11 +227,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-meslolgs/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 ### iancleary.colorls
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-colorls/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-colorls/workflows/CI/badge.svg" alt="CI workflow status">
@@ -229,11 +239,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-colorls/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 ### iancleary.ohmyzsh
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-ohmyzsh/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-ohmyzsh/workflows/CI/badge.svg" alt="CI workflow status">
@@ -244,11 +251,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-ohmyzsh/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 ### iancleary.gh
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-gh/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-gh/workflows/CI/badge.svg" alt="CI workflow status">
@@ -259,12 +263,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-gh/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
-
 
 ### iancleary.tailscale
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-tailscale/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-tailscale/workflows/CI/badge.svg" alt="CI workflow status">
@@ -275,7 +275,6 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-tailscale/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 
 ## Virtual Machines
@@ -297,26 +296,15 @@ Hyper-V is also possible for Virtualization, but I've had difficulties with stat
 
 > Note: If you go the Hyper-V route, there is also a [hyper-v](roles/hyper-v/) role that helps set the resolution, such that the Hyper-V window on the host will be scaled to the correct resolution.  In general, Hyper-V will be faster than VirtualBox, due to what layer of hypervisor each are.
 
-If your machine is fast enough, I recommend the [VirtualBox and port forwarding route](#virtual-machines).  Especially usefule with a shared drive and a symlink from /mnt/shared to the home directory within the virtual machine.  I recommend that workflow.
+If your machine is fast enough, I recommend the [VirtualBox and port forwarding route](#virtual-machines).  Especially useful with a shared drive and a symlink from /mnt/shared to the home directory within the virtual machine.  I recommend that workflow.
 
 
 ## Author
 
 This project was created by [Ian Cleary](https://iancleary.me), (originally inspired by [Jeff Geerling](https://www.jeffgeerling.com/)).
 
-[badge-gh-actions]: https://github.com/iancleary/ubuntu-dev-playbook/workflows/CI/badge.svg?event=push
+[badge-gh-actions]: https://github.com/iancleary/ubuntu-dev-playbook/workflows/CI/badge.svg
 [link-gh-actions]: https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3ACI
-
-## Ansible Playbook to configure my laptops and desktops
-
-I care about not having to think too much about my setup between machines.
-Especially when I want to get right to work.
-
-For that reason, it is very comfortable for me
-to have the same base configuration
-on each machine (look, feel,
-keyboard shortcuts, core software, etc.).
-
 
 ## Supported Ubuntu LTS Versions
 
