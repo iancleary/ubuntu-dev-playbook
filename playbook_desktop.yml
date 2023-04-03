@@ -35,7 +35,7 @@
     # extra-packages should go after universe to ensure packages are found
     - name: Install extra apt, pip, pipx, and gem packages
       ansible.builtin.import_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages', 'extra-desktop-packages', 'skip-ci']
+      tags: ['extra-desktop-packages', 'skip-ci']
 
     - name: Install Flatpaks
       ansible.builtin.import_tasks: tasks/flatpak.yml
