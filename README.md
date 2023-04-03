@@ -218,8 +218,6 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 
 ### iancleary.meslolgs
 
-<p align="center">
-
 <a href="https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-meslolgs/workflows/CI/badge.svg" alt="CI workflow status">
 </a>
@@ -229,11 +227,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-meslolgs/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 ### iancleary.colorls
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-colorls/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-colorls/workflows/CI/badge.svg" alt="CI workflow status">
@@ -244,11 +239,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-colorls/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 ### iancleary.ohmyzsh
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-ohmyzsh/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-ohmyzsh/workflows/CI/badge.svg" alt="CI workflow status">
@@ -259,11 +251,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-ohmyzsh/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 ### iancleary.gh
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-gh/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-gh/workflows/CI/badge.svg" alt="CI workflow status">
@@ -274,12 +263,8 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-gh/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
-
 
 ### iancleary.tailscale
-
-<p align="center">
 
 <a href="https://github.com/iancleary/ansible-role-tailscale/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-tailscale/workflows/CI/badge.svg" alt="CI workflow status">
@@ -290,7 +275,6 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 <a href="https://raw.githubusercontent.com/iancleary/ansible-role-tailscale/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
-</p>
 
 
 ## Virtual Machines
