@@ -218,7 +218,7 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 
 ### iancleary.meslolgs
 
-<a href="https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3Aci" target="_blank">
+<a href="https://github.com/iancleary/meslolgs/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-meslolgs/workflows/CI/badge.svg" alt="CI workflow status">
 </a>
 <a href="https://github.com/iancleary/ansible-role-meslolgs/actions?query=workflow%3Arelease" target="_blank">
