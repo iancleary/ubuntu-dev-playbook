@@ -1,0 +1,45 @@
+---
+code_extensions: []
+# ## Docker and Remote Development
+# - ms-azuretools.vscode-docker
+# - ms-vscode-remote.remote-containers
+# - ms-vscode-remote.remote-ssh
+# - ms-vscode-remote.remote-ssh-edit
+# # - ms-vscode-remote.remote-wsl
+# - ms-vscode-remote.vscode-remote-extensionpack
+## General Development
+# - christian-kohler.path-intellisense
+# - vscode-icons-team.vscode-icons
+# - riccardoNovaglia.missinglineendoffile
+# - shardulm94.trailing-spaces
+# - oderwat.indent-rainbow
+# - ms-vscode.makefile-tools
+# # - Shan.code-settings-sync
+
+# ## Git Utilities
+# - eamodio.gitlens
+# - donjayamanne.githistory
+# - mhutchie.git-graph
+
+# ## Markdown Linting
+# - DavidAnson.vscode-markdownlint
+
+# ## Python Development
+# - ms-python.python
+# - charliermarsh.ruff
+# - njpwerner.autodocstring
+# - wholroyd.jinja
+# - ms-python.vscode-pylance
+
+# ## Spellchecking
+# - streetsidesoftware.code-spell-checker
+
+# ## Themes
+# - akamud.vscode-theme-onedark
+
+# ## HTML
+# - formulahendry.auto-close-tag
+# - anteprimorac.html-end-tag-labels
+# - vincaslt.highlight-matching-tag
+# - formulahendry.auto-rename-tag
+# - devonray.snippet

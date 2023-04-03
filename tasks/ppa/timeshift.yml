@@ -7,7 +7,7 @@
 
 - name: Install apt package
   become: true
-  apt:
+  ansible.builtin.apt:
     name: "timeshift"
     state: present
     update_cache: "yes"

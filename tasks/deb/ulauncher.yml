@@ -8,14 +8,14 @@
 
 - name: Install deb from github (Specific Version)
   become: true
-  apt:
+  ansible.builtin.apt:
     deb: >-
-        https://github.com/Ulauncher/Ulauncher/releases/download/{{ulauncher_version}}/ulauncher_{{ulauncher_version}}_all.deb
+        https://github.com/Ulauncher/Ulauncher/releases/download/{{ ulauncher_version }}/ulauncher_{{ ulauncher_version }}_all.deb
   when: ulauncher_version is defined
 
 - name: Install deb from github (Latest)
   become: true
-  apt:
+  ansible.builtin.apt:
     deb: >-
-        https://github.com/Ulauncher/Ulauncher/releases/download/{{ulauncher_latest.tag}}/ulauncher_{{ulauncher_latest.tag}}_all.deb
+        https://github.com/Ulauncher/Ulauncher/releases/download/{{ ulauncher_latest.tag }}/ulauncher_{{ ulauncher_latest.tag }}_all.deb
   when: ulauncher_version is not defined

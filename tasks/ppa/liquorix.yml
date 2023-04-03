@@ -8,14 +8,14 @@
 
 - name: Update apt cache if repo was added.
   become: true
-  apt:
+  ansible.builtin.apt:
     update_cache: true
   when: liquorix_repo.changed
   tags: ['skip_ansible_lint']
 
 - name: Ensure liquorix is installed.
   become: true
-  apt:
+  ansible.builtin.apt:
     name:
       - linux-image-liquorix-amd64
       - linux-headers-liquorix-amd64

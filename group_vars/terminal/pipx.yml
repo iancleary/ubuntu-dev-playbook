@@ -1,0 +1,12 @@
+---
+pipx_packages:
+  - name: pdm
+    state: latest
+  - name: poetry
+    state: latest
+  - name: pre-commit
+    state: latest
+  - name: ruff
+    state: latest
+  - name: podman-compose
+    state: latest

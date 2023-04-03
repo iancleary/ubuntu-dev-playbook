@@ -27,6 +27,6 @@
   tags: ['skip_ansible_lint']
 
 - name: Ensure appimagelauncher is installed.
-  apt:
+  ansible.builtin.apt:
     name: "appimagelauncher"
     state: present

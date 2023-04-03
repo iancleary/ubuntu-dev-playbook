@@ -1,0 +1,9 @@
+---
+configure_meslolgs: true
+configure_colorls: true
+configure_ohmyzsh: true
+configure_docker: true
+configure_nodejs: true
+configure_gh: true
+configure_tailscale: true
+configure_terraform: false

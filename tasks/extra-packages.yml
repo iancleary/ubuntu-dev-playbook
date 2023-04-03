@@ -1,13 +1,13 @@
 ---
 - name: Install global apt packages
   become: true
-  apt:
+  ansible.builtin.apt:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
   loop: "{{ apt_packages }}"
 
 - name: Install global Pip packages.
-  pip:
+  ansible.builtin.pip:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
@@ -22,7 +22,7 @@
 
 - name: Install global Ruby gems.
   become: true
-  gem:
+  community.general.gem:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"

@@ -141,7 +141,8 @@ yarn-error.log*
 # Private group_vars subfolders
 # This ignores subfolders, but tracks all
 # https://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder
-group_vars/*
+!group_vars/desktop/
+!group_vars/vm/
 !group_vars/all/
 # you could add other folders here by copying the above line
 #

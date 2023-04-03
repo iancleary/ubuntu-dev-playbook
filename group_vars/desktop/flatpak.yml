@@ -1,0 +1,20 @@
+---
+configure_flatpak_gnome_software: true  # gnome software plugin, can turn off to avoid duplicate stores (snap-store and gnome-software)
+flatpaks:
+  # - "net.giuspen.cherrytree"  # Hierarchical Note Taking
+  - "com.uploadedlobster.peek"  # Simple screen recorder with an easy to use interface
+  - "com.github.junrrein.PDFSlicer"
+  - "org.kde.okular"  # Document Viewer
+  - "com.spotify.Client"  # Music
+  - "com.rafaelmardojai.Blanket"  # Background Sounds
+  - "com.github.tchx84.Flatseal"  # Manage Flatpak permissions
+  - "org.gabmus.whatip"  # Info on your IP
+  - "org.libreoffice.LibreOffice"
+  - "org.mozilla.firefox"
+  - "org.videolan.VLC"
+  - "us.zoom.Zoom"
+  - "nl.hjdskes.gcolor3"  # Color Picker
+  - "re.sonny.Junction"
+  - "com.mattjakeman.ExtensionManager"
+  - "ca.desrt.dconf-editor"
+  - "io.podman_desktop.PodmanDesktop"

@@ -1,0 +1,22 @@
+---
+pip_packages:
+  # - name: mkdocs
+  #   state: present # present/absent/latest, default: present
+  #   version: "0.16.3" # default: N/A
+  - name: pip
+    state: latest
+  - name: keyrings.alt
+  - name: testresources
+  - name: setuptools
+    state: latest
+  - name: wheel
+  - name: pyyaml
+  - name: pipx
+  - name: pdm
+    state: absent
+  - name: poetry
+    state: absent
+  - name: pre-commit
+    state: absent
+  - name: ruff
+    state: absent

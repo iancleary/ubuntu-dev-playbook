@@ -1,0 +1,3 @@
+---
+# used in URL of some deb packages on github
+host_arch: "amd64"

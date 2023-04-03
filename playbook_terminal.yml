@@ -1,0 +1,55 @@
+---
+- name: Install Terminal Applications
+  hosts: terminal
+  vars_files:
+    - default.terminal.config.yml
+  pre_tasks:
+    - name: Include playbook configuration.
+      ansible.builtin.include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+
+  roles:
+    # 'skip-ci' allows me to not test that role
+    # 'never' is a special tag that is on run when that tag is specified
+
+    # Terminal
+    - role: iancleary.meslolgs
+      tags: ['fonts', 'meslolgs', 'skip-ci']
+      when: configure_meslolgs
+    - role: iancleary.colorls
+      become: true
+      tags: ['colorls', 'skip-ci']
+      when: configure_colorls
+    - role: iancleary.ohmyzsh
+      tags: ['ohmyzsh', 'zsh', 'skip-ci']
+      when: configure_ohmyzsh
+    - role: iancleary.docker
+      become: true
+      tags: ['docker', 'skip-ci']
+      when: configure_docker
+    - role: geerlingguy.nodejs
+      become: true
+      tags: ['nodejs', 'skip-ci']
+      when: configure_nodejs
+    - role: iancleary.gh
+      tags: ['gh', 'github-cli', 'skip-ci']
+      when: configure_gh
+    - role: iancleary.tailscale
+      become: true
+      tags: ['tailscale', 'skip-ci']
+      when: configure_tailscale
+
+  tasks:
+    - name: Setup apt universe repository
+      ansible.builtin.import_tasks: tasks/universe-repository.yml
+
+    # extra-packages should go after universe to ensure packages are found
+    - name: Install extra apt, pip, pipx, and gem packages
+      ansible.builtin.import_tasks: tasks/extra-packages.yml
+
+    - name: Install Terraform
+      ansible.builtin.import_tasks: tasks/ppa/terraform.yml
+      tags: ['terraform']
+      when: configure_terraform

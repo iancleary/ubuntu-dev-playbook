@@ -1,0 +1,9 @@
+---
+configure_node: true
+nodejs_version: "18.x"
+# Set to true to suppress the UID/GID switching when running package scripts. If
+# set explicitly to false, then installing as a non-root user will fail.
+npm_config_unsafe_perm: true
+npm_global_packages:
+  - name: "yarn"
+  - name: "vercel"

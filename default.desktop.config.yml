@@ -1,0 +1,12 @@
+---
+configure_flatpak: true
+configure_snap: true
+configure_code_extensions: true
+configure_airpods_pro_bluetooth_fix: true
+configure_wifi_powersave_mode: true
+configure_ulauncher: true
+configure_appimagelauncher: true
+configure_nextcloud: true
+configure_liquorix: false
+configure_caffeine: false
+configure_timeshift: false

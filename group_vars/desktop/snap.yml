@@ -1,0 +1,18 @@
+---
+snaps:
+  - name: "authy"  # 2-Factor Authentication
+  - name: "beekeeper-studio"  # An open source SQL editor and database management app
+  - name: "code"
+    classic: "yes"
+  - name: "flameshot"  # Powerful yet simple to use screenshot software
+  - name: "slack"
+    classic: "yes"
+  - name: "chromium"
+  - name: "standard-notes"
+
+# you are responsible for making sure there is a matching snap
+snap_plugs:
+  - app: "chromium"
+    plug: "home"
+  - app: "standard-notes"
+    plug: "password-manager-service"

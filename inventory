@@ -1,2 +1,8 @@
 [all]
 127.0.0.1  ansible_connection=local
+
+[terminal]
+127.0.0.1  ansible_connection=local
+
+[desktop]
+127.0.0.1  ansible_connection=local

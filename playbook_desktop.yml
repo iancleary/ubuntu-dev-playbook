@@ -1,0 +1,94 @@
+---
+- name: Install Desktop Applications
+  hosts: desktop
+  vars_files:
+    - default.desktop.config.yml
+  pre_tasks:
+    - name: Include playbook configuration.
+      ansible.builtin.include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+    - name: Massage ansible_distribution_release for elementary OS 6.x
+      ansible.builtin.set_fact:
+        ansible_distribution_release: focal
+      when: ansible_distribution_release in ["odin", "jolnir"]
+      register: elementary_os
+      tags: ['always']
+    - name: Massage ansible_distribution_release for elementary OS 7.x
+      ansible.builtin.set_fact:
+        ansible_distribution_release: jammy
+      when: ansible_distribution_release in ["horus"]
+      register: elementary_os
+      tags: ['always']
+    - name: Debug ansible_distribution_release
+      ansible.builtin.debug:
+        msg: "{{ ansible_distribution_release }}"
+      tags: ['always']
+
+  tasks:
+    - name: Setup apt universe repository
+      ansible.builtin.import_tasks: tasks/universe-repository.yml
+      when: configure_universe_repository
+      tags: ['universe-repository', 'extra-packages', 'extra-desktop-packages']
+
+    # extra-packages should go after universe to ensure packages are found
+    - name: Install extra apt, pip, pipx, and gem packages
+      ansible.builtin.import_tasks: tasks/extra-packages.yml
+      tags: ['extra-desktop-packages', 'skip-ci']
+
+    - name: Install Flatpaks
+      ansible.builtin.import_tasks: tasks/flatpak.yml
+      tags: ['flatpak', 'skip-ci']
+      when: configure_flatpak
+
+    - name: Install Snaps
+      ansible.builtin.import_tasks: tasks/snap.yml
+      tags: ['snap', 'skip-ci']
+      when: configure_snap
+
+    - name: Install VS Code Extensions
+      ansible.builtin.import_tasks: tasks/code-extensions.yml
+      tags: ['code-extensions', 'skip-ci']
+      when: configure_code_extensions
+
+    - name: Help Apple Airpods connect
+      ansible.builtin.import_tasks: tasks/airpods-pro-bluetooth-fix.yml
+      tags: ['airpods-pro-bluetooth-fix', 'skip-ci']
+      when: configure_airpods_pro_bluetooth_fix
+
+    - name: Configure Wifi Powersave Mode
+      ansible.builtin.import_tasks: tasks/wifi-powersave-mode.yml
+      tags: ['wifi-powersave-mode', 'skip-ci']
+      when: configure_wifi_powersave_mode
+
+    - name: Install ulauncher
+      ansible.builtin.import_tasks: tasks/deb/ulauncher.yml
+      tags: ['ulauncher']
+      when: configure_ulauncher
+
+    - name: Install App Image Launcher
+      ansible.builtin.import_tasks: tasks/ppa/appimagelauncher.yml
+      tags: ['appimagelauncher']
+      become: true
+      when: configure_appimagelauncher
+
+    - name: Install Nextcloud AppImage
+      ansible.builtin.import_tasks: tasks/nextcloud.yml
+      tags: ['nextcloud']
+      when: configure_nextcloud
+
+    - name: Install Caffeine
+      ansible.builtin.import_tasks: tasks/ppa/caffeine.yml
+      tags: ['caffeine']
+      when: configure_caffeine
+
+    - name: Install Liqourix Kernel
+      ansible.builtin.import_tasks: tasks/ppa/liquorix.yml
+      tags: ['liquorix']
+      when: configure_liquorix
+
+    - name: Install Timeshift Backups
+      ansible.builtin.import_tasks: tasks/ppa/timeshift.yml
+      tags: ['timeshift']
+      when: configure_timeshift

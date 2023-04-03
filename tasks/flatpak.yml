@@ -1,29 +1,29 @@
 ---
-- name: install flatpak packages
+- name: Install flatpak packages
   become: true
-  apt:
+  ansible.builtin.apt:
     name:
       - "gnome-software"
       - "gnome-software-plugin-flatpak"
     state: present
 
-- name: install flatpak packages
+- name: Install flatpak packages
   become: true
-  apt:
+  ansible.builtin.apt:
     name: "flatpak"
     state: present
   when: configure_flatpak_gnome_software
 
-- name: install flatpak remote
+- name: Install flatpak remote
   become: true
-  flatpak_remote:
+  community.general.flatpak_remote:
     name: flathub
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: Install Flatpak Applications
   become: true
-  flatpak:
+  community.general.flatpak:
     name: "{{ item }}"
     state: present
   with_items: "{{ flatpaks }}"

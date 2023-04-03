@@ -1,273 +1,26 @@
-# ubuntu-dev-playbook
+<img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
 
-[![Test](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Test/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
-[![Lint](https://github.com/iancleary/ubuntu-dev-playbook/workflows/Lint/badge.svg)](https://github.com/iancleary/ubuntu-dev-playbook/actions)
-[![Calendar Versioning](https://img.shields.io/badge/calver-YYYY.M.D-22bfda.svg)](https://calver.org)
+# Ubuntu Development Ansible Playbook
 
-## Ansible Playbook to configure my laptops and desktops
+[![CI][badge-gh-actions]][link-gh-actions]
 
-I care about not having to think too much about my setup between machines.
-Especially when I want to get right to work.
+This playbook installs and configures most of the software I use on my Ubuntu Installations for web and software development. Some things are slightly difficult to automate, so I still have a few manual installation steps, but at least it's all documented here.
 
-For that reason, it is very comfortable for me
-to have the same base configuration
-on each machine (look, feel,
-keyboard shortcuts, core software, etc.).
+## Installation
 
-### My journey to the current state of this repo
+  1. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html):
 
-* I found a cool bash script on the internet (*I didn't understand most of it*) 🤷
-* I modified cool bash script for my needs and it worked! 🚀
-* I learned about Makefiles. 😄
-* I proceeded to do everything with Makefiles. 🤩🤩🤩
-* I got tired of running successive Make targets over and again 😐.
-* I used Ansible at work and decided to take a course to learn more about it. 🤓
-* I put off actually taking the plunge to use Ansible. 🕒🕕🕘🕛
-* I finally took the plunge and decided to use Ansible for my configuration. ✔️
+     1. Upgrade Pip: `python3 -m pip install --upgrade pip`
+     2. Run the following command to add Python 3 to your $PATH: `export PATH="$HOME/.local/bin:$PATH"`
+     3. Install Ansible: `python3 -m pip install ansible --user`
 
-## Supported Ubuntu LTS Versions
+  2. Clone or download this repository to your local drive.
+  3. Run `ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
+  4. Run `ansible-playbook plabook_terminal.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
+  5. (if desired) Run `ansible-playbook plabook_desktop.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
 
-I will support the LTS versions I use. There are no plans to support non-LTS versions.
+> Note: If some Homebrew commands fail, you might need logout and log back in again.
 
-> [GitHub Actions: Ubuntu 22.04 is now generally available on GitHub-hosted runners](https://github.blog/changelog/2022-08-09-github-actions-ubuntu-22-04-is-now-generally-available-on-github-hosted-runners/)
-
-| LTS | Last Supported Branch/Tag  |
-|:-------------|:-------------:|
-|  Ubuntu 20.04 and 22.04 (including elementary OS 6.x and 7.x, respectively) | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
-|  Ubuntu 20.04 (including elementary OS 6.0) | [2022.9.25](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2022.9.25)|
-|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
-
-## Use Cases
-
---------------------------
-
-I've aligned ansible tags/roles around my common use cases:
-
-* [Terminal/WSL](#Terminal/WSL)
-* [Dotfiles](#Dotfiles)
-* [Hyper-V](#Hyper-V)
-* [Desktop](#Desktop)
-
-## Terminal/WSL
-
-### Shell
-
-* `zsh` and `oh-my-zsh`
-* [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with [needed fonts](https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k), *installs fonts automatically*!
-* [colorls](https://github.com/athityakumar/colorls): A Ruby script that colorizes the ls output with color and icons.
-
-### Development Tooling
-
-* `ansible`,
-* `docker`,
-* `docker-compose`,
-* `nodejs`, `npm`, and `yarn`
-* `python3`, `python3.10`
-* `gh` [GitHub CLI](https://github.com/cli/cli#installation-and-upgrading)
-* `yarn`
-* `terraform`
-* `linode` CLI
-
-## Dotfiles
-
-* [iancleary/dotfiles](https://github.com/iancleary/dotfiles) managed with the [yadm](https://yadm.io/docs/getting_started) dotfile manager
-
-> Check out their [Getting Started Documentation](https://yadm.io/docs/getting_started)
-
-The ansible role [yadm](roles/yadm) does more or less the following:
-
-```bash
-yadm clone -b main https://github.com/iancleary/dotfiles --bootstrap
-```
-
-This clones my dotfiles repo via HTTPS using yadm's [bootstrap](https://yadm.io/docs/bootstrap) standard command.
-
-My Bootstrap script is [iancleary/dotfiles/blob/main/.config/yadm/bootstrap](https://github.com/iancleary/dotfiles/blob/main/.config/yadm/bootstrap). It's purpose is to:
-
-* loads my dotfiles (including SSH keys)
-* decrypt the private key (prompts for password),
-* add the key to ssh-agent,
-* tests the connection,
-* and exit.
-
-## Hyper-V
-
-This [role](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/roles/hyper-v/tasks/main.yml) allows you to set the screen resolution in `/etc/default/grub`.
-
-## Desktop
-
-### Integrated Development Environment
-
-* [VSCode](https://code.visualstudio.com/),
-* VS Code Extensions
-
-> If you prefer a fully open source option, checkout [VSCodium](https://vscodium.com/)! Set "code_executable" to "/snap/bin/codium".
-
-### Application Base
-
-* `Flatpak`,
-* `Snap`,
-
-> various applications are installed with both packages managers.
-
-### AppImageLauncher
-
-* [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), see the [Integrate any AppImage into the Ubuntu Desktop](https://dev.to/strotgen/integrate-tinkerwell-or-any-appimage-into-the-ubuntu-desktop-le9) article.
-
-### Application Launcher
-
-* [ULauncher](https://github.com/ULauncher/ULauncher), A ctrl + spacebar productivity bar, Ulauncher is inspired by Alfred for macOS and similar semantic search tools that followed in its wake.
-
-### Backups
-
-* `Timeshift` <https://github.com/teejee2008/timeshift>,
-
-### Screenshots and GIFs
-
-* [Flameshot](https://flameshot.js.org/#/),
-
-> Flameshot keybinding to the Print Screen key using `gsettings`
-
-* [Peek](https://github.com/phw/peek), a simple screen recorder with an easy to use interface
-
-### Utilities
-
-* [Tailscale (A secure network that just works)](https://tailscale.com/download/linux)
-* [Caffeine](https://launchpad.net/caffeine),
-* `Nordvpn`,
-* [PDFSlicer](https://github.com/junrrein/pdfslicer)
-* Blanket: Background sounds
-* Flatseal: Manage flatpak permissions
-* WhatIP: Info on your IP
-* Bitwarden:  A secure and free fassword manager for all of your devices
-
-### Music
-
-* `Spotify`,
-
-### Notes
-
-* `Standard Notes`,
-
-### System Info
-
-* `Stacer` <https://github.com/oguzhaninan/Stacer>,
-
-### Email, Contacts, Calendar
-
-* TBD
-
-### File Storage
-
-* `Tresorit`
-
---------------------------
-
-## Existing Machine
-
-On an existing machine, I run the following bash command,
-to ensure I am consistent with my playbook
-
-## Make All
-
-```bash
-make all
-```
-
-This target runs four other targets in series:
-
-* `bootstrap`
-* `bootstrap-check`
-* `install`
-* `non-ansible`
-
-Let's go through each.
-
-### Make bootstrap
-
-This installs several packages with `apt` and
-python packages per the [requirements-ansible.txt](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/requirements-ansible.txt) file.
-
-> This includes Ansible, using Python3.
-
-This also moves the [home-local-bin.sh](https://github.com/iancleary/ubuntu-dev-playbook/blob/main/home-local-bin.sh)
-file to the `/etc/profile.d/` folder as described above.
-
-> The `yarn` roles does a similar operation,
-> except with Ansible instead of bash.
-
-### Make bootstrap-check
-
-This is to confirm both the `ansible` and `psutil`
-Python3 packages are installed and on the `$PATH`.
-
-If the pip installation falls back to using the `--user` flag,
-packages will be located in the following directory under `$HOME`:
-
-> Goal: `export PATH="$HOME/.local/bin:$PATH"` without duplication!
-
-```bash
-#/etc/profile.d/home-local-bin.sh
-
-addToPATH() {
-  case ":$PATH:" in
-    *":$1:"*) :;; # already there
-    *) PATH="$1:$PATH";; # or PATH="$PATH:$1"
-  esac
-}
-
-# Important for python pip packages installed with --user
-addToPATH "$HOME/.local/bin"
-```
-
-> `make bootstrap` will set this up for you!
-
-*Source: [duplicate-entries-in-path-a-problem](https://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem)*
-
-### Make install
-
-This runs the `playbook.yml` Ansible playbook.
-
-The following two commands yield the same bash command:
-
-```bash
-make install
-```
-
-```bash
-ansible-playbook playbook.yml \
--i inventory \
---ask-become-pass \
--e '{"users": [{"username": "$(shell whoami)"}]}'
-```
-
-> Note: `$(shell whoami)` in a Makefile translates to `$(whoami)` in bash.
-
-The "-e" is for extra variable and is from my Ansible Galaxy role [iancleary/ansible-role-zsh#example-playbook](https://github.com/iancleary/ansible-role-zsh#example-playbook)
-
-### Make non-ansible
-
-This the targets that I found easier to maintain with bash or Makefile scripts.
-
-```bash
-# configure Flameshot with gsettings to bind to PrtScr
-make flameshot-keybindings
-
-# Ubuntu 20.04 defaults
-make python-three-eight-install
-make python-three-eight-supporting
-
-...
-
-```
-
-### Naming Convention for Make Targets
-
-> `make check` and `make install` are two of the standard
-> [Makefile targets](https://www.gnu.org/prep/standards/html_node/Standard-Targets.html)
-> for this repo.
-
---------------------------
 
 ## New Machine Setup Scripts
 
@@ -299,103 +52,281 @@ https://github.com/iancleary/ubuntu-dev-playbook/raw/main/run_desktop.sh | \
 bash
 ```
 
---------------------------
+> Note I run both the playbook_terminal.yml and playbook_desktop.yml as they are mutually exclusive.  In older releases, they were a single playbook, but I've separated them.
 
 ## Overriding Defaults
 
 Not everyone's development environment and preferred software configuration is the same.
 
-You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
+You can override any of the defaults configured in [group_vars](group_vars) by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
 
 ```yaml
-    nodejs_version: "14.x"
-    nodejs_npm_global_packages:
-      - name: "@vue/cli"
-      - name: "nativefier"
-      - name: "markdownlint-cli"
-      - name: "carbon-now-cli"
+apt_packages:
+  - python3.10
+  - git
+  - nala
+
+nodejs_version: "18.x"
+# Set to true to suppress the UID/GID switching when running package scripts. If
+# set explicitly to false, then installing as a non-root user will fail.
+npm_config_unsafe_perm: true
+npm_global_packages:
+  - name: "yarn"
+  - name: "vercel"
+
+gem_packages:
+  - name: bundler
+    state: latest
+
+pip_packages:
+  - name: mkdocs
+
+pipx_packages:
+  - name: ruff
+  - name: pre-commit
+
+
+snaps:
+  - name: "authy"  # 2-Factor Authentication
+  - name: "beekeeper-studio"  # An open source SQL editor and database management app
+  - name: "code"
+    classic: "yes"
+  - name: "flameshot"  # Powerful yet simple to use screenshot software
+  - name: "slack"
+    classic: "yes"
+  - name: "chromium"
+  - name: "standard-notes"
+
+# you are responsible for making sure there is a matching snap
+snap_plugs:
+  - plug: "home"
+    app: "chromium"
+  - plug: "password-manager-service"
+    app: "standard-notes"
+
+
+configure_flatpak: true
+configure_flatpak_gnome_software: true  # gnome software plugin, can turn off to avoid duplicate stores (snap-store and gnome-software)
+flatpaks:
+  # - "net.giuspen.cherrytree"  # Hierarchical Note Taking
+  - "com.uploadedlobster.peek"  # Simple screen recorder with an easy to use interface
+  - "com.rafaelmardojai.Blanket"  # Background Sounds
+  - "com.github.tchx84.Flatseal"  # Manage Flatpak permissions
+  - "org.gabmus.whatip"  # Info on your IP
+  - "org.libreoffice.LibreOffice"
+  - "org.mozilla.firefox"
+  - "org.videolan.VLC"
+  - "nl.hjdskes.gcolor3"  # Color Picker
+  - "re.sonny.Junction"
+  - "com.mattjakeman.ExtensionManager"
+  - "ca.desrt.dconf-editor"
+  - "io.podman_desktop.PodmanDesktop"
+
+gem_packages:
+  - name: bundler
+    state: present # present/absent/latest, default: present
+    version: "~> 1.15.1" # default: N/A
+
+configure_code_extensions: true
+code_extensions:
+  - # General Development
+  - christian-kohler.path-intellisense
+  - vscode-icons-team.vscode-icons
+  - riccardoNovaglia.missinglineendoffile
+  - shardulm94.trailing-spaces
+  - oderwat.indent-rainbow
+  - ms-vscode.makefile-tools
+  # - Shan.code-settings-sync
+
+  ## Git Utilities
+  - eamodio.gitlens
+  - donjayamanne.githistory
+  - mhutchie.git-graph
+
+  ## Markdown Linting
+  - DavidAnson.vscode-markdownlint
+
+  ## Python Development
+  - ms-python.python
+  - himanoa.Python-autopep8
+  - njpwerner.autodocstring
+  - wholroyd.jinja
+  - ms-python.vscode-pylance
+
+  ## Spellchecking
+  - streetsidesoftware.code-spell-checker
+
+  ## Themes
+  - sdras.night-owl
+  - akamud.vscode-theme-onedark
+
+  ## Vue.js Development
+  - octref.vetur
+  - dbaeumer.vscode-eslint
+  - pranaygp.vscode-css-peek
+  - sdras.vue-vscode-snippets
+
+  ## HTML
+  - formulahendry.auto-close-tag
+  - anteprimorac.html-end-tag-labels
+  - vincaslt.highlight-matching-tag
+  - formulahendry.auto-rename-tag
 
 ```
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
-### Order of precedence for variables
+## Included Applications / Configuration (Default)
 
-* Any content in the `config.yml` has the highest precedence (not version controlled; sensitive)
-* The version controlled [default.config.yml](https://github.com/iancleary/ubuntu-dev-playbook/tree/main/default.config.yml) file.
+Default applications are controlled on a group basis, with hosts being localhosts.
+This yields a groups_vars folder for [terminal](group_vars/terminal/) and one for [desktop](group_vars/desktop/)
 
-> This allows hostnames to remain private outside of version control, for say secret operations 🕵️
+The folders contain the defaults, as well as some of the Ansible Galaxy Roles:
 
-## Example Using This Repo As Is
+* [iancleary.ohmyzsh](https://github.com/iancleary/ansible-role-ohmyzsh/) and it's [defaults](https://github.com/iancleary/ansible-role-ohmyzsh/blob/main/defaults/main.yml)
 
-For example, a `config.yml` could contain:
 
-```yaml
----
-nodejs_npm_global_packages:
-  - name: "@vue/cli"
-  - name: "@gridsome/cli"
-```
+## Testing the Playbook
 
-## Example Forking This Repo
+While I often setup new machines while I experiment Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! This project is [continuously tested on GitHub Actions' Ubuntu infrastructure](https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3ACI).
 
-For example, a `default.config.yml` could contain:
+## Testing the Ansible Roles is done elsewhere
 
-```yaml
----
-nodejs_npm_global_packages:
-  - name: "@vue/cli"
-```
+This project intentionally doesn't not test the Ansible Galaxy roles that are continuously tested on Github Actions Ubuntu infrastructure elsewhere.  That testing uses Docker and (generally) targets the latest Ubuntu LTS and the latest Fedora release.
 
-Then run `make all`
+This project doesn't test on Github Actions with Fedora, as that (at the time of writing) isn't easily supported with Github Actions while not using docker.
 
-Voila (with your edits)! 🚀🚀🚀
+That said, I'm considering adding Fedora support (as there are just a few apt installs that would need to be expanded upon to also support rpm/dnf)
 
---------------------------
 
-## Quick Note on /etc/profile.d/
+### iancleary.meslolgs
 
-Investigate this folder and your
-~/.bashrc, ~/.zshrc, etc. files
-will become simpler and more maintainable! 🚀
+<p align="center">
 
-> Let's stuff a few more lines of configuration into that file, it will be fine 😬😬😬😬.
+<a href="https://github.com/iancleary/ansible-role-meslolgs/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-meslolgs/workflows/CI/badge.svg" alt="CI workflow status">
+</a>
+<a href="https://github.com/iancleary/ansible-role-meslolgs/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-meslolgs/workflows/Release/badge.svg" alt="Release workflow status">
+</a>
+<a href="https://raw.githubusercontent.com/iancleary/ansible-role-meslolgs/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</a>
+</p>
 
-Tl;dr is that most shells source all files in that folder,
-similar to `source ~/.bashrc` on a fresh Ubuntu install.
-The main advantage for using the `/etc/profile.d/` folder
-is that it is modular and maintainable.
+### iancleary.colorls
 
-Fast forward to your using that folder as it was intended.
+<p align="center">
 
-> A zen like calm washes over you now that there is
-> a single file per application and use case!
+<a href="https://github.com/iancleary/ansible-role-colorls/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-colorls/workflows/CI/badge.svg" alt="CI workflow status">
+</a>
+<a href="https://github.com/iancleary/ansible-role-colorls/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-colorls/workflows/Release/badge.svg" alt="Release workflow status">
+</a>
+<a href="https://raw.githubusercontent.com/iancleary/ansible-role-colorls/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</a>
+</p>
 
-Your messy filing cabinet of assorted patches is no more. 🔥
+### iancleary.ohmyzsh
 
-> The `. /etc/profile` command is used to
-> manually source the `/etc/profile.d/ folder.
+<p align="center">
 
-## Changes
+<a href="https://github.com/iancleary/ansible-role-ohmyzsh/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-ohmyzsh/workflows/CI/badge.svg" alt="CI workflow status">
+</a>
+<a href="https://github.com/iancleary/ansible-role-ohmyzsh/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-ohmyzsh/workflows/Release/badge.svg" alt="Release workflow status">
+</a>
+<a href="https://raw.githubusercontent.com/iancleary/ansible-role-ohmyzsh/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</a>
+</p>
 
-See [CHANGELOG](CHANGELOG.md) for history.
+### iancleary.gh
 
-## Linting
+<p align="center">
 
-Linting is performed on common file types:
+<a href="https://github.com/iancleary/ansible-role-gh/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-gh/workflows/CI/badge.svg" alt="CI workflow status">
+</a>
+<a href="https://github.com/iancleary/ansible-role-gh/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-gh/workflows/Release/badge.svg" alt="Release workflow status">
+</a>
+<a href="https://raw.githubusercontent.com/iancleary/ansible-role-gh/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</a>
+</p>
 
-* YAML files with [yamllint](https://yamllint.readthedocs.io/)
-* Bash files with [shellcheck](https://www.shellcheck.net/)
-* Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
-## Requirements_ansible.txt
+### iancleary.tailscale
 
- Notable Ansible Modules Used with regards to dependencies
+<p align="center">
 
-* [snap](https://docs.ansible.com/ansible/latest/modules/dconf_module.html)
-  * This drives the ansible >=2.8.0 requirement
+<a href="https://github.com/iancleary/ansible-role-tailscale/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-tailscale/workflows/CI/badge.svg" alt="CI workflow status">
+</a>
+<a href="https://github.com/iancleary/ansible-role-tailscale/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-tailscale/workflows/Release/badge.svg" alt="Release workflow status">
+</a>
+<a href="https://raw.githubusercontent.com/iancleary/ansible-role-tailscale/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</a>
+</p>
 
---------------------------
+
+## Virtual Machines
+
+You can also run Ubuntu inside a VM.
+
+If you do, I currently recommend:
+
+  - [VirtualBox](https://virtualbox.org)
+  - [Easy SSH Setup for VirtualBox](https://dev.to/developertharun/easy-way-to-ssh-into-virtualbox-machine-any-os-just-x-steps-5d9i), this can scale to different VMs by changing which host port you forward each VM to, and changing the ssh config on the host accordingly.
+
+Additionally, it is useful to mount a shared drive.
+
+## Windows
+
+For Windows hosts, I've had issues with WSL while using certain VPNs (say Cisco AnyConnect).  While there are likely guides on how to get WSLs DNS issues resolved under WSL2, that is not the focus of this repo.  The playbook will generally work on WSL though.
+
+Hyper-V is also possible for Virtualization, but I've had difficulties with static IP Configuration, see [local-ssh-config](https://github.com/iancleary/local-ssh-config).
+
+> Note: If you go the Hyper-V route, there is also a [hyper-v](roles/hyper-v/) role that helps set the resolution, such that the Hyper-V window on the host will be scaled to the correct resolution.  In general, Hyper-V will be faster than VirtualBox, due to what layer of hypervisor each are.
+
+If your machine is fast enough, I recommend the [VirtualBox and port forwarding route](#virtual-machines).  Especially usefule with a shared drive and a symlink from /mnt/shared to the home directory within the virtual machine.  I recommend that workflow.
+
+
+## Author
+
+This project was created by [Ian Cleary](https://iancleary.me), (originally inspired by [Jeff Geerling](https://www.jeffgeerling.com/)).
+
+[badge-gh-actions]: https://github.com/iancleary/ubuntu-dev-playbook/workflows/CI/badge.svg?event=push
+[link-gh-actions]: https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3ACI
+
+## Ansible Playbook to configure my laptops and desktops
+
+I care about not having to think too much about my setup between machines.
+Especially when I want to get right to work.
+
+For that reason, it is very comfortable for me
+to have the same base configuration
+on each machine (look, feel,
+keyboard shortcuts, core software, etc.).
+
+
+## Supported Ubuntu LTS Versions
+
+I will support the LTS versions I use. There are no plans to support non-LTS versions.
+
+> [GitHub Actions: Ubuntu 22.04 is now generally available on GitHub-hosted runners](https://github.blog/changelog/2022-08-09-github-actions-ubuntu-22-04-is-now-generally-available-on-github-hosted-runners/)
+
+| LTS | Last Supported Branch/Tag  |
+|:-------------|:-------------:|
+|  Ubuntu 20.04 and 22.04 (including elementary OS 6.x and 7.x, respectively) | [main](https://github.com/iancleary/ubuntu-dev-playbook)|
+|  Ubuntu 20.04 (including elementary OS 6.0) | [2022.9.25](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2022.9.25)|
+|  Ubuntu 18.04 | [2020.1.0](https://github.com/iancleary/ubuntu-dev-playbook/releases/tag/v2020.1.0)|
 
 ## Authors
 

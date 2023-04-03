@@ -1,7 +1,7 @@
 ---
 - name: Install snapd apt dependency
   become: true
-  apt:
+  ansible.builtin.apt:
     name: "snapd"
     state: present
 
@@ -9,15 +9,15 @@
   become: true
   community.general.snap:
     name: "{{ item.name }}"
-    channel: "{{ item.channel | default('stable')}}"
-    classic: "{{ item.classic | default('no')}}"
+    channel: "{{ item.channel | default('stable') }}"
+    classic: "{{ item.classic | default('no') }}"
   with_items: "{{ snaps }}"
 
 # https://github.com/ansible/ansible/issues/58403
 # I can't find a counterpart on https://github.com/ansible-collections/community.general/issues as of 2021-10-27
 - name: Setup Snap Plugs
-  become: "yes"
+  become: true
   become_method: sudo
   changed_when: false
-  shell: 'snap connect {{ item.app }}:{{ item.plug }}'
+  ansible.builtin.command: 'snap connect {{ item.app }}:{{ item.plug }}'
   with_items: "{{ snap_plugs }}"

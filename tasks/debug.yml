@@ -1,0 +1,12 @@
+---
+- name: Debug - display ansible_os_family
+  ansible.builtin.debug:
+    msg: "{{ ansible_os_family }}"
+
+- name: Debug - display ansible_distribution_release
+  ansible.builtin.debug:
+    msg: "{{ ansible_distribution_release }}"
+
+- name: Debug - display ansible_user
+  ansible.builtin.debug:
+    msg: "{{ ansible_user }}"

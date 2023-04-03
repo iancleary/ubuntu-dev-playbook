@@ -1,0 +1,63 @@
+---
+name: Test
+
+on: push
+
+env:
+  hostname: runner
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Linters
+        run: |
+          python3 -m pip install pre-commit
+          python3 -m pip install ansible-lint
+          pre-commit install
+      - name: lint
+        run: |
+          make lint
+
+  terminal:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: install galaxy roles
+        run: |
+          make galaxy-requirements
+      - name: terminal
+        run: |
+          make terminal-github-runner
+
+  desktop:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          make bootstrap-before-install
+      - name: before_script
+        run: |
+          make bootstrap-before-script
+      - name: install
+        run: |
+          make bootstrap-install
+      - name: install galaxy roles
+        run: |
+          make galaxy-requirements
+      - name: desktop
+        run: make desktop-github-runner
