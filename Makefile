@@ -73,10 +73,6 @@ bootstrap-check:
 bootstrap-check: ## Check that PATH and requirements are correct
 	@ansible --version | grep "python version"
 
-check: DARGS?=
-check: ## Checks personal-computer.yml playbook
-	@$(ANSIBLE) --check
-
 terminal-github-runner:
 terminal-github-runner:
 	# test coverage is in the ansible roles themselves
