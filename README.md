@@ -1,8 +1,8 @@
 <p align="center">
 
-<img src="./img/ubuntu_orange_hex.svg" width="250" height="156" alt="Ubuntu Dev Playbook Logo" />
-<img src="./img/plus.svg" width="30" height="130" alt="Ubuntu Dev Playbook Logo" />
-<img src="./img//Ansible-Wordmark-RGB-White.svg" width="250" height="130" alt="Mac Dev Playbook Logo" />
+<img src="./img/ubuntu_orange_hex.svg" width="250" height="156" alt="Ubuntu Logo" />
+<img src="./img/plus.svg" width="30" height="130" alt="Plus Sign SVG" />
+<img src="./img//Ansible-Wordmark-RGB-White.svg" width="250" height="130" alt="Ansible Logo" />
 
 </p>
 
@@ -218,7 +218,7 @@ That said, I'm considering adding Fedora support (as there are just a few apt in
 
 ### iancleary.meslolgs
 
-<a href="https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3Aci" target="_blank">
+<a href="https://github.com/iancleary/meslolgs/actions?query=workflow%3Aci" target="_blank">
     <img src="https://github.com/iancleary/ansible-role-meslolgs/workflows/CI/badge.svg" alt="CI workflow status">
 </a>
 <a href="https://github.com/iancleary/ansible-role-meslolgs/actions?query=workflow%3Arelease" target="_blank">
