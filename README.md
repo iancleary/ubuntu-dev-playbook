@@ -1,8 +1,8 @@
 <p align="center">
 
-<img src="./img/ubuntu_orange_hex.svg" width="250" height="156" alt="Ubuntu Dev Playbook Logo" />
-<img src="./img/plus.svg" width="30" height="130" alt="Ubuntu Dev Playbook Logo" />
-<img src="./img//Ansible-Wordmark-RGB-White.svg" width="250" height="130" alt="Mac Dev Playbook Logo" />
+<img src="./img/ubuntu_orange_hex.svg" width="250" height="156" alt="Ubuntu Logo" />
+<img src="./img/plus.svg" width="30" height="130" alt="Plus Sign SVG" />
+<img src="./img//Ansible-Wordmark-RGB-White.svg" width="250" height="130" alt="Ansible Logo" />
 
 </p>
 
