@@ -12,14 +12,14 @@ This playbook installs and configures most of the software I use on my Ubuntu In
 
      1. Upgrade Pip: `python3 -m pip install --upgrade pip`
      2. Run the following command to add Python 3 to your $PATH: `export PATH="$HOME/.local/bin:$PATH"`
-     3. Install Ansible: `python3 -m pip install ansible --user`
+     3. Install Ansible: `python3 -m pip install ansible`
 
   2. Clone or download this repository to your local drive.
   3. Run `ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
-  4. Run `ansible-playbook plabook_terminal.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
-  5. (if desired) Run `ansible-playbook plabook_desktop.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
+  4. Run `ansible-playbook playbook_terminal.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
+  5. (if desired) Run `ansible-playbook playbook_desktop.yml --ask-become-pass` inside this directory. Enter your sudo account password when prompted for the 'BECOME' password.
 
-> Note: If some Homebrew commands fail, you might need logout and log back in again.
+> Note: If some commands fail, you might need logout and log back in again.
 
 
 ## New Machine Setup Scripts
@@ -58,7 +58,9 @@ bash
 
 Not everyone's development environment and preferred software configuration is the same.
 
-You can override any of the defaults configured in [group_vars](group_vars) by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
+You can override any of the defaults configured in [group_vars](group_vars) by creating a `config.yml` file and setting the overrides in that file.
+
+**For example, you can customize the installed packages and apps with something like:**
 
 ```yaml
 apt_packages:
