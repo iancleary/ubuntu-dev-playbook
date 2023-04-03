@@ -297,7 +297,7 @@ Hyper-V is also possible for Virtualization, but I've had difficulties with stat
 
 > Note: If you go the Hyper-V route, there is also a [hyper-v](roles/hyper-v/) role that helps set the resolution, such that the Hyper-V window on the host will be scaled to the correct resolution.  In general, Hyper-V will be faster than VirtualBox, due to what layer of hypervisor each are.
 
-If your machine is fast enough, I recommend the [VirtualBox and port forwarding route](#virtual-machines).  Especially usefule with a shared drive and a symlink from /mnt/shared to the home directory within the virtual machine.  I recommend that workflow.
+If your machine is fast enough, I recommend the [VirtualBox and port forwarding route](#virtual-machines).  Especially useful with a shared drive and a symlink from /mnt/shared to the home directory within the virtual machine.  I recommend that workflow.
 
 
 ## Author
