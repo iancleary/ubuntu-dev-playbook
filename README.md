@@ -190,12 +190,16 @@ The folders contain the defaults, as well as some of the Ansible Galaxy Roles:
 
 While I often setup new machines while I experiment Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! This project is [continuously tested on GitHub Actions' Ubuntu infrastructure](https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3ACI).
 
-## Testing the Ansible Roles
+## Testing the Ansible Roles is done elsewhere
 
-This project intentionally doesn't not test the Ansible Galaxy roles that are continuously tested on Github Actions Ubuntu infrastructure.  This testing uses Docker and (generally) targets the latest Ubuntu LTS and the latest Fedora release.  This project doesn't test on Github Actions with Fedora, as that (at the time of writing) isn't easily supported.  That said, I'm considering adding Fedora support (as there are just a few apt installs that would need to be expanded upon to also support rpm/dnf)
+This project intentionally doesn't not test the Ansible Galaxy roles that are continuously tested on Github Actions Ubuntu infrastructure elsewhere.  That testing uses Docker and (generally) targets the latest Ubuntu LTS and the latest Fedora release.
+
+This project doesn't test on Github Actions with Fedora, as that (at the time of writing) isn't easily supported with Github Actions while not using docker.
+
+That said, I'm considering adding Fedora support (as there are just a few apt installs that would need to be expanded upon to also support rpm/dnf)
 
 
-### ansible-role-meslolgs
+### iancleary.meslolgs
 
 <p align="center">
 
@@ -210,7 +214,7 @@ This project intentionally doesn't not test the Ansible Galaxy roles that are co
 </a>
 </p>
 
-### ansible-role-colorls
+### iancleary.colorls
 
 <p align="center">
 
@@ -225,7 +229,7 @@ This project intentionally doesn't not test the Ansible Galaxy roles that are co
 </a>
 </p>
 
-### ansible-role-ohmyzsh
+### iancleary.ohmyzsh
 
 <p align="center">
 
@@ -240,7 +244,7 @@ This project intentionally doesn't not test the Ansible Galaxy roles that are co
 </a>
 </p>
 
-### ansible-role-gh
+### iancleary.gh
 
 <p align="center">
 
@@ -256,7 +260,7 @@ This project intentionally doesn't not test the Ansible Galaxy roles that are co
 </p>
 
 
-### ansible-role-tailscale
+### iancleary.tailscale
 
 <p align="center">
 

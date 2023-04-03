@@ -1,6 +1,8 @@
 ---
 - name: Install Desktop Applications
   hosts: desktop
+  vars_files:
+    - default.terminal.config.yml
   pre_tasks:
     - name: Include playbook configuration.
       ansible.builtin.include_vars: "{{ item }}"

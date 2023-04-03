@@ -1,5 +1,4 @@
 ---
-configure_snap: true
 snaps:
   - name: "authy"  # 2-Factor Authentication
   - name: "beekeeper-studio"  # An open source SQL editor and database management app

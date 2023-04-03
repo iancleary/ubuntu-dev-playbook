@@ -1,6 +1,8 @@
 ---
 - name: Install Terminal Applications
   hosts: terminal
+  vars_files:
+    - default.terminal.config.yml
   pre_tasks:
     - name: Include playbook configuration.
       ansible.builtin.include_vars: "{{ item }}"
@@ -15,23 +17,29 @@
     # Terminal
     - role: iancleary.meslolgs
       tags: ['fonts', 'meslolgs', 'skip-ci']
+      when: configure_meslolgs
     - role: iancleary.colorls
       become: true
       tags: ['colorls', 'skip-ci']
+      when: configure_colorls
     - role: iancleary.ohmyzsh
       tags: ['ohmyzsh', 'zsh', 'skip-ci']
+      when: configure_ohmyzsh
     - role: iancleary.docker
       become: true
       tags: ['docker', 'skip-ci']
+      when: configure_docker
     - role: geerlingguy.nodejs
       become: true
       tags: ['nodejs', 'skip-ci']
+      when: configure_nodejs
     - role: iancleary.gh
       tags: ['gh', 'github-cli', 'skip-ci']
-      when: configure_github_cli
+      when: configure_gh
     - role: iancleary.tailscale
-      tags: ['tailscale', 'skip-ci']
       become: true
+      tags: ['tailscale', 'skip-ci']
+      when: configure_tailscale
 
   tasks:
     - name: Setup apt universe repository

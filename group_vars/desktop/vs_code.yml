@@ -1,5 +1,4 @@
 ---
-configure_code_extensions: true
 code_extensions: []
 # ## Docker and Remote Development
 # - ms-azuretools.vscode-docker
