@@ -117,6 +117,7 @@ cargo:
 material-shell: ## Install Material Shell GNOME Extension from source
 material-shell:
 	git clone --depth 1 https://github.com/material-shell/material-shell.git && cd material-shell && make install
+	xdg-open https://github.com/material-shell/material-shell#get-the-most-up-to-date-version-with-git
 
 tresorit: ## Install Tresorit
 tresorit:
