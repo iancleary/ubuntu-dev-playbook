@@ -114,6 +114,10 @@ cargo:
 	cargo install just
 	cargo install sd
 
+material-shell: ## Install Material Shell GNOME Extension from source
+material-shell:
+	git clone --depth 1 https://github.com/material-shell/material-shell.git && cd material-shell && make install
+
 tresorit: ## Install Tresorit
 tresorit:
 	wget -O ~/Downloads/tresorit_installer.run https://installerstorage.blob.core.windows.net/public/install/tresorit_installer.run
