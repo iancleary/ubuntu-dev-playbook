@@ -9,6 +9,7 @@ zsh_aliases:
   - cg='cd `git rev-parse --show-toplevel`'  # go to git main level
   - ga='git add -A'
   - gc='git commit -m '
+  - gs='git status'
   - gp='git push origin'
   - gl='git pull origin'
   - gr='git reset HEAD --hard'
