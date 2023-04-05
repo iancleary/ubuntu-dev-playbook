@@ -10,4 +10,6 @@ zsh_aliases:
   - ga='git add -A'
   - gc='git commit -m '
   - gp='git push origin'
+  - gl='git pull origin'
+  - gr='git reset HEAD --hard'
   - gcm='git checkout main && git pull origin main && git branch -D '
