@@ -2,7 +2,7 @@
 configure_flatpak_gnome_software: true  # gnome software plugin, can turn off to avoid duplicate stores (snap-store and gnome-software)
 flatpaks:
   # - "net.giuspen.cherrytree"  # Hierarchical Note Taking
-  - "com.uploadedlobster.peek"  # Simple screen recorder with an easy to use interface
+  - "io.github.seadve.Kooha"
   - "com.github.junrrein.PDFSlicer"
   - "org.kde.okular"  # Document Viewer
   - "com.spotify.Client"  # Music
