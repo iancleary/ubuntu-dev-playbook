@@ -126,7 +126,7 @@ configure_flatpak: true
 configure_flatpak_gnome_software: true  # gnome software plugin, can turn off to avoid duplicate stores (snap-store and gnome-software)
 flatpaks:
   # - "net.giuspen.cherrytree"  # Hierarchical Note Taking
-  - "com.uploadedlobster.peek"  # Simple screen recorder with an easy to use interface
+  - "io.github.seadve.Kooha"  # Simple screen recorder with an easy to use interface
   - "com.rafaelmardojai.Blanket"  # Background Sounds
   - "com.github.tchx84.Flatseal"  # Manage Flatpak permissions
   - "org.gabmus.whatip"  # Info on your IP
