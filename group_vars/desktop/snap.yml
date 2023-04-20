@@ -9,6 +9,8 @@ snaps:
     classic: "yes"
   - name: "chromium"
   - name: "standard-notes"
+  - name: "chezmoi"
+    classic: "yes"
 
 # you are responsible for making sure there is a matching snap
 snap_plugs:
