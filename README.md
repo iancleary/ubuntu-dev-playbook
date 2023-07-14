@@ -1,3 +1,11 @@
+ARCHIVED 
+=========
+
+> This repo is archived. I no longer plan to maintain it.  You are welcome to do anything permitted by the [LICENSE](LICENSE).
+> 
+> Why, see this article about [NixOS vs Ansible](https://discourse.nixos.org/t/nixos-vs-ansible/16757/17) for more details.
+
+
 <p align="center">
 
 <img src="./img/ubuntu_orange_hex.svg" width="250" height="156" alt="Ubuntu Logo" />
