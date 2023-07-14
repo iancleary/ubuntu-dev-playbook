@@ -18,9 +18,6 @@ ARCHIVED
 
 <p align="center">
 
-<a href="https://github.com/iancleary/ubuntu-dev-playbook/actions?query=workflow%3ACI" target="_blank">
-    <img src="https://github.com/iancleary/ubuntu-dev-playbook/workflows/CI/badge.svg" alt="CI workflow status">
-</a>
 <a href="https://raw.githubusercontent.com/iancleary/ubuntu-dev-playbook/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
